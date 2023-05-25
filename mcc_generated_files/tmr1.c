@@ -142,6 +142,8 @@ void TMR1_Reload(void)
     TMR1_WriteTimer(timer1ReloadVal);
 }
 
+//static uint8_t foo = 0;
+
 void TMR1_ISR(void)
 {
     static volatile uint16_t CountCallBack = 0;
@@ -149,6 +151,9 @@ void TMR1_ISR(void)
     // Clear the TMR1 interrupt flag
     PIR1bits.TMR1IF = 0;    
     TMR1_WriteTimer(timer1ReloadVal);
+
+    //foo = !foo;
+    //LATAbits.LATA3 = foo;
 
     // callback function - called every 100th pass
     if (++CountCallBack >= TMR1_INTERRUPT_TICKER_FACTOR)

@@ -89,7 +89,6 @@ void rtcc_init(void)
     TMR1IF is not looked at or modified because there could be other tasks running
     on this interrupt.
   ***************************************************************************/
-
 void rtcc_handler(void)
 {
 	deviceTime++;

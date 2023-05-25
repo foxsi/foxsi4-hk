@@ -67,11 +67,23 @@ void main(void)
 
     // Disable the Peripheral Interrupts
     //INTERRUPT_PeripheralInterruptDisable();
+    TMR1_StartTimer();
     
-    
+    do { TRISAbits.TRISA3 = 0; } while(0);
+    LATAbits.LATA3 = 1;
 
+    uint8_t foo = 0;
+    
+    OSCTUNE = 0x00;
+    OSCCON |= 0x02;
+    
     while (1)
     {
+        //__delay_ms(500);
+        foo = !foo;
+        LATAbits.LATA3 = foo;
+        
+
         Network_Manage();
         // Add your application code
         DEMO_TCP_echo_server();
