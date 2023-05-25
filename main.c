@@ -43,6 +43,7 @@
 
 #include "mcc_generated_files/mcc.h"
 #include "user_func.h"
+#include "mcc_generated_files/spi1.h"
 
 /*
                          Main application
@@ -71,6 +72,14 @@ void main(void)
     
     do { TRISAbits.TRISA3 = 0; } while(0);
     LATAbits.LATA3 = 1;
+    
+    // set LTC2983 #2 chip select pin as output:
+    TRISEbits.TRISE1 = 0;
+    // raise LTC2983 #2 chip select pin high to disable:
+    LATEbits.LATE1 = 1;
+    
+    uint8_t* spi_buff = {};
+    size_t spi_buff_len = 0;
 
     uint8_t foo = 0;
     
@@ -80,13 +89,20 @@ void main(void)
     while (1)
     {
         //__delay_ms(500);
-        foo = !foo;
-        LATAbits.LATA3 = foo;
+//        foo = !foo;
+//        LATAbits.LATA3 = foo;
         
 
         Network_Manage();
         // Add your application code
         DEMO_TCP_echo_server();
+        
+        SPI1_Open(MASTER0_CONFIG);
+        // lower LTC2983 #2's chip select:
+        LATEbits.LATE1 = 0;
+        SPI1_ExchangeBlock(spi_buff, spi_buff_len);
+        LATEbits.LATE1 = 1;
+        SPI1_Close();
     }
 }
 /**
