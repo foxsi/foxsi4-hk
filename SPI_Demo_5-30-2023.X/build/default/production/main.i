@@ -7257,28 +7257,103 @@ void main(void)
 {
 
     SYSTEM_Initialize();
-# 72 "main.c"
-    do { TRISAbits.TRISA3 = 0; } while(0);
-    LATAbits.LATA3 = 1;
+# 76 "main.c"
+    SPI1_Open(SPI1_DEFAULT);
 
-    TRISEbits.TRISE1 = 0;
+
+
+    uint8_t* spi_buff;
+
+
+    LATEbits.LATE1 = 0;
+    SPI1_WriteByte(0x14);
+    LATEbits.LATE1 = 1;
+    _delay((unsigned long)((3)*(25000000/4000.0)));
+
+
+
+
+
+
+
+    LATEbits.LATE1 = 0;
+    uint8_t rsense_buff[] = {0x02, 0x02, 0x04, 0xE8, 0x02, 0x58, 0x00};
+    spi_buff = rsense_buff;
+    SPI1_WriteBlock(spi_buff, 7);
     LATEbits.LATE1 = 1;
 
-    uint8_t* spi_buff = {0x02, 0x02, 0x00, 0xE8, 0x02, 0x58, 0x00};
-    size_t spi_buff_len = 7;
+
+    LATEbits.LATE1 = 0;
+    uint8_t rtd1_buff[] = {0x02, 0x02, 0x1C, 0x60, 0x96, 0x10, 0x00};
+    spi_buff = rtd1_buff;
+    SPI1_WriteBlock(spi_buff, 7);
+    LATEbits.LATE1 = 1;
+
+
+    uint8_t conv4[] = {0x02, 0x00, 0x00, 0x88};
 
     OSCTUNE = 0x00;
     OSCCON |=2;
 
+
     while (1)
     {
 
-        SPI1_Open(SPI1_DEFAULT);
         LATEbits.LATE1 = 0;
-        SPI1_ExchangeBlock(spi_buff, spi_buff_len);
+        spi_buff = conv4;
+        SPI1_WriteBlock(spi_buff, 4);
+        LATEbits.LATE1 = 1;
+
+
+
+        _delay((unsigned long)((180)*(25000000/4000.0)));
+
+
+
+
+        LATEbits.LATE1 = 0;
+
+
+        SPI1_WriteByte(0x03);
+        while(!PIR1bits.SSP1IF);
+        PIR1bits.SSP1IF = 0;
+
+        SPI1_WriteByte(0x00);
+        while(!PIR1bits.SSP1IF);
+        PIR1bits.SSP1IF = 0;
+
+        SPI1_WriteByte(0x2C);
+        while(!PIR1bits.SSP1IF);
+        PIR1bits.SSP1IF = 0;
+
+
+
+
+
+
+        SPI1_WriteByte(0xFF);
+        SPI1_ReadByte();
+        while(!PIR1bits.SSP1IF);
+        PIR1bits.SSP1IF = 0;
+
+        SPI1_WriteByte(0xFF);
+        SPI1_ReadByte();
+        while(!PIR1bits.SSP1IF);
+        PIR1bits.SSP1IF = 0;
+
+        SPI1_WriteByte(0xFF);
+        SPI1_ReadByte();
+        while(!PIR1bits.SSP1IF);
+        PIR1bits.SSP1IF = 0;
+
+        SPI1_WriteByte(0xFF);
+        SPI1_ReadByte();
+        while(!PIR1bits.SSP1IF);
+        PIR1bits.SSP1IF = 0;
 
         LATEbits.LATE1 = 1;
-        SPI1_Close();
+        _delay((unsigned long)((30)*(25000000/4000.0)));
 
     }
+    SPI1_Close();
 }

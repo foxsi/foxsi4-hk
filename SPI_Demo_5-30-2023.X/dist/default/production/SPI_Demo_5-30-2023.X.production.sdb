@@ -3,7 +3,7 @@
 [d edition pro ]
 [d chip 18F66J60 ]
 [d frameptr 4065 ]
-"42 C:\Users\jackr\Documents\Foxsi_Lab\MPLABXProjects\SPI_Demo_5-30-2023.X\mcc_generated_files/drivers/spi_master.c
+"42 C:\Users\jackr\Documents\Foxsi_Lab\foxsi4-hk\SPI_Demo_5-30-2023.X\mcc_generated_files/drivers/spi_master.c
 [e E358 . `uc
 MASTER0_CONFIG 0
 SPI1_DEFAULT 1
@@ -12,12 +12,12 @@ SPI1_DEFAULT 1
 [e E380 . `uc
 MASTER0 0
 ]
-"73 C:\Users\jackr\Documents\Foxsi_Lab\MPLABXProjects\SPI_Demo_5-30-2023.X\mcc_generated_files/spi1.c
+"73 C:\Users\jackr\Documents\Foxsi_Lab\foxsi4-hk\SPI_Demo_5-30-2023.X\mcc_generated_files/spi1.c
 [e E358 . `uc
 MASTER0_CONFIG 0
 SPI1_DEFAULT 1
 ]
-"87 C:\Users\jackr\Documents\Foxsi_Lab\MPLABXProjects\SPI_Demo_5-30-2023.X\main.c
+"76 C:\Users\jackr\Documents\Foxsi_Lab\foxsi4-hk\SPI_Demo_5-30-2023.X\main.c
 [e E4132 . `uc
 MASTER0_CONFIG 0
 SPI1_DEFAULT 1
@@ -46,17 +46,17 @@ SPI1_DEFAULT 1
 [v ___lmul __lmul `(ul  1 e 4 0 ]
 "91 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\Umul64.c
 [v ___omul __omul `(uo  1 e 8 0 ]
-"50 C:\Users\jackr\Documents\Foxsi_Lab\MPLABXProjects\SPI_Demo_5-30-2023.X\main.c
+"50 C:\Users\jackr\Documents\Foxsi_Lab\foxsi4-hk\SPI_Demo_5-30-2023.X\main.c
 [v _main main `(v  1 e 1 0 ]
-"41 C:\Users\jackr\Documents\Foxsi_Lab\MPLABXProjects\SPI_Demo_5-30-2023.X\mcc_generated_files/drivers/spi_master.c
+"41 C:\Users\jackr\Documents\Foxsi_Lab\foxsi4-hk\SPI_Demo_5-30-2023.X\mcc_generated_files/drivers/spi_master.c
 [v _MASTER0_open MASTER0_open `(a  1 e 1 0 ]
-"50 C:\Users\jackr\Documents\Foxsi_Lab\MPLABXProjects\SPI_Demo_5-30-2023.X\mcc_generated_files/mcc.c
+"50 C:\Users\jackr\Documents\Foxsi_Lab\foxsi4-hk\SPI_Demo_5-30-2023.X\mcc_generated_files/mcc.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
 "58
 [v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
-"50 C:\Users\jackr\Documents\Foxsi_Lab\MPLABXProjects\SPI_Demo_5-30-2023.X\mcc_generated_files/pin_manager.c
+"50 C:\Users\jackr\Documents\Foxsi_Lab\foxsi4-hk\SPI_Demo_5-30-2023.X\mcc_generated_files/pin_manager.c
 [v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
-"63 C:\Users\jackr\Documents\Foxsi_Lab\MPLABXProjects\SPI_Demo_5-30-2023.X\mcc_generated_files/spi1.c
+"63 C:\Users\jackr\Documents\Foxsi_Lab\foxsi4-hk\SPI_Demo_5-30-2023.X\mcc_generated_files/spi1.c
 [v _SPI1_Initialize SPI1_Initialize `(v  1 e 1 0 ]
 "73
 [v _SPI1_Open SPI1_Open `(a  1 e 1 0 ]
@@ -76,30 +76,6 @@ SPI1_DEFAULT 1
 [v _SPI1_ReadByte SPI1_ReadByte `(uc  1 e 1 0 ]
 "3715 C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\proc\pic18f66j60.h
 [v _LATA LATA `VEuc  1 e 1 @3977 ]
-[s S425 . 1 `uc 1 LATA0 1 0 :1:0 
-`uc 1 LATA1 1 0 :1:1 
-`uc 1 LATA2 1 0 :1:2 
-`uc 1 LATA3 1 0 :1:3 
-`uc 1 LATA4 1 0 :1:4 
-`uc 1 LATA5 1 0 :1:5 
-`uc 1 REPU 1 0 :1:6 
-`uc 1 RDPU 1 0 :1:7 
-]
-"3746
-[s S434 . 1 `uc 1 LA0 1 0 :1:0 
-`uc 1 LA1 1 0 :1:1 
-`uc 1 LA2 1 0 :1:2 
-`uc 1 LA3 1 0 :1:3 
-`uc 1 LA4 1 0 :1:4 
-`uc 1 LA5 1 0 :1:5 
-`uc 1 LA6 1 0 :1:6 
-`uc 1 LA7 1 0 :1:7 
-]
-[s S443 . 1 `uc 1 . 1 0 :7:0 
-`uc 1 LATA7 1 0 :1:7 
-]
-[u S446 . 1 `S425 1 . 1 0 `S434 1 . 1 0 `S443 1 . 1 0 ]
-[v _LATAbits LATAbits `VES446  1 e 1 @3977 ]
 "3836
 [v _LATB LATB `VEuc  1 e 1 @3978 ]
 "3948
@@ -108,7 +84,7 @@ SPI1_DEFAULT 1
 [v _LATD LATD `VEuc  1 e 1 @3980 ]
 "4112
 [v _LATE LATE `VEuc  1 e 1 @3981 ]
-[s S504 . 1 `uc 1 LATE0 1 0 :1:0 
+[s S397 . 1 `uc 1 LATE0 1 0 :1:0 
 `uc 1 LATE1 1 0 :1:1 
 `uc 1 LATE2 1 0 :1:2 
 `uc 1 LATE3 1 0 :1:3 
@@ -116,38 +92,21 @@ SPI1_DEFAULT 1
 `uc 1 LATE5 1 0 :1:5 
 ]
 "4135
-[s S511 . 1 `uc 1 LE0 1 0 :1:0 
+[s S404 . 1 `uc 1 LE0 1 0 :1:0 
 `uc 1 LE1 1 0 :1:1 
 `uc 1 LE2 1 0 :1:2 
 `uc 1 LE3 1 0 :1:3 
 `uc 1 LE4 1 0 :1:4 
 `uc 1 LE5 1 0 :1:5 
 ]
-[u S518 . 1 `S504 1 . 1 0 `S511 1 . 1 0 ]
-[v _LATEbits LATEbits `VES518  1 e 1 @3981 ]
+[u S411 . 1 `S397 1 . 1 0 `S404 1 . 1 0 ]
+[v _LATEbits LATEbits `VES411  1 e 1 @3981 ]
 "4200
 [v _LATF LATF `VEuc  1 e 1 @3982 ]
 "4302
 [v _LATG LATG `VEuc  1 e 1 @3983 ]
 "4332
 [v _TRISA TRISA `VEuc  1 e 1 @3986 ]
-[s S393 . 1 `uc 1 TRISA0 1 0 :1:0 
-`uc 1 TRISA1 1 0 :1:1 
-`uc 1 TRISA2 1 0 :1:2 
-`uc 1 TRISA3 1 0 :1:3 
-`uc 1 TRISA4 1 0 :1:4 
-`uc 1 TRISA5 1 0 :1:5 
-]
-"4360
-[s S400 . 1 `uc 1 RA0 1 0 :1:0 
-`uc 1 RA1 1 0 :1:1 
-`uc 1 RA2 1 0 :1:2 
-`uc 1 RA3 1 0 :1:3 
-`uc 1 RA4 1 0 :1:4 
-`uc 1 RA5 1 0 :1:5 
-]
-[u S407 . 1 `S393 1 . 1 0 `S400 1 . 1 0 ]
-[v _TRISAbits TRISAbits `VES407  1 e 1 @3986 ]
 "4506
 [v _TRISB TRISB `VEuc  1 e 1 @3987 ]
 "4728
@@ -177,23 +136,6 @@ SPI1_DEFAULT 1
 [v _TRISD TRISD `VEuc  1 e 1 @3989 ]
 "5052
 [v _TRISE TRISE `VEuc  1 e 1 @3990 ]
-[s S472 . 1 `uc 1 TRISE0 1 0 :1:0 
-`uc 1 TRISE1 1 0 :1:1 
-`uc 1 TRISE2 1 0 :1:2 
-`uc 1 TRISE3 1 0 :1:3 
-`uc 1 TRISE4 1 0 :1:4 
-`uc 1 TRISE5 1 0 :1:5 
-]
-"5080
-[s S479 . 1 `uc 1 RE0 1 0 :1:0 
-`uc 1 RE1 1 0 :1:1 
-`uc 1 RE2 1 0 :1:2 
-`uc 1 RE3 1 0 :1:3 
-`uc 1 RE4 1 0 :1:4 
-`uc 1 RE5 1 0 :1:5 
-]
-[u S486 . 1 `S472 1 . 1 0 `S479 1 . 1 0 ]
-[v _TRISEbits TRISEbits `VES486  1 e 1 @3990 ]
 "5226
 [v _TRISF TRISF `VEuc  1 e 1 @3991 ]
 "5428
@@ -272,38 +214,81 @@ SPI1_DEFAULT 1
 "10193
 [v _OSCCON OSCCON `VEuc  1 e 1 @4051 ]
 [s S146 . 4 `uc 1 con1 1 0 `uc 1 stat 1 1 `uc 1 add 1 2 `uc 1 operation 1 3 ]
-"58 C:\Users\jackr\Documents\Foxsi_Lab\MPLABXProjects\SPI_Demo_5-30-2023.X\mcc_generated_files/spi1.c
+"58 C:\Users\jackr\Documents\Foxsi_Lab\foxsi4-hk\SPI_Demo_5-30-2023.X\mcc_generated_files/spi1.c
 [v _spi1_configuration spi1_configuration `C[2]S146  1 s 8 spi1_configuration ]
-"50 C:\Users\jackr\Documents\Foxsi_Lab\MPLABXProjects\SPI_Demo_5-30-2023.X\main.c
+"50 C:\Users\jackr\Documents\Foxsi_Lab\foxsi4-hk\SPI_Demo_5-30-2023.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"79
-[v main@spi_buff_len spi_buff_len `ui  1 a 2 8 ]
-"78
-[v main@spi_buff spi_buff `*.39uc  1 a 2 6 ]
+"102
+[v main@rtd1_buff rtd1_buff `[7]uc  1 a 7 16 ]
 "95
+[v main@rsense_buff rsense_buff `[7]uc  1 a 7 9 ]
+"108
+[v main@conv4 conv4 `[4]uc  1 a 4 23 ]
+"80
+[v main@spi_buff spi_buff `*.39uc  1 a 2 27 ]
+"94
+[v main@F4196 F4196 `[7]uc  1 s 7 F4196 ]
+"101
+[v main@F4198 F4198 `[7]uc  1 s 7 F4198 ]
+"105
+[v main@F4200 F4200 `[4]uc  1 s 4 F4200 ]
+"174
 } 0
-"50 C:\Users\jackr\Documents\Foxsi_Lab\MPLABXProjects\SPI_Demo_5-30-2023.X\mcc_generated_files/mcc.c
+"50 C:\Users\jackr\Documents\Foxsi_Lab\foxsi4-hk\SPI_Demo_5-30-2023.X\mcc_generated_files/mcc.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
 {
 "56
 } 0
-"63 C:\Users\jackr\Documents\Foxsi_Lab\MPLABXProjects\SPI_Demo_5-30-2023.X\mcc_generated_files/spi1.c
+"63 C:\Users\jackr\Documents\Foxsi_Lab\foxsi4-hk\SPI_Demo_5-30-2023.X\mcc_generated_files/spi1.c
 [v _SPI1_Initialize SPI1_Initialize `(v  1 e 1 0 ]
 {
 "71
 } 0
-"50 C:\Users\jackr\Documents\Foxsi_Lab\MPLABXProjects\SPI_Demo_5-30-2023.X\mcc_generated_files/pin_manager.c
+"50 C:\Users\jackr\Documents\Foxsi_Lab\foxsi4-hk\SPI_Demo_5-30-2023.X\mcc_generated_files/pin_manager.c
 [v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
 {
 "84
 } 0
-"58 C:\Users\jackr\Documents\Foxsi_Lab\MPLABXProjects\SPI_Demo_5-30-2023.X\mcc_generated_files/mcc.c
+"58 C:\Users\jackr\Documents\Foxsi_Lab\foxsi4-hk\SPI_Demo_5-30-2023.X\mcc_generated_files/mcc.c
 [v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
 {
 "66
 } 0
-"73 C:\Users\jackr\Documents\Foxsi_Lab\MPLABXProjects\SPI_Demo_5-30-2023.X\mcc_generated_files/spi1.c
+"132 C:\Users\jackr\Documents\Foxsi_Lab\foxsi4-hk\SPI_Demo_5-30-2023.X\mcc_generated_files/spi1.c
+[v _SPI1_WriteByte SPI1_WriteByte `(v  1 e 1 0 ]
+{
+[v SPI1_WriteByte@byte byte `uc  1 a 1 wreg ]
+[v SPI1_WriteByte@byte byte `uc  1 a 1 wreg ]
+"134
+[v SPI1_WriteByte@byte byte `uc  1 a 1 0 ]
+"135
+} 0
+"114
+[v _SPI1_WriteBlock SPI1_WriteBlock `(v  1 e 1 0 ]
+{
+"116
+[v SPI1_WriteBlock@data data `*.39uc  1 a 2 5 ]
+"114
+[v SPI1_WriteBlock@block block `*.39v  1 p 2 1 ]
+[v SPI1_WriteBlock@blockSize blockSize `ui  1 p 2 3 ]
+"121
+} 0
+"93
+[v _SPI1_ExchangeByte SPI1_ExchangeByte `(uc  1 e 1 0 ]
+{
+[v SPI1_ExchangeByte@data data `uc  1 a 1 wreg ]
+[v SPI1_ExchangeByte@data data `uc  1 a 1 wreg ]
+"95
+[v SPI1_ExchangeByte@data data `uc  1 a 1 0 ]
+"99
+} 0
+"137
+[v _SPI1_ReadByte SPI1_ReadByte `(uc  1 e 1 0 ]
+{
+"140
+} 0
+"73
 [v _SPI1_Open SPI1_Open `(a  1 e 1 0 ]
 {
 [v SPI1_Open@spi1UniqueConfiguration spi1UniqueConfiguration `E358  1 a 1 wreg ]
@@ -311,16 +296,6 @@ SPI1_DEFAULT 1
 "75
 [v SPI1_Open@spi1UniqueConfiguration spi1UniqueConfiguration `E358  1 a 1 1 ]
 "86
-} 0
-"101
-[v _SPI1_ExchangeBlock SPI1_ExchangeBlock `(v  1 e 1 0 ]
-{
-"103
-[v SPI1_ExchangeBlock@data data `*.39uc  1 a 2 4 ]
-"101
-[v SPI1_ExchangeBlock@block block `*.39v  1 p 2 0 ]
-[v SPI1_ExchangeBlock@blockSize blockSize `ui  1 p 2 2 ]
-"111
 } 0
 "88
 [v _SPI1_Close SPI1_Close `(v  1 e 1 0 ]

@@ -3,56 +3,13 @@ Version 4.0 HI-TECH Software Intermediate Code
 "71 ./mcc_generated_files/mcc.h
 [; ;./mcc_generated_files/mcc.h: 71: void SYSTEM_Initialize(void);
 [v _SYSTEM_Initialize `(v ~T0 @X0 0 ef ]
-"4343 C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\proc\pic18f66j60.h
-[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\proc\pic18f66j60.h: 4343:     struct {
-[s S159 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S159 . TRISA0 TRISA1 TRISA2 TRISA3 TRISA4 TRISA5 ]
-"4351
-[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\proc\pic18f66j60.h: 4351:     struct {
-[s S160 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S160 . RA0 RA1 RA2 RA3 RA4 RA5 ]
-"4342
-[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\proc\pic18f66j60.h: 4342: typedef union {
-[u S158 `S159 1 `S160 1 ]
-[n S158 . . . ]
-"4360
-[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\proc\pic18f66j60.h: 4360: extern volatile TRISAbits_t TRISAbits __attribute__((address(0xF92)));
-[v _TRISAbits `VS158 ~T0 @X0 0 e@3986 ]
-"3721
-[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\proc\pic18f66j60.h: 3721:     struct {
-[s S137 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S137 . LATA0 LATA1 LATA2 LATA3 LATA4 LATA5 REPU RDPU ]
-"3731
-[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\proc\pic18f66j60.h: 3731:     struct {
-[s S138 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S138 . LA0 LA1 LA2 LA3 LA4 LA5 LA6 LA7 ]
-"3741
-[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\proc\pic18f66j60.h: 3741:     struct {
-[s S139 :7 `uc 1 :1 `uc 1 ]
-[n S139 . . LATA7 ]
-"3720
-[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\proc\pic18f66j60.h: 3720: typedef union {
-[u S136 `S137 1 `S138 1 `S139 1 ]
-[n S136 . . . . ]
-"3746
-[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\proc\pic18f66j60.h: 3746: extern volatile LATAbits_t LATAbits __attribute__((address(0xF89)));
-[v _LATAbits `VS136 ~T0 @X0 0 e@3977 ]
-"5063
-[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\proc\pic18f66j60.h: 5063:     struct {
-[s S183 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S183 . TRISE0 TRISE1 TRISE2 TRISE3 TRISE4 TRISE5 ]
-"5071
-[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\proc\pic18f66j60.h: 5071:     struct {
-[s S184 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S184 . RE0 RE1 RE2 RE3 RE4 RE5 ]
-"5062
-[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\proc\pic18f66j60.h: 5062: typedef union {
-[u S182 `S183 1 `S184 1 ]
-[n S182 . . . ]
-"5080
-[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\proc\pic18f66j60.h: 5080: extern volatile TRISEbits_t TRISEbits __attribute__((address(0xF96)));
-[v _TRISEbits `VS182 ~T0 @X0 0 e@3990 ]
-"4118
+"76 main.c
+[; ;main.c: 76:     SPI1_Open(SPI1_DEFAULT);
+[c E4132 0 1 .. ]
+[n E4132 . MASTER0_CONFIG SPI1_DEFAULT  ]
+"65 ./mcc_generated_files/drivers/../spi1.h
+[v _SPI1_Open `(a ~T0 @X0 0 ef1`E4132 ]
+"4118 C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\proc\pic18f66j60.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\proc\pic18f66j60.h: 4118:     struct {
 [s S150 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S150 . LATE0 LATE1 LATE2 LATE3 LATE4 LATE5 ]
@@ -67,20 +24,41 @@ Version 4.0 HI-TECH Software Intermediate Code
 "4135
 [; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\proc\pic18f66j60.h: 4135: extern volatile LATEbits_t LATEbits __attribute__((address(0xF8D)));
 [v _LATEbits `VS149 ~T0 @X0 0 e@3981 ]
-"5486
+"71 ./mcc_generated_files/drivers/../spi1.h
+[v _SPI1_WriteByte `(v ~T0 @X0 0 ef1`uc ]
+[v F192 `(v ~T0 @X0 1 tf1`ul ]
+"12 C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\builtins.h
+[v __delay `JF192 ~T0 @X0 0 e ]
+[p i __delay ]
+"69 ./mcc_generated_files/drivers/../spi1.h
+[v _SPI1_WriteBlock `(v ~T0 @X0 0 ef2`*v`ui ]
+"5486 C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\proc\pic18f66j60.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\proc\pic18f66j60.h: 5486: extern volatile unsigned char OSCTUNE __attribute__((address(0xF9B)));
 [v _OSCTUNE `Vuc ~T0 @X0 0 e@3995 ]
 "10193
 [; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\proc\pic18f66j60.h: 10193: extern volatile unsigned char OSCCON __attribute__((address(0xFD3)));
 [v _OSCCON `Vuc ~T0 @X0 0 e@4051 ]
-"87 main.c
-[; ;main.c: 87:         SPI1_Open(SPI1_DEFAULT);
-[c E4132 0 1 .. ]
-[n E4132 . MASTER0_CONFIG SPI1_DEFAULT  ]
-"65 ./mcc_generated_files/drivers/../spi1.h
-[v _SPI1_Open `(a ~T0 @X0 0 ef1`E4132 ]
-"68
-[v _SPI1_ExchangeBlock `(v ~T0 @X0 0 ef2`*v`ui ]
+"5623
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\proc\pic18f66j60.h: 5623:     struct {
+[s S207 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S207 . TMR1IF TMR2IF CCP1IF SSP1IF TX1IF RC1IF ADIF ]
+"5632
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\proc\pic18f66j60.h: 5632:     struct {
+[s S208 :4 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S208 . . TXIF RCIF ]
+"5637
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\proc\pic18f66j60.h: 5637:     struct {
+[s S209 :3 `uc 1 :1 `uc 1 ]
+[n S209 . . SSPIF ]
+"5622
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\proc\pic18f66j60.h: 5622: typedef union {
+[u S206 `S207 1 `S208 1 `S209 1 ]
+[n S206 . . . . ]
+"5642
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\proc\pic18f66j60.h: 5642: extern volatile PIR1bits_t PIR1bits __attribute__((address(0xF9E)));
+[v _PIR1bits `VS206 ~T0 @X0 0 e@3998 ]
+"72 ./mcc_generated_files/drivers/../spi1.h
+[v _SPI1_ReadByte `(uc ~T0 @X0 0 ef ]
 "66
 [v _SPI1_Close `(v ~T0 @X0 0 ef ]
 "55 C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\proc\pic18f66j60.h
@@ -899,64 +877,242 @@ Version 4.0 HI-TECH Software Intermediate Code
 "53
 [; ;main.c: 53:     SYSTEM_Initialize();
 [e ( _SYSTEM_Initialize ..  ]
-"72
-[; ;main.c: 72:     do { TRISAbits.TRISA3 = 0; } while(0);
-[e :U 444 ]
-{
-[e = . . _TRISAbits 0 3 -> -> 0 `i `uc ]
-}
-[e :U 443 ]
-"73
-[; ;main.c: 73:     LATAbits.LATA3 = 1;
-[e = . . _LATAbits 0 3 -> -> 1 `i `uc ]
-"75
-[; ;main.c: 75:     TRISEbits.TRISE1 = 0;
-[e = . . _TRISEbits 0 1 -> -> 0 `i `uc ]
 "76
-[; ;main.c: 76:     LATEbits.LATE1 = 1;
-[e = . . _LATEbits 0 1 -> -> 1 `i `uc ]
-"78
-[; ;main.c: 78:     uint8_t* spi_buff = {0x02, 0x02, 0x00, 0xE8, 0x02, 0x58, 0x00};
-[v _spi_buff `*uc ~T0 @X0 1 a ]
-[e = _spi_buff -> -> 2 `i `*uc ]
-"79
-[; ;main.c: 79:     size_t spi_buff_len = 7;
-[v _spi_buff_len `ui ~T0 @X0 1 a ]
-[e = _spi_buff_len -> -> 7 `i `ui ]
-"81
-[; ;main.c: 81:     OSCTUNE = 0x00;
-[e = _OSCTUNE -> -> 0 `i `uc ]
-"82
-[; ;main.c: 82:     OSCCON |=2;
-[e =| _OSCCON -> -> 2 `i `Vuc ]
-"84
-[; ;main.c: 84:     while (1)
-[e :U 446 ]
-"85
-[; ;main.c: 85:     {
-{
-"87
-[; ;main.c: 87:         SPI1_Open(SPI1_DEFAULT);
+[; ;main.c: 76:     SPI1_Open(SPI1_DEFAULT);
 [e ( _SPI1_Open (1 . `E4132 1 ]
-"88
-[; ;main.c: 88:         LATEbits.LATE1 = 0;
+"80
+[; ;main.c: 80:     uint8_t* spi_buff;
+[v _spi_buff `*uc ~T0 @X0 1 a ]
+"83
+[; ;main.c: 83:     LATEbits.LATE1 = 0;
 [e = . . _LATEbits 0 1 -> -> 0 `i `uc ]
-"89
-[; ;main.c: 89:         SPI1_ExchangeBlock(spi_buff, spi_buff_len);
-[e ( _SPI1_ExchangeBlock (2 , -> _spi_buff `*v _spi_buff_len ]
-"91
-[; ;main.c: 91:         LATEbits.LATE1 = 1;
+"84
+[; ;main.c: 84:     SPI1_WriteByte(0x14);
+[e ( _SPI1_WriteByte (1 -> -> 20 `i `uc ]
+"85
+[; ;main.c: 85:     LATEbits.LATE1 = 1;
 [e = . . _LATEbits 0 1 -> -> 1 `i `uc ]
-"92
-[; ;main.c: 92:         SPI1_Close();
-[e ( _SPI1_Close ..  ]
+"86
+[; ;main.c: 86:     _delay((unsigned long)((3)*(25000000/4000.0)));
+[e ( __delay (1 -> * -> -> 3 `i `d / -> -> 25000000 `l `d .4000.0 `ul ]
 "94
-[; ;main.c: 94:     }
-}
-[e :U 445 ]
-[e $U 446  ]
-[e :U 447 ]
+[; ;main.c: 94:     LATEbits.LATE1 = 0;
+[e = . . _LATEbits 0 1 -> -> 0 `i `uc ]
+[v F4196 `uc ~T0 @X0 -> 7 `i s ]
+[i F4196
+:U ..
 "95
-[; ;main.c: 95: }
+[; ;main.c: 95:     uint8_t rsense_buff[] = {0x02, 0x02, 0x04, 0xE8, 0x02, 0x58, 0x00};
+-> -> 2 `i `uc
+-> -> 2 `i `uc
+-> -> 4 `i `uc
+-> -> 232 `i `uc
+-> -> 2 `i `uc
+-> -> 88 `i `uc
+-> -> 0 `i `uc
+..
+]
+[v _rsense_buff `uc ~T0 @X0 -> 7 `i a ]
+[e = _rsense_buff F4196 ]
+"96
+[; ;main.c: 96:     spi_buff = rsense_buff;
+[e = _spi_buff &U _rsense_buff ]
+"97
+[; ;main.c: 97:     SPI1_WriteBlock(spi_buff, 7);
+[e ( _SPI1_WriteBlock (2 , -> _spi_buff `*v -> -> 7 `i `ui ]
+"98
+[; ;main.c: 98:     LATEbits.LATE1 = 1;
+[e = . . _LATEbits 0 1 -> -> 1 `i `uc ]
+"101
+[; ;main.c: 101:     LATEbits.LATE1 = 0;
+[e = . . _LATEbits 0 1 -> -> 0 `i `uc ]
+[v F4198 `uc ~T0 @X0 -> 7 `i s ]
+[i F4198
+:U ..
+"102
+[; ;main.c: 102:     uint8_t rtd1_buff[] = {0x02, 0x02, 0x1C, 0x60, 0x96, 0x10, 0x00};
+-> -> 2 `i `uc
+-> -> 2 `i `uc
+-> -> 28 `i `uc
+-> -> 96 `i `uc
+-> -> 150 `i `uc
+-> -> 16 `i `uc
+-> -> 0 `i `uc
+..
+]
+[v _rtd1_buff `uc ~T0 @X0 -> 7 `i a ]
+[e = _rtd1_buff F4198 ]
+"103
+[; ;main.c: 103:     spi_buff = rtd1_buff;
+[e = _spi_buff &U _rtd1_buff ]
+"104
+[; ;main.c: 104:     SPI1_WriteBlock(spi_buff, 7);
+[e ( _SPI1_WriteBlock (2 , -> _spi_buff `*v -> -> 7 `i `ui ]
+"105
+[; ;main.c: 105:     LATEbits.LATE1 = 1;
+[e = . . _LATEbits 0 1 -> -> 1 `i `uc ]
+[v F4200 `uc ~T0 @X0 -> 4 `i s ]
+[i F4200
+:U ..
+"108
+[; ;main.c: 108:     uint8_t conv4[] = {0x02, 0x00, 0x00, 0x88};
+-> -> 2 `i `uc
+-> -> 0 `i `uc
+-> -> 0 `i `uc
+-> -> 136 `i `uc
+..
+]
+[v _conv4 `uc ~T0 @X0 -> 4 `i a ]
+[e = _conv4 F4200 ]
+"110
+[; ;main.c: 110:     OSCTUNE = 0x00;
+[e = _OSCTUNE -> -> 0 `i `uc ]
+"111
+[; ;main.c: 111:     OSCCON |=2;
+[e =| _OSCCON -> -> 2 `i `Vuc ]
+"114
+[; ;main.c: 114:     while (1)
+[e :U 443 ]
+"115
+[; ;main.c: 115:     {
+{
+"117
+[; ;main.c: 117:         LATEbits.LATE1 = 0;
+[e = . . _LATEbits 0 1 -> -> 0 `i `uc ]
+"118
+[; ;main.c: 118:         spi_buff = conv4;
+[e = _spi_buff &U _conv4 ]
+"119
+[; ;main.c: 119:         SPI1_WriteBlock(spi_buff, 4);
+[e ( _SPI1_WriteBlock (2 , -> _spi_buff `*v -> -> 4 `i `ui ]
+"120
+[; ;main.c: 120:         LATEbits.LATE1 = 1;
+[e = . . _LATEbits 0 1 -> -> 1 `i `uc ]
+"124
+[; ;main.c: 124:         _delay((unsigned long)((180)*(25000000/4000.0)));
+[e ( __delay (1 -> * -> -> 180 `i `d / -> -> 25000000 `l `d .4000.0 `ul ]
+"129
+[; ;main.c: 129:         LATEbits.LATE1 = 0;
+[e = . . _LATEbits 0 1 -> -> 0 `i `uc ]
+"132
+[; ;main.c: 132:         SPI1_WriteByte(0x03);
+[e ( _SPI1_WriteByte (1 -> -> 3 `i `uc ]
+"133
+[; ;main.c: 133:         while(!PIR1bits.SSP1IF);
+[e $U 445  ]
+[e :U 446 ]
+[e :U 445 ]
+[e $ ! != -> . . _PIR1bits 0 3 `i -> 0 `i 446  ]
+[e :U 447 ]
+"134
+[; ;main.c: 134:         PIR1bits.SSP1IF = 0;
+[e = . . _PIR1bits 0 3 -> -> 0 `i `uc ]
+"136
+[; ;main.c: 136:         SPI1_WriteByte(0x00);
+[e ( _SPI1_WriteByte (1 -> -> 0 `i `uc ]
+"137
+[; ;main.c: 137:         while(!PIR1bits.SSP1IF);
+[e $U 448  ]
+[e :U 449 ]
+[e :U 448 ]
+[e $ ! != -> . . _PIR1bits 0 3 `i -> 0 `i 449  ]
+[e :U 450 ]
+"138
+[; ;main.c: 138:         PIR1bits.SSP1IF = 0;
+[e = . . _PIR1bits 0 3 -> -> 0 `i `uc ]
+"140
+[; ;main.c: 140:         SPI1_WriteByte(0x2C);
+[e ( _SPI1_WriteByte (1 -> -> 44 `i `uc ]
+"141
+[; ;main.c: 141:         while(!PIR1bits.SSP1IF);
+[e $U 451  ]
+[e :U 452 ]
+[e :U 451 ]
+[e $ ! != -> . . _PIR1bits 0 3 `i -> 0 `i 452  ]
+[e :U 453 ]
+"142
+[; ;main.c: 142:         PIR1bits.SSP1IF = 0;
+[e = . . _PIR1bits 0 3 -> -> 0 `i `uc ]
+"149
+[; ;main.c: 149:         SPI1_WriteByte(0xFF);
+[e ( _SPI1_WriteByte (1 -> -> 255 `i `uc ]
+"150
+[; ;main.c: 150:         SPI1_ReadByte();
+[e ( _SPI1_ReadByte ..  ]
+"151
+[; ;main.c: 151:         while(!PIR1bits.SSP1IF);
+[e $U 454  ]
+[e :U 455 ]
+[e :U 454 ]
+[e $ ! != -> . . _PIR1bits 0 3 `i -> 0 `i 455  ]
+[e :U 456 ]
+"152
+[; ;main.c: 152:         PIR1bits.SSP1IF = 0;
+[e = . . _PIR1bits 0 3 -> -> 0 `i `uc ]
+"154
+[; ;main.c: 154:         SPI1_WriteByte(0xFF);
+[e ( _SPI1_WriteByte (1 -> -> 255 `i `uc ]
+"155
+[; ;main.c: 155:         SPI1_ReadByte();
+[e ( _SPI1_ReadByte ..  ]
+"156
+[; ;main.c: 156:         while(!PIR1bits.SSP1IF);
+[e $U 457  ]
+[e :U 458 ]
+[e :U 457 ]
+[e $ ! != -> . . _PIR1bits 0 3 `i -> 0 `i 458  ]
+[e :U 459 ]
+"157
+[; ;main.c: 157:         PIR1bits.SSP1IF = 0;
+[e = . . _PIR1bits 0 3 -> -> 0 `i `uc ]
+"159
+[; ;main.c: 159:         SPI1_WriteByte(0xFF);
+[e ( _SPI1_WriteByte (1 -> -> 255 `i `uc ]
+"160
+[; ;main.c: 160:         SPI1_ReadByte();
+[e ( _SPI1_ReadByte ..  ]
+"161
+[; ;main.c: 161:         while(!PIR1bits.SSP1IF);
+[e $U 460  ]
+[e :U 461 ]
+[e :U 460 ]
+[e $ ! != -> . . _PIR1bits 0 3 `i -> 0 `i 461  ]
+[e :U 462 ]
+"162
+[; ;main.c: 162:         PIR1bits.SSP1IF = 0;
+[e = . . _PIR1bits 0 3 -> -> 0 `i `uc ]
+"164
+[; ;main.c: 164:         SPI1_WriteByte(0xFF);
+[e ( _SPI1_WriteByte (1 -> -> 255 `i `uc ]
+"165
+[; ;main.c: 165:         SPI1_ReadByte();
+[e ( _SPI1_ReadByte ..  ]
+"166
+[; ;main.c: 166:         while(!PIR1bits.SSP1IF);
+[e $U 463  ]
+[e :U 464 ]
+[e :U 463 ]
+[e $ ! != -> . . _PIR1bits 0 3 `i -> 0 `i 464  ]
+[e :U 465 ]
+"167
+[; ;main.c: 167:         PIR1bits.SSP1IF = 0;
+[e = . . _PIR1bits 0 3 -> -> 0 `i `uc ]
+"169
+[; ;main.c: 169:         LATEbits.LATE1 = 1;
+[e = . . _LATEbits 0 1 -> -> 1 `i `uc ]
+"170
+[; ;main.c: 170:         _delay((unsigned long)((30)*(25000000/4000.0)));
+[e ( __delay (1 -> * -> -> 30 `i `d / -> -> 25000000 `l `d .4000.0 `ul ]
+"172
+[; ;main.c: 172:     }
+}
+[e :U 442 ]
+[e $U 443  ]
+[e :U 444 ]
+"173
+[; ;main.c: 173:     SPI1_Close();
+[e ( _SPI1_Close ..  ]
+"174
+[; ;main.c: 174: }
 [e :UE 441 ]
 }
