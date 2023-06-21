@@ -1,14 +1,34 @@
 Version 4.0 HI-TECH Software Intermediate Code
 [p mainexit ]
-"71 ./mcc_generated_files/mcc.h
-[; ;./mcc_generated_files/mcc.h: 71: void SYSTEM_Initialize(void);
+"73 ./mcc_generated_files/mcc.h
+[; ;./mcc_generated_files/mcc.h: 73: void SYSTEM_Initialize(void);
 [v _SYSTEM_Initialize `(v ~T0 @X0 0 ef ]
-"76 main.c
-[; ;main.c: 76:     SPI1_Open(SPI1_DEFAULT);
-[c E4132 0 1 .. ]
-[n E4132 . MASTER0_CONFIG SPI1_DEFAULT  ]
-"65 ./mcc_generated_files/drivers/../spi1.h
-[v _SPI1_Open `(a ~T0 @X0 0 ef1`E4132 ]
+"10790 C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\proc\pic18f66j60.h
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\proc\pic18f66j60.h: 10790:     struct {
+[s S431 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S431 . RBIF INT0IF TMR0IF RBIE INT0IE TMR0IE PEIE_GIEL GIE_GIEH ]
+"10800
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\proc\pic18f66j60.h: 10800:     struct {
+[s S432 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S432 . . INT0F T0IF . INT0E T0IE PEIE GIE ]
+"10810
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\proc\pic18f66j60.h: 10810:     struct {
+[s S433 :6 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S433 . . GIEL GIEH ]
+"10789
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\proc\pic18f66j60.h: 10789: typedef union {
+[u S430 `S431 1 `S432 1 `S433 1 ]
+[n S430 . . . . ]
+"10816
+[; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\proc\pic18f66j60.h: 10816: extern volatile INTCONbits_t INTCONbits __attribute__((address(0xFF2)));
+[v _INTCONbits `VS430 ~T0 @X0 0 e@4082 ]
+"81 main.c
+[; ;main.c: 81:     SPI1_Open(SPI1_DEFAULT);
+[c E4133 0 .. ]
+[n E4133 . SPI1_DEFAULT  ]
+"64 ./mcc_generated_files/spi1.h
+[; ;./mcc_generated_files/spi1.h: 64: _Bool SPI1_Open(spi1_modes_t spi1UniqueConfiguration);
+[v _SPI1_Open `(a ~T0 @X0 0 ef1`E4133 ]
 "4118 C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\proc\pic18f66j60.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\proc\pic18f66j60.h: 4118:     struct {
 [s S150 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -24,13 +44,15 @@ Version 4.0 HI-TECH Software Intermediate Code
 "4135
 [; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\proc\pic18f66j60.h: 4135: extern volatile LATEbits_t LATEbits __attribute__((address(0xF8D)));
 [v _LATEbits `VS149 ~T0 @X0 0 e@3981 ]
-"71 ./mcc_generated_files/drivers/../spi1.h
+"70 ./mcc_generated_files/spi1.h
+[; ;./mcc_generated_files/spi1.h: 70: void SPI1_WriteByte(uint8_t byte);
 [v _SPI1_WriteByte `(v ~T0 @X0 0 ef1`uc ]
 [v F192 `(v ~T0 @X0 1 tf1`ul ]
 "12 C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\builtins.h
 [v __delay `JF192 ~T0 @X0 0 e ]
 [p i __delay ]
-"69 ./mcc_generated_files/drivers/../spi1.h
+"68 ./mcc_generated_files/spi1.h
+[; ;./mcc_generated_files/spi1.h: 68: void SPI1_WriteBlock(void *block, size_t blockSize);
 [v _SPI1_WriteBlock `(v ~T0 @X0 0 ef2`*v`ui ]
 "5486 C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\proc\pic18f66j60.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\proc\pic18f66j60.h: 5486: extern volatile unsigned char OSCTUNE __attribute__((address(0xF9B)));
@@ -38,7 +60,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 "10193
 [; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\proc\pic18f66j60.h: 10193: extern volatile unsigned char OSCCON __attribute__((address(0xFD3)));
 [v _OSCCON `Vuc ~T0 @X0 0 e@4051 ]
-"5623
+"104 ./mcc_generated_files/TCPIPLibrary/network.h
+[; ;./mcc_generated_files/TCPIPLibrary/network.h: 104: void Network_Manage(void);
+[v _Network_Manage `(v ~T0 @X0 0 ef ]
+"5623 C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\proc\pic18f66j60.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\proc\pic18f66j60.h: 5623:     struct {
 [s S207 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S207 . TMR1IF TMR2IF CCP1IF SSP1IF TX1IF RC1IF ADIF ]
@@ -57,9 +82,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 "5642
 [; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\proc\pic18f66j60.h: 5642: extern volatile PIR1bits_t PIR1bits __attribute__((address(0xF9E)));
 [v _PIR1bits `VS206 ~T0 @X0 0 e@3998 ]
-"72 ./mcc_generated_files/drivers/../spi1.h
+"71 ./mcc_generated_files/spi1.h
+[; ;./mcc_generated_files/spi1.h: 71: uint8_t SPI1_ReadByte(void);
 [v _SPI1_ReadByte `(uc ~T0 @X0 0 ef ]
-"66
+"65
+[; ;./mcc_generated_files/spi1.h: 65: void SPI1_Close(void);
 [v _SPI1_Close `(v ~T0 @X0 0 ef ]
 "55 C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\proc\pic18f66j60.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\proc\pic18f66j60.h: 55: __asm("MAADR5 equ 0E80h");
@@ -866,43 +893,49 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\proc\pic18f66j60.h: 11125: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
 [v $root$_main `(v ~T0 @X0 0 e ]
-"50 main.c
-[; ;main.c: 50: void main(void)
+"51 main.c
+[; ;main.c: 51: void main(void)
 [v _main `(v ~T0 @X0 1 ef ]
-"51
-[; ;main.c: 51: {
+"52
+[; ;main.c: 52: {
 {
 [e :U _main ]
 [f ]
-"53
-[; ;main.c: 53:     SYSTEM_Initialize();
+"54
+[; ;main.c: 54:     SYSTEM_Initialize();
 [e ( _SYSTEM_Initialize ..  ]
-"76
-[; ;main.c: 76:     SPI1_Open(SPI1_DEFAULT);
-[e ( _SPI1_Open (1 . `E4132 1 ]
-"80
-[; ;main.c: 80:     uint8_t* spi_buff;
-[v _spi_buff `*uc ~T0 @X0 1 a ]
-"83
-[; ;main.c: 83:     LATEbits.LATE1 = 0;
-[e = . . _LATEbits 0 1 -> -> 0 `i `uc ]
-"84
-[; ;main.c: 84:     SPI1_WriteByte(0x14);
-[e ( _SPI1_WriteByte (1 -> -> 20 `i `uc ]
+"61
+[; ;main.c: 61:     (INTCONbits.GIE = 1);
+[e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
+"67
+[; ;main.c: 67:     (INTCONbits.PEIE = 1);
+[e = . . _INTCONbits 1 6 -> -> 1 `i `uc ]
+"81
+[; ;main.c: 81:     SPI1_Open(SPI1_DEFAULT);
+[e ( _SPI1_Open (1 . `E4133 0 ]
 "85
-[; ;main.c: 85:     LATEbits.LATE1 = 1;
-[e = . . _LATEbits 0 1 -> -> 1 `i `uc ]
-"86
-[; ;main.c: 86:     _delay((unsigned long)((3)*(25000000/4000.0)));
-[e ( __delay (1 -> * -> -> 3 `i `d / -> -> 25000000 `l `d .4000.0 `ul ]
-"94
-[; ;main.c: 94:     LATEbits.LATE1 = 0;
+[; ;main.c: 85:     uint8_t* spi_buff;
+[v _spi_buff `*uc ~T0 @X0 1 a ]
+"88
+[; ;main.c: 88:     LATEbits.LATE1 = 0;
 [e = . . _LATEbits 0 1 -> -> 0 `i `uc ]
-[v F4196 `uc ~T0 @X0 -> 7 `i s ]
-[i F4196
+"89
+[; ;main.c: 89:     SPI1_WriteByte(0x14);
+[e ( _SPI1_WriteByte (1 -> -> 20 `i `uc ]
+"90
+[; ;main.c: 90:     LATEbits.LATE1 = 1;
+[e = . . _LATEbits 0 1 -> -> 1 `i `uc ]
+"91
+[; ;main.c: 91:     _delay((unsigned long)((3)*(25000000/4000.0)));
+[e ( __delay (1 -> * -> -> 3 `i `d / -> -> 25000000 `l `d .4000.0 `ul ]
+"99
+[; ;main.c: 99:     LATEbits.LATE1 = 0;
+[e = . . _LATEbits 0 1 -> -> 0 `i `uc ]
+[v F4476 `uc ~T0 @X0 -> 7 `i s ]
+[i F4476
 :U ..
-"95
-[; ;main.c: 95:     uint8_t rsense_buff[] = {0x02, 0x02, 0x04, 0xE8, 0x02, 0x58, 0x00};
+"100
+[; ;main.c: 100:     uint8_t rsense_buff[] = {0x02, 0x02, 0x04, 0xE8, 0x02, 0x58, 0x00};
 -> -> 2 `i `uc
 -> -> 2 `i `uc
 -> -> 4 `i `uc
@@ -913,24 +946,24 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ]
 [v _rsense_buff `uc ~T0 @X0 -> 7 `i a ]
-[e = _rsense_buff F4196 ]
-"96
-[; ;main.c: 96:     spi_buff = rsense_buff;
-[e = _spi_buff &U _rsense_buff ]
-"97
-[; ;main.c: 97:     SPI1_WriteBlock(spi_buff, 7);
-[e ( _SPI1_WriteBlock (2 , -> _spi_buff `*v -> -> 7 `i `ui ]
-"98
-[; ;main.c: 98:     LATEbits.LATE1 = 1;
-[e = . . _LATEbits 0 1 -> -> 1 `i `uc ]
+[e = _rsense_buff F4476 ]
 "101
-[; ;main.c: 101:     LATEbits.LATE1 = 0;
-[e = . . _LATEbits 0 1 -> -> 0 `i `uc ]
-[v F4198 `uc ~T0 @X0 -> 7 `i s ]
-[i F4198
-:U ..
+[; ;main.c: 101:     spi_buff = rsense_buff;
+[e = _spi_buff &U _rsense_buff ]
 "102
-[; ;main.c: 102:     uint8_t rtd1_buff[] = {0x02, 0x02, 0x1C, 0x60, 0x96, 0x10, 0x00};
+[; ;main.c: 102:     SPI1_WriteBlock(spi_buff, 7);
+[e ( _SPI1_WriteBlock (2 , -> _spi_buff `*v -> -> 7 `i `ui ]
+"103
+[; ;main.c: 103:     LATEbits.LATE1 = 1;
+[e = . . _LATEbits 0 1 -> -> 1 `i `uc ]
+"106
+[; ;main.c: 106:     LATEbits.LATE1 = 0;
+[e = . . _LATEbits 0 1 -> -> 0 `i `uc ]
+[v F4478 `uc ~T0 @X0 -> 7 `i s ]
+[i F4478
+:U ..
+"107
+[; ;main.c: 107:     uint8_t rtd1_buff[] = {0x02, 0x02, 0x1C, 0x60, 0x96, 0x10, 0x00};
 -> -> 2 `i `uc
 -> -> 2 `i `uc
 -> -> 28 `i `uc
@@ -941,21 +974,21 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ]
 [v _rtd1_buff `uc ~T0 @X0 -> 7 `i a ]
-[e = _rtd1_buff F4198 ]
-"103
-[; ;main.c: 103:     spi_buff = rtd1_buff;
-[e = _spi_buff &U _rtd1_buff ]
-"104
-[; ;main.c: 104:     SPI1_WriteBlock(spi_buff, 7);
-[e ( _SPI1_WriteBlock (2 , -> _spi_buff `*v -> -> 7 `i `ui ]
-"105
-[; ;main.c: 105:     LATEbits.LATE1 = 1;
-[e = . . _LATEbits 0 1 -> -> 1 `i `uc ]
-[v F4200 `uc ~T0 @X0 -> 4 `i s ]
-[i F4200
-:U ..
+[e = _rtd1_buff F4478 ]
 "108
-[; ;main.c: 108:     uint8_t conv4[] = {0x02, 0x00, 0x00, 0x88};
+[; ;main.c: 108:     spi_buff = rtd1_buff;
+[e = _spi_buff &U _rtd1_buff ]
+"109
+[; ;main.c: 109:     SPI1_WriteBlock(spi_buff, 7);
+[e ( _SPI1_WriteBlock (2 , -> _spi_buff `*v -> -> 7 `i `ui ]
+"110
+[; ;main.c: 110:     LATEbits.LATE1 = 1;
+[e = . . _LATEbits 0 1 -> -> 1 `i `uc ]
+[v F4480 `uc ~T0 @X0 -> 4 `i s ]
+[i F4480
+:U ..
+"113
+[; ;main.c: 113:     uint8_t conv4[] = {0x02, 0x00, 0x00, 0x88};
 -> -> 2 `i `uc
 -> -> 0 `i `uc
 -> -> 0 `i `uc
@@ -963,156 +996,159 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ]
 [v _conv4 `uc ~T0 @X0 -> 4 `i a ]
-[e = _conv4 F4200 ]
-"110
-[; ;main.c: 110:     OSCTUNE = 0x00;
-[e = _OSCTUNE -> -> 0 `i `uc ]
-"111
-[; ;main.c: 111:     OSCCON |=2;
-[e =| _OSCCON -> -> 2 `i `Vuc ]
-"114
-[; ;main.c: 114:     while (1)
-[e :U 443 ]
+[e = _conv4 F4480 ]
 "115
-[; ;main.c: 115:     {
-{
-"117
-[; ;main.c: 117:         LATEbits.LATE1 = 0;
-[e = . . _LATEbits 0 1 -> -> 0 `i `uc ]
-"118
-[; ;main.c: 118:         spi_buff = conv4;
-[e = _spi_buff &U _conv4 ]
+[; ;main.c: 115:     OSCTUNE = 0x00;
+[e = _OSCTUNE -> -> 0 `i `uc ]
+"116
+[; ;main.c: 116:     OSCCON |=2;
+[e =| _OSCCON -> -> 2 `i `Vuc ]
 "119
-[; ;main.c: 119:         SPI1_WriteBlock(spi_buff, 4);
-[e ( _SPI1_WriteBlock (2 , -> _spi_buff `*v -> -> 4 `i `ui ]
-"120
-[; ;main.c: 120:         LATEbits.LATE1 = 1;
-[e = . . _LATEbits 0 1 -> -> 1 `i `uc ]
-"124
-[; ;main.c: 124:         _delay((unsigned long)((180)*(25000000/4000.0)));
-[e ( __delay (1 -> * -> -> 180 `i `d / -> -> 25000000 `l `d .4000.0 `ul ]
-"129
-[; ;main.c: 129:         LATEbits.LATE1 = 0;
-[e = . . _LATEbits 0 1 -> -> 0 `i `uc ]
-"132
-[; ;main.c: 132:         SPI1_WriteByte(0x03);
-[e ( _SPI1_WriteByte (1 -> -> 3 `i `uc ]
-"133
-[; ;main.c: 133:         while(!PIR1bits.SSP1IF);
-[e $U 445  ]
-[e :U 446 ]
-[e :U 445 ]
-[e $ ! != -> . . _PIR1bits 0 3 `i -> 0 `i 446  ]
-[e :U 447 ]
-"134
-[; ;main.c: 134:         PIR1bits.SSP1IF = 0;
-[e = . . _PIR1bits 0 3 -> -> 0 `i `uc ]
-"136
-[; ;main.c: 136:         SPI1_WriteByte(0x00);
-[e ( _SPI1_WriteByte (1 -> -> 0 `i `uc ]
-"137
-[; ;main.c: 137:         while(!PIR1bits.SSP1IF);
-[e $U 448  ]
-[e :U 449 ]
-[e :U 448 ]
-[e $ ! != -> . . _PIR1bits 0 3 `i -> 0 `i 449  ]
-[e :U 450 ]
-"138
-[; ;main.c: 138:         PIR1bits.SSP1IF = 0;
-[e = . . _PIR1bits 0 3 -> -> 0 `i `uc ]
-"140
-[; ;main.c: 140:         SPI1_WriteByte(0x2C);
-[e ( _SPI1_WriteByte (1 -> -> 44 `i `uc ]
-"141
-[; ;main.c: 141:         while(!PIR1bits.SSP1IF);
-[e $U 451  ]
-[e :U 452 ]
-[e :U 451 ]
-[e $ ! != -> . . _PIR1bits 0 3 `i -> 0 `i 452  ]
-[e :U 453 ]
-"142
-[; ;main.c: 142:         PIR1bits.SSP1IF = 0;
-[e = . . _PIR1bits 0 3 -> -> 0 `i `uc ]
-"149
-[; ;main.c: 149:         SPI1_WriteByte(0xFF);
-[e ( _SPI1_WriteByte (1 -> -> 255 `i `uc ]
-"150
-[; ;main.c: 150:         SPI1_ReadByte();
-[e ( _SPI1_ReadByte ..  ]
-"151
-[; ;main.c: 151:         while(!PIR1bits.SSP1IF);
-[e $U 454  ]
-[e :U 455 ]
-[e :U 454 ]
-[e $ ! != -> . . _PIR1bits 0 3 `i -> 0 `i 455  ]
-[e :U 456 ]
-"152
-[; ;main.c: 152:         PIR1bits.SSP1IF = 0;
-[e = . . _PIR1bits 0 3 -> -> 0 `i `uc ]
-"154
-[; ;main.c: 154:         SPI1_WriteByte(0xFF);
-[e ( _SPI1_WriteByte (1 -> -> 255 `i `uc ]
-"155
-[; ;main.c: 155:         SPI1_ReadByte();
-[e ( _SPI1_ReadByte ..  ]
-"156
-[; ;main.c: 156:         while(!PIR1bits.SSP1IF);
-[e $U 457  ]
-[e :U 458 ]
-[e :U 457 ]
-[e $ ! != -> . . _PIR1bits 0 3 `i -> 0 `i 458  ]
+[; ;main.c: 119:     while (1)
 [e :U 459 ]
-"157
-[; ;main.c: 157:         PIR1bits.SSP1IF = 0;
-[e = . . _PIR1bits 0 3 -> -> 0 `i `uc ]
-"159
-[; ;main.c: 159:         SPI1_WriteByte(0xFF);
-[e ( _SPI1_WriteByte (1 -> -> 255 `i `uc ]
-"160
-[; ;main.c: 160:         SPI1_ReadByte();
-[e ( _SPI1_ReadByte ..  ]
-"161
-[; ;main.c: 161:         while(!PIR1bits.SSP1IF);
-[e $U 460  ]
-[e :U 461 ]
-[e :U 460 ]
-[e $ ! != -> . . _PIR1bits 0 3 `i -> 0 `i 461  ]
-[e :U 462 ]
-"162
-[; ;main.c: 162:         PIR1bits.SSP1IF = 0;
-[e = . . _PIR1bits 0 3 -> -> 0 `i `uc ]
-"164
-[; ;main.c: 164:         SPI1_WriteByte(0xFF);
-[e ( _SPI1_WriteByte (1 -> -> 255 `i `uc ]
-"165
-[; ;main.c: 165:         SPI1_ReadByte();
-[e ( _SPI1_ReadByte ..  ]
-"166
-[; ;main.c: 166:         while(!PIR1bits.SSP1IF);
-[e $U 463  ]
-[e :U 464 ]
-[e :U 463 ]
-[e $ ! != -> . . _PIR1bits 0 3 `i -> 0 `i 464  ]
-[e :U 465 ]
-"167
-[; ;main.c: 167:         PIR1bits.SSP1IF = 0;
-[e = . . _PIR1bits 0 3 -> -> 0 `i `uc ]
-"169
-[; ;main.c: 169:         LATEbits.LATE1 = 1;
+"120
+[; ;main.c: 120:     {
+{
+"122
+[; ;main.c: 122:         Network_Manage();
+[e ( _Network_Manage ..  ]
+"128
+[; ;main.c: 128:         LATEbits.LATE1 = 0;
+[e = . . _LATEbits 0 1 -> -> 0 `i `uc ]
+"129
+[; ;main.c: 129:         spi_buff = conv4;
+[e = _spi_buff &U _conv4 ]
+"130
+[; ;main.c: 130:         SPI1_WriteBlock(spi_buff, 4);
+[e ( _SPI1_WriteBlock (2 , -> _spi_buff `*v -> -> 4 `i `ui ]
+"131
+[; ;main.c: 131:         LATEbits.LATE1 = 1;
 [e = . . _LATEbits 0 1 -> -> 1 `i `uc ]
+"135
+[; ;main.c: 135:         _delay((unsigned long)((180)*(25000000/4000.0)));
+[e ( __delay (1 -> * -> -> 180 `i `d / -> -> 25000000 `l `d .4000.0 `ul ]
+"140
+[; ;main.c: 140:         LATEbits.LATE1 = 0;
+[e = . . _LATEbits 0 1 -> -> 0 `i `uc ]
+"143
+[; ;main.c: 143:         SPI1_WriteByte(0x03);
+[e ( _SPI1_WriteByte (1 -> -> 3 `i `uc ]
+"144
+[; ;main.c: 144:         while(!PIR1bits.SSP1IF);
+[e $U 461  ]
+[e :U 462 ]
+[e :U 461 ]
+[e $ ! != -> . . _PIR1bits 0 3 `i -> 0 `i 462  ]
+[e :U 463 ]
+"145
+[; ;main.c: 145:         PIR1bits.SSP1IF = 0;
+[e = . . _PIR1bits 0 3 -> -> 0 `i `uc ]
+"147
+[; ;main.c: 147:         SPI1_WriteByte(0x00);
+[e ( _SPI1_WriteByte (1 -> -> 0 `i `uc ]
+"148
+[; ;main.c: 148:         while(!PIR1bits.SSP1IF);
+[e $U 464  ]
+[e :U 465 ]
+[e :U 464 ]
+[e $ ! != -> . . _PIR1bits 0 3 `i -> 0 `i 465  ]
+[e :U 466 ]
+"149
+[; ;main.c: 149:         PIR1bits.SSP1IF = 0;
+[e = . . _PIR1bits 0 3 -> -> 0 `i `uc ]
+"151
+[; ;main.c: 151:         SPI1_WriteByte(0x2C);
+[e ( _SPI1_WriteByte (1 -> -> 44 `i `uc ]
+"152
+[; ;main.c: 152:         while(!PIR1bits.SSP1IF);
+[e $U 467  ]
+[e :U 468 ]
+[e :U 467 ]
+[e $ ! != -> . . _PIR1bits 0 3 `i -> 0 `i 468  ]
+[e :U 469 ]
+"153
+[; ;main.c: 153:         PIR1bits.SSP1IF = 0;
+[e = . . _PIR1bits 0 3 -> -> 0 `i `uc ]
+"160
+[; ;main.c: 160:         SPI1_WriteByte(0xFF);
+[e ( _SPI1_WriteByte (1 -> -> 255 `i `uc ]
+"161
+[; ;main.c: 161:         SPI1_ReadByte();
+[e ( _SPI1_ReadByte ..  ]
+"162
+[; ;main.c: 162:         while(!PIR1bits.SSP1IF);
+[e $U 470  ]
+[e :U 471 ]
+[e :U 470 ]
+[e $ ! != -> . . _PIR1bits 0 3 `i -> 0 `i 471  ]
+[e :U 472 ]
+"163
+[; ;main.c: 163:         PIR1bits.SSP1IF = 0;
+[e = . . _PIR1bits 0 3 -> -> 0 `i `uc ]
+"165
+[; ;main.c: 165:         SPI1_WriteByte(0xFF);
+[e ( _SPI1_WriteByte (1 -> -> 255 `i `uc ]
+"166
+[; ;main.c: 166:         SPI1_ReadByte();
+[e ( _SPI1_ReadByte ..  ]
+"167
+[; ;main.c: 167:         while(!PIR1bits.SSP1IF);
+[e $U 473  ]
+[e :U 474 ]
+[e :U 473 ]
+[e $ ! != -> . . _PIR1bits 0 3 `i -> 0 `i 474  ]
+[e :U 475 ]
+"168
+[; ;main.c: 168:         PIR1bits.SSP1IF = 0;
+[e = . . _PIR1bits 0 3 -> -> 0 `i `uc ]
 "170
-[; ;main.c: 170:         _delay((unsigned long)((30)*(25000000/4000.0)));
-[e ( __delay (1 -> * -> -> 30 `i `d / -> -> 25000000 `l `d .4000.0 `ul ]
+[; ;main.c: 170:         SPI1_WriteByte(0xFF);
+[e ( _SPI1_WriteByte (1 -> -> 255 `i `uc ]
+"171
+[; ;main.c: 171:         SPI1_ReadByte();
+[e ( _SPI1_ReadByte ..  ]
 "172
-[; ;main.c: 172:     }
-}
-[e :U 442 ]
-[e $U 443  ]
-[e :U 444 ]
+[; ;main.c: 172:         while(!PIR1bits.SSP1IF);
+[e $U 476  ]
+[e :U 477 ]
+[e :U 476 ]
+[e $ ! != -> . . _PIR1bits 0 3 `i -> 0 `i 477  ]
+[e :U 478 ]
 "173
-[; ;main.c: 173:     SPI1_Close();
+[; ;main.c: 173:         PIR1bits.SSP1IF = 0;
+[e = . . _PIR1bits 0 3 -> -> 0 `i `uc ]
+"175
+[; ;main.c: 175:         SPI1_WriteByte(0xFF);
+[e ( _SPI1_WriteByte (1 -> -> 255 `i `uc ]
+"176
+[; ;main.c: 176:         SPI1_ReadByte();
+[e ( _SPI1_ReadByte ..  ]
+"177
+[; ;main.c: 177:         while(!PIR1bits.SSP1IF);
+[e $U 479  ]
+[e :U 480 ]
+[e :U 479 ]
+[e $ ! != -> . . _PIR1bits 0 3 `i -> 0 `i 480  ]
+[e :U 481 ]
+"178
+[; ;main.c: 178:         PIR1bits.SSP1IF = 0;
+[e = . . _PIR1bits 0 3 -> -> 0 `i `uc ]
+"180
+[; ;main.c: 180:         LATEbits.LATE1 = 1;
+[e = . . _LATEbits 0 1 -> -> 1 `i `uc ]
+"181
+[; ;main.c: 181:         _delay((unsigned long)((30)*(25000000/4000.0)));
+[e ( __delay (1 -> * -> -> 30 `i `d / -> -> 25000000 `l `d .4000.0 `ul ]
+"183
+[; ;main.c: 183:     }
+}
+[e :U 458 ]
+[e $U 459  ]
+[e :U 460 ]
+"184
+[; ;main.c: 184:     SPI1_Close();
 [e ( _SPI1_Close ..  ]
-"174
-[; ;main.c: 174: }
-[e :UE 441 ]
+"185
+[; ;main.c: 185: }
+[e :UE 457 ]
 }

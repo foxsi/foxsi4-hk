@@ -3,25 +3,995 @@
 [d edition pro ]
 [d chip 18F66J60 ]
 [d frameptr 4065 ]
-"42 C:\Users\jackr\Documents\Foxsi_Lab\foxsi4-hk\SPI_Demo_5-30-2023.X\mcc_generated_files/drivers/spi_master.c
+"120 C:\Users\jackr\Documents\Foxsi_Lab\foxsi4-hk\SPI_Demo_5-30-2023.X\mcc_generated_files/TCPIPLibrary/ipv4.c
+[e E617 . `uc
+ERROR 0
+SUCCESS 1
+LINK_NOT_FOUND 2
+BUFFER_BUSY 3
+TX_LOGIC_NOT_IDLE 4
+MAC_NOT_FOUND 5
+IP_WRONG_VERSION 6
+IPV4_CHECKSUM_FAILS 7
+DEST_IP_NOT_MATCHED 8
+ICMP_CHECKSUM_FAILS 9
+UDP_CHECKSUM_FAILS 10
+TCP_CHECKSUM_FAILS 11
+DMA_TIMEOUT 12
+PORT_NOT_AVAILABLE 13
+ARP_IP_NOT_MATCHED 14
+EAPoL_PACKET_FAILURE 15
+INCORRECT_IPV4_HLEN 16
+IPV4_NO_OPTIONS 17
+TX_QUEUED 18
+IPV6_CHECKSUM_FAILS 19
+IPV6_LOCAL_ADDR_RESOLVE 20
+IPV6_LOCAL_ADDR_INVALID 21
+NO_GATEWAY 22
+ADDRESS_RESOLUTION 23
+GLOBAL_DESTINATION 24
+ARP_WRONG_HARDWARE_ADDR_TYPE 25
+ARP_WRONG_PROTOCOL_TYPE 26
+ARP_WRONG_HARDWARE_ADDR_LEN 27
+ARP_WRONG_PROTOCOL_LEN 28
+]
+"221
+[e E474 . `uc
+HOPOPT_TCPIP 0
+ICMP_TCPIP 1
+IGMP_TCPIP 2
+GGP_TCPIP 3
+IPV4_TCPIP 4
+ST_TCPIP 5
+TCP_TCPIP 6
+CBT_TCPIP 7
+EGP_TCPIP 8
+IGP_TCPIP 9
+BBN_RCC_MON_TCPIP 10
+NVP_II_TCPIP 11
+PUP_TCPIP 12
+ARGUS_TCPIP 13
+EMCON_TCPIP 14
+XNET_TCPIP 15
+CHAOS_TCPIP 16
+UDP_TCPIP 17
+MUX_TCPIP 18
+DCN_MEAS_TCPIP 19
+HMP_TCPIP 20
+PRM_TCPIP 21
+XNS_IDP_TCPIP 22
+TRUNK_1_TCPIP 23
+TRUNK_2_TCPIP 24
+LEAF_1_TCPIP 25
+LEAF_2_TCPIP 26
+RDP_TCPIP 27
+IRTP_TCPIP 28
+ISO_TP4_TCPIP 29
+NETBLT_TCPIP 30
+MFE_NSP_TCPIP 31
+MERIT_INP_TCPIP 32
+DCCP_TCPIP 33
+THREEPC_TCPIP 34
+IDPR_TCPIP 35
+XTP_TCPIP 36
+DDP_TCPIP 37
+IDPR_CMTP_TCPIP 38
+TPpp_TCPIP 39
+IL_TCPIP 40
+IPV6_TUNNEL_TCPIP 41
+SDRP_TCPIP 42
+IPV6_Route_TCPIP 43
+IPV6_Frag_TCPIP 44
+IDRP_TCPIP 45
+RSVP_TCPIP 46
+GRE_TCPIP 47
+DSR_TCPIP 48
+BNA_TCPIP 49
+ESP_TCPIP 50
+AH_TCPIP 51
+I_NLSP_TCPIP 52
+SWIPE_TCPIP 53
+NARP_TCPIP 54
+MOBILE_TCPIP 55
+TLSP_TCPIP 56
+SKIP_TCPIP 57
+IPV6_ICMP_TCPIP 58
+IPV6_NoNxt_TCPIP 59
+IPV6_Opts_TCPIP 60
+CFTP_TCPIP 62
+SAT_EXPAK_TCPIP 64
+KRYPTOLAN_TCPIP 65
+RVD_TCPIP 66
+IPPC_TCPIP 67
+SAT_MON_TCPIP 69
+VISA_TCPIP 70
+IPCV_TCPIP 71
+CPNX_TCPIP 72
+CPHB_TCPIP 73
+WSN_TCPIP 74
+PVP_TCPIP 75
+BR_SAT_MON_TCPIP 76
+SUN_ND_TCPIP 77
+WB_MON_TCPIP 78
+WB_EXPAK_TCPIP 79
+ISO_IP_TCPIP 80
+VMTP_TCPIP 81
+SECURE_VMTP_TCPIP 82
+VINES_TCPIP 83
+TTP_TCPIP 84
+IPTM_TCPIP 84
+NSFNET_IGP_TCPIP 85
+DGP_TCPIP 86
+TCF_TCPIP 87
+EIGRP_TCPIP 88
+OSPFIGP_TCPIP 89
+Sprite_RPC_TCPIP 90
+LARP_TCPIP 91
+MTP_TCPIP 92
+AX25_TCPIP 93
+IPIP_TCPIP 94
+MICP_TCPIP 95
+SCC_SP_TCPIP 96
+ETHERIP_TCPIP 97
+ENCAP_TCPIP 98
+GMTP_TCPIP 100
+IFMP_TCPIP 101
+PNNI_TCPIP 102
+PIM_TCPIP 103
+ARIS_TCPIP 104
+SCPS_TCPIP 105
+QNX_TCPIP 106
+A_N_TCPIP 107
+IPComp_TCPIP 108
+SNP_TCPIP 109
+Compaq_Peer_TCPIP 110
+IPX_in_IP_TCPIP 111
+VRRP_TCPIP 112
+PGM_TCPIP 113
+L2TP_TCPIP 115
+DDX_TCPIP 116
+IATP_TCPIP 117
+STP_TCPIP 118
+SRP_TCPIP 119
+UTI_TCPIP 120
+SMP_TCPIP 121
+SM_TCPIP 122
+PTP_TCPIP 123
+ISIS_TCPIP 124
+FIRE_TCPIP 125
+CRTP_TCPIP 126
+CRUDP_TCPIP 127
+SSCOPMCE_TCPIP 128
+IPLT_TCPIP 129
+SPS_TCPIP 130
+PIPE_TCPIP 131
+SCTP_TCPIP 132
+FC_TCPIP 133
+]
+"58 C:\Users\jackr\Documents\Foxsi_Lab\foxsi4-hk\SPI_Demo_5-30-2023.X\mcc_generated_files/TCPIPLibrary/icmp.c
+[e E617 . `uc
+ERROR 0
+SUCCESS 1
+LINK_NOT_FOUND 2
+BUFFER_BUSY 3
+TX_LOGIC_NOT_IDLE 4
+MAC_NOT_FOUND 5
+IP_WRONG_VERSION 6
+IPV4_CHECKSUM_FAILS 7
+DEST_IP_NOT_MATCHED 8
+ICMP_CHECKSUM_FAILS 9
+UDP_CHECKSUM_FAILS 10
+TCP_CHECKSUM_FAILS 11
+DMA_TIMEOUT 12
+PORT_NOT_AVAILABLE 13
+ARP_IP_NOT_MATCHED 14
+EAPoL_PACKET_FAILURE 15
+INCORRECT_IPV4_HLEN 16
+IPV4_NO_OPTIONS 17
+TX_QUEUED 18
+IPV6_CHECKSUM_FAILS 19
+IPV6_LOCAL_ADDR_RESOLVE 20
+IPV6_LOCAL_ADDR_INVALID 21
+NO_GATEWAY 22
+ADDRESS_RESOLUTION 23
+GLOBAL_DESTINATION 24
+ARP_WRONG_HARDWARE_ADDR_TYPE 25
+ARP_WRONG_PROTOCOL_TYPE 26
+ARP_WRONG_HARDWARE_ADDR_LEN 27
+ARP_WRONG_PROTOCOL_LEN 28
+]
+"85
+[e E408 . `ui
+ECHO_REPLY 0
+DEST_NETWORK_UNREACHABLE 768
+DEST_HOST_UNREACHABLE 769
+DEST_PROTOCOL_UNREACHABLE 770
+DEST_PORT_UNREACHABLE 771
+FRAGMENTATION_REQUIRED 772
+SOURCE_ROUTE_FAILED 773
+DESTINATION_NETWORK_UNKNOWN 774
+SOURCE_HOST_ISOLATED 775
+NETWORK_ADMINISTRATIVELY_PROHIBITED 776
+HOST_ADMINISTRATIVELY_PROHIBITED 777
+NETWORK_UNREACHABLE_FOR_TOS 778
+HOST_UNREACHABLE_FOR_TOS 779
+COMMUNICATION_ADMINISTRATIVELY_PROHIBITED 780
+HOST_PRECEDENCE_VIOLATION 781
+PRECEDENCE_CUTOFF_IN_EFFECT 782
+SOURCE_QUENCH 1024
+REDIRECT_DATAGRAM_FOR_THE_NETWORK 1280
+REDIRECT_DATAGRAM_FOR_THE_HOST 1281
+REDIRECT_DATAGRAM_FOR_THE_TOS_AND_NETWORK 1282
+REDIRECT_DATAGRAM_FOR_THE_TOS_AND_HOST 1283
+ALTERNATE_HOST_ADDRESS 1536
+ECHO_REQUEST 2048
+UNASSIGNED_ECHO_TYPE_CODE_REQUEST_1 2090
+UNASSIGNED_ECHO_TYPE_CODE_REQUEST_2 2300
+ROUTER_ADVERTISEMENT 2304
+ROUTER_SOLICITATION 2560
+TRACEROUTE 12288
+]
+"108
+[e E474 . `uc
+HOPOPT_TCPIP 0
+ICMP_TCPIP 1
+IGMP_TCPIP 2
+GGP_TCPIP 3
+IPV4_TCPIP 4
+ST_TCPIP 5
+TCP_TCPIP 6
+CBT_TCPIP 7
+EGP_TCPIP 8
+IGP_TCPIP 9
+BBN_RCC_MON_TCPIP 10
+NVP_II_TCPIP 11
+PUP_TCPIP 12
+ARGUS_TCPIP 13
+EMCON_TCPIP 14
+XNET_TCPIP 15
+CHAOS_TCPIP 16
+UDP_TCPIP 17
+MUX_TCPIP 18
+DCN_MEAS_TCPIP 19
+HMP_TCPIP 20
+PRM_TCPIP 21
+XNS_IDP_TCPIP 22
+TRUNK_1_TCPIP 23
+TRUNK_2_TCPIP 24
+LEAF_1_TCPIP 25
+LEAF_2_TCPIP 26
+RDP_TCPIP 27
+IRTP_TCPIP 28
+ISO_TP4_TCPIP 29
+NETBLT_TCPIP 30
+MFE_NSP_TCPIP 31
+MERIT_INP_TCPIP 32
+DCCP_TCPIP 33
+THREEPC_TCPIP 34
+IDPR_TCPIP 35
+XTP_TCPIP 36
+DDP_TCPIP 37
+IDPR_CMTP_TCPIP 38
+TPpp_TCPIP 39
+IL_TCPIP 40
+IPV6_TUNNEL_TCPIP 41
+SDRP_TCPIP 42
+IPV6_Route_TCPIP 43
+IPV6_Frag_TCPIP 44
+IDRP_TCPIP 45
+RSVP_TCPIP 46
+GRE_TCPIP 47
+DSR_TCPIP 48
+BNA_TCPIP 49
+ESP_TCPIP 50
+AH_TCPIP 51
+I_NLSP_TCPIP 52
+SWIPE_TCPIP 53
+NARP_TCPIP 54
+MOBILE_TCPIP 55
+TLSP_TCPIP 56
+SKIP_TCPIP 57
+IPV6_ICMP_TCPIP 58
+IPV6_NoNxt_TCPIP 59
+IPV6_Opts_TCPIP 60
+CFTP_TCPIP 62
+SAT_EXPAK_TCPIP 64
+KRYPTOLAN_TCPIP 65
+RVD_TCPIP 66
+IPPC_TCPIP 67
+SAT_MON_TCPIP 69
+VISA_TCPIP 70
+IPCV_TCPIP 71
+CPNX_TCPIP 72
+CPHB_TCPIP 73
+WSN_TCPIP 74
+PVP_TCPIP 75
+BR_SAT_MON_TCPIP 76
+SUN_ND_TCPIP 77
+WB_MON_TCPIP 78
+WB_EXPAK_TCPIP 79
+ISO_IP_TCPIP 80
+VMTP_TCPIP 81
+SECURE_VMTP_TCPIP 82
+VINES_TCPIP 83
+TTP_TCPIP 84
+IPTM_TCPIP 84
+NSFNET_IGP_TCPIP 85
+DGP_TCPIP 86
+TCF_TCPIP 87
+EIGRP_TCPIP 88
+OSPFIGP_TCPIP 89
+Sprite_RPC_TCPIP 90
+LARP_TCPIP 91
+MTP_TCPIP 92
+AX25_TCPIP 93
+IPIP_TCPIP 94
+MICP_TCPIP 95
+SCC_SP_TCPIP 96
+ETHERIP_TCPIP 97
+ENCAP_TCPIP 98
+GMTP_TCPIP 100
+IFMP_TCPIP 101
+PNNI_TCPIP 102
+PIM_TCPIP 103
+ARIS_TCPIP 104
+SCPS_TCPIP 105
+QNX_TCPIP 106
+A_N_TCPIP 107
+IPComp_TCPIP 108
+SNP_TCPIP 109
+Compaq_Peer_TCPIP 110
+IPX_in_IP_TCPIP 111
+VRRP_TCPIP 112
+PGM_TCPIP 113
+L2TP_TCPIP 115
+DDX_TCPIP 116
+IATP_TCPIP 117
+STP_TCPIP 118
+SRP_TCPIP 119
+UTI_TCPIP 120
+SMP_TCPIP 121
+SM_TCPIP 122
+PTP_TCPIP 123
+ISIS_TCPIP 124
+FIRE_TCPIP 125
+CRTP_TCPIP 126
+CRUDP_TCPIP 127
+SSCOPMCE_TCPIP 128
+IPLT_TCPIP 129
+SPS_TCPIP 130
+PIPE_TCPIP 131
+SCTP_TCPIP 132
+FC_TCPIP 133
+]
+"66 C:\Users\jackr\Documents\Foxsi_Lab\foxsi4-hk\SPI_Demo_5-30-2023.X\mcc_generated_files/TCPIPLibrary/log.c
+[e E685 . `uc
+LOG_EMERGENCY 0
+LOG_ALERTS 1
+LOG_CRITICAL 2
+LOG_ERROR 3
+LOG_WARNING 4
+LOG_NOTICE 5
+LOG_INFO 6
+LOG_DEBUG 7
+]
+"68
+[e E695 . `uc
+LOG_KERN 0
+LOG_DTLS 1
+LOG_ECC 2
+LOG_DAEMON 3
+LOG_AUTH 4
+LOG_SYSLOG 5
+LOG_LPR 6
+LOG_NEWS 7
+LOG_TFTP 8
+LOG_UUID 9
+LOG_COAP 10
+LOG_FTP 11
+LOG_NTP 12
+LOG_HTTP 13
+LOG_SNMP 14
+LOG_RTCC 15
+LOG_CBOR 16
+LOG_UDP 17
+LOG_TCP 18
+LOG_DHCP 19
+LOG_DNS 20
+LOG_LLDP 21
+LOG_LINK 22
+LOG_LAST 23
+]
+"119
+[e E993 . `uc
+ERROR 0
+SUCCESS 1
+LINK_NOT_FOUND 2
+BUFFER_BUSY 3
+TX_LOGIC_NOT_IDLE 4
+MAC_NOT_FOUND 5
+IP_WRONG_VERSION 6
+IPV4_CHECKSUM_FAILS 7
+DEST_IP_NOT_MATCHED 8
+ICMP_CHECKSUM_FAILS 9
+UDP_CHECKSUM_FAILS 10
+TCP_CHECKSUM_FAILS 11
+DMA_TIMEOUT 12
+PORT_NOT_AVAILABLE 13
+ARP_IP_NOT_MATCHED 14
+EAPoL_PACKET_FAILURE 15
+INCORRECT_IPV4_HLEN 16
+IPV4_NO_OPTIONS 17
+TX_QUEUED 18
+IPV6_CHECKSUM_FAILS 19
+IPV6_LOCAL_ADDR_RESOLVE 20
+IPV6_LOCAL_ADDR_INVALID 21
+NO_GATEWAY 22
+ADDRESS_RESOLUTION 23
+GLOBAL_DESTINATION 24
+ARP_WRONG_HARDWARE_ADDR_TYPE 25
+ARP_WRONG_PROTOCOL_TYPE 26
+ARP_WRONG_HARDWARE_ADDR_LEN 27
+ARP_WRONG_PROTOCOL_LEN 28
+]
+"140 C:\Users\jackr\Documents\Foxsi_Lab\foxsi4-hk\SPI_Demo_5-30-2023.X\mcc_generated_files/TCPIPLibrary/network.c
+[e E933 . `uc
+ERROR 0
+SUCCESS 1
+LINK_NOT_FOUND 2
+BUFFER_BUSY 3
+TX_LOGIC_NOT_IDLE 4
+MAC_NOT_FOUND 5
+IP_WRONG_VERSION 6
+IPV4_CHECKSUM_FAILS 7
+DEST_IP_NOT_MATCHED 8
+ICMP_CHECKSUM_FAILS 9
+UDP_CHECKSUM_FAILS 10
+TCP_CHECKSUM_FAILS 11
+DMA_TIMEOUT 12
+PORT_NOT_AVAILABLE 13
+ARP_IP_NOT_MATCHED 14
+EAPoL_PACKET_FAILURE 15
+INCORRECT_IPV4_HLEN 16
+IPV4_NO_OPTIONS 17
+TX_QUEUED 18
+IPV6_CHECKSUM_FAILS 19
+IPV6_LOCAL_ADDR_RESOLVE 20
+IPV6_LOCAL_ADDR_INVALID 21
+NO_GATEWAY 22
+ADDRESS_RESOLUTION 23
+GLOBAL_DESTINATION 24
+ARP_WRONG_HARDWARE_ADDR_TYPE 25
+ARP_WRONG_PROTOCOL_TYPE 26
+ARP_WRONG_HARDWARE_ADDR_LEN 27
+ARP_WRONG_PROTOCOL_LEN 28
+]
+"56 C:\Users\jackr\Documents\Foxsi_Lab\foxsi4-hk\SPI_Demo_5-30-2023.X\mcc_generated_files/TCPIPLibrary/log_syslog.c
+[e E4588 . `uc
+ERROR 0
+SUCCESS 1
+LINK_NOT_FOUND 2
+BUFFER_BUSY 3
+TX_LOGIC_NOT_IDLE 4
+MAC_NOT_FOUND 5
+IP_WRONG_VERSION 6
+IPV4_CHECKSUM_FAILS 7
+DEST_IP_NOT_MATCHED 8
+ICMP_CHECKSUM_FAILS 9
+UDP_CHECKSUM_FAILS 10
+TCP_CHECKSUM_FAILS 11
+DMA_TIMEOUT 12
+PORT_NOT_AVAILABLE 13
+ARP_IP_NOT_MATCHED 14
+EAPoL_PACKET_FAILURE 15
+INCORRECT_IPV4_HLEN 16
+IPV4_NO_OPTIONS 17
+TX_QUEUED 18
+IPV6_CHECKSUM_FAILS 19
+IPV6_LOCAL_ADDR_RESOLVE 20
+IPV6_LOCAL_ADDR_INVALID 21
+NO_GATEWAY 22
+ADDRESS_RESOLUTION 23
+GLOBAL_DESTINATION 24
+ARP_WRONG_HARDWARE_ADDR_TYPE 25
+ARP_WRONG_PROTOCOL_TYPE 26
+ARP_WRONG_HARDWARE_ADDR_LEN 27
+ARP_WRONG_PROTOCOL_LEN 28
+]
+"68 C:\Users\jackr\Documents\Foxsi_Lab\foxsi4-hk\SPI_Demo_5-30-2023.X\mcc_generated_files/TCPIPLibrary/udpv4.c
+[e E617 . `uc
+ERROR 0
+SUCCESS 1
+LINK_NOT_FOUND 2
+BUFFER_BUSY 3
+TX_LOGIC_NOT_IDLE 4
+MAC_NOT_FOUND 5
+IP_WRONG_VERSION 6
+IPV4_CHECKSUM_FAILS 7
+DEST_IP_NOT_MATCHED 8
+ICMP_CHECKSUM_FAILS 9
+UDP_CHECKSUM_FAILS 10
+TCP_CHECKSUM_FAILS 11
+DMA_TIMEOUT 12
+PORT_NOT_AVAILABLE 13
+ARP_IP_NOT_MATCHED 14
+EAPoL_PACKET_FAILURE 15
+INCORRECT_IPV4_HLEN 16
+IPV4_NO_OPTIONS 17
+TX_QUEUED 18
+IPV6_CHECKSUM_FAILS 19
+IPV6_LOCAL_ADDR_RESOLVE 20
+IPV6_LOCAL_ADDR_INVALID 21
+NO_GATEWAY 22
+ADDRESS_RESOLUTION 23
+GLOBAL_DESTINATION 24
+ARP_WRONG_HARDWARE_ADDR_TYPE 25
+ARP_WRONG_PROTOCOL_TYPE 26
+ARP_WRONG_HARDWARE_ADDR_LEN 27
+ARP_WRONG_PROTOCOL_LEN 28
+]
+"74
+[e E474 . `uc
+HOPOPT_TCPIP 0
+ICMP_TCPIP 1
+IGMP_TCPIP 2
+GGP_TCPIP 3
+IPV4_TCPIP 4
+ST_TCPIP 5
+TCP_TCPIP 6
+CBT_TCPIP 7
+EGP_TCPIP 8
+IGP_TCPIP 9
+BBN_RCC_MON_TCPIP 10
+NVP_II_TCPIP 11
+PUP_TCPIP 12
+ARGUS_TCPIP 13
+EMCON_TCPIP 14
+XNET_TCPIP 15
+CHAOS_TCPIP 16
+UDP_TCPIP 17
+MUX_TCPIP 18
+DCN_MEAS_TCPIP 19
+HMP_TCPIP 20
+PRM_TCPIP 21
+XNS_IDP_TCPIP 22
+TRUNK_1_TCPIP 23
+TRUNK_2_TCPIP 24
+LEAF_1_TCPIP 25
+LEAF_2_TCPIP 26
+RDP_TCPIP 27
+IRTP_TCPIP 28
+ISO_TP4_TCPIP 29
+NETBLT_TCPIP 30
+MFE_NSP_TCPIP 31
+MERIT_INP_TCPIP 32
+DCCP_TCPIP 33
+THREEPC_TCPIP 34
+IDPR_TCPIP 35
+XTP_TCPIP 36
+DDP_TCPIP 37
+IDPR_CMTP_TCPIP 38
+TPpp_TCPIP 39
+IL_TCPIP 40
+IPV6_TUNNEL_TCPIP 41
+SDRP_TCPIP 42
+IPV6_Route_TCPIP 43
+IPV6_Frag_TCPIP 44
+IDRP_TCPIP 45
+RSVP_TCPIP 46
+GRE_TCPIP 47
+DSR_TCPIP 48
+BNA_TCPIP 49
+ESP_TCPIP 50
+AH_TCPIP 51
+I_NLSP_TCPIP 52
+SWIPE_TCPIP 53
+NARP_TCPIP 54
+MOBILE_TCPIP 55
+TLSP_TCPIP 56
+SKIP_TCPIP 57
+IPV6_ICMP_TCPIP 58
+IPV6_NoNxt_TCPIP 59
+IPV6_Opts_TCPIP 60
+CFTP_TCPIP 62
+SAT_EXPAK_TCPIP 64
+KRYPTOLAN_TCPIP 65
+RVD_TCPIP 66
+IPPC_TCPIP 67
+SAT_MON_TCPIP 69
+VISA_TCPIP 70
+IPCV_TCPIP 71
+CPNX_TCPIP 72
+CPHB_TCPIP 73
+WSN_TCPIP 74
+PVP_TCPIP 75
+BR_SAT_MON_TCPIP 76
+SUN_ND_TCPIP 77
+WB_MON_TCPIP 78
+WB_EXPAK_TCPIP 79
+ISO_IP_TCPIP 80
+VMTP_TCPIP 81
+SECURE_VMTP_TCPIP 82
+VINES_TCPIP 83
+TTP_TCPIP 84
+IPTM_TCPIP 84
+NSFNET_IGP_TCPIP 85
+DGP_TCPIP 86
+TCF_TCPIP 87
+EIGRP_TCPIP 88
+OSPFIGP_TCPIP 89
+Sprite_RPC_TCPIP 90
+LARP_TCPIP 91
+MTP_TCPIP 92
+AX25_TCPIP 93
+IPIP_TCPIP 94
+MICP_TCPIP 95
+SCC_SP_TCPIP 96
+ETHERIP_TCPIP 97
+ENCAP_TCPIP 98
+GMTP_TCPIP 100
+IFMP_TCPIP 101
+PNNI_TCPIP 102
+PIM_TCPIP 103
+ARIS_TCPIP 104
+SCPS_TCPIP 105
+QNX_TCPIP 106
+A_N_TCPIP 107
+IPComp_TCPIP 108
+SNP_TCPIP 109
+Compaq_Peer_TCPIP 110
+IPX_in_IP_TCPIP 111
+VRRP_TCPIP 112
+PGM_TCPIP 113
+L2TP_TCPIP 115
+DDX_TCPIP 116
+IATP_TCPIP 117
+STP_TCPIP 118
+SRP_TCPIP 119
+UTI_TCPIP 120
+SMP_TCPIP 121
+SM_TCPIP 122
+PTP_TCPIP 123
+ISIS_TCPIP 124
+FIRE_TCPIP 125
+CRTP_TCPIP 126
+CRUDP_TCPIP 127
+SSCOPMCE_TCPIP 128
+IPLT_TCPIP 129
+SPS_TCPIP 130
+PIPE_TCPIP 131
+SCTP_TCPIP 132
+FC_TCPIP 133
+]
+"101 C:\Users\jackr\Documents\Foxsi_Lab\foxsi4-hk\SPI_Demo_5-30-2023.X\mcc_generated_files/TCPIPLibrary/arpv4.c
+[e E782 . `uc
+ERROR 0
+SUCCESS 1
+LINK_NOT_FOUND 2
+BUFFER_BUSY 3
+TX_LOGIC_NOT_IDLE 4
+MAC_NOT_FOUND 5
+IP_WRONG_VERSION 6
+IPV4_CHECKSUM_FAILS 7
+DEST_IP_NOT_MATCHED 8
+ICMP_CHECKSUM_FAILS 9
+UDP_CHECKSUM_FAILS 10
+TCP_CHECKSUM_FAILS 11
+DMA_TIMEOUT 12
+PORT_NOT_AVAILABLE 13
+ARP_IP_NOT_MATCHED 14
+EAPoL_PACKET_FAILURE 15
+INCORRECT_IPV4_HLEN 16
+IPV4_NO_OPTIONS 17
+TX_QUEUED 18
+IPV6_CHECKSUM_FAILS 19
+IPV6_LOCAL_ADDR_RESOLVE 20
+IPV6_LOCAL_ADDR_INVALID 21
+NO_GATEWAY 22
+ADDRESS_RESOLUTION 23
+GLOBAL_DESTINATION 24
+ARP_WRONG_HARDWARE_ADDR_TYPE 25
+ARP_WRONG_PROTOCOL_TYPE 26
+ARP_WRONG_HARDWARE_ADDR_LEN 27
+ARP_WRONG_PROTOCOL_LEN 28
+]
+"52 C:\Users\jackr\Documents\Foxsi_Lab\foxsi4-hk\SPI_Demo_5-30-2023.X\mcc_generated_files/TCPIPLibrary/tcpv4.c
+[e E1012 . `uc
+NO_BUFF 0
+RX_BUFF_IN_USE 1
+TX_BUFF_IN_USE 2
+]
+[e E970 . `uc
+CLOSED 0
+LISTEN 1
+SYN_SENT 2
+SYN_RECEIVED 3
+ESTABLISHED 4
+FIN_WAIT_1 5
+FIN_WAIT_2 6
+CLOSE_WAIT 7
+CLOSING 8
+LAST_ACK 9
+TIME_WAIT 10
+]
+[e E983 . `uc
+CLOSE 0
+ACTIVE_OPEN 1
+PASIVE_OPEN 2
+RCV_SYN 3
+RCV_ACK 4
+RCV_SYNACK 5
+RCV_FIN 6
+RCV_FINACK 7
+RX_PACKET 8
+RCV_RST 9
+RCV_RSTACK 10
+RCV_PSHACK 11
+TIMEOUT 12
+NOP 13
+]
+[e E999 . `uc
+NOT_A_SOCKET 0
+SOCKET_CLOSED 1
+SOCKET_IN_PROGRESS 2
+SOCKET_CONNECTED 3
+SOCKET_CLOSING 4
+]
+"173
+[e E784 . `uc
+ERROR 0
+SUCCESS 1
+LINK_NOT_FOUND 2
+BUFFER_BUSY 3
+TX_LOGIC_NOT_IDLE 4
+MAC_NOT_FOUND 5
+IP_WRONG_VERSION 6
+IPV4_CHECKSUM_FAILS 7
+DEST_IP_NOT_MATCHED 8
+ICMP_CHECKSUM_FAILS 9
+UDP_CHECKSUM_FAILS 10
+TCP_CHECKSUM_FAILS 11
+DMA_TIMEOUT 12
+PORT_NOT_AVAILABLE 13
+ARP_IP_NOT_MATCHED 14
+EAPoL_PACKET_FAILURE 15
+INCORRECT_IPV4_HLEN 16
+IPV4_NO_OPTIONS 17
+TX_QUEUED 18
+IPV6_CHECKSUM_FAILS 19
+IPV6_LOCAL_ADDR_RESOLVE 20
+IPV6_LOCAL_ADDR_INVALID 21
+NO_GATEWAY 22
+ADDRESS_RESOLUTION 23
+GLOBAL_DESTINATION 24
+ARP_WRONG_HARDWARE_ADDR_TYPE 25
+ARP_WRONG_PROTOCOL_TYPE 26
+ARP_WRONG_HARDWARE_ADDR_LEN 27
+ARP_WRONG_PROTOCOL_LEN 28
+]
+"275
+[e E641 . `uc
+HOPOPT_TCPIP 0
+ICMP_TCPIP 1
+IGMP_TCPIP 2
+GGP_TCPIP 3
+IPV4_TCPIP 4
+ST_TCPIP 5
+TCP_TCPIP 6
+CBT_TCPIP 7
+EGP_TCPIP 8
+IGP_TCPIP 9
+BBN_RCC_MON_TCPIP 10
+NVP_II_TCPIP 11
+PUP_TCPIP 12
+ARGUS_TCPIP 13
+EMCON_TCPIP 14
+XNET_TCPIP 15
+CHAOS_TCPIP 16
+UDP_TCPIP 17
+MUX_TCPIP 18
+DCN_MEAS_TCPIP 19
+HMP_TCPIP 20
+PRM_TCPIP 21
+XNS_IDP_TCPIP 22
+TRUNK_1_TCPIP 23
+TRUNK_2_TCPIP 24
+LEAF_1_TCPIP 25
+LEAF_2_TCPIP 26
+RDP_TCPIP 27
+IRTP_TCPIP 28
+ISO_TP4_TCPIP 29
+NETBLT_TCPIP 30
+MFE_NSP_TCPIP 31
+MERIT_INP_TCPIP 32
+DCCP_TCPIP 33
+THREEPC_TCPIP 34
+IDPR_TCPIP 35
+XTP_TCPIP 36
+DDP_TCPIP 37
+IDPR_CMTP_TCPIP 38
+TPpp_TCPIP 39
+IL_TCPIP 40
+IPV6_TUNNEL_TCPIP 41
+SDRP_TCPIP 42
+IPV6_Route_TCPIP 43
+IPV6_Frag_TCPIP 44
+IDRP_TCPIP 45
+RSVP_TCPIP 46
+GRE_TCPIP 47
+DSR_TCPIP 48
+BNA_TCPIP 49
+ESP_TCPIP 50
+AH_TCPIP 51
+I_NLSP_TCPIP 52
+SWIPE_TCPIP 53
+NARP_TCPIP 54
+MOBILE_TCPIP 55
+TLSP_TCPIP 56
+SKIP_TCPIP 57
+IPV6_ICMP_TCPIP 58
+IPV6_NoNxt_TCPIP 59
+IPV6_Opts_TCPIP 60
+CFTP_TCPIP 62
+SAT_EXPAK_TCPIP 64
+KRYPTOLAN_TCPIP 65
+RVD_TCPIP 66
+IPPC_TCPIP 67
+SAT_MON_TCPIP 69
+VISA_TCPIP 70
+IPCV_TCPIP 71
+CPNX_TCPIP 72
+CPHB_TCPIP 73
+WSN_TCPIP 74
+PVP_TCPIP 75
+BR_SAT_MON_TCPIP 76
+SUN_ND_TCPIP 77
+WB_MON_TCPIP 78
+WB_EXPAK_TCPIP 79
+ISO_IP_TCPIP 80
+VMTP_TCPIP 81
+SECURE_VMTP_TCPIP 82
+VINES_TCPIP 83
+TTP_TCPIP 84
+IPTM_TCPIP 84
+NSFNET_IGP_TCPIP 85
+DGP_TCPIP 86
+TCF_TCPIP 87
+EIGRP_TCPIP 88
+OSPFIGP_TCPIP 89
+Sprite_RPC_TCPIP 90
+LARP_TCPIP 91
+MTP_TCPIP 92
+AX25_TCPIP 93
+IPIP_TCPIP 94
+MICP_TCPIP 95
+SCC_SP_TCPIP 96
+ETHERIP_TCPIP 97
+ENCAP_TCPIP 98
+GMTP_TCPIP 100
+IFMP_TCPIP 101
+PNNI_TCPIP 102
+PIM_TCPIP 103
+ARIS_TCPIP 104
+SCPS_TCPIP 105
+QNX_TCPIP 106
+A_N_TCPIP 107
+IPComp_TCPIP 108
+SNP_TCPIP 109
+Compaq_Peer_TCPIP 110
+IPX_in_IP_TCPIP 111
+VRRP_TCPIP 112
+PGM_TCPIP 113
+L2TP_TCPIP 115
+DDX_TCPIP 116
+IATP_TCPIP 117
+STP_TCPIP 118
+SRP_TCPIP 119
+UTI_TCPIP 120
+SMP_TCPIP 121
+SM_TCPIP 122
+PTP_TCPIP 123
+ISIS_TCPIP 124
+FIRE_TCPIP 125
+CRTP_TCPIP 126
+CRUDP_TCPIP 127
+SSCOPMCE_TCPIP 128
+IPLT_TCPIP 129
+SPS_TCPIP 130
+PIPE_TCPIP 131
+SCTP_TCPIP 132
+FC_TCPIP 133
+]
+"479
+[e E1047 . `uc
+TCP_EOP 0
+TCP_NOP 1
+TCP_MSS 2
+]
+"223 C:\Users\jackr\Documents\Foxsi_Lab\foxsi4-hk\SPI_Demo_5-30-2023.X\mcc_generated_files/TCPIPLibrary/ETHxxJ6x_driver.c
+[e E4630 . `uc
+PHCON1 0
+PHSTAT1 1
+PHCON2 16
+PHSTAT2 17
+PHIE 18
+PHIR 19
+PHLCON 20
+]
+[e E4639 . `c
+READ_FAIL -3
+WRITE_FAIL -2
+BUSY_TIMEOUT -1
+NOERROR 0
+]
+"288
+[e E4387 . `uc
+ERROR 0
+SUCCESS 1
+LINK_NOT_FOUND 2
+BUFFER_BUSY 3
+TX_LOGIC_NOT_IDLE 4
+MAC_NOT_FOUND 5
+IP_WRONG_VERSION 6
+IPV4_CHECKSUM_FAILS 7
+DEST_IP_NOT_MATCHED 8
+ICMP_CHECKSUM_FAILS 9
+UDP_CHECKSUM_FAILS 10
+TCP_CHECKSUM_FAILS 11
+DMA_TIMEOUT 12
+PORT_NOT_AVAILABLE 13
+ARP_IP_NOT_MATCHED 14
+EAPoL_PACKET_FAILURE 15
+INCORRECT_IPV4_HLEN 16
+IPV4_NO_OPTIONS 17
+TX_QUEUED 18
+IPV6_CHECKSUM_FAILS 19
+IPV6_LOCAL_ADDR_RESOLVE 20
+IPV6_LOCAL_ADDR_INVALID 21
+NO_GATEWAY 22
+ADDRESS_RESOLUTION 23
+GLOBAL_DESTINATION 24
+ARP_WRONG_HARDWARE_ADDR_TYPE 25
+ARP_WRONG_PROTOCOL_TYPE 26
+ARP_WRONG_HARDWARE_ADDR_LEN 27
+ARP_WRONG_PROTOCOL_LEN 28
+]
+"72 C:\Users\jackr\Documents\Foxsi_Lab\foxsi4-hk\SPI_Demo_5-30-2023.X\mcc_generated_files/spi1.c
 [e E358 . `uc
-MASTER0_CONFIG 0
-SPI1_DEFAULT 1
+SPI1_DEFAULT 0
 ]
-"56
-[e E380 . `uc
-MASTER0 0
+"81 C:\Users\jackr\Documents\Foxsi_Lab\foxsi4-hk\SPI_Demo_5-30-2023.X\main.c
+[e E4133 . `uc
+SPI1_DEFAULT 0
 ]
-"73 C:\Users\jackr\Documents\Foxsi_Lab\foxsi4-hk\SPI_Demo_5-30-2023.X\mcc_generated_files/spi1.c
-[e E358 . `uc
-MASTER0_CONFIG 0
-SPI1_DEFAULT 1
-]
-"76 C:\Users\jackr\Documents\Foxsi_Lab\foxsi4-hk\SPI_Demo_5-30-2023.X\main.c
-[e E4132 . `uc
-MASTER0_CONFIG 0
-SPI1_DEFAULT 1
-]
+"7 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\__lldiv.c
+[v ___lldiv __lldiv `(ul  1 e 4 0 ]
+"10 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\__secs_to_tm.c
+[v ___secs_to_tm __secs_to_tm `(i  1 e 2 0 ]
+"1 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\abs.c
+[v _abs abs `(i  1 e 2 0 ]
+"7 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\aldiv.c
+[v ___aldiv __aldiv `(l  1 e 4 0 ]
+"7 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\almod.c
+[v ___almod __almod `(l  1 e 4 0 ]
+"4 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\atoi.c
+[v _atoi atoi `(i  1 e 2 0 ]
+"152 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\doprnt.c
+[v _pad pad `(v  1 s 1 pad ]
+"470
+[v _dtoa dtoa `(v  1 s 1 dtoa ]
+"862
+[v _stoa stoa `(v  1 s 1 stoa ]
+"917
+[v _utoa utoa `(v  1 s 1 utoa ]
+"952
+[v _xtoa xtoa `(v  1 s 1 xtoa ]
+"1029
+[v _read_prec_or_width read_prec_or_width `(i  1 s 2 read_prec_or_width ]
+"1048
+[v _vfpfcnvrt vfpfcnvrt `(v  1 s 1 vfpfcnvrt ]
+"1546
+[v _vfprintf vfprintf `(i  1 e 2 0 ]
 "4 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\fleq.c
 [v ___fleq __fleq `(b  1 e 0 0 ]
 "62 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\float.c
@@ -34,6 +1004,40 @@ SPI1_DEFAULT 1
 [v ___ftmul __ftmul `(f  1 e 4 0 ]
 "19 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\ftsub.c
 [v ___ftsub __ftsub `(f  1 e 4 0 ]
+"40 C:\Program Files\Microchip\xc8\v2.41\pic\include\c99\time.h
+[s S436 tm 24 `i 1 tm_sec 2 0 `i 1 tm_min 2 2 `i 1 tm_hour 2 4 `i 1 tm_mday 2 6 `i 1 tm_mon 2 8 `i 1 tm_year 2 10 `i 1 tm_wday 2 12 `i 1 tm_yday 2 14 `i 1 tm_isdst 2 16 `l 1 __tm_gmtoff 4 18 `*.25Cuc 1 __tm_zone 2 22 ]
+"6 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\gmtime.c
+[v _gmtime gmtime `(*.39S436  1 e 2 0 ]
+"40 C:\Program Files\Microchip\xc8\v2.41\pic\include\c99\time.h
+[s S436 tm 24 `i 1 tm_sec 2 0 `i 1 tm_min 2 2 `i 1 tm_hour 2 4 `i 1 tm_mday 2 6 `i 1 tm_mon 2 8 `i 1 tm_year 2 10 `i 1 tm_wday 2 12 `i 1 tm_yday 2 14 `i 1 tm_isdst 2 16 `l 1 __tm_gmtoff 4 18 `*.25Cuc 1 __tm_zone 2 22 ]
+"5 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\gmtime_r.c
+[v ___gmtime_r __gmtime_r `(*.39S436  1 e 2 0 ]
+"5 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\isalpha.c
+[v _isalpha isalpha `(i  1 e 2 0 ]
+"5 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\isdigit.c
+[v _isdigit isdigit `(i  1 e 2 0 ]
+"5 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\islower.c
+[v _islower islower `(i  1 e 2 0 ]
+"5 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\isspace.c
+[v _isspace isspace `(i  1 e 2 0 ]
+"5 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\isupper.c
+[v _isupper isupper `(i  1 e 2 0 ]
+"7 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\llmod.c
+[v ___llmod __llmod `(ul  1 e 4 0 ]
+"7 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\lwmod.c
+[v ___lwmod __lwmod `(ui  1 e 2 0 ]
+"4 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\memcpy.c
+[v _memcpy memcpy `(*.39v  1 e 2 0 ]
+"8 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\nf_fputc.c
+[v _fputc fputc `(i  1 e 2 0 ]
+"8 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\nf_fputs.c
+[v _fputs fputs `(i  1 e 2 0 ]
+"9 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\nf_sprintf.c
+[v _sprintf sprintf `(i  1 e 2 0 ]
+"5 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\printf.c
+[v _printf printf `(i  1 e 2 0 ]
+"7 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\putch.c
+[v _putch putch `(v  1 e 1 0 ]
 "10 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\sprcadd.c
 [v ___fladd __fladd `(d  1 e 4 0 ]
 "245
@@ -42,39 +1046,367 @@ SPI1_DEFAULT 1
 [v ___fldiv __fldiv `(d  1 e 4 0 ]
 "8 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\sprcmul.c
 [v ___flmul __flmul `(d  1 e 4 0 ]
+"3 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\strchr.c
+[v _strchr strchr `(*.25uc  1 e 2 0 ]
+"3 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\strcspn.c
+[v _strcspn strcspn `(ui  1 e 2 0 ]
+"5 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\strlen.c
+[v _strlen strlen `(ui  1 e 2 0 ]
+"3 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\strncmp.c
+[v _strncmp strncmp `(i  1 e 2 0 ]
+"3 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\strspn.c
+[v _strspn strspn `(ui  1 e 2 0 ]
+"3 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\strtok.c
+[v _strtok strtok `(*.2uc  1 e 2 0 ]
+"4 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\toupper.c
+[v _toupper toupper `(i  1 e 2 0 ]
+"15 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\Umul16.c
+[v ___wmul __wmul `(ui  1 e 2 0 ]
 "15 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\Umul32.c
 [v ___lmul __lmul `(ul  1 e 4 0 ]
 "91 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\Umul64.c
 [v ___omul __omul `(uo  1 e 8 0 ]
-"50 C:\Users\jackr\Documents\Foxsi_Lab\foxsi4-hk\SPI_Demo_5-30-2023.X\main.c
+"51 C:\Users\jackr\Documents\Foxsi_Lab\foxsi4-hk\SPI_Demo_5-30-2023.X\main.c
 [v _main main `(v  1 e 1 0 ]
-"41 C:\Users\jackr\Documents\Foxsi_Lab\foxsi4-hk\SPI_Demo_5-30-2023.X\mcc_generated_files/drivers/spi_master.c
-[v _MASTER0_open MASTER0_open `(a  1 e 1 0 ]
+"52 C:\Users\jackr\Documents\Foxsi_Lab\foxsi4-hk\SPI_Demo_5-30-2023.X\mcc_generated_files/interrupt_manager.c
+[v _INTERRUPT_Initialize INTERRUPT_Initialize `(v  1 e 1 0 ]
+"58
+[v _INTERRUPT_InterruptManager INTERRUPT_InterruptManager `IIH(v  1 e 1 0 ]
 "50 C:\Users\jackr\Documents\Foxsi_Lab\foxsi4-hk\SPI_Demo_5-30-2023.X\mcc_generated_files/mcc.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
-"58
+"61
 [v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
 "50 C:\Users\jackr\Documents\Foxsi_Lab\foxsi4-hk\SPI_Demo_5-30-2023.X\mcc_generated_files/pin_manager.c
 [v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
-"63 C:\Users\jackr\Documents\Foxsi_Lab\foxsi4-hk\SPI_Demo_5-30-2023.X\mcc_generated_files/spi1.c
+"62 C:\Users\jackr\Documents\Foxsi_Lab\foxsi4-hk\SPI_Demo_5-30-2023.X\mcc_generated_files/spi1.c
 [v _SPI1_Initialize SPI1_Initialize `(v  1 e 1 0 ]
-"73
+"72
 [v _SPI1_Open SPI1_Open `(a  1 e 1 0 ]
-"88
+"87
 [v _SPI1_Close SPI1_Close `(v  1 e 1 0 ]
-"93
+"92
 [v _SPI1_ExchangeByte SPI1_ExchangeByte `(uc  1 e 1 0 ]
-"101
-[v _SPI1_ExchangeBlock SPI1_ExchangeBlock `(v  1 e 1 0 ]
-"114
+"113
 [v _SPI1_WriteBlock SPI1_WriteBlock `(v  1 e 1 0 ]
-"123
-[v _SPI1_ReadBlock SPI1_ReadBlock `(v  1 e 1 0 ]
-"132
+"131
 [v _SPI1_WriteByte SPI1_WriteByte `(v  1 e 1 0 ]
-"137
+"136
 [v _SPI1_ReadByte SPI1_ReadByte `(uc  1 e 1 0 ]
-"3715 C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\proc\pic18f66j60.h
+"87 C:\Users\jackr\Documents\Foxsi_Lab\foxsi4-hk\SPI_Demo_5-30-2023.X\mcc_generated_files/TCPIPLibrary/arpv4.c
+[v _ARPV4_Init ARPV4_Init `(v  1 e 1 0 ]
+"101
+[v _ARPV4_Packet ARPV4_Packet `(E933  1 e 1 0 ]
+"187
+[v _ARPV4_Update ARPV4_Update `(v  1 e 1 0 ]
+"202
+[v _ARPV4_Request ARPV4_Request `(E617  1 e 1 0 ]
+"49 C:\Users\jackr\Documents\Foxsi_Lab\foxsi4-hk\SPI_Demo_5-30-2023.X\mcc_generated_files/TCPIPLibrary/mac_address.h
+"51
+[s S289 . 6 `uc 1 byte1 1 0 `uc 1 byte2 1 1 `uc 1 byte3 1 2 `uc 1 byte4 1 3 `uc 1 byte5 1 4 `uc 1 byte6 1 5 ]
+"242 C:\Users\jackr\Documents\Foxsi_Lab\foxsi4-hk\SPI_Demo_5-30-2023.X\mcc_generated_files/TCPIPLibrary/arpv4.c
+[u S296 . 6 `[6]uc 1 mac_array 6 0 `S289 1 s 6 0 ]
+[v _ARPV4_Lookup ARPV4_Lookup `(*.39S296  1 e 2 0 ]
+"108 C:\Users\jackr\Documents\Foxsi_Lab\foxsi4-hk\SPI_Demo_5-30-2023.X\mcc_generated_files/TCPIPLibrary/ETHxxJ6x_driver.c
+[v _ETH_EdataRead ETH_EdataRead `T(uc  1 e 1 0 ]
+"114
+[v _ETH_EdataWrite ETH_EdataWrite `T(v  1 e 1 0 ]
+"132
+[v _ETH_Init ETH_Init `(v  1 e 1 0 ]
+"235
+[v _ETH_CheckLinkUp ETH_CheckLinkUp `(a  1 e 1 0 ]
+"255
+[v _ETH_EventHandler ETH_EventHandler `(v  1 e 1 0 ]
+"306
+[v _ETH_NextPacketUpdate ETH_NextPacketUpdate `(v  1 e 1 0 ]
+"338
+[v _PHY_WaitForBusy PHY_WaitForBusy `T(E4639  1 e 1 0 ]
+"357
+[v _PHY_Write PHY_Write `(E4639  1 e 1 0 ]
+"390
+[v _PHY_Read PHY_Read `(l  1 e 4 0 ]
+"420
+[v _ETH_Read8 ETH_Read8 `(uc  1 e 1 0 ]
+"439
+[v _ETH_Read16 ETH_Read16 `(us  1 e 2 0 ]
+"507
+[v _ETH_ReadBlock ETH_ReadBlock `(us  1 e 2 0 ]
+"527
+[v _ETH_Write8 ETH_Write8 `(v  1 e 1 0 ]
+"536
+[v _ETH_Write16 ETH_Write16 `(v  1 e 1 0 ]
+"557
+[v _ETH_Write32 ETH_Write32 `(v  1 e 1 0 ]
+"565
+[v _ETH_WriteString ETH_WriteString `(us  1 e 2 0 ]
+"583
+[v _ETH_WriteBlock ETH_WriteBlock `(us  1 e 2 0 ]
+"609
+[v _ETH_WriteStart ETH_WriteStart `(E617  1 e 1 0 ]
+"697
+[v _ETH_Send ETH_Send `(E617  1 e 1 0 ]
+"729
+[v _ETH_SendQueued ETH_SendQueued `(E4387  1 e 1 0 ]
+"758
+[v _ETH_Insert ETH_Insert `(v  1 e 1 0 ]
+"773
+[v _ETH_Dump ETH_Dump `(v  1 e 1 0 ]
+"787
+[v _ETH_Flush ETH_Flush `(v  1 e 1 0 ]
+"849
+[v _ETH_Copy ETH_Copy `(E617  1 e 1 0 ]
+"894
+[v _ETH_Shift_Tx_Packets ETH_Shift_Tx_Packets `(E4387  1 e 1 0 ]
+"938
+[v _ETH_ComputeChecksum ETH_ComputeChecksum `(us  1 s 2 ETH_ComputeChecksum ]
+"982
+[v _ETH_TxComputeChecksum ETH_TxComputeChecksum `(us  1 e 2 0 ]
+"1009
+[v _ETH_RxComputeChecksum ETH_RxComputeChecksum `(us  1 e 2 0 ]
+"1031
+[v _ETH_GetMAC ETH_GetMAC `(v  1 e 1 0 ]
+"1059
+[v _ETH_SaveRDPT ETH_SaveRDPT `(v  1 e 1 0 ]
+"1064
+[v _ETH_GetReadPtr ETH_GetReadPtr `(us  1 e 2 0 ]
+"1069
+[v _ETH_SetReadPtr ETH_SetReadPtr `(v  1 e 1 0 ]
+"1095
+[v _ETH_GetRxByteCount ETH_GetRxByteCount `(us  1 e 2 0 ]
+"1100
+[v _ETH_SetRxByteCount ETH_SetRxByteCount `(v  1 e 1 0 ]
+"1105
+[v _ETH_ResetByteCount ETH_ResetByteCount `(v  1 e 1 0 ]
+"1110
+[v _ETH_GetByteCount ETH_GetByteCount `(us  1 e 2 0 ]
+"1140
+[v _ETH_PacketListReset ETH_PacketListReset `(v  1 e 1 0 ]
+"90 C:\Users\jackr\Documents\Foxsi_Lab\foxsi4-hk\SPI_Demo_5-30-2023.X\mcc_generated_files/TCPIPLibrary/ethernet_driver.h
+[s S3034 . 10 `us 1 flags 2 0 `us 1 packetStart 2 2 `us 1 packetEnd 2 4 `*.39v 1 prevPacket 2 6 `*.39v 1 nextPacket 2 8 ]
+"1161 C:\Users\jackr\Documents\Foxsi_Lab\foxsi4-hk\SPI_Demo_5-30-2023.X\mcc_generated_files/TCPIPLibrary/ETHxxJ6x_driver.c
+[v _ETH_NewPacket ETH_NewPacket `(*.39S3034  1 e 2 0 ]
+"1216
+[v _ETH_RemovePacket ETH_RemovePacket `(v  1 e 1 0 ]
+"58 C:\Users\jackr\Documents\Foxsi_Lab\foxsi4-hk\SPI_Demo_5-30-2023.X\mcc_generated_files/TCPIPLibrary/icmp.c
+[v _ICMP_Receive ICMP_Receive `(E617  1 e 1 0 ]
+"99
+[v _ICMP_EchoReply ICMP_EchoReply `(E617  1 e 1 0 ]
+"137
+[v _ICMP_PortUnreachable ICMP_PortUnreachable `(E617  1 e 1 0 ]
+"164
+[v _isPortUnreachable isPortUnreachable `(a  1 e 1 0 ]
+"172
+[v _resetPortUnreachable resetPortUnreachable `(v  1 e 1 0 ]
+"31 C:\Users\jackr\Documents\Foxsi_Lab\foxsi4-hk\SPI_Demo_5-30-2023.X\mcc_generated_files/TCPIPLibrary/ip_database.c
+[v _ipdb_init ipdb_init `(v  1 e 1 0 ]
+"71 C:\Users\jackr\Documents\Foxsi_Lab\foxsi4-hk\SPI_Demo_5-30-2023.X\mcc_generated_files/TCPIPLibrary/ipv4.c
+[v _IPV4_Init IPV4_Init `(v  1 e 1 0 ]
+"76
+[v _IPV4_PseudoHeaderChecksum IPV4_PseudoHeaderChecksum `(us  1 e 2 0 ]
+"109
+[v _getHeaderLen getHeaderLen `(uc  1 s 1 getHeaderLen ]
+"120
+[v _IPV4_Packet IPV4_Packet `(E617  1 e 1 0 ]
+"230
+[v _IPv4_Start IPv4_Start `(E617  1 e 1 0 ]
+"286
+[v _IPV4_Send IPV4_Send `(E617  1 e 1 0 ]
+"306
+[v _IPV4_GetDatagramLength IPV4_GetDatagramLength `(us  1 e 2 0 ]
+"97 C:\Users\jackr\Documents\Foxsi_Lab\foxsi4-hk\SPI_Demo_5-30-2023.X\mcc_generated_files/TCPIPLibrary/log.c
+[v _LOG_Init LOG_Init `(v  1 e 1 0 ]
+"53 C:\Users\jackr\Documents\Foxsi_Lab\foxsi4-hk\SPI_Demo_5-30-2023.X\mcc_generated_files/TCPIPLibrary/log_console.c
+[v _logConsole logConsole `(uc  1 e 1 0 ]
+"56 C:\Users\jackr\Documents\Foxsi_Lab\foxsi4-hk\SPI_Demo_5-30-2023.X\mcc_generated_files/TCPIPLibrary/log_syslog.c
+[v _logSyslog logSyslog `(E993  1 e 1 0 ]
+"49 C:\Users\jackr\Documents\Foxsi_Lab\foxsi4-hk\SPI_Demo_5-30-2023.X\mcc_generated_files/TCPIPLibrary/mac_address.h
+"51
+[s S289 . 6 `uc 1 byte1 1 0 `uc 1 byte2 1 1 `uc 1 byte3 1 2 `uc 1 byte4 1 3 `uc 1 byte5 1 4 `uc 1 byte6 1 5 ]
+"48 C:\Users\jackr\Documents\Foxsi_Lab\foxsi4-hk\SPI_Demo_5-30-2023.X\mcc_generated_files/TCPIPLibrary/mac_address.c
+[u S296 . 6 `[6]uc 1 mac_array 6 0 `S289 1 s 6 0 ]
+[v _MAC_getAddress MAC_getAddress `(*.39CS296  1 e 2 0 ]
+"75 C:\Users\jackr\Documents\Foxsi_Lab\foxsi4-hk\SPI_Demo_5-30-2023.X\mcc_generated_files/TCPIPLibrary/network.c
+[v _Network_Init Network_Init `(v  1 e 1 0 ]
+"88
+[v _timersInit timersInit `(v  1 e 1 0 ]
+"94
+[v _Network_WaitForLink Network_WaitForLink `(v  1 e 1 0 ]
+"99
+[v _Network_Manage Network_Manage `(v  1 e 1 0 ]
+"122
+[v _Network_Read Network_Read `(v  1 e 1 0 ]
+"167
+[v _Network_SaveStartPosition Network_SaveStartPosition `(v  1 s 1 Network_SaveStartPosition ]
+"172
+[v _Network_GetStartPosition Network_GetStartPosition `(us  1 e 2 0 ]
+"60 C:\Users\jackr\Documents\Foxsi_Lab\foxsi4-hk\SPI_Demo_5-30-2023.X\mcc_generated_files/TCPIPLibrary/rtcc.c
+[v _rtcc_init rtcc_init `(v  1 e 1 0 ]
+"93
+[v _rtcc_handler rtcc_handler `(v  1 e 1 0 ]
+"160
+[v _time time `(ul  1 e 4 0 ]
+"89 C:\Users\jackr\Documents\Foxsi_Lab\foxsi4-hk\SPI_Demo_5-30-2023.X\mcc_generated_files/TCPIPLibrary/tcpv4.c
+[v _TCB_Insert TCB_Insert `(v  1 s 1 TCB_Insert ]
+"113
+[v _TCB_Remove TCB_Remove `(v  1 s 1 TCB_Remove ]
+"143
+[v _TCB_Reset TCB_Reset `(v  1 s 1 TCB_Reset ]
+"173
+[v _TCB_Check TCB_Check `(E784  1 s 1 TCB_Check ]
+"211
+[v _TCP_Snd TCP_Snd `(E784  1 s 1 TCP_Snd ]
+"329
+[v _TCP_PayloadSave TCP_PayloadSave `(E784  1 e 1 0 ]
+"378
+[v _TCP_ParseTCPOptions TCP_ParseTCPOptions `(E784  1 s 1 TCP_ParseTCPOptions ]
+"506
+[v _TCP_Recv TCP_Recv `(v  1 e 1 0 ]
+"625
+[v _TCP_FiniteStateMachine TCP_FiniteStateMachine `(E784  1 s 1 TCP_FiniteStateMachine ]
+"1266
+[v _TCP_Init TCP_Init `(v  1 e 1 0 ]
+"1316
+[v _TCP_SocketPoll TCP_SocketPoll `(E999  1 e 1 0 ]
+"1525
+[v _TCP_Update TCP_Update `(v  1 e 1 0 ]
+"1575
+[v _TCP_TimoutRetransmit TCP_TimoutRetransmit `(E784  1 s 1 TCP_TimoutRetransmit ]
+"68 C:\Users\jackr\Documents\Foxsi_Lab\foxsi4-hk\SPI_Demo_5-30-2023.X\mcc_generated_files/TCPIPLibrary/udpv4.c
+[v _UDP_Start UDP_Start `(E4588  1 e 1 0 ]
+"96
+[v _UDP_Send UDP_Send `(E4588  1 e 1 0 ]
+"123
+[v _UDP_Receive UDP_Receive `(E617  1 e 1 0 ]
+"47 C:\Users\jackr\Documents\Foxsi_Lab\foxsi4-hk\SPI_Demo_5-30-2023.X\mcc_generated_files/TCPIPLibrary/udpv4_port_handler_table.h
+[s S1181 . 4 `us 1 portNumber 2 0 `*.37(v 1 callBack 2 2 ]
+"50 C:\Users\jackr\Documents\Foxsi_Lab\foxsi4-hk\SPI_Demo_5-30-2023.X\mcc_generated_files/TCPIPLibrary/udpv4_port_handler_table.c
+[v _udp_table_getIterator udp_table_getIterator `(*.25S1181  1 e 2 0 ]
+"47 C:\Users\jackr\Documents\Foxsi_Lab\foxsi4-hk\SPI_Demo_5-30-2023.X\mcc_generated_files/TCPIPLibrary/udpv4_port_handler_table.h
+[s S1181 . 4 `us 1 portNumber 2 0 `*.37(v 1 callBack 2 2 ]
+"55 C:\Users\jackr\Documents\Foxsi_Lab\foxsi4-hk\SPI_Demo_5-30-2023.X\mcc_generated_files/TCPIPLibrary/udpv4_port_handler_table.c
+[v _udp_table_nextEntry udp_table_nextEntry `(*.25S1181  1 e 2 0 ]
+"64 C:\Users\jackr\Documents\Foxsi_Lab\foxsi4-hk\SPI_Demo_5-30-2023.X\mcc_generated_files/tmr1.c
+[v _TMR1_Initialize TMR1_Initialize `(v  1 e 1 0 ]
+"118
+[v _TMR1_WriteTimer TMR1_WriteTimer `(v  1 e 1 0 ]
+"145
+[v _TMR1_ISR TMR1_ISR `(v  1 e 1 0 ]
+"164
+[v _TMR1_CallBack TMR1_CallBack `(v  1 e 1 0 ]
+"174
+[v _TMR1_SetInterruptHandler TMR1_SetInterruptHandler `(v  1 e 1 0 ]
+"178
+[v _TMR1_DefaultInterruptHandler TMR1_DefaultInterruptHandler `(v  1 e 1 0 ]
+"53 C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\pic\include\proc\pic18f66j60.h
+[v _MAADR5 MAADR5 `VEuc  1 e 1 @3712 ]
+"60
+[v _MAADR6 MAADR6 `VEuc  1 e 1 @3713 ]
+"67
+[v _MAADR3 MAADR3 `VEuc  1 e 1 @3714 ]
+"74
+[v _MAADR4 MAADR4 `VEuc  1 e 1 @3715 ]
+"81
+[v _MAADR1 MAADR1 `VEuc  1 e 1 @3716 ]
+"88
+[v _MAADR2 MAADR2 `VEuc  1 e 1 @3717 ]
+[s S3289 . 1 `uc 1 BUSY 1 0 :1:0 
+`uc 1 SCAN 1 0 :1:1 
+`uc 1 NVALID 1 0 :1:2 
+`uc 1 . 1 0 :1:3 
+]
+"108
+[u S3294 . 1 `S3289 1 . 1 0 ]
+[v _MISTATbits MISTATbits `VES3294  1 e 1 @3722 ]
+"181
+[v _MACON1 MACON1 `VEuc  1 e 1 @3744 ]
+"219
+[v _MACON3 MACON3 `VEuc  1 e 1 @3746 ]
+"290
+[v _MACON4 MACON4 `VEuc  1 e 1 @3747 ]
+"312
+[v _MABBIPG MABBIPG `VEuc  1 e 1 @3748 ]
+"368
+[v _MAIPG MAIPG `VEus  1 e 2 @3750 ]
+"389
+[v _MAMXFL MAMXFL `VEus  1 e 2 @3754 ]
+"410
+[v _MICMD MICMD `VEuc  1 e 1 @3762 ]
+[s S3306 . 1 `uc 1 MIIRD 1 0 :1:0 
+`uc 1 MIISCAN 1 0 :1:1 
+]
+"421
+[u S3309 . 1 `S3306 1 . 1 0 ]
+[v _MICMDbits MICMDbits `VES3309  1 e 1 @3762 ]
+"436
+[v _MIREGADR MIREGADR `VEuc  1 e 1 @3764 ]
+"443
+[v _MIWR MIWR `VEus  1 e 2 @3766 ]
+"464
+[v _MIRD MIRD `VEus  1 e 2 @3768 ]
+"639
+[v _ERXFCON ERXFCON `VEuc  1 e 1 @3800 ]
+"708
+[v _EWRPT EWRPT `VEus  1 e 2 @3810 ]
+"729
+[v _ETXST ETXST `VEus  1 e 2 @3812 ]
+"750
+[v _ETXND ETXND `VEus  1 e 2 @3814 ]
+"771
+[v _ERXST ERXST `VEus  1 e 2 @3816 ]
+"792
+[v _ERXND ERXND `VEus  1 e 2 @3818 ]
+"813
+[v _ERXRDPT ERXRDPT `VEus  1 e 2 @3820 ]
+"855
+[v _EDMAST EDMAST `VEus  1 e 2 @3824 ]
+"876
+[v _EDMAND EDMAND `VEus  1 e 2 @3826 ]
+"897
+[v _EDMADST EDMADST `VEus  1 e 2 @3828 ]
+"939
+[v _EIE EIE `VEuc  1 e 1 @3835 ]
+[s S3262 . 1 `uc 1 RXERIE 1 0 :1:0 
+`uc 1 TXERIE 1 0 :1:1 
+`uc 1 . 1 0 :1:2 
+`uc 1 TXIE 1 0 :1:3 
+`uc 1 LINKIE 1 0 :1:4 
+`uc 1 DMAIE 1 0 :1:5 
+`uc 1 PKTIE 1 0 :1:6 
+]
+"959
+[s S3270 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 ETXIE 1 0 :1:3 
+]
+[u S3273 . 1 `S3262 1 . 1 0 `S3270 1 . 1 0 ]
+[v _EIEbits EIEbits `VES3273  1 e 1 @3835 ]
+[s S3076 . 1 `uc 1 PHYRDY 1 0 :1:0 
+`uc 1 TXABRT 1 0 :1:1 
+`uc 1 RXBUSY 1 0 :1:2 
+`uc 1 . 1 0 :2:3 
+`uc 1 . 1 0 :1:5 
+`uc 1 BUFER 1 0 :1:6 
+]
+"1014
+[u S3083 . 1 `S3076 1 . 1 0 ]
+[v _ESTATbits ESTATbits `VES3083  1 e 1 @3837 ]
+"1039
+[v _ECON2 ECON2 `VEuc  1 e 1 @3838 ]
+[s S3113 . 1 `uc 1 RXERIF 1 0 :1:0 
+`uc 1 TXERIF 1 0 :1:1 
+`uc 1 . 1 0 :1:2 
+`uc 1 TXIF 1 0 :1:3 
+`uc 1 LINKIF 1 0 :1:4 
+`uc 1 DMAIF 1 0 :1:5 
+`uc 1 PKTIF 1 0 :1:6 
+]
+"1092
+[s S3121 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 ETXIF 1 0 :1:3 
+]
+[u S3124 . 1 `S3113 1 . 1 0 `S3121 1 . 1 0 ]
+[v _EIRbits EIRbits `VES3124  1 e 1 @3936 ]
+"2103
+[v _ERDPT ERDPT `VEus  1 e 2 @3962 ]
+"3715
 [v _LATA LATA `VEuc  1 e 1 @3977 ]
 "3836
 [v _LATB LATB `VEuc  1 e 1 @3978 ]
@@ -84,7 +1416,7 @@ SPI1_DEFAULT 1
 [v _LATD LATD `VEuc  1 e 1 @3980 ]
 "4112
 [v _LATE LATE `VEuc  1 e 1 @3981 ]
-[s S397 . 1 `uc 1 LATE0 1 0 :1:0 
+[s S4222 . 1 `uc 1 LATE0 1 0 :1:0 
 `uc 1 LATE1 1 0 :1:1 
 `uc 1 LATE2 1 0 :1:2 
 `uc 1 LATE3 1 0 :1:3 
@@ -92,15 +1424,15 @@ SPI1_DEFAULT 1
 `uc 1 LATE5 1 0 :1:5 
 ]
 "4135
-[s S404 . 1 `uc 1 LE0 1 0 :1:0 
+[s S4229 . 1 `uc 1 LE0 1 0 :1:0 
 `uc 1 LE1 1 0 :1:1 
 `uc 1 LE2 1 0 :1:2 
 `uc 1 LE3 1 0 :1:3 
 `uc 1 LE4 1 0 :1:4 
 `uc 1 LE5 1 0 :1:5 
 ]
-[u S411 . 1 `S397 1 . 1 0 `S404 1 . 1 0 ]
-[v _LATEbits LATEbits `VES411  1 e 1 @3981 ]
+[u S4236 . 1 `S4222 1 . 1 0 `S4229 1 . 1 0 ]
+[v _LATEbits LATEbits `VES4236  1 e 1 @3981 ]
 "4200
 [v _LATF LATF `VEuc  1 e 1 @3982 ]
 "4302
@@ -111,7 +1443,7 @@ SPI1_DEFAULT 1
 [v _TRISB TRISB `VEuc  1 e 1 @3987 ]
 "4728
 [v _TRISC TRISC `VEuc  1 e 1 @3988 ]
-[s S154 . 1 `uc 1 TRISC0 1 0 :1:0 
+[s S3624 . 1 `uc 1 TRISC0 1 0 :1:0 
 `uc 1 TRISC1 1 0 :1:1 
 `uc 1 TRISC2 1 0 :1:2 
 `uc 1 TRISC3 1 0 :1:3 
@@ -121,7 +1453,7 @@ SPI1_DEFAULT 1
 `uc 1 TRISC7 1 0 :1:7 
 ]
 "4760
-[s S163 . 1 `uc 1 RC0 1 0 :1:0 
+[s S3633 . 1 `uc 1 RC0 1 0 :1:0 
 `uc 1 RC1 1 0 :1:1 
 `uc 1 RC2 1 0 :1:2 
 `uc 1 RC3 1 0 :1:3 
@@ -130,8 +1462,8 @@ SPI1_DEFAULT 1
 `uc 1 RC6 1 0 :1:6 
 `uc 1 RC7 1 0 :1:7 
 ]
-[u S172 . 1 `S154 1 . 1 0 `S163 1 . 1 0 ]
-[v _TRISCbits TRISCbits `VES172  1 e 1 @3988 ]
+[u S3642 . 1 `S3624 1 . 1 0 `S3633 1 . 1 0 ]
+[v _TRISCbits TRISCbits `VES3642  1 e 1 @3988 ]
 "4950
 [v _TRISD TRISD `VEuc  1 e 1 @3989 ]
 "5052
@@ -142,7 +1474,23 @@ SPI1_DEFAULT 1
 [v _TRISG TRISG `VEuc  1 e 1 @3992 ]
 "5486
 [v _OSCTUNE OSCTUNE `VEuc  1 e 1 @3995 ]
-[s S244 . 1 `uc 1 TMR1IF 1 0 :1:0 
+[s S3896 . 1 `uc 1 TMR1IE 1 0 :1:0 
+`uc 1 TMR2IE 1 0 :1:1 
+`uc 1 CCP1IE 1 0 :1:2 
+`uc 1 SSP1IE 1 0 :1:3 
+`uc 1 TX1IE 1 0 :1:4 
+`uc 1 RC1IE 1 0 :1:5 
+`uc 1 ADIE 1 0 :1:6 
+]
+"5562
+[s S3904 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 SSPIE 1 0 :1:3 
+`uc 1 TXIE 1 0 :1:4 
+`uc 1 RCIE 1 0 :1:5 
+]
+[u S3909 . 1 `S3896 1 . 1 0 `S3904 1 . 1 0 ]
+[v _PIE1bits PIE1bits `VES3909  1 e 1 @3997 ]
+[s S3713 . 1 `uc 1 TMR1IF 1 0 :1:0 
 `uc 1 TMR2IF 1 0 :1:1 
 `uc 1 CCP1IF 1 0 :1:2 
 `uc 1 SSP1IF 1 0 :1:3 
@@ -151,50 +1499,65 @@ SPI1_DEFAULT 1
 `uc 1 ADIF 1 0 :1:6 
 ]
 "5642
-[s S252 . 1 `uc 1 . 1 0 :4:0 
+[s S3721 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 TXIF 1 0 :1:4 
 `uc 1 RCIF 1 0 :1:5 
 ]
-[s S256 . 1 `uc 1 . 1 0 :3:0 
+[s S3725 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 SSPIF 1 0 :1:3 
 ]
-[u S259 . 1 `S244 1 . 1 0 `S252 1 . 1 0 `S256 1 . 1 0 ]
-[v _PIR1bits PIR1bits `VES259  1 e 1 @3998 ]
-[s S353 . 1 `uc 1 PCFG 1 0 :4:0 
+[u S3728 . 1 `S3713 1 . 1 0 `S3721 1 . 1 0 `S3725 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES3728  1 e 1 @3998 ]
+[s S3191 . 1 `uc 1 CCP2IF 1 0 :1:0 
+`uc 1 TMR3IF 1 0 :1:1 
+`uc 1 . 1 0 :1:2 
+`uc 1 BCL1IF 1 0 :1:3 
+`uc 1 . 1 0 :1:4 
+`uc 1 ETHIF 1 0 :1:5 
+`uc 1 CMIF 1 0 :1:6 
+`uc 1 OSCFIF 1 0 :1:7 
+]
+"5856
+[s S3200 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 BCLIF 1 0 :1:3 
+]
+[u S3203 . 1 `S3191 1 . 1 0 `S3200 1 . 1 0 ]
+[v _PIR2bits PIR2bits `VES3203  1 e 1 @4001 ]
+[s S3833 . 1 `uc 1 PCFG 1 0 :4:0 
 `uc 1 VCFG 1 0 :2:4 
 ]
 "7996
-[s S356 . 1 `uc 1 PCFG0 1 0 :1:0 
+[s S3836 . 1 `uc 1 PCFG0 1 0 :1:0 
 `uc 1 PCFG1 1 0 :1:1 
 `uc 1 PCFG2 1 0 :1:2 
 `uc 1 PCFG3 1 0 :1:3 
 `uc 1 VCFG0 1 0 :1:4 
 `uc 1 VCFG1 1 0 :1:5 
 ]
-[s S363 . 1 `uc 1 . 1 0 :3:0 
+[s S3843 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 CHSN3 1 0 :1:3 
 `uc 1 VCFG01 1 0 :1:4 
 `uc 1 VCFG11 1 0 :1:5 
 ]
-[u S368 . 1 `S353 1 . 1 0 `S356 1 . 1 0 `S363 1 . 1 0 ]
-[v _ADCON1bits ADCON1bits `VES368  1 e 1 @4033 ]
+[u S3848 . 1 `S3833 1 . 1 0 `S3836 1 . 1 0 `S3843 1 . 1 0 ]
+[v _ADCON1bits ADCON1bits `VES3848  1 e 1 @4033 ]
 "8203
 [v _SSP1CON2 SSP1CON2 `VEuc  1 e 1 @4037 ]
 "8575
 [v _SSP1CON1 SSP1CON1 `VEuc  1 e 1 @4038 ]
-[s S194 . 1 `uc 1 SSPM 1 0 :4:0 
+[s S3664 . 1 `uc 1 SSPM 1 0 :4:0 
 `uc 1 CKP 1 0 :1:4 
 `uc 1 SSPEN 1 0 :1:5 
 `uc 1 SSPOV 1 0 :1:6 
 `uc 1 WCOL 1 0 :1:7 
 ]
 "8610
-[s S200 . 1 `uc 1 SSPM0 1 0 :1:0 
+[s S3670 . 1 `uc 1 SSPM0 1 0 :1:0 
 `uc 1 SSPM1 1 0 :1:1 
 `uc 1 SSPM2 1 0 :1:2 
 `uc 1 SSPM3 1 0 :1:3 
 ]
-[s S205 . 1 `uc 1 SSPM01 1 0 :1:0 
+[s S3675 . 1 `uc 1 SSPM01 1 0 :1:0 
 `uc 1 SSPM11 1 0 :1:1 
 `uc 1 SSPM21 1 0 :1:2 
 `uc 1 SSPM31 1 0 :1:3 
@@ -203,102 +1566,1469 @@ SPI1_DEFAULT 1
 `uc 1 SSPOV1 1 0 :1:6 
 `uc 1 WCOL1 1 0 :1:7 
 ]
-[u S214 . 1 `S194 1 . 1 0 `S200 1 . 1 0 `S205 1 . 1 0 ]
-[v _SSP1CON1bits SSP1CON1bits `VES214  1 e 1 @4038 ]
+[u S3684 . 1 `S3664 1 . 1 0 `S3670 1 . 1 0 `S3675 1 . 1 0 ]
+[v _SSP1CON1bits SSP1CON1bits `VES3684  1 e 1 @4038 ]
 "8813
 [v _SSP1STAT SSP1STAT `VEuc  1 e 1 @4039 ]
 "9411
 [v _SSP1ADD SSP1ADD `VEuc  1 e 1 @4040 ]
 "9633
 [v _SSP1BUF SSP1BUF `VEuc  1 e 1 @4041 ]
+"9833
+[v _T1CON T1CON `VEuc  1 e 1 @4045 ]
+[s S3933 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 NOT_T1SYNC 1 0 :1:2 
+]
+"9870
+[s S3936 . 1 `uc 1 TMR1ON 1 0 :1:0 
+`uc 1 TMR1CS 1 0 :1:1 
+`uc 1 nT1SYNC 1 0 :1:2 
+`uc 1 T1OSCEN 1 0 :1:3 
+`uc 1 T1CKPS 1 0 :2:4 
+`uc 1 T1RUN 1 0 :1:6 
+`uc 1 RD16 1 0 :1:7 
+]
+[s S3944 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 T1SYNC 1 0 :1:2 
+`uc 1 . 1 0 :1:3 
+`uc 1 T1CKPS0 1 0 :1:4 
+`uc 1 T1CKPS1 1 0 :1:5 
+]
+[s S3950 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 T1INSYNC 1 0 :1:2 
+]
+[s S3953 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 SOSCEN 1 0 :1:3 
+`uc 1 . 1 0 :3:4 
+`uc 1 T1RD16 1 0 :1:7 
+]
+[u S3958 . 1 `S3933 1 . 1 0 `S3936 1 . 1 0 `S3944 1 . 1 0 `S3950 1 . 1 0 `S3953 1 . 1 0 ]
+[v _T1CONbits T1CONbits `VES3958  1 e 1 @4045 ]
+"9945
+[v _TMR1 TMR1 `VEus  1 e 2 @4046 ]
+"9952
+[v _TMR1L TMR1L `VEuc  1 e 1 @4046 ]
+"9959
+[v _TMR1H TMR1H `VEuc  1 e 1 @4047 ]
+[s S4035 . 1 `uc 1 NOT_BOR 1 0 :1:0 
+]
+"10014
+[s S4037 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 NOT_POR 1 0 :1:1 
+]
+[s S4040 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 NOT_PD 1 0 :1:2 
+]
+[s S4043 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 NOT_TO 1 0 :1:3 
+]
+[s S4046 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 NOT_RI 1 0 :1:4 
+]
+[s S4049 . 1 `uc 1 . 1 0 :5:0 
+`uc 1 NOT_CM 1 0 :1:5 
+]
+[s S4052 . 1 `uc 1 nBOR 1 0 :1:0 
+`uc 1 nPOR 1 0 :1:1 
+`uc 1 nPD 1 0 :1:2 
+`uc 1 nTO 1 0 :1:3 
+`uc 1 nRI 1 0 :1:4 
+`uc 1 nCM 1 0 :1:5 
+`uc 1 . 1 0 :1:6 
+`uc 1 IPEN 1 0 :1:7 
+]
+[s S4061 . 1 `uc 1 BOR 1 0 :1:0 
+`uc 1 POR 1 0 :1:1 
+`uc 1 PD 1 0 :1:2 
+`uc 1 TO 1 0 :1:3 
+`uc 1 RI 1 0 :1:4 
+`uc 1 CM 1 0 :1:5 
+]
+[u S4068 . 1 `S4035 1 . 1 0 `S4037 1 . 1 0 `S4040 1 . 1 0 `S4043 1 . 1 0 `S4046 1 . 1 0 `S4049 1 . 1 0 `S4052 1 . 1 0 `S4061 1 . 1 0 ]
+[v _RCONbits RCONbits `VES4068  1 e 1 @4048 ]
+"10142
+[v _ECON1 ECON1 `VEuc  1 e 1 @4050 ]
+[s S3093 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 RXEN 1 0 :1:2 
+`uc 1 TXRTS 1 0 :1:3 
+`uc 1 CSUMEN 1 0 :1:4 
+`uc 1 DMAST 1 0 :1:5 
+`uc 1 RXRST 1 0 :1:6 
+`uc 1 TXRST 1 0 :1:7 
+]
+"10158
+[u S3101 . 1 `S3093 1 . 1 0 ]
+[v _ECON1bits ECON1bits `VES3101  1 e 1 @4050 ]
 "10193
 [v _OSCCON OSCCON `VEuc  1 e 1 @4051 ]
-[s S146 . 4 `uc 1 con1 1 0 `uc 1 stat 1 1 `uc 1 add 1 2 `uc 1 operation 1 3 ]
+"10784
+[v _INTCON INTCON `VEuc  1 e 1 @4082 ]
+[s S1533 . 1 `uc 1 RBIF 1 0 :1:0 
+`uc 1 INT0IF 1 0 :1:1 
+`uc 1 TMR0IF 1 0 :1:2 
+`uc 1 RBIE 1 0 :1:3 
+`uc 1 INT0IE 1 0 :1:4 
+`uc 1 TMR0IE 1 0 :1:5 
+`uc 1 PEIE_GIEL 1 0 :1:6 
+`uc 1 GIE_GIEH 1 0 :1:7 
+]
+"10816
+[s S1542 . 1 `uc 1 . 1 0 :1:0 
+`uc 1 INT0F 1 0 :1:1 
+`uc 1 T0IF 1 0 :1:2 
+`uc 1 . 1 0 :1:3 
+`uc 1 INT0E 1 0 :1:4 
+`uc 1 T0IE 1 0 :1:5 
+`uc 1 PEIE 1 0 :1:6 
+`uc 1 GIE 1 0 :1:7 
+]
+[s S1551 . 1 `uc 1 . 1 0 :6:0 
+`uc 1 GIEL 1 0 :1:6 
+`uc 1 GIEH 1 0 :1:7 
+]
+[u S1555 . 1 `S1533 1 . 1 0 `S1542 1 . 1 0 `S1551 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES1555  1 e 1 @4082 ]
+"11857
+[v _GIE GIE `VEb  1 e 0 @32663 ]
+"12904
+[v _RXRST RXRST `VEb  1 e 0 @32406 ]
+"118 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\doprnt.c
+[v _prec prec `i  1 s 2 prec ]
+[v _width width `i  1 s 2 width ]
+"119
+[v _flags flags `uc  1 s 1 flags ]
+"144
+[v _dbuf dbuf `[32]uc  1 s 32 dbuf ]
+"3 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\errno.c
+[v _errno errno `i  1 e 2 0 ]
+[s S3616 . 4 `uc 1 con1 1 0 `uc 1 stat 1 1 `uc 1 add 1 2 `uc 1 operation 1 3 ]
 "58 C:\Users\jackr\Documents\Foxsi_Lab\foxsi4-hk\SPI_Demo_5-30-2023.X\mcc_generated_files/spi1.c
-[v _spi1_configuration spi1_configuration `C[2]S146  1 s 8 spi1_configuration ]
-"50 C:\Users\jackr\Documents\Foxsi_Lab\foxsi4-hk\SPI_Demo_5-30-2023.X\main.c
+[v _spi1_configuration spi1_configuration `C[1]S3616  1 s 4 spi1_configuration ]
+[s S289 . 6 `uc 1 byte1 1 0 `uc 1 byte2 1 1 `uc 1 byte3 1 2 `uc 1 byte4 1 3 `uc 1 byte5 1 4 `uc 1 byte6 1 5 ]
+"79 C:\Users\jackr\Documents\Foxsi_Lab\foxsi4-hk\SPI_Demo_5-30-2023.X\mcc_generated_files/TCPIPLibrary/arpv4.c
+[u S296 . 6 `[6]uc 1 mac_array 6 0 `S289 1 s 6 0 ]
+[v _hostMacAddress hostMacAddress `S296  1 e 6 0 ]
+"81
+[s S1612 . 13 `S296 1 macAddress 6 0 `ul 1 ipAddress 4 6 `us 1 protocolType 2 10 `uc 1 age 1 12 ]
+[v _arpMap arpMap `[8]S1612  1 e 104 0 ]
+[s S966 . 6 `uc 1 error 1 0 :1:0 
+`uc 1 pktReady 1 0 :1:1 
+`uc 1 up 1 0 :1:2 
+`uc 1 idle 1 0 :1:3 
+`uc 1 linkChange 1 0 :1:4 
+`uc 1 bufferBusy 1 0 :1:5 
+`uc 1 . 1 1 :3:0 
+`us 1 saveRDPT 2 2 `us 1 saveWRPT 2 4 ]
+"53 C:\Users\jackr\Documents\Foxsi_Lab\foxsi4-hk\SPI_Demo_5-30-2023.X\mcc_generated_files/TCPIPLibrary/ETHxxJ6x_driver.c
+[v _ethData ethData `VES966  1 e 6 0 ]
+"92
+[v _ethListSize ethListSize `uc  1 e 1 0 ]
+[s S3034 . 10 `us 1 flags 2 0 `us 1 packetStart 2 2 `us 1 packetEnd 2 4 `*.39v 1 prevPacket 2 6 `*.39v 1 nextPacket 2 8 ]
+"94
+[v _txData txData `[20]S3034  1 s 200 txData ]
+"96
+[v _pHead pHead `*.39S3034  1 s 2 pHead ]
+"97
+[v _pTail pTail `*.39S3034  1 s 2 pTail ]
+"99
+[v _errataTemp errataTemp `us  1 e 2 @3710 ]
+"119
+[v _nextPacketPointer nextPacketPointer `us  1 s 2 nextPacketPointer ]
+[s S3040 . 4 `us 1 byteCount 2 0 `uc 1 long_drop_event 1 2 :1:0 
+`uc 1 . 1 2 :1:1 
+`uc 1 excessCarrierEvent 1 2 :1:2 
+`uc 1 . 1 2 :1:3 
+`uc 1 crcError 1 2 :1:4 
+`uc 1 lengthCheckError 1 2 :1:5 
+`uc 1 lengthLongError 1 2 :1:6 
+`uc 1 rxOK 1 2 :1:7 
+`uc 1 rxMulticast 1 3 :1:0 
+`uc 1 rxBroadcast 1 3 :1:1 
+`uc 1 dribbleNibble 1 3 :1:2 
+`uc 1 controlFrame 1 3 :1:3 
+`uc 1 pauseControlFrame 1 3 :1:4 
+`uc 1 unknownContrlFrame 1 3 :1:5 
+`uc 1 vlanTagPresent 1 3 :1:6 
+`uc 1 zero 1 3 :1:7 
+]
+"120
+[u S3058 . 4 `[4]uc 1 v 4 0 `S3040 1 . 4 0 ]
+[v _rxPacketStatusVector rxPacketStatusVector `S3058  1 s 4 rxPacketStatusVector ]
+"51 C:\Users\jackr\Documents\Foxsi_Lab\foxsi4-hk\SPI_Demo_5-30-2023.X\mcc_generated_files/TCPIPLibrary/icmp.c
+[v _portUnreachable portUnreachable `us  1 e 2 0 ]
+[s S115 . 36 `ul 1 ipv4_myAddress 4 0 `[2]ul 1 ipv4_dns 8 4 `ul 1 ipv4_subnetMask 4 12 `ul 1 ipv4_router 4 16 `ul 1 ipv4_gateway 4 20 `[2]ul 1 ipv4_ntpAddress 8 24 `ul 1 ipv4_tftpAddress 4 32 ]
+"29 C:\Users\jackr\Documents\Foxsi_Lab\foxsi4-hk\SPI_Demo_5-30-2023.X\mcc_generated_files/TCPIPLibrary/ip_database.c
+[v _ip_database_info ip_database_info `S115  1 e 36 0 ]
+[s S24 . 20 `uc 1 ihl 1 0 :4:0 
+`uc 1 version 1 0 :4:4 
+`uc 1 ecn 1 1 :2:0 
+`uc 1 dscp 1 1 :6:2 
+`us 1 length 2 2 `us 1 identifcation 2 4 `uc 1 fragmentOffsetHigh 1 6 :5:0 
+`uc 1 . 1 6 :1:5 
+`uc 1 dontFragment 1 6 :1:6 
+`uc 1 moreFragments 1 6 :1:7 
+`uc 1 fragmentOffsetLow 1 7 `uc 1 timeToLive 1 8 `uc 1 protocol 1 9 `us 1 headerCksm 2 10 `ul 1 srcIpAddress 4 12 `ul 1 dstIpAddress 4 16 ]
+"62 C:\Users\jackr\Documents\Foxsi_Lab\foxsi4-hk\SPI_Demo_5-30-2023.X\mcc_generated_files/TCPIPLibrary/ipv4.c
+[v _ipv4Header ipv4Header `S24  1 e 20 0 ]
+"64
+[v _remoteIpv4Address remoteIpv4Address `ul  1 e 4 0 ]
+"46 C:\Users\jackr\Documents\Foxsi_Lab\foxsi4-hk\SPI_Demo_5-30-2023.X\mcc_generated_files/TCPIPLibrary/lfsr.c
+[v _xorSequences xorSequences `C[18]uc  1 e 18 0 ]
+"47
+[v _xor_mask xor_mask `uc  1 e 1 0 ]
+"48
+[v _lfsr_value lfsr_value `uc  1 e 1 0 ]
+"66 C:\Users\jackr\Documents\Foxsi_Lab\foxsi4-hk\SPI_Demo_5-30-2023.X\mcc_generated_files/TCPIPLibrary/log.c
+[v _limit limit `[23]E685  1 e 23 0 ]
+[s S854 . 2 `E695 1 logFacility 1 0 `E685 1 severityThreshold 1 1 ]
+"68
+[v _severityThresholdTable severityThresholdTable `C[24]S854  1 e 48 0 ]
+"45 C:\Users\jackr\Documents\Foxsi_Lab\foxsi4-hk\SPI_Demo_5-30-2023.X\mcc_generated_files/TCPIPLibrary/mac_address.c
+[v _macAddress macAddress `S296  1 e 6 0 ]
+"46
+[v _broadcastMAC broadcastMAC `CS296  1 e 6 0 ]
+"63 C:\Users\jackr\Documents\Foxsi_Lab\foxsi4-hk\SPI_Demo_5-30-2023.X\mcc_generated_files/TCPIPLibrary/network.c
+[v _arpTimer arpTimer `ul  1 e 4 0 ]
+"65
+[v _networkStartPosition networkStartPosition `us  1 e 2 0 ]
+"31 C:\Users\jackr\Documents\Foxsi_Lab\foxsi4-hk\SPI_Demo_5-30-2023.X\mcc_generated_files/TCPIPLibrary/rtcc.c
+[v _deviceTime deviceTime `VEul  1 e 4 0 ]
+"32
+[v _dirtyTime dirtyTime `VEa  1 e 1 0 ]
+"34
+[v _seconds_counter seconds_counter `VEus  1 e 2 0 ]
+[s S1885 . 58 `us 1 localPort 2 0 `ul 1 destIP 4 2 `us 1 destPort 2 6 `ul 1 remoteSeqno 4 8 `ul 1 remoteAck 4 12 `ul 1 localSeqno 4 16 `ul 1 localLastAck 4 20 `us 1 remoteWnd 2 24 `us 1 localWnd 2 26 `us 1 mss 2 28 `*.2uc 1 rxBufferStart 2 30 `*.2uc 1 rxBufferPtr 2 32 `E1012 1 rxBufState 1 34 `*.2uc 1 txBufferStart 2 35 `*.2uc 1 txBufferPtr 2 37 `us 1 bytesToSend 2 39 `E1012 1 txBufState 1 41 `us 1 bytesSent 2 42 `a 1 payloadSave 1 44 `E970 1 fsmState 1 45 `E983 1 connectionEvent 1 46 `*.2v 1 nextTCB 2 47 `*.2v 1 prevTCB 2 49 `us 1 timeout 2 51 `us 1 timeoutReloadValue 2 53 `uc 1 timeoutsCount 1 55 `uc 1 flags 1 56 `E999 1 socketState 1 57 ]
+"52 C:\Users\jackr\Documents\Foxsi_Lab\foxsi4-hk\SPI_Demo_5-30-2023.X\mcc_generated_files/TCPIPLibrary/tcpv4.c
+[v _tcbList tcbList `*.2S1885  1 e 2 0 ]
+"53
+[v _tcbListSize tcbListSize `c  1 e 1 0 ]
+"54
+[v _currentTCB currentTCB `*.2S1885  1 e 2 0 ]
+[s S1914 . 1 `uc 1 ns 1 0 :1:0 
+`uc 1 reserved 1 0 :3:1 
+`uc 1 dataOffset 1 0 :4:4 
+]
+"56
+[u S1918 . 1 `uc 1 byte13 1 0 `S1914 1 . 1 0 ]
+[s S1921 . 1 `uc 1 fin 1 0 :1:0 
+`uc 1 syn 1 0 :1:1 
+`uc 1 rst 1 0 :1:2 
+`uc 1 psh 1 0 :1:3 
+`uc 1 ack 1 0 :1:4 
+`uc 1 urg 1 0 :1:5 
+`uc 1 ece 1 0 :1:6 
+`uc 1 cwr 1 0 :1:7 
+]
+[u S1930 . 1 `uc 1 flags 1 0 `S1921 1 . 1 0 ]
+[s S1933 . 20 `us 1 sourcePort 2 0 `us 1 destPort 2 2 `ul 1 sequenceNumber 4 4 `ul 1 ackNumber 4 8 `S1918 1 . 1 12 `S1930 1 . 1 13 `us 1 windowSize 2 14 `us 1 checksum 2 16 `us 1 urgentPtr 2 18 ]
+[v _tcpHeader tcpHeader `S1933  1 s 20 tcpHeader ]
+"57
+[v _nextAvailablePort nextAvailablePort `us  1 s 2 nextAvailablePort ]
+"58
+[v _nextSequenceNumber nextSequenceNumber `ul  1 s 4 nextSequenceNumber ]
+"60
+[v _receivedRemoteAddress receivedRemoteAddress `ul  1 s 4 receivedRemoteAddress ]
+"61
+[v _rcvPayloadLen rcvPayloadLen `us  1 s 2 rcvPayloadLen ]
+"62
+[v _tcpMss tcpMss `us  1 s 2 tcpMss ]
+"65
+[v _tcpDataLength tcpDataLength `us  1 s 2 tcpDataLength ]
+"66
+[v _bytesToSendForRetransmit bytesToSendForRetransmit `us  1 s 2 bytesToSendForRetransmit ]
+"67
+[v _txBufferPtrForRetransmit txBufferPtrForRetransmit `*.2uc  1 s 2 txBufferPtrForRetransmit ]
+"68
+[v _localSeqnoForRetransmit localSeqnoForRetransmit `ul  1 s 4 localSeqnoForRetransmit ]
+"69
+[v _lastAckNumber lastAckNumber `ul  1 s 4 lastAckNumber ]
+"61 C:\Users\jackr\Documents\Foxsi_Lab\foxsi4-hk\SPI_Demo_5-30-2023.X\mcc_generated_files/TCPIPLibrary/udpv4.c
+[v _destPort destPort `us  1 e 2 0 ]
+[s S1200 . 8 `us 1 srcPort 2 0 `us 1 dstPort 2 2 `us 1 length 2 4 `us 1 checksum 2 6 ]
+"62
+[v _udpHeader udpHeader `S1200  1 e 8 0 ]
+[s S1181 . 4 `us 1 portNumber 2 0 `*.37(v 1 callBack 2 2 ]
+"44 C:\Users\jackr\Documents\Foxsi_Lab\foxsi4-hk\SPI_Demo_5-30-2023.X\mcc_generated_files/TCPIPLibrary/udpv4_port_handler_table.c
+[v _UDP_CallBackTable UDP_CallBackTable `C[0]S1181  1 e 0 0 ]
+"57 C:\Users\jackr\Documents\Foxsi_Lab\foxsi4-hk\SPI_Demo_5-30-2023.X\mcc_generated_files/tmr1.c
+[v _timer1ReloadVal timer1ReloadVal `VEus  1 e 2 0 ]
+"58
+[v _TMR1_InterruptHandler TMR1_InterruptHandler `*.37(v  1 e 2 0 ]
+"51 C:\Users\jackr\Documents\Foxsi_Lab\foxsi4-hk\SPI_Demo_5-30-2023.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"102
-[v main@rtd1_buff rtd1_buff `[7]uc  1 a 7 16 ]
-"95
-[v main@rsense_buff rsense_buff `[7]uc  1 a 7 9 ]
-"108
-[v main@conv4 conv4 `[4]uc  1 a 4 23 ]
-"80
-[v main@spi_buff spi_buff `*.39uc  1 a 2 27 ]
-"94
-[v main@F4196 F4196 `[7]uc  1 s 7 F4196 ]
-"101
-[v main@F4198 F4198 `[7]uc  1 s 7 F4198 ]
-"105
-[v main@F4200 F4200 `[4]uc  1 s 4 F4200 ]
-"174
+"107
+[v main@rtd1_buff rtd1_buff `[7]uc  1 a 7 214 ]
+"100
+[v main@rsense_buff rsense_buff `[7]uc  1 a 7 207 ]
+"113
+[v main@conv4 conv4 `[4]uc  1 a 4 221 ]
+"85
+[v main@spi_buff spi_buff `*.39uc  1 a 2 225 ]
+"99
+[v main@F4476 F4476 `[7]uc  1 s 7 F4476 ]
+"106
+[v main@F4478 F4478 `[7]uc  1 s 7 F4478 ]
+"110
+[v main@F4480 F4480 `[4]uc  1 s 4 F4480 ]
+"185
 } 0
 "50 C:\Users\jackr\Documents\Foxsi_Lab\foxsi4-hk\SPI_Demo_5-30-2023.X\mcc_generated_files/mcc.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
 {
-"56
+"59
 } 0
-"63 C:\Users\jackr\Documents\Foxsi_Lab\foxsi4-hk\SPI_Demo_5-30-2023.X\mcc_generated_files/spi1.c
+"64 C:\Users\jackr\Documents\Foxsi_Lab\foxsi4-hk\SPI_Demo_5-30-2023.X\mcc_generated_files/tmr1.c
+[v _TMR1_Initialize TMR1_Initialize `(v  1 e 1 0 ]
+{
+"88
+} 0
+"62 C:\Users\jackr\Documents\Foxsi_Lab\foxsi4-hk\SPI_Demo_5-30-2023.X\mcc_generated_files/spi1.c
 [v _SPI1_Initialize SPI1_Initialize `(v  1 e 1 0 ]
 {
-"71
+"70
 } 0
 "50 C:\Users\jackr\Documents\Foxsi_Lab\foxsi4-hk\SPI_Demo_5-30-2023.X\mcc_generated_files/pin_manager.c
 [v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
 {
 "84
 } 0
-"58 C:\Users\jackr\Documents\Foxsi_Lab\foxsi4-hk\SPI_Demo_5-30-2023.X\mcc_generated_files/mcc.c
+"61 C:\Users\jackr\Documents\Foxsi_Lab\foxsi4-hk\SPI_Demo_5-30-2023.X\mcc_generated_files/mcc.c
 [v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
 {
-"66
+"67
 } 0
-"132 C:\Users\jackr\Documents\Foxsi_Lab\foxsi4-hk\SPI_Demo_5-30-2023.X\mcc_generated_files/spi1.c
+"75 C:\Users\jackr\Documents\Foxsi_Lab\foxsi4-hk\SPI_Demo_5-30-2023.X\mcc_generated_files/TCPIPLibrary/network.c
+[v _Network_Init Network_Init `(v  1 e 1 0 ]
+{
+"86
+} 0
+"88
+[v _timersInit timersInit `(v  1 e 1 0 ]
+{
+"92
+} 0
+"60 C:\Users\jackr\Documents\Foxsi_Lab\foxsi4-hk\SPI_Demo_5-30-2023.X\mcc_generated_files/TCPIPLibrary/rtcc.c
+[v _rtcc_init rtcc_init `(v  1 e 1 0 ]
+{
+"64
+} 0
+"174 C:\Users\jackr\Documents\Foxsi_Lab\foxsi4-hk\SPI_Demo_5-30-2023.X\mcc_generated_files/tmr1.c
+[v _TMR1_SetInterruptHandler TMR1_SetInterruptHandler `(v  1 e 1 0 ]
+{
+[v TMR1_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 4 ]
+"176
+} 0
+"1266 C:\Users\jackr\Documents\Foxsi_Lab\foxsi4-hk\SPI_Demo_5-30-2023.X\mcc_generated_files/TCPIPLibrary/tcpv4.c
+[v _TCP_Init TCP_Init `(v  1 e 1 0 ]
+{
+"1272
+} 0
+"94 C:\Users\jackr\Documents\Foxsi_Lab\foxsi4-hk\SPI_Demo_5-30-2023.X\mcc_generated_files/TCPIPLibrary/network.c
+[v _Network_WaitForLink Network_WaitForLink `(v  1 e 1 0 ]
+{
+"97
+} 0
+"97 C:\Users\jackr\Documents\Foxsi_Lab\foxsi4-hk\SPI_Demo_5-30-2023.X\mcc_generated_files/TCPIPLibrary/log.c
+[v _LOG_Init LOG_Init `(v  1 e 1 0 ]
+{
+"101
+[v LOG_Init@x x `uc  1 a 1 40 ]
+"99
+[v LOG_Init@t t `ul  1 a 4 36 ]
+"105
+} 0
+"5 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\printf.c
+[v _printf printf `(i  1 e 2 0 ]
+{
+"8
+[v printf@ap ap `[1]*.39v  1 a 2 80 ]
+"5
+[v printf@fmt fmt `*.25Cuc  1 p 2 0 ]
+"13
+} 0
+"71 C:\Users\jackr\Documents\Foxsi_Lab\foxsi4-hk\SPI_Demo_5-30-2023.X\mcc_generated_files/TCPIPLibrary/ipv4.c
+[v _IPV4_Init IPV4_Init `(v  1 e 1 0 ]
+{
+"74
+} 0
+"31 C:\Users\jackr\Documents\Foxsi_Lab\foxsi4-hk\SPI_Demo_5-30-2023.X\mcc_generated_files/TCPIPLibrary/ip_database.c
+[v _ipdb_init ipdb_init `(v  1 e 1 0 ]
+{
+"38
+[v ipdb_init@x x `uc  1 a 1 4 ]
+"42
+} 0
+"132 C:\Users\jackr\Documents\Foxsi_Lab\foxsi4-hk\SPI_Demo_5-30-2023.X\mcc_generated_files/TCPIPLibrary/ETHxxJ6x_driver.c
+[v _ETH_Init ETH_Init `(v  1 e 1 0 ]
+{
+[s S289 . 6 `uc 1 byte1 1 0 `uc 1 byte2 1 1 `uc 1 byte3 1 2 `uc 1 byte4 1 3 `uc 1 byte5 1 4 `uc 1 byte6 1 5 ]
+"134
+[u S296 . 6 `[6]uc 1 mac_array 6 0 `S289 1 s 6 0 ]
+[v ETH_Init@mac mac `*.39CS296  1 a 2 19 ]
+"233
+} 0
+"357
+[v _PHY_Write PHY_Write `(E4639  1 e 1 0 ]
+{
+[v PHY_Write@reg reg `E4630  1 a 1 wreg ]
+"359
+[v PHY_Write@GIESave GIESave `uc  1 a 1 9 ]
+"357
+[v PHY_Write@reg reg `E4630  1 a 1 wreg ]
+[v PHY_Write@data data `us  1 p 2 6 ]
+"361
+[v PHY_Write@reg reg `E4630  1 a 1 8 ]
+"382
+} 0
+"49 C:\Users\jackr\Documents\Foxsi_Lab\foxsi4-hk\SPI_Demo_5-30-2023.X\mcc_generated_files/TCPIPLibrary/mac_address.h
+"51
+[s S289 . 6 `uc 1 byte1 1 0 `uc 1 byte2 1 1 `uc 1 byte3 1 2 `uc 1 byte4 1 3 `uc 1 byte5 1 4 `uc 1 byte6 1 5 ]
+"48 C:\Users\jackr\Documents\Foxsi_Lab\foxsi4-hk\SPI_Demo_5-30-2023.X\mcc_generated_files/TCPIPLibrary/mac_address.c
+[u S296 . 6 `[6]uc 1 mac_array 6 0 `S289 1 s 6 0 ]
+[v _MAC_getAddress MAC_getAddress `(*.39CS296  1 e 2 0 ]
+{
+"51
+} 0
+"1140 C:\Users\jackr\Documents\Foxsi_Lab\foxsi4-hk\SPI_Demo_5-30-2023.X\mcc_generated_files/TCPIPLibrary/ETHxxJ6x_driver.c
+[v _ETH_PacketListReset ETH_PacketListReset `(v  1 e 1 0 ]
+{
+"1142
+[v ETH_PacketListReset@index index `us  1 a 2 6 ]
+"1143
+[v ETH_PacketListReset@ptr ptr `*.39uc  1 a 2 4 ]
+"1154
+} 0
+"87 C:\Users\jackr\Documents\Foxsi_Lab\foxsi4-hk\SPI_Demo_5-30-2023.X\mcc_generated_files/TCPIPLibrary/arpv4.c
+[v _ARPV4_Init ARPV4_Init `(v  1 e 1 0 ]
+{
+"89
+[v ARPV4_Init@x x `uc  1 a 1 6 ]
+"94
+} 0
+"1031 C:\Users\jackr\Documents\Foxsi_Lab\foxsi4-hk\SPI_Demo_5-30-2023.X\mcc_generated_files/TCPIPLibrary/ETHxxJ6x_driver.c
+[v _ETH_GetMAC ETH_GetMAC `(v  1 e 1 0 ]
+{
+[v ETH_GetMAC@mac mac `*.39uc  1 p 2 4 ]
+"1041
+} 0
+"52 C:\Users\jackr\Documents\Foxsi_Lab\foxsi4-hk\SPI_Demo_5-30-2023.X\mcc_generated_files/interrupt_manager.c
+[v _INTERRUPT_Initialize INTERRUPT_Initialize `(v  1 e 1 0 ]
+{
+"56
+} 0
+"131 C:\Users\jackr\Documents\Foxsi_Lab\foxsi4-hk\SPI_Demo_5-30-2023.X\mcc_generated_files/spi1.c
 [v _SPI1_WriteByte SPI1_WriteByte `(v  1 e 1 0 ]
 {
 [v SPI1_WriteByte@byte byte `uc  1 a 1 wreg ]
 [v SPI1_WriteByte@byte byte `uc  1 a 1 wreg ]
+"133
+[v SPI1_WriteByte@byte byte `uc  1 a 1 4 ]
 "134
-[v SPI1_WriteByte@byte byte `uc  1 a 1 0 ]
-"135
 } 0
-"114
+"113
 [v _SPI1_WriteBlock SPI1_WriteBlock `(v  1 e 1 0 ]
 {
-"116
-[v SPI1_WriteBlock@data data `*.39uc  1 a 2 5 ]
-"114
-[v SPI1_WriteBlock@block block `*.39v  1 p 2 1 ]
-[v SPI1_WriteBlock@blockSize blockSize `ui  1 p 2 3 ]
-"121
+"115
+[v SPI1_WriteBlock@data data `*.39uc  1 a 2 9 ]
+"113
+[v SPI1_WriteBlock@block block `*.39v  1 p 2 5 ]
+[v SPI1_WriteBlock@blockSize blockSize `ui  1 p 2 7 ]
+"120
 } 0
-"93
+"92
 [v _SPI1_ExchangeByte SPI1_ExchangeByte `(uc  1 e 1 0 ]
 {
 [v SPI1_ExchangeByte@data data `uc  1 a 1 wreg ]
 [v SPI1_ExchangeByte@data data `uc  1 a 1 wreg ]
-"95
-[v SPI1_ExchangeByte@data data `uc  1 a 1 0 ]
-"99
+"94
+[v SPI1_ExchangeByte@data data `uc  1 a 1 4 ]
+"98
 } 0
-"137
+"136
 [v _SPI1_ReadByte SPI1_ReadByte `(uc  1 e 1 0 ]
 {
-"140
+"139
 } 0
-"73
+"72
 [v _SPI1_Open SPI1_Open `(a  1 e 1 0 ]
 {
 [v SPI1_Open@spi1UniqueConfiguration spi1UniqueConfiguration `E358  1 a 1 wreg ]
 [v SPI1_Open@spi1UniqueConfiguration spi1UniqueConfiguration `E358  1 a 1 wreg ]
-"75
-[v SPI1_Open@spi1UniqueConfiguration spi1UniqueConfiguration `E358  1 a 1 1 ]
-"86
+"74
+[v SPI1_Open@spi1UniqueConfiguration spi1UniqueConfiguration `E358  1 a 1 5 ]
+"85
 } 0
-"88
+"87
 [v _SPI1_Close SPI1_Close `(v  1 e 1 0 ]
 {
-"91
+"90
+} 0
+"99 C:\Users\jackr\Documents\Foxsi_Lab\foxsi4-hk\SPI_Demo_5-30-2023.X\mcc_generated_files/TCPIPLibrary/network.c
+[v _Network_Manage Network_Manage `(v  1 e 1 0 ]
+{
+"101
+[v Network_Manage@now now `ul  1 a 4 145 ]
+"102
+[v Network_Manage@nowPv nowPv `ul  1 s 4 nowPv ]
+"120
+} 0
+"160 C:\Users\jackr\Documents\Foxsi_Lab\foxsi4-hk\SPI_Demo_5-30-2023.X\mcc_generated_files/TCPIPLibrary/rtcc.c
+[v _time time `(ul  1 e 4 0 ]
+{
+"163
+[v time@the_time the_time `ul  1 a 4 9 ]
+"162
+[v time@gie_val gie_val `a  1 a 1 8 ]
+"160
+[v time@t t `*.39ul  1 p 2 4 ]
+"176
+} 0
+"1525 C:\Users\jackr\Documents\Foxsi_Lab\foxsi4-hk\SPI_Demo_5-30-2023.X\mcc_generated_files/TCPIPLibrary/tcpv4.c
+[v _TCP_Update TCP_Update `(v  1 e 1 0 ]
+{
+"1556
+[v TCP_Update@retries retries `i  1 a 2 138 ]
+[s S1885 . 58 `us 1 localPort 2 0 `ul 1 destIP 4 2 `us 1 destPort 2 6 `ul 1 remoteSeqno 4 8 `ul 1 remoteAck 4 12 `ul 1 localSeqno 4 16 `ul 1 localLastAck 4 20 `us 1 remoteWnd 2 24 `us 1 localWnd 2 26 `us 1 mss 2 28 `*.2uc 1 rxBufferStart 2 30 `*.2uc 1 rxBufferPtr 2 32 `E1012 1 rxBufState 1 34 `*.2uc 1 txBufferStart 2 35 `*.2uc 1 txBufferPtr 2 37 `us 1 bytesToSend 2 39 `E1012 1 txBufState 1 41 `us 1 bytesSent 2 42 `a 1 payloadSave 1 44 `E970 1 fsmState 1 45 `E983 1 connectionEvent 1 46 `*.2v 1 nextTCB 2 47 `*.2v 1 prevTCB 2 49 `us 1 timeout 2 51 `us 1 timeoutReloadValue 2 53 `uc 1 timeoutsCount 1 55 `uc 1 flags 1 56 `E999 1 socketState 1 57 ]
+"1527
+[v TCP_Update@tcbPtr tcbPtr `*.2S1885  1 a 2 140 ]
+"1529
+[v TCP_Update@count count `i  1 a 2 136 ]
+"1573
+} 0
+"122 C:\Users\jackr\Documents\Foxsi_Lab\foxsi4-hk\SPI_Demo_5-30-2023.X\mcc_generated_files/TCPIPLibrary/network.c
+[v _Network_Read Network_Read `(v  1 e 1 0 ]
+{
+"151
+[v Network_Read@t t `l  1 a 4 189 ]
+"125
+[v Network_Read@debug_str debug_str `[80]uc  1 a 80 109 ]
+[u S346 . 2 `us 1 type 2 0 `us 1 length 2 0 `us 1 tpid 2 0 ]
+"124
+[s S350 . 14 `[6]uc 1 destinationMAC 6 0 `[6]uc 1 sourceMAC 6 6 `S346 1 id 2 12 ]
+[v Network_Read@header header `S350  1 a 14 193 ]
+"165
+} 0
+"167
+[v _Network_SaveStartPosition Network_SaveStartPosition `(v  1 s 1 Network_SaveStartPosition ]
+{
+"170
+} 0
+"120 C:\Users\jackr\Documents\Foxsi_Lab\foxsi4-hk\SPI_Demo_5-30-2023.X\mcc_generated_files/TCPIPLibrary/ipv4.c
+[v _IPV4_Packet IPV4_Packet `(E617  1 e 1 0 ]
+{
+"124
+[v IPV4_Packet@msg msg `[40]uc  1 a 40 64 ]
+"122
+[v IPV4_Packet@cksm cksm `us  1 a 2 107 ]
+"123
+[v IPV4_Packet@length length `us  1 a 2 105 ]
+"125
+[v IPV4_Packet@hdrLen hdrLen `uc  1 a 1 104 ]
+"228
+} 0
+"9 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\nf_sprintf.c
+[v _sprintf sprintf `(i  1 e 2 0 ]
+{
+[u S4921 . 3 `*.2uc 1 buffer 3 0 `*.2Cuc 1 source 3 0 ]
+"13
+[s S4924 _IO_FILE 12 `S4921 1 . 3 0 `i 1 count 2 3 `[3]uc 1 ungetbuf 3 5 `i 1 ungetcnt 2 8 `i 1 limit 2 10 ]
+[v sprintf@f f `S4924  1 a 12 14 ]
+"12
+[v sprintf@ap ap `[1]*.39v  1 a 2 12 ]
+"9
+[v sprintf@s s `*.39uc  1 p 2 0 ]
+[v sprintf@fmt fmt `*.25Cuc  1 p 2 2 ]
+"23
+} 0
+"1546 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\doprnt.c
+[v _vfprintf vfprintf `(i  1 e 2 0 ]
+{
+"1549
+[v vfprintf@cfmt cfmt `*.25uc  1 a 2 78 ]
+[s S4956 _IO_FILE 0 ]
+"1546
+[v vfprintf@fp fp `*.39S4956  1 p 2 72 ]
+[v vfprintf@fmt fmt `*.25Cuc  1 p 2 74 ]
+[v vfprintf@ap ap `*.39*.39v  1 p 2 76 ]
+"1569
+} 0
+"1048
+[v _vfpfcnvrt vfpfcnvrt `(v  1 s 1 vfpfcnvrt ]
+{
+[u S5000 . 4 `l 1 sint 4 0 `ul 1 uint 4 0 `*.2v 1 vp 3 0 `d 1 f 4 0 ]
+"1059
+[v vfpfcnvrt@convarg convarg `S5000  1 a 4 65 ]
+"1050
+[v vfpfcnvrt@cp cp `*.25uc  1 a 2 70 ]
+"1051
+[v vfpfcnvrt@done done `i  1 a 2 61 ]
+"1050
+[v vfpfcnvrt@c c `uc  1 a 1 69 ]
+[s S4956 _IO_FILE 0 ]
+"1048
+[v vfpfcnvrt@fp fp `*.39S4956  1 p 2 51 ]
+[v vfpfcnvrt@fmt fmt `*.39*.25uc  1 p 2 53 ]
+[v vfpfcnvrt@ap ap `*.39*.39v  1 p 2 55 ]
+"1543
+} 0
+"952
+[v _xtoa xtoa `(v  1 s 1 xtoa ]
+{
+"960
+[v xtoa@i i `i  1 a 2 48 ]
+[v xtoa@w w `i  1 a 2 46 ]
+[v xtoa@p p `i  1 a 2 44 ]
+"959
+[v xtoa@c c `uc  1 a 1 50 ]
+[s S4956 _IO_FILE 0 ]
+"952
+[v xtoa@fp fp `*.39S4956  1 p 2 31 ]
+[v xtoa@d d `ul  1 p 4 33 ]
+[v xtoa@x x `uc  1 p 1 37 ]
+"1024
+} 0
+"4 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\toupper.c
+[v _toupper toupper `(i  1 e 2 0 ]
+{
+[v toupper@c c `i  1 p 2 8 ]
+"8
+} 0
+"5 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\islower.c
+[v _islower islower `(i  1 e 2 0 ]
+{
+[v islower@c c `i  1 p 2 4 ]
+"8
+} 0
+"5 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\isupper.c
+[v _isupper isupper `(i  1 e 2 0 ]
+{
+[v isupper@c c `i  1 p 2 4 ]
+"8
+} 0
+"5 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\isalpha.c
+[v _isalpha isalpha `(i  1 e 2 0 ]
+{
+[v isalpha@c c `i  1 p 2 4 ]
+"8
+} 0
+"917 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\doprnt.c
+[v _utoa utoa `(v  1 s 1 utoa ]
+{
+"919
+[v utoa@i i `i  1 a 2 41 ]
+[v utoa@w w `i  1 a 2 39 ]
+[v utoa@p p `i  1 a 2 37 ]
+[s S4956 _IO_FILE 0 ]
+"917
+[v utoa@fp fp `*.39S4956  1 p 2 31 ]
+[v utoa@d d `ul  1 p 4 33 ]
+"947
+} 0
+"7 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\llmod.c
+[v ___llmod __llmod `(ul  1 e 4 0 ]
+{
+"10
+[v ___llmod@counter counter `uc  1 a 1 12 ]
+"7
+[v ___llmod@dividend dividend `ul  1 p 4 4 ]
+[v ___llmod@divisor divisor `ul  1 p 4 8 ]
+"25
+} 0
+"7 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\__lldiv.c
+[v ___lldiv __lldiv `(ul  1 e 4 0 ]
+{
+"10
+[v ___lldiv@quotient quotient `ul  1 a 4 12 ]
+"11
+[v ___lldiv@counter counter `uc  1 a 1 16 ]
+"7
+[v ___lldiv@dividend dividend `ul  1 p 4 4 ]
+[v ___lldiv@divisor divisor `ul  1 p 4 8 ]
+"30
+} 0
+"3 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\strncmp.c
+[v _strncmp strncmp `(i  1 e 2 0 ]
+{
+"5
+[v strncmp@r r `*.25Cuc  1 a 2 13 ]
+[v strncmp@l l `*.25Cuc  1 a 2 11 ]
+"3
+[v strncmp@_l _l `*.25Cuc  1 p 2 4 ]
+[v strncmp@_r _r `*.25Cuc  1 p 2 6 ]
+[v strncmp@n n `ui  1 p 2 8 ]
+"9
+} 0
+"862 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\doprnt.c
+[v _stoa stoa `(v  1 s 1 stoa ]
+{
+"864
+[v stoa@nuls nuls `[7]uc  1 a 7 18 ]
+"865
+[v stoa@l l `i  1 a 2 33 ]
+[v stoa@p p `i  1 a 2 31 ]
+"864
+[v stoa@cp cp `*.35uc  1 a 2 29 ]
+"865
+[v stoa@w w `i  1 a 2 27 ]
+[v stoa@i i `i  1 a 2 25 ]
+[s S4956 _IO_FILE 0 ]
+"862
+[v stoa@fp fp `*.39S4956  1 p 2 13 ]
+[v stoa@s s `*.35uc  1 p 2 15 ]
+"864
+[v stoa@F1156 F1156 `[7]uc  1 s 7 F1156 ]
+"913
+} 0
+"5 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\strlen.c
+[v _strlen strlen `(ui  1 e 2 0 ]
+{
+"7
+[v strlen@a a `*.35Cuc  1 a 2 6 ]
+"5
+[v strlen@s s `*.35Cuc  1 p 2 4 ]
+"12
+} 0
+"1029 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\doprnt.c
+[v _read_prec_or_width read_prec_or_width `(i  1 s 2 read_prec_or_width ]
+{
+"1035
+[v read_prec_or_width@c c `uc  1 a 1 16 ]
+"1030
+[v read_prec_or_width@n n `i  1 a 2 17 ]
+"1029
+[v read_prec_or_width@fmt fmt `*.39*.25Cuc  1 p 2 10 ]
+[v read_prec_or_width@ap ap `*.39[1]*.39v  1 p 2 12 ]
+"1042
+} 0
+"470
+[v _dtoa dtoa `(v  1 s 1 dtoa ]
+{
+"473
+[v dtoa@i i `i  1 a 2 44 ]
+[v dtoa@w w `i  1 a 2 41 ]
+[v dtoa@p p `i  1 a 2 39 ]
+"472
+[v dtoa@s s `uc  1 a 1 43 ]
+[s S4956 _IO_FILE 0 ]
+"470
+[v dtoa@fp fp `*.39S4956  1 p 2 31 ]
+[v dtoa@d d `l  1 p 4 33 ]
+"527
+} 0
+"152
+[v _pad pad `(v  1 s 1 pad ]
+{
+"154
+[v pad@w w `i  1 a 2 29 ]
+[v pad@i i `i  1 a 2 27 ]
+[s S4956 _IO_FILE 0 ]
+"152
+[v pad@fp fp `*.39S4956  1 p 2 20 ]
+[v pad@buf buf `*.39uc  1 p 2 22 ]
+[v pad@p p `i  1 p 2 24 ]
+"183
+} 0
+"8 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\nf_fputs.c
+[v _fputs fputs `(i  1 e 2 0 ]
+{
+"11
+[v fputs@i i `i  1 a 2 18 ]
+"10
+[v fputs@c c `uc  1 a 1 17 ]
+"8
+[v fputs@s s `*.39Cuc  1 p 2 13 ]
+[u S4921 . 3 `*.2uc 1 buffer 3 0 `*.2Cuc 1 source 3 0 ]
+[s S4924 _IO_FILE 12 `S4921 1 . 3 0 `i 1 count 2 3 `[3]uc 1 ungetbuf 3 5 `i 1 ungetcnt 2 8 `i 1 limit 2 10 ]
+[v fputs@fp fp `*.39S4924  1 p 2 15 ]
+"19
+} 0
+"8 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\nf_fputc.c
+[v _fputc fputc `(i  1 e 2 0 ]
+{
+[v fputc@c c `i  1 p 2 4 ]
+[u S4921 . 3 `*.2uc 1 buffer 3 0 `*.2Cuc 1 source 3 0 ]
+[s S4924 _IO_FILE 12 `S4921 1 . 3 0 `i 1 count 2 3 `[3]uc 1 ungetbuf 3 5 `i 1 ungetcnt 2 8 `i 1 limit 2 10 ]
+[v fputc@fp fp `*.39S4924  1 p 2 6 ]
+"24
+} 0
+"7 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\putch.c
+[v _putch putch `(v  1 e 1 0 ]
+{
+"9
+} 0
+"1 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\abs.c
+[v _abs abs `(i  1 e 2 0 ]
+{
+[v abs@a a `i  1 p 2 14 ]
+"4
+} 0
+"7 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\almod.c
+[v ___almod __almod `(l  1 e 4 0 ]
+{
+"10
+[v ___almod@sign sign `uc  1 a 1 13 ]
+[v ___almod@counter counter `uc  1 a 1 12 ]
+"7
+[v ___almod@dividend dividend `l  1 p 4 4 ]
+[v ___almod@divisor divisor `l  1 p 4 8 ]
+"34
+} 0
+"7 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\aldiv.c
+[v ___aldiv __aldiv `(l  1 e 4 0 ]
+{
+"10
+[v ___aldiv@quotient quotient `l  1 a 4 14 ]
+"11
+[v ___aldiv@sign sign `uc  1 a 1 13 ]
+[v ___aldiv@counter counter `uc  1 a 1 12 ]
+"7
+[v ___aldiv@dividend dividend `l  1 p 4 4 ]
+[v ___aldiv@divisor divisor `l  1 p 4 8 ]
+"41
+} 0
+"109 C:\Users\jackr\Documents\Foxsi_Lab\foxsi4-hk\SPI_Demo_5-30-2023.X\mcc_generated_files/TCPIPLibrary/ipv4.c
+[v _getHeaderLen getHeaderLen `(uc  1 s 1 getHeaderLen ]
+{
+"111
+[v getHeaderLen@rxptr rxptr `us  1 a 2 8 ]
+"112
+[v getHeaderLen@header_len header_len `uc  1 a 1 10 ]
+"119
+} 0
+"1100 C:\Users\jackr\Documents\Foxsi_Lab\foxsi4-hk\SPI_Demo_5-30-2023.X\mcc_generated_files/TCPIPLibrary/ETHxxJ6x_driver.c
+[v _ETH_SetRxByteCount ETH_SetRxByteCount `(v  1 e 1 0 ]
+{
+[v ETH_SetRxByteCount@count count `us  1 p 2 6 ]
+"1103
+} 0
+"1095
+[v _ETH_GetRxByteCount ETH_GetRxByteCount `(us  1 e 2 0 ]
+{
+"1098
+} 0
+"1064
+[v _ETH_GetReadPtr ETH_GetReadPtr `(us  1 e 2 0 ]
+{
+"1067
+} 0
+"123 C:\Users\jackr\Documents\Foxsi_Lab\foxsi4-hk\SPI_Demo_5-30-2023.X\mcc_generated_files/TCPIPLibrary/udpv4.c
+[v _UDP_Receive UDP_Receive `(E617  1 e 1 0 ]
+{
+[s S1181 . 4 `us 1 portNumber 2 0 `*.37(v 1 callBack 2 2 ]
+"126
+[v UDP_Receive@hptr hptr `*.25S1181  1 a 2 49 ]
+"125
+[v UDP_Receive@ret ret `E617  1 a 1 48 ]
+"123
+[v UDP_Receive@udpcksm udpcksm `us  1 p 2 42 ]
+"168
+} 0
+"47 C:\Users\jackr\Documents\Foxsi_Lab\foxsi4-hk\SPI_Demo_5-30-2023.X\mcc_generated_files/TCPIPLibrary/udpv4_port_handler_table.h
+[s S1181 . 4 `us 1 portNumber 2 0 `*.37(v 1 callBack 2 2 ]
+"55 C:\Users\jackr\Documents\Foxsi_Lab\foxsi4-hk\SPI_Demo_5-30-2023.X\mcc_generated_files/TCPIPLibrary/udpv4_port_handler_table.c
+[v _udp_table_nextEntry udp_table_nextEntry `(*.25S1181  1 e 2 0 ]
+{
+[v udp_table_nextEntry@i i `*.25S1181  1 p 2 4 ]
+"64
+} 0
+"47 C:\Users\jackr\Documents\Foxsi_Lab\foxsi4-hk\SPI_Demo_5-30-2023.X\mcc_generated_files/TCPIPLibrary/udpv4_port_handler_table.h
+[s S1181 . 4 `us 1 portNumber 2 0 `*.37(v 1 callBack 2 2 ]
+"50 C:\Users\jackr\Documents\Foxsi_Lab\foxsi4-hk\SPI_Demo_5-30-2023.X\mcc_generated_files/TCPIPLibrary/udpv4_port_handler_table.c
+[v _udp_table_getIterator udp_table_getIterator `(*.25S1181  1 e 2 0 ]
+{
+"53
+} 0
+"306 C:\Users\jackr\Documents\Foxsi_Lab\foxsi4-hk\SPI_Demo_5-30-2023.X\mcc_generated_files/TCPIPLibrary/ipv4.c
+[v _IPV4_GetDatagramLength IPV4_GetDatagramLength `(us  1 e 2 0 ]
+{
+"309
+} 0
+"137 C:\Users\jackr\Documents\Foxsi_Lab\foxsi4-hk\SPI_Demo_5-30-2023.X\mcc_generated_files/TCPIPLibrary/icmp.c
+[v _ICMP_PortUnreachable ICMP_PortUnreachable `(E617  1 e 1 0 ]
+{
+"140
+[v ICMP_PortUnreachable@cksm cksm `us  1 a 2 39 ]
+"139
+[v ICMP_PortUnreachable@ret ret `E617  1 a 1 41 ]
+"137
+[v ICMP_PortUnreachable@srcIPAddress srcIPAddress `ul  1 p 4 29 ]
+[v ICMP_PortUnreachable@destIPAddress destIPAddress `ul  1 p 4 33 ]
+[v ICMP_PortUnreachable@length length `us  1 p 2 37 ]
+"162
+} 0
+"172 C:\Users\jackr\Documents\Foxsi_Lab\foxsi4-hk\SPI_Demo_5-30-2023.X\mcc_generated_files/TCPIPLibrary/network.c
+[v _Network_GetStartPosition Network_GetStartPosition `(us  1 e 2 0 ]
+{
+"175
+} 0
+"1069 C:\Users\jackr\Documents\Foxsi_Lab\foxsi4-hk\SPI_Demo_5-30-2023.X\mcc_generated_files/TCPIPLibrary/ETHxxJ6x_driver.c
+[v _ETH_SetReadPtr ETH_SetReadPtr `(v  1 e 1 0 ]
+{
+[v ETH_SetReadPtr@rdptr rdptr `us  1 p 2 6 ]
+"1072
+} 0
+"506 C:\Users\jackr\Documents\Foxsi_Lab\foxsi4-hk\SPI_Demo_5-30-2023.X\mcc_generated_files/TCPIPLibrary/tcpv4.c
+[v _TCP_Recv TCP_Recv `(v  1 e 1 0 ]
+{
+[s S1885 . 58 `us 1 localPort 2 0 `ul 1 destIP 4 2 `us 1 destPort 2 6 `ul 1 remoteSeqno 4 8 `ul 1 remoteAck 4 12 `ul 1 localSeqno 4 16 `ul 1 localLastAck 4 20 `us 1 remoteWnd 2 24 `us 1 localWnd 2 26 `us 1 mss 2 28 `*.2uc 1 rxBufferStart 2 30 `*.2uc 1 rxBufferPtr 2 32 `E1012 1 rxBufState 1 34 `*.2uc 1 txBufferStart 2 35 `*.2uc 1 txBufferPtr 2 37 `us 1 bytesToSend 2 39 `E1012 1 txBufState 1 41 `us 1 bytesSent 2 42 `a 1 payloadSave 1 44 `E970 1 fsmState 1 45 `E983 1 connectionEvent 1 46 `*.2v 1 nextTCB 2 47 `*.2v 1 prevTCB 2 49 `us 1 timeout 2 51 `us 1 timeoutReloadValue 2 53 `uc 1 timeoutsCount 1 55 `uc 1 flags 1 56 `E999 1 socketState 1 57 ]
+"508
+[v TCP_Recv@tcbPtr tcbPtr `*.2S1885  1 a 2 139 ]
+"509
+[v TCP_Recv@count count `c  1 a 1 138 ]
+"506
+[v TCP_Recv@remoteAddress remoteAddress `ul  1 p 4 132 ]
+[v TCP_Recv@length length `us  1 p 2 136 ]
+"611
+} 0
+"378
+[v _TCP_ParseTCPOptions TCP_ParseTCPOptions `(E784  1 s 1 TCP_ParseTCPOptions ]
+{
+"381
+[v TCP_ParseTCPOptions@tcpOptionsSize tcpOptionsSize `us  1 a 2 12 ]
+"380
+[v TCP_ParseTCPOptions@opt opt `uc  1 a 1 11 ]
+"382
+[v TCP_ParseTCPOptions@ret ret `E784  1 a 1 10 ]
+"492
+} 0
+"420 C:\Users\jackr\Documents\Foxsi_Lab\foxsi4-hk\SPI_Demo_5-30-2023.X\mcc_generated_files/TCPIPLibrary/ETHxxJ6x_driver.c
+[v _ETH_Read8 ETH_Read8 `(uc  1 e 1 0 ]
+{
+"422
+[v ETH_Read8@ret ret `uc  1 a 1 4 ]
+"434
+} 0
+"625 C:\Users\jackr\Documents\Foxsi_Lab\foxsi4-hk\SPI_Demo_5-30-2023.X\mcc_generated_files/TCPIPLibrary/tcpv4.c
+[v _TCP_FiniteStateMachine TCP_FiniteStateMachine `(E784  1 s 1 TCP_FiniteStateMachine ]
+{
+"627
+[v TCP_FiniteStateMachine@notAckBytes notAckBytes `us  1 a 2 128 ]
+"630
+[v TCP_FiniteStateMachine@nextState nextState `E970  1 a 1 131 ]
+"631
+[v TCP_FiniteStateMachine@event event `E983  1 a 1 130 ]
+"628
+[v TCP_FiniteStateMachine@ret ret `E784  1 a 1 127 ]
+"1263
+} 0
+"172 C:\Users\jackr\Documents\Foxsi_Lab\foxsi4-hk\SPI_Demo_5-30-2023.X\mcc_generated_files/TCPIPLibrary/icmp.c
+[v _resetPortUnreachable resetPortUnreachable `(v  1 e 1 0 ]
+{
+"175
+} 0
+"164
+[v _isPortUnreachable isPortUnreachable `(a  1 e 1 0 ]
+{
+[v isPortUnreachable@port port `us  1 p 2 4 ]
+"170
+} 0
+"1575 C:\Users\jackr\Documents\Foxsi_Lab\foxsi4-hk\SPI_Demo_5-30-2023.X\mcc_generated_files/TCPIPLibrary/tcpv4.c
+[v _TCP_TimoutRetransmit TCP_TimoutRetransmit `(E784  1 s 1 TCP_TimoutRetransmit ]
+{
+"1583
+} 0
+"329
+[v _TCP_PayloadSave TCP_PayloadSave `(E784  1 e 1 0 ]
+{
+"332
+[v TCP_PayloadSave@buffer_size buffer_size `us  1 a 2 104 ]
+"329
+[v TCP_PayloadSave@len len `us  1 p 2 94 ]
+"362
+} 0
+"211
+[v _TCP_Snd TCP_Snd `(E784  1 s 1 TCP_Snd ]
+{
+[s S1914 . 1 `uc 1 ns 1 0 :1:0 
+`uc 1 reserved 1 0 :3:1 
+`uc 1 dataOffset 1 0 :4:4 
+]
+"214
+[u S1918 . 1 `uc 1 byte13 1 0 `S1914 1 . 1 0 ]
+[s S1921 . 1 `uc 1 fin 1 0 :1:0 
+`uc 1 syn 1 0 :1:1 
+`uc 1 rst 1 0 :1:2 
+`uc 1 psh 1 0 :1:3 
+`uc 1 ack 1 0 :1:4 
+`uc 1 urg 1 0 :1:5 
+`uc 1 ece 1 0 :1:6 
+`uc 1 cwr 1 0 :1:7 
+]
+[u S1930 . 1 `uc 1 flags 1 0 `S1921 1 . 1 0 ]
+[s S1933 . 20 `us 1 sourcePort 2 0 `us 1 destPort 2 2 `ul 1 sequenceNumber 4 4 `ul 1 ackNumber 4 8 `S1918 1 . 1 12 `S1930 1 . 1 13 `us 1 windowSize 2 14 `us 1 checksum 2 16 `us 1 urgentPtr 2 18 ]
+[v TCP_Snd@txHeader txHeader `S1933  1 a 20 74 ]
+"215
+[v TCP_Snd@payloadLength payloadLength `us  1 a 2 71 ]
+"216
+[v TCP_Snd@cksm cksm `us  1 a 2 69 ]
+"217
+[v TCP_Snd@data data `*.2uc  1 a 2 67 ]
+"213
+[v TCP_Snd@ret ret `E784  1 a 1 73 ]
+[s S1885 . 58 `us 1 localPort 2 0 `ul 1 destIP 4 2 `us 1 destPort 2 6 `ul 1 remoteSeqno 4 8 `ul 1 remoteAck 4 12 `ul 1 localSeqno 4 16 `ul 1 localLastAck 4 20 `us 1 remoteWnd 2 24 `us 1 localWnd 2 26 `us 1 mss 2 28 `*.2uc 1 rxBufferStart 2 30 `*.2uc 1 rxBufferPtr 2 32 `E1012 1 rxBufState 1 34 `*.2uc 1 txBufferStart 2 35 `*.2uc 1 txBufferPtr 2 37 `us 1 bytesToSend 2 39 `E1012 1 txBufState 1 41 `us 1 bytesSent 2 42 `a 1 payloadSave 1 44 `E970 1 fsmState 1 45 `E983 1 connectionEvent 1 46 `*.2v 1 nextTCB 2 47 `*.2v 1 prevTCB 2 49 `us 1 timeout 2 51 `us 1 timeoutReloadValue 2 53 `uc 1 timeoutsCount 1 55 `uc 1 flags 1 56 `E999 1 socketState 1 57 ]
+"211
+[v TCP_Snd@tcbPtr tcbPtr `*.2S1885  1 p 2 29 ]
+"315
+} 0
+"143
+[v _TCB_Reset TCB_Reset `(v  1 s 1 TCB_Reset ]
+{
+[s S1885 . 58 `us 1 localPort 2 0 `ul 1 destIP 4 2 `us 1 destPort 2 6 `ul 1 remoteSeqno 4 8 `ul 1 remoteAck 4 12 `ul 1 localSeqno 4 16 `ul 1 localLastAck 4 20 `us 1 remoteWnd 2 24 `us 1 localWnd 2 26 `us 1 mss 2 28 `*.2uc 1 rxBufferStart 2 30 `*.2uc 1 rxBufferPtr 2 32 `E1012 1 rxBufState 1 34 `*.2uc 1 txBufferStart 2 35 `*.2uc 1 txBufferPtr 2 37 `us 1 bytesToSend 2 39 `E1012 1 txBufState 1 41 `us 1 bytesSent 2 42 `a 1 payloadSave 1 44 `E970 1 fsmState 1 45 `E983 1 connectionEvent 1 46 `*.2v 1 nextTCB 2 47 `*.2v 1 prevTCB 2 49 `us 1 timeout 2 51 `us 1 timeoutReloadValue 2 53 `uc 1 timeoutsCount 1 55 `uc 1 flags 1 56 `E999 1 socketState 1 57 ]
+[v TCB_Reset@tcbPtr tcbPtr `*.2S1885  1 p 2 4 ]
+"162
+} 0
+"76 C:\Users\jackr\Documents\Foxsi_Lab\foxsi4-hk\SPI_Demo_5-30-2023.X\mcc_generated_files/TCPIPLibrary/ipv4.c
+[v _IPV4_PseudoHeaderChecksum IPV4_PseudoHeaderChecksum `(us  1 e 2 0 ]
+{
+[s S45 . 12 `ul 1 srcIpAddress 4 0 `ul 1 dstIpAddress 4 4 `uc 1 protocol 1 8 `uc 1 z 1 9 `us 1 length 2 10 ]
+"78
+[v IPV4_PseudoHeaderChecksum@tmp tmp `S45  1 a 12 21 ]
+"80
+[v IPV4_PseudoHeaderChecksum@cksm cksm `ul  1 a 4 17 ]
+"81
+[v IPV4_PseudoHeaderChecksum@v v `*.39us  1 a 2 14 ]
+"79
+[v IPV4_PseudoHeaderChecksum@len len `uc  1 a 1 16 ]
+"76
+[v IPV4_PseudoHeaderChecksum@payloadLen payloadLen `us  1 p 2 4 ]
+"106
+} 0
+"58 C:\Users\jackr\Documents\Foxsi_Lab\foxsi4-hk\SPI_Demo_5-30-2023.X\mcc_generated_files/TCPIPLibrary/icmp.c
+[v _ICMP_Receive ICMP_Receive `(E617  1 e 1 0 ]
+{
+[s S541 . 2 `uc 1 code 1 0 `uc 1 type 1 1 ]
+"60
+[u S544 . 2 `us 1 typeCode 2 0 `S541 1 . 2 0 ]
+[s S547 . 4 `S544 1 . 2 0 `us 1 checksum 2 2 ]
+[v ICMP_Receive@icmpHdr icmpHdr `S547  1 a 4 54 ]
+[s S24 . 20 `uc 1 ihl 1 0 :4:0 
+`uc 1 version 1 0 :4:4 
+`uc 1 ecn 1 1 :2:0 
+`uc 1 dscp 1 1 :6:2 
+`us 1 length 2 2 `us 1 identifcation 2 4 `uc 1 fragmentOffsetHigh 1 6 :5:0 
+`uc 1 . 1 6 :1:5 
+`uc 1 dontFragment 1 6 :1:6 
+`uc 1 moreFragments 1 6 :1:7 
+`uc 1 fragmentOffsetLow 1 7 `uc 1 timeToLive 1 8 `uc 1 protocol 1 9 `us 1 headerCksm 2 10 `ul 1 srcIpAddress 4 12 `ul 1 dstIpAddress 4 16 ]
+"58
+[v ICMP_Receive@ipv4Hdr ipv4Hdr `*.39S24  1 p 2 46 ]
+"88
+} 0
+"99
+[v _ICMP_EchoReply ICMP_EchoReply `(E617  1 e 1 0 ]
+{
+"112
+[v ICMP_EchoReply@ipv4PayloadLength ipv4PayloadLength `us  1 a 2 43 ]
+"111
+[v ICMP_EchoReply@icmp_cksm_start icmp_cksm_start `us  1 a 2 39 ]
+"101
+[v ICMP_EchoReply@cksm cksm `us  1 a 2 41 ]
+"104
+[v ICMP_EchoReply@sequence sequence `us  1 a 2 37 ]
+"103
+[v ICMP_EchoReply@identifier identifier `us  1 a 2 35 ]
+"102
+[v ICMP_EchoReply@ret ret `E617  1 a 1 45 ]
+[s S24 . 20 `uc 1 ihl 1 0 :4:0 
+`uc 1 version 1 0 :4:4 
+`uc 1 ecn 1 1 :2:0 
+`uc 1 dscp 1 1 :6:2 
+`us 1 length 2 2 `us 1 identifcation 2 4 `uc 1 fragmentOffsetHigh 1 6 :5:0 
+`uc 1 . 1 6 :1:5 
+`uc 1 dontFragment 1 6 :1:6 
+`uc 1 moreFragments 1 6 :1:7 
+`uc 1 fragmentOffsetLow 1 7 `uc 1 timeToLive 1 8 `uc 1 protocol 1 9 `us 1 headerCksm 2 10 `ul 1 srcIpAddress 4 12 `ul 1 dstIpAddress 4 16 ]
+"99
+[v ICMP_EchoReply@ipv4Hdr ipv4Hdr `*.39S24  1 p 2 29 ]
+"135
+} 0
+"230 C:\Users\jackr\Documents\Foxsi_Lab\foxsi4-hk\SPI_Demo_5-30-2023.X\mcc_generated_files/TCPIPLibrary/ipv4.c
+[v _IPv4_Start IPv4_Start `(E617  1 e 1 0 ]
+{
+"235
+[v IPv4_Start@targetAddress targetAddress `ul  1 a 4 79 ]
+[s S289 . 6 `uc 1 byte1 1 0 `uc 1 byte2 1 1 `uc 1 byte3 1 2 `uc 1 byte4 1 3 `uc 1 byte5 1 4 `uc 1 byte6 1 5 ]
+"234
+[u S296 . 6 `[6]uc 1 mac_array 6 0 `S289 1 s 6 0 ]
+[v IPv4_Start@destMacAddress destMacAddress `*.35CS296  1 a 2 83 ]
+"232
+[v IPv4_Start@ret ret `E617  1 a 1 85 ]
+"230
+[v IPv4_Start@destAddress destAddress `ul  1 p 4 66 ]
+[v IPv4_Start@protocol protocol `E474  1 p 1 70 ]
+"284
+} 0
+"527 C:\Users\jackr\Documents\Foxsi_Lab\foxsi4-hk\SPI_Demo_5-30-2023.X\mcc_generated_files/TCPIPLibrary/ETHxxJ6x_driver.c
+[v _ETH_Write8 ETH_Write8 `(v  1 e 1 0 ]
+{
+[v ETH_Write8@data data `uc  1 a 1 wreg ]
+[v ETH_Write8@data data `uc  1 a 1 wreg ]
+"529
+[v ETH_Write8@data data `uc  1 a 1 4 ]
+"530
+} 0
+"557
+[v _ETH_Write32 ETH_Write32 `(v  1 e 1 0 ]
+{
+[v ETH_Write32@data data `ul  1 p 4 4 ]
+"563
+} 0
+"536
+[v _ETH_Write16 ETH_Write16 `(v  1 e 1 0 ]
+{
+[v ETH_Write16@data data `us  1 p 2 4 ]
+"540
+} 0
+"202 C:\Users\jackr\Documents\Foxsi_Lab\foxsi4-hk\SPI_Demo_5-30-2023.X\mcc_generated_files/TCPIPLibrary/arpv4.c
+[v _ARPV4_Request ARPV4_Request `(E617  1 e 1 0 ]
+{
+[s S289 . 6 `uc 1 byte1 1 0 `uc 1 byte2 1 1 `uc 1 byte3 1 2 `uc 1 byte4 1 3 `uc 1 byte5 1 4 `uc 1 byte6 1 5 ]
+"208
+[u S296 . 6 `[6]uc 1 mac_array 6 0 `S289 1 s 6 0 ]
+[s S1652 . 28 `us 1 htype 2 0 `us 1 ptype 2 2 `uc 1 hlen 1 4 `uc 1 plen 1 5 `us 1 oper 2 6 `S296 1 sha 6 8 `ul 1 spa 4 14 `S296 1 tha 6 18 `ul 1 tpa 4 24 ]
+[v ARPV4_Request@header header `S1652  1 a 28 1 ]
+"204
+[v ARPV4_Request@ret ret `E782  1 a 1 0 ]
+"202
+[v ARPV4_Request@destAddress destAddress `ul  1 p 4 30 ]
+"235
+} 0
+"49 C:\Users\jackr\Documents\Foxsi_Lab\foxsi4-hk\SPI_Demo_5-30-2023.X\mcc_generated_files/TCPIPLibrary/mac_address.h
+"51
+[s S289 . 6 `uc 1 byte1 1 0 `uc 1 byte2 1 1 `uc 1 byte3 1 2 `uc 1 byte4 1 3 `uc 1 byte5 1 4 `uc 1 byte6 1 5 ]
+"242 C:\Users\jackr\Documents\Foxsi_Lab\foxsi4-hk\SPI_Demo_5-30-2023.X\mcc_generated_files/TCPIPLibrary/arpv4.c
+[u S296 . 6 `[6]uc 1 mac_array 6 0 `S289 1 s 6 0 ]
+[v _ARPV4_Lookup ARPV4_Lookup `(*.39S296  1 e 2 0 ]
+{
+"244
+[s S1612 . 13 `S296 1 macAddress 6 0 `ul 1 ipAddress 4 6 `us 1 protocolType 2 10 `uc 1 age 1 12 ]
+[v ARPV4_Lookup@entry_pointer entry_pointer `*.39S1612  1 a 2 12 ]
+"245
+[v ARPV4_Lookup@x x `uc  1 a 1 14 ]
+"242
+[v ARPV4_Lookup@ip_address ip_address `ul  1 p 4 4 ]
+"254
+} 0
+"286 C:\Users\jackr\Documents\Foxsi_Lab\foxsi4-hk\SPI_Demo_5-30-2023.X\mcc_generated_files/TCPIPLibrary/ipv4.c
+[v _IPV4_Send IPV4_Send `(E617  1 e 1 0 ]
+{
+"288
+[v IPV4_Send@totalLength totalLength `us  1 a 2 45 ]
+"289
+[v IPV4_Send@cksm cksm `us  1 a 2 43 ]
+"290
+[v IPV4_Send@ret ret `E617  1 a 1 42 ]
+"286
+[v IPV4_Send@payloadLength payloadLength `us  1 p 2 36 ]
+"304
+} 0
+"982 C:\Users\jackr\Documents\Foxsi_Lab\foxsi4-hk\SPI_Demo_5-30-2023.X\mcc_generated_files/TCPIPLibrary/ETHxxJ6x_driver.c
+[v _ETH_TxComputeChecksum ETH_TxComputeChecksum `(us  1 e 2 0 ]
+{
+"985
+[v ETH_TxComputeChecksum@cksm cksm `us  1 a 2 34 ]
+"984
+[v ETH_TxComputeChecksum@rxptr rxptr `us  1 a 2 32 ]
+"982
+[v ETH_TxComputeChecksum@position position `us  1 p 2 22 ]
+[v ETH_TxComputeChecksum@len len `us  1 p 2 24 ]
+[v ETH_TxComputeChecksum@seed seed `us  1 p 2 26 ]
+"1001
+} 0
+"758
+[v _ETH_Insert ETH_Insert `(v  1 e 1 0 ]
+{
+"760
+[v ETH_Insert@current_tx_ptr current_tx_ptr `us  1 a 2 12 ]
+"758
+[v ETH_Insert@data data `*.39uc  1 p 2 4 ]
+[v ETH_Insert@len len `us  1 p 2 6 ]
+[v ETH_Insert@offset offset `us  1 p 2 8 ]
+"767
+} 0
+"1059
+[v _ETH_SaveRDPT ETH_SaveRDPT `(v  1 e 1 0 ]
+{
+"1062
+} 0
+"439
+[v _ETH_Read16 ETH_Read16 `(us  1 e 2 0 ]
+{
+"441
+[v ETH_Read16@ret ret `us  1 a 2 6 ]
+"454
+} 0
+"849
+[v _ETH_Copy ETH_Copy `(E617  1 e 1 0 ]
+{
+"852
+[v ETH_Copy@tmp_len tmp_len `us  1 a 2 14 ]
+"851
+[v ETH_Copy@timer timer `us  1 a 2 12 ]
+"849
+[v ETH_Copy@len len `us  1 p 2 10 ]
+"887
+} 0
+"773
+[v _ETH_Dump ETH_Dump `(v  1 e 1 0 ]
+{
+[v ETH_Dump@length length `us  1 p 2 4 ]
+"782
+} 0
+"1009
+[v _ETH_RxComputeChecksum ETH_RxComputeChecksum `(us  1 e 2 0 ]
+{
+"1012
+[v ETH_RxComputeChecksum@cksm cksm `ul  1 a 4 40 ]
+"1011
+[v ETH_RxComputeChecksum@rxptr rxptr `us  1 a 2 38 ]
+"1009
+[v ETH_RxComputeChecksum@len len `us  1 p 2 22 ]
+[v ETH_RxComputeChecksum@seed seed `us  1 p 2 24 ]
+"1025
+} 0
+"938
+[v _ETH_ComputeChecksum ETH_ComputeChecksum `(us  1 s 2 ETH_ComputeChecksum ]
+{
+"940
+[v ETH_ComputeChecksum@cksm cksm `ul  1 a 4 16 ]
+"941
+[v ETH_ComputeChecksum@v v `us  1 a 2 20 ]
+"938
+[v ETH_ComputeChecksum@len len `us  1 p 2 4 ]
+[v ETH_ComputeChecksum@seed seed `us  1 p 2 6 ]
+"973
+} 0
+"306
+[v _ETH_NextPacketUpdate ETH_NextPacketUpdate `(v  1 e 1 0 ]
+{
+"322
+} 0
+"787
+[v _ETH_Flush ETH_Flush `(v  1 e 1 0 ]
+{
+"804
+} 0
+"101 C:\Users\jackr\Documents\Foxsi_Lab\foxsi4-hk\SPI_Demo_5-30-2023.X\mcc_generated_files/TCPIPLibrary/arpv4.c
+[v _ARPV4_Packet ARPV4_Packet `(E933  1 e 1 0 ]
+{
+"141
+[v ARPV4_Packet@x_1751 x `uc  1 a 1 7 ]
+[s S289 . 6 `uc 1 byte1 1 0 `uc 1 byte2 1 1 `uc 1 byte3 1 2 `uc 1 byte4 1 3 `uc 1 byte5 1 4 `uc 1 byte6 1 5 ]
+"140
+[u S296 . 6 `[6]uc 1 mac_array 6 0 `S289 1 s 6 0 ]
+[s S1612 . 13 `S296 1 macAddress 6 0 `ul 1 ipAddress 4 6 `us 1 protocolType 2 10 `uc 1 age 1 12 ]
+[v ARPV4_Packet@arpPtr arpPtr `*.39S1612  1 a 2 4 ]
+"122
+[v ARPV4_Packet@x x `uc  1 a 1 6 ]
+[s S289 . 6 `uc 1 byte1 1 0 `uc 1 byte2 1 1 `uc 1 byte3 1 2 `uc 1 byte4 1 3 `uc 1 byte5 1 4 `uc 1 byte6 1 5 ]
+"103
+[u S296 . 6 `[6]uc 1 mac_array 6 0 `S289 1 s 6 0 ]
+[s S1652 . 28 `us 1 htype 2 0 `us 1 ptype 2 2 `uc 1 hlen 1 4 `uc 1 plen 1 5 `us 1 oper 2 6 `S296 1 sha 6 8 `ul 1 spa 4 14 `S296 1 tha 6 18 `ul 1 tpa 4 24 ]
+[v ARPV4_Packet@header header `S1652  1 a 28 10 ]
+"104
+[s S1612 . 13 `S296 1 macAddress 6 0 `ul 1 ipAddress 4 6 `us 1 protocolType 2 10 `uc 1 age 1 12 ]
+[v ARPV4_Packet@entryPointer entryPointer `*.39S1612  1 a 2 8 ]
+"106
+[v ARPV4_Packet@length length `us  1 a 2 0 ]
+"107
+[v ARPV4_Packet@ret ret `E782  1 a 1 3 ]
+"105
+[v ARPV4_Packet@mergeFlag mergeFlag `a  1 a 1 2 ]
+"181
+} 0
+"4 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\memcpy.c
+[v _memcpy memcpy `(*.39v  1 e 2 0 ]
+{
+"8
+[v memcpy@s s `*.39Cuc  1 a 2 13 ]
+"7
+[v memcpy@d d `*.39uc  1 a 2 11 ]
+"9
+[v memcpy@tmp tmp `uc  1 a 1 10 ]
+"4
+[v memcpy@d1 d1 `*.39v  1 p 2 4 ]
+[v memcpy@s1 s1 `*.39Cv  1 p 2 6 ]
+[v memcpy@n n `ui  1 p 2 8 ]
+"18
+} 0
+"609 C:\Users\jackr\Documents\Foxsi_Lab\foxsi4-hk\SPI_Demo_5-30-2023.X\mcc_generated_files/TCPIPLibrary/ETHxxJ6x_driver.c
+[v _ETH_WriteStart ETH_WriteStart `(E617  1 e 1 0 ]
+{
+[s S3034 . 10 `us 1 flags 2 0 `us 1 packetStart 2 2 `us 1 packetEnd 2 4 `*.39v 1 prevPacket 2 6 `*.39v 1 nextPacket 2 8 ]
+"611
+[v ETH_WriteStart@ethPacket ethPacket `*.39S3034  1 a 2 28 ]
+[s S289 . 6 `uc 1 byte1 1 0 `uc 1 byte2 1 1 `uc 1 byte3 1 2 `uc 1 byte4 1 3 `uc 1 byte5 1 4 `uc 1 byte6 1 5 ]
+"609
+[u S296 . 6 `[6]uc 1 mac_array 6 0 `S289 1 s 6 0 ]
+[v ETH_WriteStart@dest_mac dest_mac `*.35CS296  1 p 2 22 ]
+[v ETH_WriteStart@type type `us  1 p 2 24 ]
+"682
+} 0
+"1105
+[v _ETH_ResetByteCount ETH_ResetByteCount `(v  1 e 1 0 ]
+{
+"1108
+} 0
+"90 C:\Users\jackr\Documents\Foxsi_Lab\foxsi4-hk\SPI_Demo_5-30-2023.X\mcc_generated_files/TCPIPLibrary/ethernet_driver.h
+[s S3034 . 10 `us 1 flags 2 0 `us 1 packetStart 2 2 `us 1 packetEnd 2 4 `*.39v 1 prevPacket 2 6 `*.39v 1 nextPacket 2 8 ]
+"1161 C:\Users\jackr\Documents\Foxsi_Lab\foxsi4-hk\SPI_Demo_5-30-2023.X\mcc_generated_files/TCPIPLibrary/ETHxxJ6x_driver.c
+[v _ETH_NewPacket ETH_NewPacket `(*.39S3034  1 e 2 0 ]
+{
+"1163
+[v ETH_NewPacket@index index `uc  1 a 1 8 ]
+"1209
+} 0
+"583
+[v _ETH_WriteBlock ETH_WriteBlock `(us  1 e 2 0 ]
+{
+"585
+[v ETH_WriteBlock@p p `*.39Cuc  1 a 2 8 ]
+"583
+[v ETH_WriteBlock@buffer buffer `*.39Cuc  1 p 2 4 ]
+[v ETH_WriteBlock@length length `us  1 p 2 6 ]
+"591
+} 0
+"114
+[v _ETH_EdataWrite ETH_EdataWrite `T(v  1 e 1 0 ]
+{
+"117
+} 0
+"697
+[v _ETH_Send ETH_Send `(E617  1 e 1 0 ]
+{
+"699
+[v ETH_Send@packetEnd packetEnd `us  1 a 2 12 ]
+"722
+} 0
+"507
+[v _ETH_ReadBlock ETH_ReadBlock `(us  1 e 2 0 ]
+{
+"510
+[v ETH_ReadBlock@p p `*.39uc  1 a 2 10 ]
+"509
+[v ETH_ReadBlock@len len `us  1 a 2 8 ]
+"507
+[v ETH_ReadBlock@buffer buffer `*.39v  1 p 2 4 ]
+[v ETH_ReadBlock@length length `us  1 p 2 6 ]
+"520
+} 0
+"108
+[v _ETH_EdataRead ETH_EdataRead `T(uc  1 e 1 0 ]
+{
+"112
+} 0
+"255
+[v _ETH_EventHandler ETH_EventHandler `(v  1 e 1 0 ]
+{
+"304
+} 0
+"894
+[v _ETH_Shift_Tx_Packets ETH_Shift_Tx_Packets `(E4387  1 e 1 0 ]
+{
+[s S3034 . 10 `us 1 flags 2 0 `us 1 packetStart 2 2 `us 1 packetEnd 2 4 `*.39v 1 prevPacket 2 6 `*.39v 1 nextPacket 2 8 ]
+"916
+[v ETH_Shift_Tx_Packets@pElem pElem `*.39S3034  1 a 2 20 ]
+"917
+[v ETH_Shift_Tx_Packets@shiftOffset shiftOffset `us  1 a 2 14 ]
+"897
+[v ETH_Shift_Tx_Packets@len len `us  1 a 2 18 ]
+"896
+[v ETH_Shift_Tx_Packets@timer timer `us  1 a 2 16 ]
+"935
+} 0
+"15 C:\Program Files\Microchip\xc8\v2.41\pic\sources\c99\common\Umul16.c
+[v ___wmul __wmul `(ui  1 e 2 0 ]
+{
+"17
+[v ___wmul@product product `ui  1 a 2 8 ]
+"15
+[v ___wmul@multiplier multiplier `ui  1 p 2 4 ]
+[v ___wmul@multiplicand multiplicand `ui  1 p 2 6 ]
+"53
+} 0
+"729 C:\Users\jackr\Documents\Foxsi_Lab\foxsi4-hk\SPI_Demo_5-30-2023.X\mcc_generated_files/TCPIPLibrary/ETHxxJ6x_driver.c
+[v _ETH_SendQueued ETH_SendQueued `(E4387  1 e 1 0 ]
+{
+"749
+} 0
+"1216
+[v _ETH_RemovePacket ETH_RemovePacket `(v  1 e 1 0 ]
+{
+[s S3034 . 10 `us 1 flags 2 0 `us 1 packetStart 2 2 `us 1 packetEnd 2 4 `*.39v 1 prevPacket 2 6 `*.39v 1 nextPacket 2 8 ]
+[v ETH_RemovePacket@pPacket pPacket `*.39S3034  1 p 2 4 ]
+"1269
+} 0
+"235
+[v _ETH_CheckLinkUp ETH_CheckLinkUp `(a  1 e 1 0 ]
+{
+"237
+[v ETH_CheckLinkUp@value value `ul  1 a 4 15 ]
+"250
+} 0
+"390
+[v _PHY_Read PHY_Read `(l  1 e 4 0 ]
+{
+[v PHY_Read@reg reg `E4630  1 a 1 wreg ]
+"392
+[v PHY_Read@ret ret `l  1 a 4 11 ]
+"390
+[v PHY_Read@reg reg `E4630  1 a 1 wreg ]
+[v PHY_Read@reg reg `E4630  1 a 1 10 ]
+"414
+} 0
+"338
+[v _PHY_WaitForBusy PHY_WaitForBusy `T(E4639  1 e 1 0 ]
+{
+"341
+[v PHY_WaitForBusy@timeout timeout `uc  1 a 1 5 ]
+"340
+[v PHY_WaitForBusy@ret ret `E4639  1 a 1 4 ]
+"349
+} 0
+"187 C:\Users\jackr\Documents\Foxsi_Lab\foxsi4-hk\SPI_Demo_5-30-2023.X\mcc_generated_files/TCPIPLibrary/arpv4.c
+[v _ARPV4_Update ARPV4_Update `(v  1 e 1 0 ]
+{
+"190
+[v ARPV4_Update@x x `uc  1 a 1 6 ]
+[s S289 . 6 `uc 1 byte1 1 0 `uc 1 byte2 1 1 `uc 1 byte3 1 2 `uc 1 byte4 1 3 `uc 1 byte5 1 4 `uc 1 byte6 1 5 ]
+"189
+[u S296 . 6 `[6]uc 1 mac_array 6 0 `S289 1 s 6 0 ]
+[s S1612 . 13 `S296 1 macAddress 6 0 `ul 1 ipAddress 4 6 `us 1 protocolType 2 10 `uc 1 age 1 12 ]
+[v ARPV4_Update@entryPointer entryPointer `*.39S1612  1 a 2 4 ]
+"195
+} 0
+"58 C:\Users\jackr\Documents\Foxsi_Lab\foxsi4-hk\SPI_Demo_5-30-2023.X\mcc_generated_files/interrupt_manager.c
+[v _INTERRUPT_InterruptManager INTERRUPT_InterruptManager `IIH(v  1 e 1 0 ]
+{
+"76
+} 0
+"145 C:\Users\jackr\Documents\Foxsi_Lab\foxsi4-hk\SPI_Demo_5-30-2023.X\mcc_generated_files/tmr1.c
+[v _TMR1_ISR TMR1_ISR `(v  1 e 1 0 ]
+{
+"147
+[v TMR1_ISR@CountCallBack CountCallBack `VEus  1 s 2 CountCallBack ]
+"162
+} 0
+"118
+[v _TMR1_WriteTimer TMR1_WriteTimer `(v  1 e 1 0 ]
+{
+[v TMR1_WriteTimer@timerVal timerVal `us  1 p 2 0 ]
+"138
+} 0
+"164
+[v _TMR1_CallBack TMR1_CallBack `(v  1 e 1 0 ]
+{
+"172
+} 0
+"178
+[v _TMR1_DefaultInterruptHandler TMR1_DefaultInterruptHandler `(v  1 e 1 0 ]
+{
+"181
+} 0
+"93 C:\Users\jackr\Documents\Foxsi_Lab\foxsi4-hk\SPI_Demo_5-30-2023.X\mcc_generated_files/TCPIPLibrary/rtcc.c
+[v _rtcc_handler rtcc_handler `(v  1 e 1 0 ]
+{
+"96
 } 0

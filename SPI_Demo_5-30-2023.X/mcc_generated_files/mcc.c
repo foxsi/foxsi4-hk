@@ -50,18 +50,19 @@
 void SYSTEM_Initialize(void)
 {
 
+    INTERRUPT_Initialize();
     SPI1_Initialize();
     PIN_MANAGER_Initialize();
     OSCILLATOR_Initialize();
+    TMR1_Initialize();
+    Network_Init();
 }
 
 void OSCILLATOR_Initialize(void)
 {
     // SCS Primary_or_INTOSC; OSTS intosc; IDLEN disabled; 
-    //OSCCON = 0x00;
+    OSCCON = 0x00;
     // PLLEN disabled; PPST0 disabled; PPRE divide_by_3; PPST1 divide_by_3; 
-    //OSCTUNE = 0x00;
-    OSCCON |=2;
     OSCTUNE = 0x00;
 }
 

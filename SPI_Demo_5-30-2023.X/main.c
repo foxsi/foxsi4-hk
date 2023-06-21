@@ -43,10 +43,13 @@
 
 #include "mcc_generated_files/mcc.h"
 #include "mcc_generated_files/spi1.h"
+#include "tcp_server_demo.h"
 
 /*
                          Main application
  */
+
+//Code Not working, copied code into spi2ether in order to get it to run
 void main(void)
 {
     // Initialize the device
@@ -57,22 +60,26 @@ void main(void)
     // Use the following macros to:
 
     // Enable the Global Interrupts
-    //INTERRUPT_GlobalInterruptEnable();
+    INTERRUPT_GlobalInterruptEnable();
 
     // Disable the Global Interrupts
     //INTERRUPT_GlobalInterruptDisable();
 
     // Enable the Peripheral Interrupts
-    //INTERRUPT_PeripheralInterruptEnable();
+    INTERRUPT_PeripheralInterruptEnable();
 
     // Disable the Peripheral Interrupts
     //INTERRUPT_PeripheralInterruptDisable();
-    
     
 //    do { TRISAbits.TRISA3 = 0; } while(0);
 //    LATAbits.LATA3 = 1;
 //    TRISDbits.TRISD2 = 1;
     // Open SPI
+    
+//    TRISEbits.TRISE1 = 0;
+    // raise LTC2983 #2 chip select pin high to disable:
+//    LATEbits.LATE1 = 1;
+    
     SPI1_Open(SPI1_DEFAULT);
     
     
@@ -113,6 +120,12 @@ void main(void)
     
     while (1)
     {
+//        Commented out line in Network_Manage() to get function to run
+        Network_Manage();
+//        Cannot find DEMO_TCP_EchoServer()?
+//        DEMO_TCP_EchoServer();
+
+        
 //        Start Conversion on Ch 4------------------------------------------------------------
         LATEbits.LATE1 = 0;
         spi_buff = conv4;
@@ -123,8 +136,8 @@ void main(void)
 //        INTERRUPT bit goes high and LTC is done with conversion
         __delay_ms(180);
         
-        // Supposed to be INTERRUPT pin, LOW when busy, HIGH when free
-        // for some reason not working
+//         Supposed to be INTERRUPT pin, LOW when busy, HIGH when free
+//         for some reason not working
 //        while(!LATDbits.LATD2);
         LATEbits.LATE1 = 0;
      

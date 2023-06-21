@@ -42,8 +42,8 @@
 */
 
 #include "mcc_generated_files/mcc.h"
-#include "user_func.h"
 #include "mcc_generated_files/spi1.h"
+#include "user_func.h"
 
 /*
                          Main application
@@ -68,42 +68,119 @@ void main(void)
 
     // Disable the Peripheral Interrupts
     //INTERRUPT_PeripheralInterruptDisable();
-    TMR1_StartTimer();
     
-    do { TRISAbits.TRISA3 = 0; } while(0);
-    LATAbits.LATA3 = 1;
+//    do { TRISAbits.TRISA3 = 0; } while(0);
+//    LATAbits.LATA3 = 1;
+//    TRISDbits.TRISD2 = 1;
+    // Open SPI
     
-    // set LTC2983 #2 chip select pin as output:
-    TRISEbits.TRISE1 = 0;
+//    TRISEbits.TRISE1 = 0;
     // raise LTC2983 #2 chip select pin high to disable:
+//    LATEbits.LATE1 = 1;
+    
+    SPI1_Open(SPI1_DEFAULT);
+    
+    
+    // Pointer used to write data
+    uint8_t* spi_buff;
+//    
+////    Used to initilize LTC, not sure why this is needed
+    LATEbits.LATE1 = 0;
+    SPI1_WriteByte(0x14);
+    LATEbits.LATE1 = 1;     
+    __delay_ms(3);
+    
+    
+    // Possibly check if chip is ready
+    uint8_t spi_buff_arr[] = {0x03, 0x00, 0x00, 0xff};
+    spi_buff = spi_buff_arr;
+    
+    // Configure Sense Resistor 150 Ohms------------------------------------------------------
+    LATEbits.LATE1 = 0;
+    uint8_t rsense_buff[] = {0x02, 0x02, 0x04, 0xE8, 0x02, 0x58, 0x00};
+    spi_buff = rsense_buff;
+    SPI1_WriteBlock(spi_buff, 7);
     LATEbits.LATE1 = 1;
     
-    uint8_t* spi_buff = {};
-    size_t spi_buff_len = 0;
-
-    uint8_t foo = 0;
+    // Configure RTD 1 at ch 4----------------------------------------------------------------
+    LATEbits.LATE1 = 0;
+    uint8_t rtd1_buff[] = {0x02, 0x02, 0x1C, 0x60, 0x96, 0x10, 0x00};
+    spi_buff = rtd1_buff;
+    SPI1_WriteBlock(spi_buff, 7);
+    LATEbits.LATE1 = 1;
+    
+//    Block to start conversion on ch 4-------------------------------------------------------
+    uint8_t conv4[] = {0x02, 0x00, 0x00, 0x88};
     
     OSCTUNE = 0x00;
-    OSCCON |= 0x02;
+    OSCCON |=2;
     
     while (1)
     {
-        //__delay_ms(500);
-//        foo = !foo;
-//        LATAbits.LATA3 = foo;
-        
-
+//        Commented out line in Network_Manage() to get function to run
         Network_Manage();
-        // Add your application code
+//        Cannot find DEMO_TCP_EchoServer()?
         DEMO_TCP_echo_server();
+
         
-        SPI1_Open(MASTER0_CONFIG);
-        // lower LTC2983 #2's chip select:
-        LATEbits.LATE1 = 0;
-        SPI1_ExchangeBlock(spi_buff, spi_buff_len);
-        LATEbits.LATE1 = 1;
-        SPI1_Close();
+////        Start Conversion on Ch 4------------------------------------------------------------
+//        LATEbits.LATE1 = 0;
+//        spi_buff = conv4;
+//        SPI1_WriteBlock(spi_buff, 4);
+//        LATEbits.LATE1 = 1;
+//        
+////        For now using 180 ms delay to wait till--------------------------------------------- 
+////        INTERRUPT bit goes high and LTC is done with conversion
+//        __delay_ms(180);
+//        
+////         Supposed to be INTERRUPT pin, LOW when busy, HIGH when free
+////         for some reason not working
+////        while(!LATDbits.LATD2);
+//        LATEbits.LATE1 = 0;
+//     
+//        // Read Result at Ch 4----------------------------------------------------------------
+//        SPI1_WriteByte(0x03);
+//        while(!PIR1bits.SSP1IF);
+//        PIR1bits.SSP1IF = 0;
+//        
+//        SPI1_WriteByte(0x00);
+//        while(!PIR1bits.SSP1IF);
+//        PIR1bits.SSP1IF = 0;
+//        
+//        SPI1_WriteByte(0x2C);
+//        while(!PIR1bits.SSP1IF);
+//        PIR1bits.SSP1IF = 0;
+//        
+////         Read out status register if wanted
+////        SPI1_WriteByte(0x00);
+////        while(!PIR1bits.SSP1IF);
+////        PIR1bits.SSP1IF = 0;
+//        
+//        SPI1_WriteByte(0xFF);
+//        SPI1_ReadByte();
+//        while(!PIR1bits.SSP1IF);
+//        PIR1bits.SSP1IF = 0;
+//        
+//        SPI1_WriteByte(0xFF);
+//        SPI1_ReadByte();
+//        while(!PIR1bits.SSP1IF);
+//        PIR1bits.SSP1IF = 0;
+//        
+//        SPI1_WriteByte(0xFF);
+//        SPI1_ReadByte();
+//        while(!PIR1bits.SSP1IF);
+//        PIR1bits.SSP1IF = 0;
+//        
+//        SPI1_WriteByte(0xFF);
+//        SPI1_ReadByte();
+//        while(!PIR1bits.SSP1IF);
+//        PIR1bits.SSP1IF = 0;
+//        
+//        LATEbits.LATE1 = 1;
+//        __delay_ms(30);
+       
     }
+    SPI1_Close();
 }
 /**
  End of File

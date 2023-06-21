@@ -1,4 +1,4 @@
-# 1 "mcc_generated_files/drivers/spi_master.c"
+# 1 "mcc_generated_files/TCPIPLibrary/ip_database.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,10 +6,8 @@
 # 1 "<built-in>" 2
 # 1 "C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/PIC18F-J_DFP/1.5.44/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "mcc_generated_files/drivers/spi_master.c" 2
-# 33 "mcc_generated_files/drivers/spi_master.c"
-# 1 "mcc_generated_files/drivers/spi_master.h" 1
-# 37 "mcc_generated_files/drivers/spi_master.h"
+# 1 "mcc_generated_files/TCPIPLibrary/ip_database.c" 2
+# 23 "mcc_generated_files/TCPIPLibrary/ip_database.c"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdint.h" 1 3
 
 
@@ -115,13 +113,8 @@ typedef int32_t int_fast32_t;
 typedef uint16_t uint_fast16_t;
 typedef uint32_t uint_fast32_t;
 # 145 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdint.h" 2 3
-# 37 "mcc_generated_files/drivers/spi_master.h" 2
+# 23 "mcc_generated_files/TCPIPLibrary/ip_database.c" 2
 
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdbool.h" 1 3
-# 38 "mcc_generated_files/drivers/spi_master.h" 2
-
-# 1 "mcc_generated_files/drivers/../spi1.h" 1
-# 54 "mcc_generated_files/drivers/../spi1.h"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdio.h" 1 3
 # 10 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdio.h" 3
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\features.h" 1 3
@@ -273,74 +266,187 @@ char *ctermid(char *);
 
 
 char *tempnam(const char *, const char *);
-# 54 "mcc_generated_files/drivers/../spi1.h" 2
+# 24 "mcc_generated_files/TCPIPLibrary/ip_database.c" 2
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\string.h" 1 3
+# 25 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\string.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 1 3
+# 411 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef struct __locale_struct * locale_t;
+# 26 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\string.h" 2 3
+
+void *memcpy (void *restrict, const void *restrict, size_t);
+void *memmove (void *, const void *, size_t);
+void *memset (void *, int, size_t);
+int memcmp (const void *, const void *, size_t);
+void *memchr (const void *, int, size_t);
+
+char *strcpy (char *restrict, const char *restrict);
+char *strncpy (char *restrict, const char *restrict, size_t);
+
+char *strcat (char *restrict, const char *restrict);
+char *strncat (char *restrict, const char *restrict, size_t);
+
+int strcmp (const char *, const char *);
+int strncmp (const char *, const char *, size_t);
+
+int strcoll (const char *, const char *);
+size_t strxfrm (char *restrict, const char *restrict, size_t);
+
+char *strchr (const char *, int);
+char *strrchr (const char *, int);
+
+size_t strcspn (const char *, const char *);
+size_t strspn (const char *, const char *);
+char *strpbrk (const char *, const char *);
+char *strstr (const char *, const char *);
+char *strtok (char *restrict, const char *restrict);
+
+size_t strlen (const char *);
+
+char *strerror (int);
+
+
+
+
+char *strtok_r (char *restrict, const char *restrict, char **restrict);
+int strerror_r (int, char *, size_t);
+char *stpcpy(char *restrict, const char *restrict);
+char *stpncpy(char *restrict, const char *restrict, size_t);
+size_t strnlen (const char *, size_t);
+char *strdup (const char *);
+char *strndup (const char *, size_t);
+char *strsignal(int);
+char *strerror_l (int, locale_t);
+int strcoll_l (const char *, const char *, locale_t);
+size_t strxfrm_l (char *restrict, const char *restrict, size_t, locale_t);
+
+
+
+
+void *memccpy (void *restrict, const void *restrict, int, size_t);
+# 25 "mcc_generated_files/TCPIPLibrary/ip_database.c" 2
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdlib.h" 1 3
+# 21 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdlib.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 1 3
+# 18 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef long int wchar_t;
+# 22 "C:\\Program Files\\Microchip\\xc8\\v2.41\\pic\\include\\c99\\stdlib.h" 2 3
+
+int atoi (const char *);
+long atol (const char *);
+long long atoll (const char *);
+double atof (const char *);
+
+float strtof (const char *restrict, char **restrict);
+double strtod (const char *restrict, char **restrict);
+long double strtold (const char *restrict, char **restrict);
+
+
+
+long strtol (const char *restrict, char **restrict, int);
+unsigned long strtoul (const char *restrict, char **restrict, int);
+long long strtoll (const char *restrict, char **restrict, int);
+unsigned long long strtoull (const char *restrict, char **restrict, int);
+
+int rand (void);
+void srand (unsigned);
+
+void *malloc (size_t);
+void *calloc (size_t, size_t);
+void *realloc (void *, size_t);
+void free (void *);
+
+          void abort (void);
+int atexit (void (*) (void));
+          void exit (int);
+          void _Exit (int);
+
+void *bsearch (const void *, const void *, size_t, size_t, int (*)(const void *, const void *));
 
 
 
 
 
-typedef enum {
-    MASTER0_CONFIG,
-    SPI1_DEFAULT
-} spi1_modes_t;
-
-void SPI1_Initialize(void);
-_Bool SPI1_Open(spi1_modes_t spi1UniqueConfiguration);
-void SPI1_Close(void);
-uint8_t SPI1_ExchangeByte(uint8_t data);
-void SPI1_ExchangeBlock(void *block, size_t blockSize);
-void SPI1_WriteBlock(void *block, size_t blockSize);
-void SPI1_ReadBlock(void *block, size_t blockSize);
-void SPI1_WriteByte(uint8_t byte);
-uint8_t SPI1_ReadByte(void);
-# 39 "mcc_generated_files/drivers/spi_master.h" 2
 
 
+__attribute__((nonreentrant)) void qsort (void *, size_t, size_t, int (*)(const void *, const void *));
+
+int abs (int);
+long labs (long);
+long long llabs (long long);
+
+typedef struct { int quot, rem; } div_t;
+typedef struct { long quot, rem; } ldiv_t;
+typedef struct { long long quot, rem; } lldiv_t;
+
+div_t div (int, int);
+ldiv_t ldiv (long, long);
+lldiv_t lldiv (long long, long long);
+
+typedef struct { unsigned int quot, rem; } udiv_t;
+typedef struct { unsigned long quot, rem; } uldiv_t;
+udiv_t udiv (unsigned int, unsigned int);
+uldiv_t uldiv (unsigned long, unsigned long);
+# 26 "mcc_generated_files/TCPIPLibrary/ip_database.c" 2
+
+# 1 "mcc_generated_files/TCPIPLibrary/ip_database.h" 1
+# 40 "mcc_generated_files/TCPIPLibrary/ip_database.h"
+ typedef struct {
+    uint32_t ipv4_myAddress;
+    uint32_t ipv4_dns[2];
+    uint32_t ipv4_subnetMask;
+    uint32_t ipv4_router;
+    uint32_t ipv4_gateway;
+    uint32_t ipv4_ntpAddress[2];
+    uint32_t ipv4_tftpAddress;
+} ip_db_info_t;
 
 
+extern ip_db_info_t ip_database_info;
+# 72 "mcc_generated_files/TCPIPLibrary/ip_database.h"
+void ipdb_init(void);
+uint32_t makeStrToIpv4Address(char *str);
+char *makeIpv4AddresstoStr(uint32_t addr);
+# 27 "mcc_generated_files/TCPIPLibrary/ip_database.c" 2
 
 
-typedef enum {
-    MASTER0
-} spi_master_configurations_t;
+ip_db_info_t ip_database_info;
 
+void ipdb_init(void)
+{
+    ip_database_info.ipv4_myAddress = 0xc0a80110;
+    ip_database_info.ipv4_subnetMask = 0xffffff00;
+    ip_database_info.ipv4_router = 0xc0a801fe;
+    ip_database_info.ipv4_dns[0] = 0x08080808;
+    ip_database_info.ipv4_dns[1] = 0x0a0a0a0a;
+    for(uint8_t x=0; x < 2; x++)
+        ip_database_info.ipv4_ntpAddress[x] = 0;
+    ip_database_info.ipv4_tftpAddress = 0;
 
-
-
-
-typedef struct { void (*spiClose)(void);
-                    _Bool (*spiOpen)(void);
-                    uint8_t (*exchangeByte)(uint8_t b);
-                    void (*exchangeBlock)(void * block, size_t blockSize);
-                    void (*writeBlock)(void * block, size_t blockSize);
-                    void (*readBlock)(void * block, size_t blockSize);
-                    void (*writeByte)(uint8_t byte);
-                    uint8_t (*readByte)(void);
-                    void (*setSpiISR)(void(*handler)(void));
-                    void (*spiISR)(void);
-} spi_master_functions_t;
-
-extern const spi_master_functions_t spiMaster[];
-
-_Bool spi_master_open(spi_master_configurations_t config);
-# 33 "mcc_generated_files/drivers/spi_master.c" 2
-
-
-_Bool MASTER0_open(void);
-
-const spi_master_functions_t spiMaster[] = {
-    { SPI1_Close, MASTER0_open, SPI1_ExchangeByte, SPI1_ExchangeBlock, SPI1_WriteBlock, SPI1_ReadBlock, SPI1_WriteByte, SPI1_ReadByte, ((void*)0), ((void*)0) }
-};
-
-_Bool MASTER0_open(void){
-    return SPI1_Open(MASTER0_CONFIG);
 }
-# 56 "mcc_generated_files/drivers/spi_master.c"
-_Bool spi_master_open(spi_master_configurations_t config){
-    switch(config){
-        case MASTER0:
-            return MASTER0_open();
-        default:
-            return 0;
+
+uint32_t makeStrToIpv4Address(char *str)
+{
+    uint32_t ip_addr;
+    char *pch;
+    uint8_t x =3;
+    pch = strtok(str,".");
+    while((pch != ((void*)0)))
+    {
+       ((uint8_t *)&ip_addr)[x]= (uint16_t)atoi((const char*)pch);
+        x--;
+        pch = strtok (((void*)0),".");
     }
+    return ip_addr;
+}
+
+char *makeIpv4AddresstoStr(uint32_t addr)
+{
+    static char ip_str[15];
+
+    sprintf(ip_str,"%d.%d.%d.%d",((char*)&addr)[3],((char*)&addr)[2],((char*)&addr)[1],((char*)&addr)[0]);
+
+    return ip_str;
 }

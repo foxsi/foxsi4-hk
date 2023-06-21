@@ -268,7 +268,6 @@ typedef uint32_t uint_fast32_t;
 
 
 typedef enum {
-    MASTER0_CONFIG,
     SPI1_DEFAULT
 } spi1_modes_t;
 
@@ -7209,7 +7208,6 @@ typedef struct {
 
 
 static const spi1_configuration_t spi1_configuration[] = {
-    { 0xa, 0x40, 0x31, 0 },
     { 0x0, 0x40, 0x0, 0 }
 };
 
