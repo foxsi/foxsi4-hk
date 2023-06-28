@@ -71,7 +71,6 @@ void main(void)
     
 //    do { TRISAbits.TRISA3 = 0; } while(0);
 //    LATAbits.LATA3 = 1;
-//    TRISDbits.TRISD2 = 1;
     // Open SPI
     
 //    TRISEbits.TRISE1 = 0;
