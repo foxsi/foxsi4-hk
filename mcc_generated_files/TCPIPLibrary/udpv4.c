@@ -17,7 +17,7 @@
 
 /*
 
-©  [2015] Microchip Technology Inc. and its subsidiaries.  You may use this software 
+Â©  [2015] Microchip Technology Inc. and its subsidiaries.  You may use this software 
 and any derivatives exclusively with Microchip products. 
   
 THIS SOFTWARE IS SUPPLIED BY MICROCHIP "AS IS".  NO WARRANTIES, WHETHER EXPRESS, 
@@ -142,7 +142,7 @@ error_msg UDP_Receive(uint16_t udpcksm) // catch all UDP packets and dispatch th
             {          
                 if(udpHeader.length == IPV4_GetDatagramLength())
                 {
-                    hptr->callBack(udpHeader.length - sizeof(udpHeader));                    
+                    //hptr->callBack(udpHeader.length - sizeof(udpHeader));                    
                 }
                 ret = SUCCESS;
                 break;

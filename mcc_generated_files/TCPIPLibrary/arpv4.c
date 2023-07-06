@@ -17,7 +17,7 @@
 
 /*
 
-©  [2015] Microchip Technology Inc. and its subsidiaries.  You may use this software  
+Â©  [2015] Microchip Technology Inc. and its subsidiaries.  You may use this software  
 and any derivatives exclusively with Microchip products. 
   
 THIS SOFTWARE IS SUPPLIED BY MICROCHIP "AS IS".  NO WARRANTIES, WHETHER EXPRESS, 

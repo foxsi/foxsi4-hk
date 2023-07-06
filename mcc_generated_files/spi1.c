@@ -132,6 +132,8 @@ void SPI1_ReadBlock(void *block, size_t blockSize)
 void SPI1_WriteByte(uint8_t byte)
 {
     SSP1BUF = byte;
+    while(!PIR1bits.SSP1IF);
+    PIR1bits.SSP1IF = 0;
 }
 
 uint8_t SPI1_ReadByte(void)

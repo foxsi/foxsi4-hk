@@ -30,7 +30,7 @@ void DEMO_TCP_echo_server(void)
             break;
 
         case SOCKET_CONNECTED:
-            // check if the buffer was sent, if yes we can reuse the //buffer
+            
             if(TCP_SendDone(&port7TCB))
             {
                 // check to see if there are any received data
@@ -40,18 +40,52 @@ void DEMO_TCP_echo_server(void)
                 {
                     //make sure it safe to use the receive buffer
                     rxLen = TCP_GetReceivedData(&port7TCB);
-
-                    //simulate some buffer processing copy from //the RX buffer to the TX buffer
-                    for(i = 0; i < rxLen; i++)
-                    {
-                        txdataPort7[i] = rxdataPort7[i];
+//                    If input is 0x31 then enter
+                    if(rxdataPort7[0] == 0x31){
+//                        Start conversion on channel 8 by passing array conv4------------------------------------------------------
+//                        to temp chip
+                        uint8_t conv4[] = {0x02, 0x00, 0x00, 0x88};
+                        uint8_t* spi_buff;
+                        LATEbits.LATE1 = 0;
+                        spi_buff = conv4;
+                        SPI1_WriteBlock(spi_buff, 4);
+                        LATEbits.LATE1 = 1; 
+                        
+//                        Wait while conversion is occuring------------------------------------------------------
+//                        While loop to check if channel is done with conversion
+//                        Probabaly easier to due with INTURUPT pin but wasnt working
+                         uint8_t status[] = {0x03,0x00,0x00};
+                         uint8_t ret = 0;
+                         while(ret^0x48){
+                            LATEbits.LATE1 = 0;
+                            spi_buff = status;
+//                          Start read from temp chip
+                            SPI1_WriteBlock(spi_buff, 3);
+                            ret = SPI1_ExchangeByte(0xFF);
+                            LATEbits.LATE1 = 1;
+                         }
+                         __delay_ms(20);
+                         
+//                       Supposed to be INTERRUPT pin, LOW when busy, HIGH when free
+                         
+//                        Read results of conversion on channel 8 by passing array------------------------------------------------------
+//                        read4 to temp chip, then pass dummy bytes to read results
+//                        uint8_t read4[] = {0x03,0x00,0x00};
+                        uint8_t read4[] = {0x03,0x00,0x2C};
+                        LATEbits.LATE1 = 0;
+                        spi_buff = read4;
+                        SPI1_WriteBlock(spi_buff, 3);
+                        txLen = 4;
+                        for(int i=0; i<txLen; i++){
+                            txdataPort7[i] = SPI1_ExchangeByte(0xFF);
+                        }
+                        LATEbits.LATE1 = 1;
+                        
+//                        Send data back through ethernet
+                        TCP_Send(&port7TCB, txdataPort7, txLen);
+                      
                     }
-                    // reuse the rx buffer
                     TCP_InsertRxBuffer(&port7TCB,rxdataPort7, sizeof(rxdataPort7));
-
-                    txLen = rxLen;
-                    //send data back to the source
-                    TCP_Send(&port7TCB, txdataPort7, txLen);
                 }
             }
             break;
