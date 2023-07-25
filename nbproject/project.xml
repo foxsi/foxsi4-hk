@@ -3,7 +3,7 @@
     <type>com.microchip.mplab.nbide.embedded.makeproject</type>
     <configuration>
         <data xmlns="http://www.netbeans.org/ns/make-project/1">
-            <name>spi2ether</name>
+            <name>spi2ether_jack</name>
             <creation-uuid>65ab3d8e-0ad9-4a1a-9aa1-2a5b355fb2b1</creation-uuid>
             <make-project-type>0</make-project-type>
             <c-extensions>c</c-extensions>
