@@ -82,22 +82,16 @@ void main(void)
     TRISAbits.TRISA3 = 0;
     LATAbits.LATA3 = 1;
 //    __delay_ms(1000);
-    uint8_t state = 0x00;
+    uint8_t blink_state = 0x00;
     
     while (1)
     {
         Network_Manage();
-        
         demo_tcp_server();
+        
         // Add your application code
-        LATAbits.LATA3 = state;
-        state = ~state;
-        
-        
-//        LATAbits.LATA3 = 0;
-//        __delay_ms(20);
-//        LATAbits.LATA3 = 1;
-//        __delay_ms(20);
+        LATAbits.LATA3 = blink_state;
+        blink_state = ~blink_state;
     }
 }
 /**

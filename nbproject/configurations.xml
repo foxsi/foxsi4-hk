@@ -73,6 +73,8 @@
       <itemPath>main.c</itemPath>
       <itemPath>demo_tcp.c</itemPath>
       <itemPath>demo_tcp.h</itemPath>
+      <itemPath>formatter_interface.h</itemPath>
+      <itemPath>formatter_interface.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"

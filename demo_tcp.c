@@ -1,7 +1,10 @@
 #include <stdio.h>
 #include <string.h>
 #include "mcc_generated_files/mcc.h"
+
 #include "demo_tcp.h"
+
+// this one has all the needed includes:
 #include "mcc_generated_files/TCPIPLibrary/tcpv4.h"
 #include "mcc_generated_files/TCPIPLibrary/ipv4.h"
 #include "mcc_generated_files/TCPIPLibrary/tcpip_config.h"
