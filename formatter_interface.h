@@ -12,26 +12,82 @@
 extern "C" {
 #endif
 
-
+#include <stddef.h> // for size_t
+#include "mcc_generated_files/mcc.h"
+#include "mcc_generated_files/TCPIPLibrary/tcpv4.h"
+#include "mcc_generated_files/spi1.h"
+    
+#define FOXSI_ETHER_BUFF_SIZE           32;
+    
+// These are SPI CS signal number == SPI REx pin number + 1 == ethernet receive msg[0]
+#define FOXSI_POWER_SWITCH              0x03    // for U8/MAX7317 on power board
+#define FOXSI_POWER_SWITCH_READ_MASK    0x80    // check if first byte if read command
+    
+#define FOXSI_POWER_HEALTH              0x04    // for U6/AD7490 on power board
+#define FOXSI_POWER_HEALTH_WRITE_MASK   0x80    // check if first byte is write command
+#define FOXSI_POWER_HEALTH_READ_ALL     0x20    // check if second byte is read all command
+#define FOXSI_POWER_HEALTH_FORWARD      0xf0    // check if second byte is forward command
+#define FOXSI_POWER_HEALTH_SETUP        0xff    // check if second byte is setup command
+#define FOXSI_POWER_HEALTH_CONTROL_MASK 0x8310  // mask to OR with shifted address to get control command
+#define FOXSI_POWER_HEALTH_MIN_DELAY_US 1       // minimum required CS raise between packets.
+    
+#define FOXSI_RTD1                      0x01    // for U19/LTC2983 on housekeeping board
+#define FOXSI_RTD2                      0x02    // for U18/LTC2983 on housekeeping board
+#define FOXSI_RTD_CONF_SENSE_ADDR       0x204   // memory address for 4B config data for sense resistor
+#define FOXSI_RTD_CONF_RTD_ADDR         0x20c   // memory address for 4B config data for first RTD (others are spaced)
+#define FOXSI_RTD_COUNT                 0x09    // number of RTDs per LTC2983 chip
+#define FOXSI_RTD_WR_CMD                0x02    // write command byte
+#define FOXSI_RTD_RD_CMD                0x03    // read command byte
+#define FOXSI_RTD_RD_ADDR               0x001c  // first address of 9 (spaced by 8 B) channels to read (once data ready).
+#define FOXSI_RTD_CONF_SENSE            0xe8025800  // value to write to FOXSI_RTD_CONF_SENSE_ADDR to config RSENSE resistor.
+#define FOXSI_RTD_CONF_RTD              0x60961000  // value to write to FOXSI_RTD_CONF_RTD_ADDR (and in 8 B offset from there) to config
+#define FOXSI_RTD_SEQ_CONV_ADDR         0x00f5      // address to write FOXSI_RTD_SEQ_CONV to start sequential conversion
+#define FOXSI_RTD_SEQ_CONV              0x000aaaa8  // value to write to FOXSI_RTD_SEQ_CONV_ADDR to start sequential conversion
+#define FOXSI_RTD_SETUP                 0xff    // setup (set config data for all channels)
+#define FOXSI_RTD_START_ALL_CONV        0xf0    // start conversion on all channels
+#define FOXSI_RTD_READ_ALL              0xf2    // read all outputs (if data ready)
+#define FOXSI_RTD_MIN_DELAY_US          10
+    
+    // for tracking different error types in software. Move this to a separate header, define macros for each bit.
+    static uint16_t             ERRORS;
     
     // like demo_tcp_server()---entry point for received Ethernet packets. 
     // Inside, delegate to handler for specific system.
-    void ethernet_handler();
+    void ethernet_handler(tcpTCB_t* port, uint8_t* recv_buff, size_t recv_size);
     
-    // should identify system and delegate to command handler. 
-    void system_handler();
+    
     
     // for reading/writing power on/off chip (on power board):
-    void power_switch_handler(); 
+    void power_switch_handler(tcpTCB_t* port, uint8_t* recv_buff, size_t recv_size); 
+    
+    
+    
     // for reading ADC chip (on power board):
-    void power_health_handler();
+    void power_health_handler(tcpTCB_t* port, uint8_t* recv_buff, size_t recv_size);
+    void power_health_spi_setup();
+    uint16_t power_health_convert_addr(uint8_t recv_addr);
+    
+    
+    
     // for reading RTD chip:
-    void rtd_handler();
+    void rtd1_handler(tcpTCB_t* port, uint8_t* recv_buff, size_t recv_size);
+    void rtd2_handler(tcpTCB_t* port, uint8_t* recv_buff, size_t recv_size);
+    
+    void rtd_setup(uint8_t rtd_num);
+    void rtd_start_all_conversion(uint8_t rtd_num);
+    void rtd_read_all(tcpTCB_t* port, uint8_t rtd_num);
+    
+    
+    
     // for reflective (on PIC) health data:
-    void introspect_handler();
+    void introspect_handler(tcpTCB_t* port, uint8_t* recv_buff, size_t recv_size);
+   
     
-    // can return by calling TCP_Send()
     
+    // utilities
+    void bytes_from_uint16_t(uint16_t source, uint8_t* store);
+    void bytes_from_uint32_t(uint32_t source, uint8_t* store);
+    void swap_byte_order(uint8_t* data, size_t size);
     
 
 

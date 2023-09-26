@@ -3,6 +3,7 @@
 #include "mcc_generated_files/mcc.h"
 
 #include "demo_tcp.h"
+#include "formatter_interface.h"
 
 // this one has all the needed includes:
 #include "mcc_generated_files/TCPIPLibrary/tcpv4.h"
@@ -32,7 +33,7 @@ void demo_tcp_server()
             break;
         case SOCKET_CLOSED:
             //configure the local port
-            TCP_Bind(&port7TCB, 7);
+            TCP_Bind(&port7TCB, 7777);
             // add receive buffer
             TCP_InsertRxBuffer(&port7TCB, rxdataPort7, sizeof(rxdataPort7));
             // start the server
@@ -42,11 +43,13 @@ void demo_tcp_server()
             // check if the buffer was sent, if yes we can send another buffer
             if(TCP_SendDone(&port7TCB))
             {
-                // check to see  if there are any received data
+                // check to see if there are any received data
                 rxLen = TCP_GetRxLength(&port7TCB);
                 if(rxLen > 0)
                 {
                     rxLen = TCP_GetReceivedData(&port7TCB);
+                    
+                    ethernet_handler(&port7TCB, rxdataPort7, rxLen);
 
                     //simulate some buffer processing
                     for(i = 0; i < rxLen; i++)
@@ -58,7 +61,7 @@ void demo_tcp_server()
                     TCP_InsertRxBuffer(&port7TCB, rxdataPort7, sizeof(rxdataPort7));
                     txLen = rxLen;
                     //send data back to the source
-                    TCP_Send(&port7TCB, txdataPort7, txLen);
+//                    TCP_Send(&port7TCB, txdataPort7, txLen);
                 }
             }
             break;

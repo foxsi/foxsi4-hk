@@ -53,6 +53,7 @@
 #include <stdbool.h>
 #include <conio.h>
 #include "interrupt_manager.h"
+#include "spi1.h"
 #include "tmr1.h"
 #include "TCPIPLibrary/network.h"
 

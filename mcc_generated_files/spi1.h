@@ -1,23 +1,23 @@
 /**
-  Generated Pin Manager File
+  SPI1 Generated Driver API Header File
 
-  Company:
+  @Company
     Microchip Technology Inc.
 
-  File Name:
-    pin_manager.c
+  @File Name
+    spi1.h
 
-  Summary:
-    This is the Pin Manager file generated using PIC10 / PIC12 / PIC16 / PIC18 MCUs
+  @Summary
+    This is the generated header file for the SPI1 driver using PIC10 / PIC12 / PIC16 / PIC18 MCUs
 
-  Description:
-    This header file provides implementations for pin APIs for all pins selected in the GUI.
+  @Description
+    This header file provides APIs for driver for SPI1.
     Generation Information :
         Product Revision  :  PIC10 / PIC12 / PIC16 / PIC18 MCUs - 1.81.8
         Device            :  PIC18F66J60
-        Driver Version    :  2.0
+        Driver Version    :  1.0.0
     The generated drivers are tested against the following:
-        Compiler          :  XC8 2.36 and above
+        Compiler          :  XC8 2.36 and above or later
         MPLAB             :  MPLAB X 6.00
 */
 
@@ -44,50 +44,31 @@
     SOFTWARE.
 */
 
-#include "pin_manager.h"
-
-
-void PIN_MANAGER_Initialize(void)
-{
-    /**
-    LATx registers
-    */
-    LATE = 0x00;
-    LATD = 0x00;
-    LATA = 0x00;
-    LATF = 0x00;
-    LATB = 0x00;
-    LATG = 0x00;
-    LATC = 0x00;
-
-    /**
-    TRISx registers
-    */
-    TRISE = 0x00;
-    TRISF = 0xFE;
-    TRISA = 0x3F;
-    TRISG = 0x10;
-    TRISB = 0xFF;
-    TRISC = 0xD6;
-    TRISD = 0x07;
-    
-    /**
-    PCFG setting
-    */   
-    ADCON1bits.PCFG = 0x00;
-
-
-    
-    
-  
-   
-}
-
-void PIN_MANAGER_IOC(void)
-{
-
-}
+#ifndef SPI1_H
+#define SPI1_H
 
 /**
- End of File
+  Section: Included Files
 */
+
+#include <stdio.h>
+#include <stdint.h>
+#include <stdbool.h>
+
+/* SPI interfaces */
+typedef enum { 
+    SPI1_DEFAULT_MODE0,
+    SPI1_DEFAULT_MODE3
+} spi1_modes_t;
+
+void SPI1_Initialize(void);
+bool SPI1_Open(spi1_modes_t spi1UniqueConfiguration);
+void SPI1_Close(void);
+uint8_t SPI1_ExchangeByte(uint8_t data);
+void SPI1_ExchangeBlock(void *block, size_t blockSize);
+void SPI1_WriteBlock(void *block, size_t blockSize);
+void SPI1_ReadBlock(void *block, size_t blockSize);
+void SPI1_WriteByte(uint8_t byte);
+uint8_t SPI1_ReadByte(void);
+
+#endif //SPI1_H

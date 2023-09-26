@@ -79,10 +79,40 @@ void main(void)
 //    OSCTUNE = 0x00;
 //    OSCCON |=2;
     
+    // configure SPI CS pins as outputs:
+    TRISEbits.TRISE0 = 0;
+    TRISEbits.TRISE1 = 0;
+    TRISEbits.TRISE2 = 0;
+    TRISEbits.TRISE3 = 0;
+    TRISEbits.TRISE4 = 0;
+    TRISEbits.TRISE5 = 0;
+    
+    // configure RD0 and RD2 as inputs (to sense LTC2983s ready)
+    TRISDbits.TRISD0 = 1;
+    TRISDbits.TRISD2 = 1;
+    
+    // hold all SPI CS pins high:
+    LATEbits.LATE0 = 1;
+    LATEbits.LATE1 = 1;
+    LATEbits.LATE2 = 1;
+    LATEbits.LATE3 = 1;
+    LATEbits.LATE4 = 1;
+    LATEbits.LATE5 = 1;
+    
+    // debugging outputs:
+    TRISAbits.TRISA2 = 0;
     TRISAbits.TRISA3 = 0;
+    TRISAbits.TRISA4 = 0;
+    TRISAbits.TRISA5 = 0;
+    
+    LATAbits.LATA5 = 0;
+    
     LATAbits.LATA3 = 1;
 //    __delay_ms(1000);
     uint8_t blink_state = 0x00;
+    
+    // raise if SPI1 opened:
+//    LATAbits.LATA2 = SPI1_Open(SPI1_DEFAULT_MODE0);
     
     while (1)
     {
@@ -93,6 +123,7 @@ void main(void)
         LATAbits.LATA3 = blink_state;
         blink_state = ~blink_state;
     }
+//    SPI1_Close();
 }
 /**
  End of File

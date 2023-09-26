@@ -82,11 +82,6 @@ void Network_Init(void)
     IPV4_Init();
     TCP_Init();
     rtcc_init();
-    
-    TRISAbits.TRISA2 = 0;
-    TRISAbits.TRISA5 = 0;
-    TRISAbits.TRISA4 = 0;
-
     Network_WaitForLink();  
     timersInit();
     LOG_Init();

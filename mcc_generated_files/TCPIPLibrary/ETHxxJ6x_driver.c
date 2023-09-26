@@ -399,25 +399,16 @@ int32_t PHY_Read(phyRegister_t reg)
         if(PHY_WaitForBusy() == BUSY_TIMEOUT)
         {
             ret = READ_FAIL;
-            
-            //DEBUG
-            LATAbits.LATA2 = 1;
         }
         else
         {
             MICMDbits.MIIRD = 0;
             ret = MIRD;
-            
-            //DEBUG
-            LATAbits.LATA5 = 1;
         }
     }
     else
     {
         ret = BUSY_TIMEOUT;
-        
-        //DEBUG
-        LATAbits.LATA4 = 1;
     }
     return ret;
 }
