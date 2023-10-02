@@ -47,8 +47,7 @@
 /*
                          Main application
  */
-void main(void)
-{
+void main(void) {
     // Initialize the device
     SYSTEM_Initialize();
     
@@ -79,6 +78,12 @@ void main(void)
 //    OSCTUNE = 0x00;
 //    OSCCON |=2;
     
+    // debugging outputs:
+    TRISAbits.TRISA2 = 0;
+    TRISAbits.TRISA3 = 0;
+    TRISAbits.TRISA4 = 0;
+    TRISAbits.TRISA5 = 0;
+    
     // configure SPI CS pins as outputs:
     TRISEbits.TRISE0 = 0;
     TRISEbits.TRISE1 = 0;
@@ -91,6 +96,8 @@ void main(void)
     TRISDbits.TRISD0 = 1;
     TRISDbits.TRISD2 = 1;
     
+    TRISGbits.TRISG4 = 0;
+    
     // hold all SPI CS pins high:
     LATEbits.LATE0 = 1;
     LATEbits.LATE1 = 1;
@@ -99,11 +106,10 @@ void main(void)
     LATEbits.LATE4 = 1;
     LATEbits.LATE5 = 1;
     
-    // debugging outputs:
-    TRISAbits.TRISA2 = 0;
-    TRISAbits.TRISA3 = 0;
-    TRISAbits.TRISA4 = 0;
-    TRISAbits.TRISA5 = 0;
+    
+    // try inverting UNLAUNCH.
+    LATGbits.LATG4 = 1;
+    
     
     LATAbits.LATA5 = 0;
     
@@ -114,8 +120,7 @@ void main(void)
     // raise if SPI1 opened:
 //    LATAbits.LATA2 = SPI1_Open(SPI1_DEFAULT_MODE0);
     
-    while (1)
-    {
+    while (1) {
         Network_Manage();
         demo_tcp_server();
         

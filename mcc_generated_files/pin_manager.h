@@ -67,6 +67,39 @@
 #define PULL_UP_ENABLED      1
 #define PULL_UP_DISABLED     0
 
+// get/set IO_RB0 aliases
+#define IO_RB0_TRIS                 TRISBbits.TRISB0
+#define IO_RB0_LAT                  LATBbits.LATB0
+#define IO_RB0_PORT                 PORTBbits.RB0
+#define IO_RB0_SetHigh()            do { LATBbits.LATB0 = 1; } while(0)
+#define IO_RB0_SetLow()             do { LATBbits.LATB0 = 0; } while(0)
+#define IO_RB0_Toggle()             do { LATBbits.LATB0 = ~LATBbits.LATB0; } while(0)
+#define IO_RB0_GetValue()           PORTBbits.RB0
+#define IO_RB0_SetDigitalInput()    do { TRISBbits.TRISB0 = 1; } while(0)
+#define IO_RB0_SetDigitalOutput()   do { TRISBbits.TRISB0 = 0; } while(0)
+
+// get/set IO_RB1 aliases
+#define IO_RB1_TRIS                 TRISBbits.TRISB1
+#define IO_RB1_LAT                  LATBbits.LATB1
+#define IO_RB1_PORT                 PORTBbits.RB1
+#define IO_RB1_SetHigh()            do { LATBbits.LATB1 = 1; } while(0)
+#define IO_RB1_SetLow()             do { LATBbits.LATB1 = 0; } while(0)
+#define IO_RB1_Toggle()             do { LATBbits.LATB1 = ~LATBbits.LATB1; } while(0)
+#define IO_RB1_GetValue()           PORTBbits.RB1
+#define IO_RB1_SetDigitalInput()    do { TRISBbits.TRISB1 = 1; } while(0)
+#define IO_RB1_SetDigitalOutput()   do { TRISBbits.TRISB1 = 0; } while(0)
+
+// get/set IO_RB2 aliases
+#define IO_RB2_TRIS                 TRISBbits.TRISB2
+#define IO_RB2_LAT                  LATBbits.LATB2
+#define IO_RB2_PORT                 PORTBbits.RB2
+#define IO_RB2_SetHigh()            do { LATBbits.LATB2 = 1; } while(0)
+#define IO_RB2_SetLow()             do { LATBbits.LATB2 = 0; } while(0)
+#define IO_RB2_Toggle()             do { LATBbits.LATB2 = ~LATBbits.LATB2; } while(0)
+#define IO_RB2_GetValue()           PORTBbits.RB2
+#define IO_RB2_SetDigitalInput()    do { TRISBbits.TRISB2 = 1; } while(0)
+#define IO_RB2_SetDigitalOutput()   do { TRISBbits.TRISB2 = 0; } while(0)
+
 // get/set RC0 procedures
 #define RC0_SetHigh()               do { LATCbits.LATC0 = 1; } while(0)
 #define RC0_SetLow()                do { LATCbits.LATC0 = 0; } while(0)

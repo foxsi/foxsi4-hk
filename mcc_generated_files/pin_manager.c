@@ -45,6 +45,7 @@
 */
 
 #include "pin_manager.h"
+#include "../formatter_interface.h"
 
 
 void PIN_MANAGER_Initialize(void)
@@ -81,10 +82,14 @@ void PIN_MANAGER_Initialize(void)
     
   
    
+	// Enable RBI interrupt
+    INTCONbits.RBIE = 1;
 }
 
 void PIN_MANAGER_IOC(void)
 {
+	// Clear global Interrupt-On-Change flag
+    INTCONbits.RBIF = 0;
 
 }
 

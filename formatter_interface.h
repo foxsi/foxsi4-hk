@@ -48,8 +48,43 @@ extern "C" {
 #define FOXSI_RTD_READ_ALL              0xf2    // read all outputs (if data ready)
 #define FOXSI_RTD_MIN_DELAY_US          10
     
+#define FOXSI_INTRO                     0x07
+#define FOXSI_INTRO_SET_FLIGHT_STATE    0xf0    // expect 1 B argument specifying state.
+#define FOXSI_INTRO_SET_UNLAUNCH        0xf1    // no more arguments. Just set FOXSI_CURRENT_STATE.
+#define FOXSI_INTRO_SET_ERRORS          0xe0    // expect 2 B of error mask after.
+#define FOXSI_INTRO_GET_FLIGHT_STATE    0x0f    // reply 1 B
+#define FOXSI_INTRO_GET_ERRORS          0x0e
+#define FOXSI_INTRO_GET_SYNC_COUNTER    0x0c
+#define FOXSI_INTRO_GET_CURRENT_CLOCK   0x0d
+
+    enum FOXSI_FLIGHT_STATE{
+        FOXSI_FLIGHT_STATE_AWAIT,
+        FOXSI_FLIGHT_STATE_UNLAUNCH,
+        FOXSI_FLIGHT_STATE_PRELAUNCH,
+        FOXSI_FLIGHT_STATE_SHUTTER,
+        FOXSI_FLIGHT_STATE_END
+    };
+    
+    uint8_t                     FOXSI_CURRENT_STATE;
+    
+    enum FOXSI_ERROR_MASK{
+        FOXSI_ERROR_INIT,
+        FOXSI_ERROR_ETH_RECV_MSB,
+        FOXSI_ERROR_POWER_SWITCH,
+        FOXSI_ERROR_POWER_HEALTH,
+        FOXSI_ERROR_RTD1,
+        FOXSI_ERROR_RTD2,
+        FOXSI_ERROR_RTD,
+        FOXSI_ERROR_INTRO
+    };
+    
+    // log timing information for PPS
+    uint32_t                    FOXSI_TIME_LONG;
+    #define                     FOXSI_SYNC_LOG_SIZE 8
+    uint32_t                    FOXSI_SYNC_LOG[FOXSI_SYNC_LOG_SIZE];
+    
     // for tracking different error types in software. Move this to a separate header, define macros for each bit.
-    static uint16_t             ERRORS;
+    uint16_t                    FOXSI_ERRORS;
     
     // like demo_tcp_server()---entry point for received Ethernet packets. 
     // Inside, delegate to handler for specific system.
@@ -81,6 +116,15 @@ extern "C" {
     
     // for reflective (on PIC) health data:
     void introspect_handler(tcpTCB_t* port, uint8_t* recv_buff, size_t recv_size);
+    
+    // work to do each loop:
+    void main_loop_handler();
+    
+    // initialize these systems:
+    void housekeeping_init();
+    
+    // to read TMR1 and store value as uint32_t (rather than uint16_t)
+    void lengthen_time();
    
     
     

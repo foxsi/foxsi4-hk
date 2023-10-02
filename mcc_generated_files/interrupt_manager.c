@@ -48,6 +48,7 @@
 
 #include "interrupt_manager.h"
 #include "mcc.h"
+#include "../formatter_interface.h"
 
 void  INTERRUPT_Initialize (void)
 {
@@ -58,6 +59,28 @@ void  INTERRUPT_Initialize (void)
 void __interrupt() INTERRUPT_InterruptManager (void)
 {
     // interrupt handler
+    if(INTCONbits.RBIE == 1 && INTCONbits.RBIF == 1)
+    {
+        PIN_MANAGER_IOC();
+
+        // state-related work:
+        if (PORTBbits.RB0 == 1) {  // SYNC signal raised. 
+            // call lengthen_time()
+            lengthen_time();    // modifies FOXSI global timer
+        }
+
+        if (PORTBbits.RB1 == 1) {  // PRELAUNCH raised.
+            FOXSI_CURRENT_STATE = FOXSI_FLIGHT_STATE_PRELAUNCH;
+        }
+
+        if (PORTBbits.RB2 == 1) {  // SHUTTER raised.
+            if (FOXSI_CURRENT_STATE == FOXSI_FLIGHT_STATE_SHUTTER) {
+                FOXSI_CURRENT_STATE = FOXSI_FLIGHT_STATE_END;
+            } else {
+                FOXSI_CURRENT_STATE = FOXSI_FLIGHT_STATE_SHUTTER;
+            }
+        }
+    }
     if(INTCONbits.PEIE == 1)
     {
         if(PIE1bits.TMR1IE == 1 && PIR1bits.TMR1IF == 1)
