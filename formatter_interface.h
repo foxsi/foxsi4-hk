@@ -53,9 +53,9 @@ extern "C" {
 #define FOXSI_INTRO_SET_UNLAUNCH        0xf1    // no more arguments. Just set FOXSI_CURRENT_STATE.
 #define FOXSI_INTRO_SET_ERRORS          0xe0    // expect 2 B of error mask after.
 #define FOXSI_INTRO_GET_FLIGHT_STATE    0x0f    // reply 1 B
-#define FOXSI_INTRO_GET_ERRORS          0x0e
+#define FOXSI_INTRO_GET_ERRORS          0x0e    // return 1 B errors
 #define FOXSI_INTRO_GET_SYNC_COUNTER    0x0c
-#define FOXSI_INTRO_GET_CURRENT_CLOCK   0x0d
+#define FOXSI_INTRO_GET_CURRENT_CLOCK   0x0d    // return 2 B current clock counter
 
     enum FOXSI_FLIGHT_STATE{
         FOXSI_FLIGHT_STATE_AWAIT,

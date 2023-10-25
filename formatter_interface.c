@@ -53,13 +53,36 @@ void power_switch_handler(tcpTCB_t* port, uint8_t* recv_buff, size_t recv_size) 
             LATEbits.LATE2 = 1;
             TCP_Send(port, recv_buff, 1);
         } else {
-            // bring CS low:
-            LATEbits.LATE2 = 0;
-            SPI1_WriteBlock(recv_buff + 1, recv_size - 1);
-//            for (int i = 1; i < recv_size; ++i) {
-//                SPI1_WriteByte(recv_buff[i]);
-//            }
-            LATEbits.LATE2 = 1;
+            
+            if (recv_buff[1] == 0x09) {
+                // formatter reset case
+                if (recv_size < 3) {
+                    // case where command is too short. should not end up here
+                    FOXSI_ERRORS |= FOXSI_ERROR_POWER_SWITCH;
+                    return;
+                } else {
+                    // case where command is long enough
+                    if (recv_buff[2] == 0x01) {
+                        // case where command is to reset formatter
+                        uint8_t spi_msg[2] = {0x09, 0x00};
+                        LATEbits.LATE2 = 0;
+                        SPI1_WriteBlock(spi_msg, 2);
+                        LATEbits.LATE2 = 1;
+                        __delay_ms(1);
+                        
+                        spi_msg[1] = 0x01;
+                        LATEbits.LATE2 = 0;
+                        SPI1_WriteBlock(spi_msg, 2);
+                        LATEbits.LATE2 = 1;
+                    }
+                }
+            } else {
+                // non-formatter reset case
+                // bring CS low:
+                LATEbits.LATE2 = 0;
+                SPI1_WriteBlock(recv_buff + 1, recv_size - 1);
+                LATEbits.LATE2 = 1;
+            }
         }    
     } else {
         // should not end up here
