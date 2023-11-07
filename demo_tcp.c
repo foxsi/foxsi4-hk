@@ -17,8 +17,8 @@ void demo_tcp_server()
     static tcpTCB_t port7TCB;
 
     // create the TX and RX Server's buffers
-    static uint8_t rxdataPort7[20];
-    static uint8_t txdataPort7[20];
+    static uint8_t rxdataPort7[64];
+    static uint8_t txdataPort7[64];
 
     uint16_t rxLen, txLen, i;
     socketState_t socket_state;

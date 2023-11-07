@@ -87,10 +87,6 @@ void power_health_handler(tcpTCB_t* port, uint8_t* recv_buff, size_t recv_size) 
                 uint8_t response_index = 2*i - 2;
                 
                 if (i == 0x0f) {            // send this one twice.
-                    
-//                    ctrl = FOXSI_POWER_HEALTH_CONTROL_MASK | power_health_convert_addr(i);
-//                    bytes_from_uint16_t(ctrl, spi_tx_buff);
-                    
                     // first send
                     LATEbits.LATE3 = 0;
                     SPI1_ExchangeBlock(spi_tx_buff, 2);
@@ -99,7 +95,6 @@ void power_health_handler(tcpTCB_t* port, uint8_t* recv_buff, size_t recv_size) 
                     
                     response[response_index + 1] = spi_tx_buff[1];
                     response[response_index] = spi_tx_buff[0];
-                    
                     
                     // reapply the tx control packet mask
                     ctrl = FOXSI_POWER_HEALTH_CONTROL_MASK | power_health_convert_addr(i);
@@ -158,8 +153,6 @@ void power_health_handler(tcpTCB_t* port, uint8_t* recv_buff, size_t recv_size) 
             LATEbits.LATE3 = 1;
             
             // build Ethernet payload (MSB, LSB order)
-//            response[1] = spi_tx_buff & 0xff;
-//            response[0] = (spi_tx_buff >> 8) & 0xff;
             response[1] = spi_tx_buff[1];
             response[0] = spi_tx_buff[0];
             
@@ -209,6 +202,7 @@ void rtd1_handler(tcpTCB_t* port, uint8_t* recv_buff, size_t recv_size) {
                 
             } else {
                 // invalid CH identifier.
+                FOXSI_ERRORS |= FOXSI_ERROR_RTD1;
             }
         }
     }
@@ -233,7 +227,7 @@ void rtd2_handler(tcpTCB_t* port, uint8_t* recv_buff, size_t recv_size) {
                 
             } else {
                 // invalid CH identifier.
-                FOXSI_ERRORS |= FOXSI_ERROR_RTD1;
+                FOXSI_ERRORS |= FOXSI_ERROR_RTD2;
             }
         }
     }
@@ -331,17 +325,16 @@ void rtd_start_all_conversion(uint8_t rtd_num) {
 }
 
 void rtd_read_all(tcpTCB_t* port, uint8_t rtd_num) {
-    uint8_t spi_tx_buff[7];
-    uint8_t response[4*9];
+    uint8_t response[4*FOXSI_RTD_COUNT];
     
     if (rtd_num == FOXSI_RTD1) {
-        
         // check if INTERRUPT asserted.
         if (PORTDbits.RD0 == 1) {
-            for (int i = 0; i < FOXSI_RTD_COUNT; ++i) {
+            for (uint16_t i = 0; i < FOXSI_RTD_COUNT; ++i) {
                 // assign/reassign value of spi_tx_buff 
+                uint8_t spi_tx_buff[7];
                 spi_tx_buff[0] = FOXSI_RTD_RD_CMD;
-                bytes_from_uint16_t(FOXSI_RTD_RD_ADDR + 8*i, spi_tx_buff + 1);
+                bytes_from_uint16_t((uint16_t)FOXSI_RTD_RD_ADDR + 8*i, spi_tx_buff + 1);
                 for (int j = 3; j < 7; ++j) {
                     spi_tx_buff[j] = 0;
                 }
@@ -357,15 +350,14 @@ void rtd_read_all(tcpTCB_t* port, uint8_t rtd_num) {
             }
         }
         
-        TCP_Send(port, response, 36);
-        
     } else if (rtd_num == FOXSI_RTD2) {
         // check if INTERRUPT asserted.
-        if (PORTDbits.RD0 == 1) {
-            for (int i = 0; i < FOXSI_RTD_COUNT; ++i) {
+        if (PORTDbits.RD2 == 1) {
+            for (uint16_t i = 0; i < FOXSI_RTD_COUNT; ++i) {
                 // assign/reassign value of spi_tx_buff 
+                uint8_t spi_tx_buff[7];
                 spi_tx_buff[0] = FOXSI_RTD_RD_CMD;
-                bytes_from_uint16_t(FOXSI_RTD_RD_ADDR + 8*i, spi_tx_buff + 1);
+                bytes_from_uint16_t((uint16_t)FOXSI_RTD_RD_ADDR + 8*i, spi_tx_buff + 1);
                 for (int j = 3; j < 7; ++j) {
                     spi_tx_buff[j] = 0;
                 }
@@ -380,13 +372,12 @@ void rtd_read_all(tcpTCB_t* port, uint8_t rtd_num) {
                 response[4*i + 3] = spi_tx_buff[6];
             }
         }
-        
-        TCP_Send(port, response, 36);
     } else {
         // shouldn't end up here.
         FOXSI_ERRORS |= FOXSI_ERROR_RTD;
     }
-    
+    error_msg err = TCP_Send(port, response, 4*FOXSI_RTD_COUNT);
+    // todo: consider adding a FOXSI_ERROR_MASK entry for err != SUCCESS.
 }
 
 void introspect_handler(tcpTCB_t* port, uint8_t* recv_buff, size_t recv_size) {
@@ -397,11 +388,11 @@ void introspect_handler(tcpTCB_t* port, uint8_t* recv_buff, size_t recv_size) {
                     FOXSI_CURRENT_STATE = recv_buff[2];
                 } else {
                     // shouldn't end up here.
-                    FOXSI_ERRORS |= FOXSI_ERROR_INTRO;
+                    FOXSI_ERRORS |= (uint8_t)FOXSI_ERROR_INTRO;
                 }
                 break;
             case FOXSI_INTRO_SET_UNLAUNCH:
-                FOXSI_CURRENT_STATE = FOXSI_FLIGHT_STATE_UNLAUNCH;
+                FOXSI_CURRENT_STATE = (uint8_t)FOXSI_FLIGHT_STATE_UNLAUNCH;
                 LATGbits.LATG4 = 0;
                 
                 // todo: set low again ever?
@@ -412,12 +403,12 @@ void introspect_handler(tcpTCB_t* port, uint8_t* recv_buff, size_t recv_size) {
                     FOXSI_ERRORS |= recv_buff[3];
                 } else {
                     // shouldn't end up here.
-                    FOXSI_ERRORS |= FOXSI_ERROR_INTRO;
+                    FOXSI_ERRORS |= (uint8_t)FOXSI_ERROR_INTRO;
                 }
                 break;
             case FOXSI_INTRO_GET_FLIGHT_STATE: {     
                 uint8_t response[2];
-                bytes_from_uint16_t(FOXSI_CURRENT_STATE, response);
+                bytes_from_uint16_t((uint16_t)FOXSI_CURRENT_STATE, response);
                 // send on Ethernet
                 TCP_Send(port, response, 2);
                 break;
@@ -433,11 +424,13 @@ void introspect_handler(tcpTCB_t* port, uint8_t* recv_buff, size_t recv_size) {
                 bytes_from_uint32_t(FOXSI_TIME_LONG, response);
                 TCP_Send(port, response, 4);
                 break;
-                
+            }
+            case FOXSI_INTRO_GET_CORE_CLOCK: {
+                uint8_t response[2];
+                bytes_from_uint16_t(TMR1_ReadTimer(), response);
+                TCP_Send(port, response, 2);
             }
             case FOXSI_INTRO_GET_SYNC_COUNTER: {
-                // todo: write it
-                
                 uint8_t response[32];
                 for (int i = 0; i < 32; i += 4) {
                     bytes_from_uint32_t(FOXSI_SYNC_LOG[i/8], response + i);
@@ -456,7 +449,7 @@ void introspect_handler(tcpTCB_t* port, uint8_t* recv_buff, size_t recv_size) {
 }
 
 
-
+ 
 void lengthen_time() {
     
     // this should only be called by ISR for SYNC input signal.
@@ -466,8 +459,8 @@ void lengthen_time() {
     
     uint16_t sys_last_time = TMR1_ReadTimer();
     
-    uint16_t big_old_lsb = FOXSI_TIME_LONG & 0xffff;
-    uint16_t big_old_msb = (FOXSI_TIME_LONG >> 16) & 0xffff;
+    uint16_t big_old_lsb = (uint16_t)FOXSI_TIME_LONG & 0xffff;
+    uint16_t big_old_msb = (uint16_t)((FOXSI_TIME_LONG >> 16) & 0xffff);
     // timer rolled over:
     if (sys_last_time < big_old_lsb) {
         // increment "rollover counter" part of FOXSI_TIME_LONG (leading 16 b):
@@ -491,10 +484,10 @@ void bytes_from_uint16_t(uint16_t source, uint8_t* store) {
     store[1] = (uint8_t)((source) & 0xff);
 }
 void bytes_from_uint32_t(uint32_t source, uint8_t* store) {
-    store[0] = (source >> 24) & 0xff;
-    store[1] = (source >> 16) & 0xff;
-    store[2] = (source >> 8) & 0xff;
-    store[3] = (source) & 0xff;
+    store[0] = (uint8_t)((source >> 24) & 0xff);
+    store[1] = (uint8_t)((source >> 16) & 0xff);
+    store[2] = (uint8_t)((source >> 8) & 0xff);
+    store[3] = (uint8_t)((source) & 0xff);
 }
 void swap_byte_order(uint8_t* data, size_t size) {
     uint8_t temp = data[0];

@@ -17,7 +17,7 @@ extern "C" {
 #include "mcc_generated_files/TCPIPLibrary/tcpv4.h"
 #include "mcc_generated_files/spi1.h"
     
-#define FOXSI_ETHER_BUFF_SIZE           32;
+#define FOXSI_ETHER_BUFF_SIZE           64;
     
 // These are SPI CS signal number == SPI REx pin number + 1 == ethernet receive msg[0]
 #define FOXSI_POWER_SWITCH              0x03    // for U8/MAX7317 on power board
@@ -56,6 +56,7 @@ extern "C" {
 #define FOXSI_INTRO_GET_ERRORS          0x0e
 #define FOXSI_INTRO_GET_SYNC_COUNTER    0x0c
 #define FOXSI_INTRO_GET_CURRENT_CLOCK   0x0d
+#define FOXSI_INTRO_GET_CORE_CLOCK      0x0b
 
     enum FOXSI_FLIGHT_STATE{
         FOXSI_FLIGHT_STATE_AWAIT,

@@ -62,25 +62,29 @@ void __interrupt() INTERRUPT_InterruptManager (void)
     if(INTCONbits.RBIE == 1 && INTCONbits.RBIF == 1)
     {
         PIN_MANAGER_IOC();
+        
+        //DEBUG
+//        LATEbits.LATE3 = 0;
 
-        // state-related work:
-        if (PORTBbits.RB0 == 1) {  // SYNC signal raised. 
-            // call lengthen_time()
-            lengthen_time();    // modifies FOXSI global timer
-        }
-
-        if (PORTBbits.RB1 == 1) {  // PRELAUNCH raised.
-            FOXSI_CURRENT_STATE = FOXSI_FLIGHT_STATE_PRELAUNCH;
-        }
-
-        if (PORTBbits.RB2 == 1) {  // SHUTTER raised.
-            if (FOXSI_CURRENT_STATE == FOXSI_FLIGHT_STATE_SHUTTER) {
-                FOXSI_CURRENT_STATE = FOXSI_FLIGHT_STATE_END;
-            } else {
-                FOXSI_CURRENT_STATE = FOXSI_FLIGHT_STATE_SHUTTER;
-            }
-        }
+//        // state-related work:
+//        if (PORTBbits.RB0 == 1) {  // SYNC signal raised. 
+//            // call lengthen_time()
+//            lengthen_time();    // modifies FOXSI global timer
+//        }
+//
+//        if (PORTBbits.RB1 == 1) {  // PRELAUNCH raised.
+//            FOXSI_CURRENT_STATE = (uint8_t)FOXSI_FLIGHT_STATE_PRELAUNCH;
+//        }
+//
+//        if (PORTBbits.RB2 == 1) {  // SHUTTER raised.
+//            if (FOXSI_CURRENT_STATE == (uint8_t)FOXSI_FLIGHT_STATE_SHUTTER) {
+//                FOXSI_CURRENT_STATE = (uint8_t)FOXSI_FLIGHT_STATE_END;
+//            } else {
+//                FOXSI_CURRENT_STATE = (uint8_t)FOXSI_FLIGHT_STATE_SHUTTER;
+//            }
+//        }
     }
+    
     if(INTCONbits.PEIE == 1)
     {
         if(PIE1bits.TMR1IE == 1 && PIR1bits.TMR1IF == 1)

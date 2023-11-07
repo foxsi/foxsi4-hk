@@ -110,7 +110,6 @@ void main(void) {
     // try inverting UNLAUNCH.
     LATGbits.LATG4 = 1;
     
-    
     LATAbits.LATA5 = 0;
     
     LATAbits.LATA3 = 1;
