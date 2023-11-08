@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=foxsi4-hk
+PROJECTNAME=housekeeping.X
 
 # Active Configuration
 DEFAULTCONF=default

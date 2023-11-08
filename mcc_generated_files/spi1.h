@@ -58,6 +58,7 @@
 /* SPI interfaces */
 typedef enum { 
     SPI1_DEFAULT_MODE0,
+    SPI1_DEFAULT_MODE1,
     SPI1_DEFAULT_MODE3
 } spi1_modes_t;
 

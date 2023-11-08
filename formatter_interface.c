@@ -9,7 +9,7 @@ void ethernet_handler(tcpTCB_t* port, uint8_t* recv_buff, size_t recv_size) {
     if (recv_size > 0) {
         switch (recv_buff[0]) {
             case FOXSI_POWER_SWITCH:
-                SPI1_Open(SPI1_DEFAULT_MODE0);
+                SPI1_Open(SPI1_DEFAULT_MODE1);
                 power_switch_handler(port, recv_buff, recv_size);
                 SPI1_Close();
                 break;
