@@ -45,7 +45,6 @@
 */
 
 #include "pin_manager.h"
-#include "../formatter_interface.h"
 
 
 void PIN_MANAGER_Initialize(void)
@@ -69,7 +68,7 @@ void PIN_MANAGER_Initialize(void)
     TRISA = 0x3F;
     TRISG = 0x10;
     TRISB = 0xFF;
-    TRISC = 0xD6;
+    TRISC = 0x96;
     TRISD = 0x07;
     
     /**
@@ -88,6 +87,7 @@ void PIN_MANAGER_Initialize(void)
 
 void PIN_MANAGER_IOC(void)
 {
+	
 	// Clear global Interrupt-On-Change flag
     INTCONbits.RBIF = 0;
 

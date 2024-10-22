@@ -16,6 +16,7 @@ extern "C" {
 #include "mcc_generated_files/mcc.h"
 #include "mcc_generated_files/TCPIPLibrary/tcpv4.h"
 #include "mcc_generated_files/spi1.h"
+#include "mcc_generated_files/drivers/uart.h"
     
 #define FOXSI_ETHER_BUFF_SIZE           64;
     
@@ -136,6 +137,9 @@ extern "C" {
     
 
 
+    
+    void uart_write_string(char *str);
+    
 #ifdef	__cplusplus
 }
 #endif
