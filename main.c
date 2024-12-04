@@ -120,7 +120,7 @@ void main(void) {
     // raise if SPI1 opened:
 //    LATAbits.LATA2 = SPI1_Open(SPI1_DEFAULT_MODE0);
     
-    const char *string = "Transmit test\n";
+    const char *string = "Transmit test\n\r";
     
     while (1) {
         Network_Manage();
@@ -129,7 +129,7 @@ void main(void) {
         // Add your application code
         LATAbits.LATA3 = blink_state;
         blink_state = ~blink_state;
-        uart_write_string(string);
+//        uart_write_string(string);
     }
 //    SPI1_Close();
 }
