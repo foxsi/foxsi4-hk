@@ -24,14 +24,17 @@ void demo_tcp_server()
     socketState_t socket_state;
 
     socket_state = TCP_SocketPoll(&port7TCB);
+    
 
     switch(socket_state)
     {
         case NOT_A_SOCKET:
+//            uart_write_string("NOT_A_SOCKET\n\r");
             // Inserting and initializing the socket
             TCP_SocketInit(&port7TCB);
             break;
         case SOCKET_CLOSED:
+//            uart_write_string("SOCKET_CLOSED\n\r");
             //configure the local port
             TCP_Bind(&port7TCB, 7777);
             // add receive buffer
@@ -40,6 +43,7 @@ void demo_tcp_server()
             TCP_Listen(&port7TCB);
             break;
         case SOCKET_CONNECTED:
+//            uart_write_string("SOCKET_CONNECTED\n\r");
             // check if the buffer was sent, if yes we can send another buffer
             if(TCP_SendDone(&port7TCB))
             {
@@ -66,10 +70,12 @@ void demo_tcp_server()
             }
             break;
         case SOCKET_CLOSING:
+//            uart_write_string("SOCKET_CLOSING\n\r");
             TCP_SocketRemove(&port7TCB);
             break;
             
         default:
+//            uart_write_string("SOCKET default\n\r");
             // we should not end up here
             break;
     }
