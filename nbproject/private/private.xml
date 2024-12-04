@@ -5,11 +5,11 @@
         <group>
             <file>file:/Users/thanasi/MPLABXProjects/housekeeping.X/demo_tcp.c</file>
             <file>file:/Users/thanasi/MPLABXProjects/housekeeping.X/formatter_interface.c</file>
-            <file>file:/Users/thanasi/MPLABXProjects/housekeeping.X/mcc_generated_files/spi1.c</file>
-            <file>file:/Users/thanasi/MPLABXProjects/housekeeping.X/mcc_generated_files/spi1.h</file>
+            <file>file:/Users/thanasi/MPLABXProjects/housekeeping.X/mcc_generated_files/pin_manager.h</file>
+            <file>file:/Users/thanasi/MPLABXProjects/housekeeping.X/mcc_generated_files/mcc.c</file>
+            <file>file:/Users/thanasi/MPLABXProjects/housekeeping.X/mcc_generated_files/TCPIPLibrary/tcpv4.c</file>
             <file>file:/Users/thanasi/MPLABXProjects/housekeeping.X/main.c</file>
-            <file>file:/Users/thanasi/MPLABXProjects/housekeeping.X/formatter_interface.h</file>
-            <file>file:/Users/thanasi/MPLABXProjects/housekeeping.X/mcc_generated_files/interrupt_manager.c</file>
+            <file>file:/Users/thanasi/MPLABXProjects/housekeeping.X/mcc_generated_files/mcc.h</file>
             <file>file:/Users/thanasi/MPLABXProjects/housekeeping.X/mcc_generated_files/pin_manager.c</file>
         </group>
     </open-files>

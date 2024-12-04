@@ -2,6 +2,7 @@
 //#include "mcc_generated_files/spi1.h"
 //#include "mcc_generated_files/mcc.h"
 #include "formatter_interface.h"
+#include <string.h>
 
 void ethernet_handler(tcpTCB_t* port, uint8_t* recv_buff, size_t recv_size) {
     
@@ -518,5 +519,14 @@ void swap_byte_order(uint8_t* data, size_t size) {
     data[size - 1] = temp;
     for (int i = 1; i < size; ++i) {
         data[i] = data[size - i - 1];
+    }
+}
+
+void uart_write_string(char *str) {
+    uint8_t count = 0; 
+	
+    while (count < strlen(str)){
+        uart[UART0].Write(str[count]);
+        count++;
     }
 }

@@ -6,6 +6,10 @@
          <string>class com.microchip.mcc.modules.mcu8.protocol.arp.ARP</string>
       </entry>
       <entry>
+         <string>EUSART1</string>
+         <string>class com.microchip.mcc.mcu8.modules.eusart.EUSART</string>
+      </entry>
+      <entry>
          <string>ICMP</string>
          <string>class com.microchip.mcc.modules.mcu8.protocol.icmp.ICMP</string>
       </entry>
@@ -54,6 +58,10 @@
          <string>class com.microchip.mcc.mcu8.modules.tmr1.TMR1</string>
       </entry>
       <entry>
+         <string>UART</string>
+         <string>class com.microchip.mcc.foundationservices.modules.softwaredriver.UART.UART</string>
+      </entry>
+      <entry>
          <string>UDP</string>
          <string>class com.microchip.mcc.modules.mcu8.protocol.udp.UDP</string>
       </entry>
@@ -63,13 +71,386 @@
       </entry>
    </usedClasses>
    <usedLibraries class="java.util.ArrayList">
-      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.mcu8.Mcu8PeripheralLibrary" version="1.82.1"/>
       <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.TCPIPLite.TCPIPLite" version="2.2.13"/>
+      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.mcu8.Mcu8PeripheralLibrary" version="1.82.1"/>
+      <ILibraryFile class="com.microchip.mcc.core.library.BaseLibraryFile" libraryClass="com.microchip.mcc.foundationservices.library.FoundationServicesLibrary" version="0.2.3"/>
    </usedLibraries>
    <tokenMap class="java.util.TreeMap">
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="ARP" name="TableSize"/>
          <value>8</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="EUSART1" name="CK1"/>
+         <value>enabled</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="EUSART1" name="DT1"/>
+         <value>disabled</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="EUSART1" name="EUSART1_RCIISRFunction"/>
+         <value>RxDefaultInterruptHandler</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="EUSART1" name="EUSART1_TXIISRFunction"/>
+         <value>TxDefaultInterruptHandler</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="EUSART1" name="SWRXBufferSize"/>
+         <value>8</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="EUSART1" name="SWTXBufferSize"/>
+         <value>8</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="EUSART1" name="baudRateComboBox"/>
+         <value>9600</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="EUSART1" name="baudRateErrorLabel"/>
+         <value>Error: 0.006 %</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="EUSART1" name="baudprocessmode"/>
+         <value>easysetup</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="EUSART1" name="dt_pin_direction"/>
+         <value>out</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="EUSART1" name="eusartInterrupts"/>
+         <value>disabled</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="EUSART1" name="systemClockValue"/>
+         <value>25000000</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="EUSART1" name="templateNameValue"/>
+         <value>eusart_noninterrupt</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="EUSART1" name="useStdio"/>
+         <value>disabled</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="EUSART1" registerAlias="BAUDCON" settingAlias="ABDEN" alias="disabled"/>
+         <value>0</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="EUSART1" registerAlias="BAUDCON" settingAlias="ABDEN" alias="enabled"/>
+         <value>1</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="EUSART1" registerAlias="BAUDCON" settingAlias="ABDOVF" alias="no_overflow"/>
+         <value>0</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="EUSART1" registerAlias="BAUDCON" settingAlias="ABDOVF" alias="overflow"/>
+         <value>1</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="EUSART1" registerAlias="BAUDCON" settingAlias="BRG16" alias="16bit_generator"/>
+         <value>1</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="EUSART1" registerAlias="BAUDCON" settingAlias="BRG16" alias="8bit_generator"/>
+         <value>0</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="EUSART1" registerAlias="BAUDCON" settingAlias="DTRXP" alias="inverted"/>
+         <value>1</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="EUSART1" registerAlias="BAUDCON" settingAlias="DTRXP" alias="not_inverted"/>
+         <value>0</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="EUSART1" registerAlias="BAUDCON" settingAlias="RCIDL" alias="bit_received"/>
+         <value>0</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="EUSART1" registerAlias="BAUDCON" settingAlias="RCIDL" alias="idle"/>
+         <value>1</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="EUSART1" registerAlias="BAUDCON" settingAlias="SCKP" alias="async_inverted_sync_risingedge"/>
+         <value>1</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="EUSART1" registerAlias="BAUDCON" settingAlias="SCKP" alias="async_noninverted_sync_fallingedge"/>
+         <value>0</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="EUSART1" registerAlias="BAUDCON" settingAlias="WUE" alias="disabled"/>
+         <value>0</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="EUSART1" registerAlias="BAUDCON" settingAlias="WUE" alias="enabled"/>
+         <value>1</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="EUSART1" registerAlias="RCSTA" settingAlias="ADDEN" alias="disabled"/>
+         <value>0</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="EUSART1" registerAlias="RCSTA" settingAlias="ADDEN" alias="enabled"/>
+         <value>1</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="EUSART1" registerAlias="RCSTA" settingAlias="CREN" alias="disabled"/>
+         <value>0</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="EUSART1" registerAlias="RCSTA" settingAlias="CREN" alias="enabled"/>
+         <value>1</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="EUSART1" registerAlias="RCSTA" settingAlias="FERR" alias="error"/>
+         <value>1</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="EUSART1" registerAlias="RCSTA" settingAlias="FERR" alias="no_error"/>
+         <value>0</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="EUSART1" registerAlias="RCSTA" settingAlias="OERR" alias="error"/>
+         <value>1</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="EUSART1" registerAlias="RCSTA" settingAlias="OERR" alias="no_error"/>
+         <value>0</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="EUSART1" registerAlias="RCSTA" settingAlias="RX9" alias="8-bit"/>
+         <value>0</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="EUSART1" registerAlias="RCSTA" settingAlias="RX9" alias="9-bit"/>
+         <value>1</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="EUSART1" registerAlias="RCSTA" settingAlias="SPEN" alias="disabled"/>
+         <value>0</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="EUSART1" registerAlias="RCSTA" settingAlias="SPEN" alias="enabled"/>
+         <value>1</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="EUSART1" registerAlias="RCSTA" settingAlias="SREN" alias="disabled"/>
+         <value>0</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="EUSART1" registerAlias="RCSTA" settingAlias="SREN" alias="enabled"/>
+         <value>1</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="EUSART1" registerAlias="TXSTA" settingAlias="BRGH" alias="hi_speed"/>
+         <value>1</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="EUSART1" registerAlias="TXSTA" settingAlias="BRGH" alias="lo_speed"/>
+         <value>0</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="EUSART1" registerAlias="TXSTA" settingAlias="CSRC" alias="master_mode"/>
+         <value>1</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="EUSART1" registerAlias="TXSTA" settingAlias="CSRC" alias="slave_mode"/>
+         <value>0</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="EUSART1" registerAlias="TXSTA" settingAlias="SENDB" alias="send_sync_break_next"/>
+         <value>1</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="EUSART1" registerAlias="TXSTA" settingAlias="SENDB" alias="sync_break_complete"/>
+         <value>0</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="EUSART1" registerAlias="TXSTA" settingAlias="SYNC" alias="asynchronous"/>
+         <value>0</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="EUSART1" registerAlias="TXSTA" settingAlias="SYNC" alias="synchronous"/>
+         <value>1</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="EUSART1" registerAlias="TXSTA" settingAlias="TRMT" alias="TSR_empty"/>
+         <value>1</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="EUSART1" registerAlias="TXSTA" settingAlias="TRMT" alias="TSR_full"/>
+         <value>0</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="EUSART1" registerAlias="TXSTA" settingAlias="TX9" alias="8-bit"/>
+         <value>0</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="EUSART1" registerAlias="TXSTA" settingAlias="TX9" alias="9-bit"/>
+         <value>1</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="EUSART1" registerAlias="TXSTA" settingAlias="TXEN" alias="disabled"/>
+         <value>0</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.OptionKey" moduleName="EUSART1" registerAlias="TXSTA" settingAlias="TXEN" alias="enabled"/>
+         <value>1</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="EUSART1" registerAlias="BAUDCON"/>
+         <value>8</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="EUSART1" registerAlias="RCSTA"/>
+         <value>144</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="EUSART1" registerAlias="SPBRGH"/>
+         <value>2</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="EUSART1" registerAlias="SPBRGL"/>
+         <value>138</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="EUSART1" registerAlias="TXREG"/>
+         <value>0</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="EUSART1" registerAlias="TXSTA"/>
+         <value>36</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="EUSART1" registerAlias="BAUDCON" settingAlias="ABDEN"/>
+         <value>disabled</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="EUSART1" registerAlias="BAUDCON" settingAlias="ABDOVF"/>
+         <value>no_overflow</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="EUSART1" registerAlias="BAUDCON" settingAlias="BRG16"/>
+         <value>16bit_generator</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="EUSART1" registerAlias="BAUDCON" settingAlias="DTRXP"/>
+         <value>not_inverted</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="EUSART1" registerAlias="BAUDCON" settingAlias="RCIDL"/>
+         <value>idle</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="EUSART1" registerAlias="BAUDCON" settingAlias="SCKP"/>
+         <value>async_noninverted_sync_fallingedge</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="EUSART1" registerAlias="BAUDCON" settingAlias="WUE"/>
+         <value>disabled</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="EUSART1" registerAlias="RCI" settingAlias="enable"/>
+         <value>disabled</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="EUSART1" registerAlias="RCI" settingAlias="flag"/>
+         <value>disabled</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="EUSART1" registerAlias="RCI" settingAlias="order"/>
+         <value>-1</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="EUSART1" registerAlias="RCI" settingAlias="priority"/>
+         <value>1</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="EUSART1" registerAlias="RCSTA" settingAlias="ADDEN"/>
+         <value>disabled</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="EUSART1" registerAlias="RCSTA" settingAlias="CREN"/>
+         <value>enabled</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="EUSART1" registerAlias="RCSTA" settingAlias="FERR"/>
+         <value>no_error</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="EUSART1" registerAlias="RCSTA" settingAlias="OERR"/>
+         <value>no_error</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="EUSART1" registerAlias="RCSTA" settingAlias="RX9"/>
+         <value>8-bit</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="EUSART1" registerAlias="RCSTA" settingAlias="RX9D"/>
+         <value>0</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="EUSART1" registerAlias="RCSTA" settingAlias="SPEN"/>
+         <value>enabled</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="EUSART1" registerAlias="RCSTA" settingAlias="SREN"/>
+         <value>disabled</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="EUSART1" registerAlias="TXI" settingAlias="enable"/>
+         <value>disabled</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="EUSART1" registerAlias="TXI" settingAlias="flag"/>
+         <value>disabled</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="EUSART1" registerAlias="TXI" settingAlias="order"/>
+         <value>-1</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="EUSART1" registerAlias="TXI" settingAlias="priority"/>
+         <value>1</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="EUSART1" registerAlias="TXSTA" settingAlias="BRGH"/>
+         <value>hi_speed</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="EUSART1" registerAlias="TXSTA" settingAlias="CSRC"/>
+         <value>slave_mode</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="EUSART1" registerAlias="TXSTA" settingAlias="SENDB"/>
+         <value>sync_break_complete</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="EUSART1" registerAlias="TXSTA" settingAlias="SYNC"/>
+         <value>asynchronous</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="EUSART1" registerAlias="TXSTA" settingAlias="TRMT"/>
+         <value>TSR_empty</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="EUSART1" registerAlias="TXSTA" settingAlias="TX9"/>
+         <value>8-bit</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="EUSART1" registerAlias="TXSTA" settingAlias="TX9D"/>
+         <value>0</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="EUSART1" registerAlias="TXSTA" settingAlias="TXEN"/>
+         <value>enabled</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="ICMP" name="ICMPEchoResponse"/>
@@ -297,7 +678,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="MAC" name="pubSubMAC_SPIMASTER/interface"/>
-         <value>6004.591780565253</value>
+         <value>3566.7285059661035</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="MSSP1" name="ActI2cClkSpeed"/>
@@ -2701,7 +3082,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="Pin Module" registerAlias="TRISC"/>
-         <value>214</value>
+         <value>150</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.RegisterKey" moduleName="Pin Module" registerAlias="TRISD"/>
@@ -3021,7 +3402,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="Pin Module" registerAlias="TRISC" settingAlias="TRISC6"/>
-         <value>input</value>
+         <value>output</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.SettingKey" moduleName="Pin Module" registerAlias="TRISC" settingAlias="TRISC7"/>
@@ -3517,7 +3898,7 @@
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="TCP/IP Lite" name="pubSubselectedTimer"/>
-         <value>7168.023815485975</value>
+         <value>4626.414504910841</value>
       </entry>
       <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="TCP/IP Lite" name="selectedTimer"/>
@@ -3732,6 +4113,42 @@
          <value>220</value>
       </entry>
       <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="UART" name="UARTConfigurations"/>
+         <value>EUSART1-PIC10 / PIC12 / PIC16 / PIC18 MCUs</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="UART" name="UARTCustomCount"/>
+         <value>1</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="UART" name="pubSubUARTConfigurations"/>
+         <value>1954.5845848535603</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="UART" name="usecaseComboSettings"/>
+         <value>Basic UART Write/Transmit</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="UART" name="validate"/>
+         <value>0.8304891351554959</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.PropertyTokenKey" moduleName="UART" name="uartConfigurationList%0%interruptState"/>
+         <value>enabled</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.PropertyTokenKey" moduleName="UART" name="uartConfigurationList%0%name"/>
+         <value>UART0</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.PropertyTokenKey" moduleName="UART" name="uartConfigurationList%0%selectedModule"/>
+         <value>EUSART1-PIC10 / PIC12 / PIC16 / PIC18 MCUs</value>
+      </entry>
+      <entry>
+         <key class="com.microchip.mcc.core.tokenManager.PropertyTokenKey" moduleName="UART" name="uartConfigurationList%0%speed"/>
+         <value>9600</value>
+      </entry>
+      <entry>
          <key class="com.microchip.mcc.core.tokenManager.CustomKey" moduleName="UDP" name="ICMP_port_unreach"/>
          <value>enabled</value>
       </entry>
@@ -3740,34 +4157,18 @@
          <value>4.09600</value>
       </entry>
    </tokenMap>
-   <generatedFileHashHistoryMap class="java.util.TreeMap">
+   <generatedFileHashHistoryMap class="java.util.HashMap">
       <entry>
-         <file>main.c</file>
-         <hash>17c67232658c3290bc1746ee96af1b6a12d4e4a90ff8bd591be76997626c116d</hash>
+         <file>mcc_generated_files/interrupt_manager.h</file>
+         <hash>b6e7aaa295ed384a68250bd9d1f72a455aa9667eff8a9ec142434e833ea0c1de</hash>
       </entry>
       <entry>
-         <file>mcc_generated_files/TCPIPLibrary/ETHxxJ6x_driver.c</file>
-         <hash>9b87dee5f23a16c47da51f0af9b0148a137b961efe997506413aa065eedddb99</hash>
+         <file>mcc_generated_files/spi1.c</file>
+         <hash>52bf563dfc666b1a57da67285ee7bbb06b86c8e8e4215613040361e7ed761e47</hash>
       </entry>
       <entry>
-         <file>mcc_generated_files/TCPIPLibrary/arpv4.c</file>
-         <hash>04e00e5cf7dd821dfdb0a47e6ad2cc73feddd84b80729ba937c20f4630045fae</hash>
-      </entry>
-      <entry>
-         <file>mcc_generated_files/TCPIPLibrary/arpv4.h</file>
-         <hash>4c261edb5ee27dab30fdb913930aebe72b458a52cfbc23869b40ef099d8a9280</hash>
-      </entry>
-      <entry>
-         <file>mcc_generated_files/TCPIPLibrary/ethernet_driver.h</file>
-         <hash>b44327e81f8f8551e93a46bfb269d3932100942b697e207e9521a3b647680a25</hash>
-      </entry>
-      <entry>
-         <file>mcc_generated_files/TCPIPLibrary/icmp.c</file>
-         <hash>6d9e5c473eee4b7fc72ee083f8b6e36a53321ea0b37bb3a4fa0041c9ca726ce0</hash>
-      </entry>
-      <entry>
-         <file>mcc_generated_files/TCPIPLibrary/icmp.h</file>
-         <hash>3d871ce71497f88b25ead993514003120bf4ce7eac8b9e3fe383113612b05bb3</hash>
+         <file>mcc_generated_files/docs/uart.dox</file>
+         <hash>98e8108c480be91b9d680db751409daa16ab284d6e3664e56dff426441d18783</hash>
       </entry>
       <entry>
          <file>mcc_generated_files/TCPIPLibrary/ip_database.c</file>
@@ -3778,148 +4179,192 @@
          <hash>685e2222ef8962151f731a140ac32ac87b20ce1afdf8d8f11d6b9a2488bfbf0c</hash>
       </entry>
       <entry>
-         <file>mcc_generated_files/TCPIPLibrary/ipv4.c</file>
-         <hash>3bf4ff0ea32d55d881912427cd07731694ff13357af603e9ff43992ce8b68280</hash>
-      </entry>
-      <entry>
-         <file>mcc_generated_files/TCPIPLibrary/ipv4.h</file>
-         <hash>c096402b0d7e2ec702421bba90a7bf9b6a200a5db2bf9786911c597a355c6835</hash>
-      </entry>
-      <entry>
-         <file>mcc_generated_files/TCPIPLibrary/lfsr.c</file>
-         <hash>8166dd9072e7c2a9ee6fd3080cc67d90a1e025c9cf2a7e0e64cba02eea3f5715</hash>
+         <file>mcc_generated_files/spi1.h</file>
+         <hash>ae54953da678852cfe6c86366fff6fe37b04d81d49725bef12eb803bcc3ef606</hash>
       </entry>
       <entry>
          <file>mcc_generated_files/TCPIPLibrary/lfsr.h</file>
          <hash>1d20a9022de67ca63958bc31e2de8503c0effede88e2716e118ab75af720d148</hash>
       </entry>
       <entry>
-         <file>mcc_generated_files/TCPIPLibrary/log.c</file>
-         <hash>d344a77fce437c87f31d9471d35203fbba2a02154d67f7a3d0f4370680a748b2</hash>
-      </entry>
-      <entry>
-         <file>mcc_generated_files/TCPIPLibrary/log.h</file>
-         <hash>f1354ce5e430cc69e49bbcf218355f028653bfe0b22c387a3bbea7490fa89d7b</hash>
-      </entry>
-      <entry>
-         <file>mcc_generated_files/TCPIPLibrary/log_console.c</file>
-         <hash>df956b4a54c43f97dea39bd562a207be2a77168fb795d698b6f3b502d75e06d2</hash>
-      </entry>
-      <entry>
-         <file>mcc_generated_files/TCPIPLibrary/log_console.h</file>
-         <hash>588e83d353d6cd7f8c2224b63267404fe698cbf3260ec58e8d2c97eac9ca1ad4</hash>
-      </entry>
-      <entry>
-         <file>mcc_generated_files/TCPIPLibrary/log_syslog.c</file>
-         <hash>21157d3b39d4e4bf2d206603bcdc9ce37b2e1ee85d4538a07c4d3bbdc078ef9d</hash>
-      </entry>
-      <entry>
-         <file>mcc_generated_files/TCPIPLibrary/log_syslog.h</file>
-         <hash>27cf27f77c11d96610398d6e41fd34dcc7c48b0cfcc35e00d7e0714f41b3fed4</hash>
-      </entry>
-      <entry>
-         <file>mcc_generated_files/TCPIPLibrary/mac_address.c</file>
-         <hash>c49273b6c06a70b89e5ab04926e506b781ceae44fdee16c10f5853b70e3686c0</hash>
-      </entry>
-      <entry>
-         <file>mcc_generated_files/TCPIPLibrary/mac_address.h</file>
-         <hash>49c12a19b29d5cb6f94042d633d73414c28e706e71d87c2257588115fb774118</hash>
-      </entry>
-      <entry>
-         <file>mcc_generated_files/TCPIPLibrary/network.c</file>
-         <hash>9fa96b86138e0b0548d70f2f4d123e80cce3ae9ff107dbd287b128cc6ea2778d</hash>
-      </entry>
-      <entry>
          <file>mcc_generated_files/TCPIPLibrary/network.h</file>
          <hash>d405cb899a8b8c3ac2f649219cb4be2449e186f2d0a3680d71ddacfc67543ebb</hash>
-      </entry>
-      <entry>
-         <file>mcc_generated_files/TCPIPLibrary/rtcc.c</file>
-         <hash>4756d7d33887a4509354cb5ae7baab95cebd3366b944020a7cb932d59c6a3246</hash>
-      </entry>
-      <entry>
-         <file>mcc_generated_files/TCPIPLibrary/rtcc.h</file>
-         <hash>8d4f7c46a8711781e0388d4e3c98d4e00d04942ce036bb5b0b96b5d21ed03ba8</hash>
-      </entry>
-      <entry>
-         <file>mcc_generated_files/TCPIPLibrary/tcpip_config.h</file>
-         <hash>2873d3fc5a94a77697d62d55e2ef9cde53b7fcfb148ddf7daf2923cc565f93aa</hash>
-      </entry>
-      <entry>
-         <file>mcc_generated_files/TCPIPLibrary/tcpip_types.h</file>
-         <hash>1466ffcf82e0ba937d16de0054a63e6b3c22fbc22484645fc572dc76788cb0c1</hash>
-      </entry>
-      <entry>
-         <file>mcc_generated_files/TCPIPLibrary/tcpv4.c</file>
-         <hash>d6f242b56c4aa7b0750d01fdcc9186734b6edc3127408c16ca92f094438a312f</hash>
       </entry>
       <entry>
          <file>mcc_generated_files/TCPIPLibrary/tcpv4.h</file>
          <hash>86d87b2fba4b8f3f4526ed282bd2c38ef3cc099ef73cc6673dcb37df373471f8</hash>
       </entry>
       <entry>
-         <file>mcc_generated_files/TCPIPLibrary/udpv4.c</file>
-         <hash>daceadc2e764f4602d0914da1ffebb6affd95faf7843b6e9ca00fedab25bc642</hash>
+         <file>mcc_generated_files/TCPIPLibrary/arpv4.h</file>
+         <hash>4c261edb5ee27dab30fdb913930aebe72b458a52cfbc23869b40ef099d8a9280</hash>
       </entry>
       <entry>
-         <file>mcc_generated_files/TCPIPLibrary/udpv4.h</file>
-         <hash>0bfa841321626041da9572a02b7a91eda1788c0a4028d8c74832d6eb506ae23c</hash>
+         <file>mcc_generated_files/TCPIPLibrary/tcpip_types.h</file>
+         <hash>1466ffcf82e0ba937d16de0054a63e6b3c22fbc22484645fc572dc76788cb0c1</hash>
       </entry>
       <entry>
-         <file>mcc_generated_files/TCPIPLibrary/udpv4_port_handler_table.c</file>
-         <hash>18e3a14f7dd7d083a28efaa1e5f175f30ec848cdddc322c3deef21ba53291de8</hash>
+         <file>mcc_generated_files/TCPIPLibrary/lfsr.c</file>
+         <hash>8166dd9072e7c2a9ee6fd3080cc67d90a1e025c9cf2a7e0e64cba02eea3f5715</hash>
       </entry>
       <entry>
-         <file>mcc_generated_files/TCPIPLibrary/udpv4_port_handler_table.h</file>
-         <hash>d79478c6047243f1e3014c280a1a638b7798ac74e367d5c2db02bb4229a637ec</hash>
+         <file>mcc_generated_files/TCPIPLibrary/network.c</file>
+         <hash>9fa96b86138e0b0548d70f2f4d123e80cce3ae9ff107dbd287b128cc6ea2778d</hash>
       </entry>
       <entry>
-         <file>mcc_generated_files/device_config.c</file>
-         <hash>4d081ef8f7a060ceeb57a76e47ac37762b92d49e446b36abaf5bdd79198dfca7</hash>
+         <file>mcc_generated_files/TCPIPLibrary/tcpv4.c</file>
+         <hash>d6f242b56c4aa7b0750d01fdcc9186734b6edc3127408c16ca92f094438a312f</hash>
       </entry>
       <entry>
-         <file>mcc_generated_files/device_config.h</file>
-         <hash>ccbab9b81397def99b886390ce7a10fa61537a41f701ac16fa162db5356530c3</hash>
+         <file>mcc_generated_files/TCPIPLibrary/arpv4.c</file>
+         <hash>04e00e5cf7dd821dfdb0a47e6ad2cc73feddd84b80729ba937c20f4630045fae</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files/mcc.h</file>
+         <hash>3b1f3de88eb8e4800e71304193fd6d14a30d12c3839f226489d50422d40f2d43</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files/TCPIPLibrary/ETHxxJ6x_driver.c</file>
+         <hash>9b87dee5f23a16c47da51f0af9b0148a137b961efe997506413aa065eedddb99</hash>
       </entry>
       <entry>
          <file>mcc_generated_files/interrupt_manager.c</file>
          <hash>902f39348e6f40c457e3695384c83afea100ff798c960816a871e7cf8c594353</hash>
       </entry>
       <entry>
-         <file>mcc_generated_files/interrupt_manager.h</file>
-         <hash>b6e7aaa295ed384a68250bd9d1f72a455aa9667eff8a9ec142434e833ea0c1de</hash>
-      </entry>
-      <entry>
          <file>mcc_generated_files/mcc.c</file>
-         <hash>6e71992cabb359e248ec7610b9309394c8c1d02e709b08dac1c7f7bf25417ffd</hash>
-      </entry>
-      <entry>
-         <file>mcc_generated_files/mcc.h</file>
-         <hash>a8a4a70d881da178bc9185a73e93d42c5ca3c7423f3f0b89826a50ce90db9d0c</hash>
+         <hash>90923fd9ef3f2657288082ac86ac50218a5eccb2900cbfe467131b7a6ba228f0</hash>
       </entry>
       <entry>
          <file>mcc_generated_files/pin_manager.c</file>
-         <hash>c3902e3ea60599c483db3ab25bae93bc54047a90c78b5b9513b2496f41dfaa95</hash>
+         <hash>4f9f95d0d122adfb84d691ed0daa5d97f579f76a262a98b1ab8f00f79b96785b</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files/TCPIPLibrary/log.h</file>
+         <hash>f1354ce5e430cc69e49bbcf218355f028653bfe0b22c387a3bbea7490fa89d7b</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files/TCPIPLibrary/rtcc.h</file>
+         <hash>8d4f7c46a8711781e0388d4e3c98d4e00d04942ce036bb5b0b96b5d21ed03ba8</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files/examples/uart_example.h</file>
+         <hash>1bef3b516e39d6a9c987d075e57a69a48cc13242126f469dc7a8ff94b8030682</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files/TCPIPLibrary/rtcc.c</file>
+         <hash>4756d7d33887a4509354cb5ae7baab95cebd3366b944020a7cb932d59c6a3246</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files/examples/uart_example.c</file>
+         <hash>ad0eb2b836f051f69fef2085769c161b3cb8e7d4be801e67b45a491b296fccf6</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files/TCPIPLibrary/udpv4.h</file>
+         <hash>0bfa841321626041da9572a02b7a91eda1788c0a4028d8c74832d6eb506ae23c</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files/TCPIPLibrary/log.c</file>
+         <hash>d344a77fce437c87f31d9471d35203fbba2a02154d67f7a3d0f4370680a748b2</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files/TCPIPLibrary/udpv4.c</file>
+         <hash>daceadc2e764f4602d0914da1ffebb6affd95faf7843b6e9ca00fedab25bc642</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files/TCPIPLibrary/ipv4.c</file>
+         <hash>3bf4ff0ea32d55d881912427cd07731694ff13357af603e9ff43992ce8b68280</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files/TCPIPLibrary/icmp.h</file>
+         <hash>3d871ce71497f88b25ead993514003120bf4ce7eac8b9e3fe383113612b05bb3</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files/TCPIPLibrary/log_syslog.h</file>
+         <hash>27cf27f77c11d96610398d6e41fd34dcc7c48b0cfcc35e00d7e0714f41b3fed4</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files/TCPIPLibrary/log_syslog.c</file>
+         <hash>21157d3b39d4e4bf2d206603bcdc9ce37b2e1ee85d4538a07c4d3bbdc078ef9d</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files/eusart1.h</file>
+         <hash>afe93e46cabb3983258ba03e098a56b50a7dad61c7bd5a9a88ea6faa4a0c6321</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files/TCPIPLibrary/icmp.c</file>
+         <hash>6d9e5c473eee4b7fc72ee083f8b6e36a53321ea0b37bb3a4fa0041c9ca726ce0</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files/TCPIPLibrary/mac_address.h</file>
+         <hash>49c12a19b29d5cb6f94042d633d73414c28e706e71d87c2257588115fb774118</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files/TCPIPLibrary/ipv4.h</file>
+         <hash>c096402b0d7e2ec702421bba90a7bf9b6a200a5db2bf9786911c597a355c6835</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files/TCPIPLibrary/udpv4_port_handler_table.h</file>
+         <hash>d79478c6047243f1e3014c280a1a638b7798ac74e367d5c2db02bb4229a637ec</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files/TCPIPLibrary/udpv4_port_handler_table.c</file>
+         <hash>18e3a14f7dd7d083a28efaa1e5f175f30ec848cdddc322c3deef21ba53291de8</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files/TCPIPLibrary/mac_address.c</file>
+         <hash>c49273b6c06a70b89e5ab04926e506b781ceae44fdee16c10f5853b70e3686c0</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files/eusart1.c</file>
+         <hash>bc17633efc3ffcf256aa65bf2c501bccf791c5b08358298eee9520fe606e277d</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files/TCPIPLibrary/ethernet_driver.h</file>
+         <hash>b44327e81f8f8551e93a46bfb269d3932100942b697e207e9521a3b647680a25</hash>
       </entry>
       <entry>
          <file>mcc_generated_files/pin_manager.h</file>
-         <hash>1fb83111cc18c7609c20b59fa816eb2f59817f572a6a6b5266c18eedb4d584dd</hash>
-      </entry>
-      <entry>
-         <file>mcc_generated_files/spi1.c</file>
-         <hash>52bf563dfc666b1a57da67285ee7bbb06b86c8e8e4215613040361e7ed761e47</hash>
-      </entry>
-      <entry>
-         <file>mcc_generated_files/spi1.h</file>
-         <hash>ae54953da678852cfe6c86366fff6fe37b04d81d49725bef12eb803bcc3ef606</hash>
+         <hash>3cb42f4380364e77a355cdee7412e19dfc1e428eab3b5ef93b47cdf2fdb6a259</hash>
       </entry>
       <entry>
          <file>mcc_generated_files/tmr1.c</file>
          <hash>6aa423483103e8580937036cb725eecb31d78d43c8d563722dc4baca60ed265b</hash>
       </entry>
       <entry>
+         <file>main.c</file>
+         <hash>17c67232658c3290bc1746ee96af1b6a12d4e4a90ff8bd591be76997626c116d</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files/TCPIPLibrary/log_console.c</file>
+         <hash>df956b4a54c43f97dea39bd562a207be2a77168fb795d698b6f3b502d75e06d2</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files/TCPIPLibrary/tcpip_config.h</file>
+         <hash>2873d3fc5a94a77697d62d55e2ef9cde53b7fcfb148ddf7daf2923cc565f93aa</hash>
+      </entry>
+      <entry>
          <file>mcc_generated_files/tmr1.h</file>
          <hash>076644da4d9a7d09bb437e3b7bdf58b47cf984efd9cdaeca392f03403c13d9db</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files/drivers/uart.h</file>
+         <hash>9cffac8dfd06dfc8a4abdf03a4cbe320711c9bd56c4bf7cd898b2c4a895b89aa</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files/device_config.h</file>
+         <hash>ccbab9b81397def99b886390ce7a10fa61537a41f701ac16fa162db5356530c3</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files/drivers/uart.c</file>
+         <hash>e494de225592113e2e6f3b7e98b9634d3afb130ca45d61195314b3a6a6e23839</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files/TCPIPLibrary/log_console.h</file>
+         <hash>588e83d353d6cd7f8c2224b63267404fe698cbf3260ec58e8d2c97eac9ca1ad4</hash>
+      </entry>
+      <entry>
+         <file>mcc_generated_files/device_config.c</file>
+         <hash>4d081ef8f7a060ceeb57a76e47ac37762b92d49e446b36abaf5bdd79198dfca7</hash>
       </entry>
    </generatedFileHashHistoryMap>
 </config>

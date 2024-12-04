@@ -43,6 +43,7 @@
 
 #include "mcc_generated_files/mcc.h"
 #include "demo_tcp.h"
+#include "formatter_interface.h"
 
 /*
                          Main application
@@ -75,8 +76,8 @@ void main(void) {
     //INTERRUPT_PeripheralInterruptDisable();
     
     // setup oscillator
-//    OSCTUNE = 0x00;
-//    OSCCON |=2;
+    OSCTUNE = 0x00;
+    OSCCON |=2;
     
     // debugging outputs:
     TRISAbits.TRISA2 = 0;
@@ -119,6 +120,8 @@ void main(void) {
     // raise if SPI1 opened:
 //    LATAbits.LATA2 = SPI1_Open(SPI1_DEFAULT_MODE0);
     
+    const char *string = "Transmit test\n";
+    
     while (1) {
         Network_Manage();
         demo_tcp_server();
@@ -126,6 +129,7 @@ void main(void) {
         // Add your application code
         LATAbits.LATA3 = blink_state;
         blink_state = ~blink_state;
+        uart_write_string(string);
     }
 //    SPI1_Close();
 }
