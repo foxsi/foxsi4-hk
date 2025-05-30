@@ -2,96 +2,99 @@
 //#include "mcc_generated_files/spi1.h"
 //#include "mcc_generated_files/mcc.h"
 #include "formatter_interface.h"
+#include "mcc_generated_files/TCPIPLibrary/udpv4.h"
+#include "mcc_generated_files/TCPIPLibrary/ip_database.h"
 #include <string.h>
 
-void ethernet_handler(tcpTCB_t* port, uint8_t* recv_buff, size_t recv_size) {
+void formatter_init_udp(void) {
+    error_msg ret = UDP_Start(makeStrToIpv4Address("192.168.1.8"), 7777, 7777);
+    if (ret != SUCCESS) {
+        FOXSI_ERRORS |= FOXSI_ERROR_INIT;
+        return;
+    }
+}
+
+void formatter_handle_udp(size_t length) {    
+    formatter_init_udp();
     
-    // handle received data
-    if (recv_size > 0) {
-        switch (recv_buff[0]) {
-            case FOXSI_POWER_SWITCH:
-                SPI1_Open(SPI1_DEFAULT_MODE1);
-                power_switch_handler(port, recv_buff, recv_size);
-                SPI1_Close();
-                break;
-            case FOXSI_POWER_HEALTH:
-                SPI1_Open(SPI1_DEFAULT_MODE3);
-                power_health_handler(port, recv_buff, recv_size);
-                SPI1_Close();
-                break;
-            case FOXSI_RTD1:
-                SPI1_Open(SPI1_DEFAULT_MODE0);
-                rtd1_handler(port, recv_buff, recv_size);
-                SPI1_Close();
-                break;
-            case FOXSI_RTD2:
-                SPI1_Open(SPI1_DEFAULT_MODE0);
-                rtd2_handler(port, recv_buff, recv_size);
-                SPI1_Close();
-                break;
-            case FOXSI_INTRO:
-                introspect_handler(port, recv_buff, recv_size);
-                break;
-            default:
-                // should not end up here
-                FOXSI_ERRORS |= FOXSI_ERROR_ETH_RECV_MSB;
-                break;
-        }
-    } else {
-        // should not end up here
+    // handle errors for incorrect packet length
+    if (length != 3) {
         FOXSI_ERRORS |= FOXSI_ERROR_ETH_RECV_MSB;
-        
+        UDP_FlushRxdPacket();
+        return;
+    }
+    // read 4 bytes from UDP. Convert to array.
+    const uint32_t recv_buff_block = UDP_Read32();
+    uint8_t recv_buff[4];
+    bytes_from_uint32_t(recv_buff_block, recv_buff);
+    
+    switch (recv_buff[0]) {
+        case FOXSI_POWER_SWITCH:
+            SPI1_Open(SPI1_DEFAULT_MODE1);
+            power_switch_handler(recv_buff);
+            SPI1_Close();
+            break;
+        case FOXSI_POWER_HEALTH:
+            SPI1_Open(SPI1_DEFAULT_MODE3);
+            power_health_handler(recv_buff);
+            SPI1_Close();
+            break;
+        case FOXSI_RTD1:
+            SPI1_Open(SPI1_DEFAULT_MODE0);
+            rtd1_handler(recv_buff);
+            SPI1_Close();
+            break;
+        case FOXSI_RTD2:
+            SPI1_Open(SPI1_DEFAULT_MODE0);
+            rtd2_handler(recv_buff);
+            SPI1_Close();
+            break;
+        case FOXSI_INTRO:
+            introspect_handler(recv_buff);
+            break;
+        default:
+            // should not end up here
+            FOXSI_ERRORS |= FOXSI_ERROR_ETH_RECV_MSB;
+            break;
     }
 }
 
-void power_switch_handler(tcpTCB_t* port, uint8_t* recv_buff, size_t recv_size) {    
+void power_switch_handler(uint8_t* recv_buff) {
     // use pin RE2 for the power switch CS
-    if (recv_size > 1) {
-        if (recv_buff[1] > 0x0d) {
-            // handle read command
-            LATEbits.LATE2 = 0;
-            SPI1_ExchangeBlock(recv_buff + 1, recv_size - 1);
-            LATEbits.LATE2 = 1;
-            TCP_Send(port, recv_buff, 1);
-        } else {
-            
-            if (recv_buff[1] == 0x09) {
-                // formatter reset case
-                if (recv_size < 3) {
-                    // case where command is too short. should not end up here
-                    FOXSI_ERRORS |= FOXSI_ERROR_POWER_SWITCH;
-                    return;
-                } else {
-                    // case where command is long enough
-                    if (recv_buff[2] == 0x01) {
-                        // case where command is to reset formatter
-                        uint8_t spi_msg[2] = {0x09, 0x00};
-                        LATEbits.LATE2 = 0;
-                        SPI1_WriteBlock(spi_msg, 2);
-                        LATEbits.LATE2 = 1;
-                        __delay_ms(1);
-                        
-                        spi_msg[1] = 0x01;
-                        LATEbits.LATE2 = 0;
-                        SPI1_WriteBlock(spi_msg, 2);
-                        LATEbits.LATE2 = 1;
-                    }
-                }
-            } else {
-                // non-formatter reset case
-                // bring CS low:
-                LATEbits.LATE2 = 0;
-                SPI1_WriteBlock(recv_buff + 1, recv_size - 1);
-                LATEbits.LATE2 = 1;
-            }
-        }    
+    if (recv_buff[1] > 0x0d) {
+        // handle read command
+        LATEbits.LATE2 = 0;
+        SPI1_ExchangeBlock(recv_buff + 1, 2);
+        LATEbits.LATE2 = 1;
+        UDP_WriteBlock(recv_buff, 2);
+        UDP_Send();
     } else {
-        // should not end up here
-        FOXSI_ERRORS |= FOXSI_ERROR_POWER_SWITCH;
-    }
+        if (recv_buff[1] == 0x09) {
+            // formatter reset case
+            if (recv_buff[2] == 0x01) {
+                // case where command is to reset formatter
+                uint8_t spi_msg[2] = {0x09, 0x00};
+                LATEbits.LATE2 = 0;
+                SPI1_WriteBlock(spi_msg, 2);
+                LATEbits.LATE2 = 1;
+                __delay_ms(100);
+
+                spi_msg[1] = 0x01;
+                LATEbits.LATE2 = 0;
+                SPI1_WriteBlock(spi_msg, 2);
+                LATEbits.LATE2 = 1;
+            } 
+        } else {
+            // non-formatter reset case. Forward the write_value.
+            // bring CS low:
+            LATEbits.LATE2 = 0;
+            SPI1_WriteBlock(recv_buff + 1, 2);
+            LATEbits.LATE2 = 1;
+        }
+    }    
 }
 
-void power_health_handler(tcpTCB_t* port, uint8_t* recv_buff, size_t recv_size) {
+void power_health_handler(uint8_t* recv_buff) {
     switch (recv_buff[1]) {
         case FOXSI_POWER_HEALTH_READ_ALL: {
             uint8_t response[32]; // 2B per VIN, 16 VINs.
@@ -145,7 +148,8 @@ void power_health_handler(tcpTCB_t* port, uint8_t* recv_buff, size_t recv_size) 
             }
             
             // send all response data on ethernet
-            TCP_Send(port, response, 32);
+            UDP_WriteBlock(response, 32);
+            UDP_Send();
             break;
         }
         case FOXSI_POWER_HEALTH_FORWARD: {
@@ -181,7 +185,8 @@ void power_health_handler(tcpTCB_t* port, uint8_t* recv_buff, size_t recv_size) 
             response[0] = spi_tx_buff[0];
             
             // send on Ethernet
-            TCP_Send(port, response, 2);
+            UDP_WriteBlock(response, 2);
+            UDP_Send();
             
             break;
         }
@@ -204,10 +209,10 @@ void power_health_spi_setup() {
 
 uint16_t power_health_convert_addr(uint8_t recv_addr) {
     uint16_t result = (uint16_t)recv_addr << 10;
-    return result; // << 10;
+    return result;
 }
 
-void rtd1_handler(tcpTCB_t* port, uint8_t* recv_buff, size_t recv_size) {
+void rtd1_handler(uint8_t* recv_buff) {
     switch (recv_buff[1]) {
         case FOXSI_RTD_SETUP: {
             rtd_setup(FOXSI_RTD1);
@@ -218,21 +223,17 @@ void rtd1_handler(tcpTCB_t* port, uint8_t* recv_buff, size_t recv_size) {
             break;
         }
         case FOXSI_RTD_READ_ALL: {
-            rtd_read_all(port, FOXSI_RTD1);
+            rtd_read_all(FOXSI_RTD1);
             break;
         }
         default: {
-            if (1 < recv_buff[1] && recv_buff[1] < 11) {
-                
-            } else {
-                // invalid CH identifier.
-                FOXSI_ERRORS |= FOXSI_ERROR_RTD1;
-            }
+            // invalid CH identifier.
+            FOXSI_ERRORS |= FOXSI_ERROR_RTD1;
         }
     }
 }
 
-void rtd2_handler(tcpTCB_t* port, uint8_t* recv_buff, size_t recv_size) {
+void rtd2_handler(uint8_t* recv_buff) {
     switch (recv_buff[1]) {
         case FOXSI_RTD_SETUP: {
             rtd_setup(FOXSI_RTD2);
@@ -243,16 +244,12 @@ void rtd2_handler(tcpTCB_t* port, uint8_t* recv_buff, size_t recv_size) {
             break;
         }
         case FOXSI_RTD_READ_ALL: {
-            rtd_read_all(port, FOXSI_RTD2);
+            rtd_read_all(FOXSI_RTD2);
             break;
         }
         default: {
-            if (1 < recv_buff[1] && recv_buff[1] < 11) {
-                
-            } else {
-                // invalid CH identifier.
-                FOXSI_ERRORS |= FOXSI_ERROR_RTD2;
-            }
+            // invalid CH identifier.
+            FOXSI_ERRORS |= FOXSI_ERROR_RTD2;
         }
     }
 }
@@ -348,8 +345,8 @@ void rtd_start_all_conversion(uint8_t rtd_num) {
     }
 }
 
-void rtd_read_all(tcpTCB_t* port, uint8_t rtd_num) {
-    uint8_t response[4*FOXSI_RTD_COUNT];
+void rtd_read_all(uint8_t rtd_num) {
+    uint8_t response[4*FOXSI_RTD_COUNT] = {0x00};
     
     if (rtd_num == FOXSI_RTD1) {
         // check if INTERRUPT asserted.
@@ -399,76 +396,66 @@ void rtd_read_all(tcpTCB_t* port, uint8_t rtd_num) {
     } else {
         // shouldn't end up here.
         FOXSI_ERRORS |= FOXSI_ERROR_RTD;
+        return;
     }
-    error_msg err = TCP_Send(port, response, 4*FOXSI_RTD_COUNT);
+    UDP_WriteBlock(response, 4*FOXSI_RTD_COUNT);
+    error_msg err = UDP_Send();
     // todo: consider adding a FOXSI_ERROR_MASK entry for err != SUCCESS.
 }
 
-void introspect_handler(tcpTCB_t* port, uint8_t* recv_buff, size_t recv_size) {
-    if (recv_size > 1) {
-        switch (recv_buff[1]) {
-            case FOXSI_INTRO_SET_FLIGHT_STATE:
-                if (recv_size > 2) {
-                    FOXSI_CURRENT_STATE = recv_buff[2];
-                } else {
-                    // shouldn't end up here.
-                    FOXSI_ERRORS |= (uint8_t)FOXSI_ERROR_INTRO;
-                }
-                break;
-            case FOXSI_INTRO_SET_UNLAUNCH:
-                FOXSI_CURRENT_STATE = (uint8_t)FOXSI_FLIGHT_STATE_UNLAUNCH;
+void introspect_handler(uint8_t* recv_buff) {
+    switch (recv_buff[1]) {
+        case FOXSI_INTRO_SET_FLIGHT_STATE:
+            FOXSI_CURRENT_STATE = recv_buff[2];
+            if (FOXSI_CURRENT_STATE & FOXSI_FLIGHT_STATE_UNLAUNCH) {
                 LATGbits.LATG4 = 0;
-                
                 // todo: set low again ever?
-                break;
-            case FOXSI_INTRO_SET_ERRORS:
-                if (recv_size > 3) {
-                    FOXSI_ERRORS = (uint16_t)(recv_buff[2] << 8);
-                    FOXSI_ERRORS |= recv_buff[3];
-                } else {
-                    // shouldn't end up here.
-                    FOXSI_ERRORS |= (uint8_t)FOXSI_ERROR_INTRO;
-                }
-                break;
-            case FOXSI_INTRO_GET_FLIGHT_STATE: {     
-                uint8_t response[2];
-                bytes_from_uint16_t((uint16_t)FOXSI_CURRENT_STATE, response);
-                // send on Ethernet
-                TCP_Send(port, response, 2);
-                break;
-            }
-            case FOXSI_INTRO_GET_ERRORS: {
-                uint8_t response[2];
-                bytes_from_uint16_t(FOXSI_ERRORS, response);
-                TCP_Send(port, response, 2);
-                break;
-            }
-            case FOXSI_INTRO_GET_CURRENT_CLOCK: {
-                uint8_t response[4];
-                bytes_from_uint32_t(FOXSI_TIME_LONG, response);
-                TCP_Send(port, response, 4);
-                break;
-            }
-            case FOXSI_INTRO_GET_CORE_CLOCK: {
-                uint8_t response[2];
-                bytes_from_uint16_t(TMR1_ReadTimer(), response);
-                TCP_Send(port, response, 2);
-            }
-            case FOXSI_INTRO_GET_SYNC_COUNTER: {
-                uint8_t response[32];
-                for (int i = 0; i < 32; i += 4) {
-                    bytes_from_uint32_t(FOXSI_SYNC_LOG[i/8], response + i);
-                }
-                TCP_Send(port, response, 32);
-                        
-                break;
-            }
-            default:
-                FOXSI_ERRORS |= FOXSI_ERROR_INTRO;
-                break;
+            } 
+            break;
+        case FOXSI_INTRO_RESET_ERRORS:
+            FOXSI_ERRORS = 0x00;
+            break;
+        case FOXSI_INTRO_GET_FLIGHT_STATE: {     
+            uint8_t response[2];
+            bytes_from_uint16_t((uint16_t)FOXSI_CURRENT_STATE, response);
+            // send on Ethernet
+            UDP_WriteBlock(response, 2);
+            UDP_Send();
+            break;
         }
-    } else {
-        FOXSI_ERRORS |= FOXSI_ERROR_INTRO;
+        case FOXSI_INTRO_GET_ERRORS: {
+            uint8_t response[2];
+            bytes_from_uint16_t(FOXSI_ERRORS, response);
+            UDP_WriteBlock(response, 2);
+            UDP_Send();
+            break;
+        }
+        case FOXSI_INTRO_GET_CURRENT_CLOCK: {
+            uint8_t response[4];
+            bytes_from_uint32_t(FOXSI_TIME_LONG, response);
+            UDP_WriteBlock(response, 4);
+            UDP_Send();
+            break;
+        }
+        case FOXSI_INTRO_GET_CORE_CLOCK: {
+            uint8_t response[2];
+            bytes_from_uint16_t(TMR1_ReadTimer(), response);
+            UDP_WriteBlock(response, 2);
+            UDP_Send();
+        }
+        case FOXSI_INTRO_GET_SYNC_COUNTER: {
+            uint8_t response[32];
+            for (int i = 0; i < 32; i += 4) {
+                bytes_from_uint32_t(FOXSI_SYNC_LOG[i/8], response + i);
+            }
+            UDP_WriteBlock(response, 32);
+            UDP_Send();
+
+            break;
+        }
+        default:
+            FOXSI_ERRORS |= FOXSI_ERROR_INTRO;
+            break;
     }
 }
 

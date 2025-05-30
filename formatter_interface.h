@@ -52,7 +52,7 @@ extern "C" {
 #define FOXSI_INTRO                     0x07
 #define FOXSI_INTRO_SET_FLIGHT_STATE    0xf0    // expect 1 B argument specifying state.
 #define FOXSI_INTRO_SET_UNLAUNCH        0xf1    // no more arguments. Just set FOXSI_CURRENT_STATE.
-#define FOXSI_INTRO_SET_ERRORS          0xe0    // expect 2 B of error mask after.
+#define FOXSI_INTRO_RESET_ERRORS        0xe0    // clear FOXSI_ERROR_MASK
 #define FOXSI_INTRO_GET_FLIGHT_STATE    0x0f    // reply 1 B
 #define FOXSI_INTRO_GET_ERRORS          0x0e    // return 1 B errors
 #define FOXSI_INTRO_GET_SYNC_COUNTER    0x0c
@@ -88,42 +88,38 @@ extern "C" {
     // for tracking different error types in software. Move this to a separate header, define macros for each bit.
     uint16_t                    FOXSI_ERRORS;
     
-    // like demo_tcp_server()---entry point for received Ethernet packets. 
-    // Inside, delegate to handler for specific system.
-    void ethernet_handler(tcpTCB_t* port, uint8_t* recv_buff, size_t recv_size);
+    
+    void formatter_init_udp(void);
+    void formatter_handle_udp(size_t length);
     
     
     
     // for reading/writing power on/off chip (on power board):
-    void power_switch_handler(tcpTCB_t* port, uint8_t* recv_buff, size_t recv_size); 
+    void power_switch_handler(uint8_t* recv_buff); 
     
     
     
     // for reading ADC chip (on power board):
-    void power_health_handler(tcpTCB_t* port, uint8_t* recv_buff, size_t recv_size);
+    void power_health_handler(uint8_t* recv_buff);
     void power_health_spi_setup();
     uint16_t power_health_convert_addr(uint8_t recv_addr);
     
     
     
     // for reading RTD chip:
-    void rtd1_handler(tcpTCB_t* port, uint8_t* recv_buff, size_t recv_size);
-    void rtd2_handler(tcpTCB_t* port, uint8_t* recv_buff, size_t recv_size);
+    void rtd1_handler(uint8_t* recv_buff);
+    void rtd2_handler(uint8_t* recv_buff);
     
     void rtd_setup(uint8_t rtd_num);
     void rtd_start_all_conversion(uint8_t rtd_num);
-    void rtd_read_all(tcpTCB_t* port, uint8_t rtd_num);
+    void rtd_read_all(uint8_t rtd_num);
     
     
     
     // for reflective (on PIC) health data:
-    void introspect_handler(tcpTCB_t* port, uint8_t* recv_buff, size_t recv_size);
+    void introspect_handler(uint8_t* recv_buff);
+   
     
-    // work to do each loop:
-    void main_loop_handler();
-    
-    // initialize these systems:
-    void housekeeping_init();
     
     // to read TMR1 and store value as uint32_t (rather than uint16_t)
     void lengthen_time();

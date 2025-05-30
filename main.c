@@ -122,9 +122,12 @@ void main(void) {
     
     const char *string = "Transmit test\n\r";
     
+    formatter_init_udp();
+    
     while (1) {
-        Network_Manage();
-        demo_tcp_server();
+         Network_Manage();
+        // demo_tcp_server();
+//        formatter_handle_udp();
         
         // Add your application code
         LATAbits.LATA3 = blink_state;

@@ -40,9 +40,11 @@ MICROCHIP PROVIDES THIS SOFTWARE CONDITIONALLY UPON YOUR ACCEPTANCE OF THESE TER
 #include <stdio.h>
 #include "tcpip_config.h"
 #include "udpv4_port_handler_table.h"
+#include "../../formatter_interface.h"
 
 const udp_handler_t UDP_CallBackTable[] = \
-{    
+{
+    {7777, &formatter_handle_udp}
 };
 
 // ***************** Leave the stuff below this line alone *********************

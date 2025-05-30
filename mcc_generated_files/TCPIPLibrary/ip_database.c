@@ -30,7 +30,7 @@ ip_db_info_t ip_database_info;
 
 void ipdb_init(void)
 {
-    ip_database_info.ipv4_myAddress = 0xc0a80110;
+    ip_database_info.ipv4_myAddress = 0xc0a80111;
     ip_database_info.ipv4_subnetMask = 0xffffff00;
     ip_database_info.ipv4_router = 0xc0a801fe;
     ip_database_info.ipv4_dns[0] = 0x08080808;
