@@ -3,12 +3,14 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/Users/thanasi/MPLABXProjects/housekeeping.X/demo_tcp.c</file>
             <file>file:/Users/thanasi/MPLABXProjects/housekeeping.X/formatter_interface.c</file>
-            <file>file:/Users/thanasi/MPLABXProjects/housekeeping.X/mcc_generated_files/TCPIPLibrary/tcpv4.h</file>
-            <file>file:/Users/thanasi/MPLABXProjects/housekeeping.X/mcc_generated_files/TCPIPLibrary/tcpv4.c</file>
+            <file>file:/Users/thanasi/MPLABXProjects/housekeeping.X/mcc_generated_files/TCPIPLibrary/ipv4.c</file>
+            <file>file:/Users/thanasi/MPLABXProjects/housekeeping.X/mcc_generated_files/TCPIPLibrary/ethernet_driver.h</file>
+            <file>file:/Users/thanasi/MPLABXProjects/housekeeping.X/mcc_generated_files/TCPIPLibrary/ETHxxJ6x_driver.c</file>
+            <file>file:/Users/thanasi/MPLABXProjects/housekeeping.X/mcc_generated_files/TCPIPLibrary/network.c</file>
             <file>file:/Users/thanasi/MPLABXProjects/housekeeping.X/main.c</file>
             <file>file:/Users/thanasi/MPLABXProjects/housekeeping.X/formatter_interface.h</file>
+            <file>file:/Users/thanasi/MPLABXProjects/housekeeping.X/mcc_generated_files/TCPIPLibrary/log.h</file>
         </group>
     </open-files>
 </project-private>

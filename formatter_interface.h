@@ -67,8 +67,6 @@ extern "C" {
         FOXSI_FLIGHT_STATE_END
     };
     
-    uint8_t                     FOXSI_CURRENT_STATE;
-    
     enum FOXSI_ERROR_MASK{
         FOXSI_ERROR_INIT,
         FOXSI_ERROR_ETH_RECV_MSB,
@@ -80,14 +78,21 @@ extern "C" {
         FOXSI_ERROR_INTRO
     };
     
+    uint8_t         FOXSI_CURRENT_STATE;
+    
     // log timing information for PPS
-    uint32_t                    FOXSI_TIME_LONG;
-    #define                     FOXSI_SYNC_LOG_SIZE 8
-    uint32_t                    FOXSI_SYNC_LOG[FOXSI_SYNC_LOG_SIZE];
+    uint32_t        FOXSI_TIME_LONG;
+    #define         FOXSI_SYNC_LOG_SIZE 8
+    uint32_t        FOXSI_SYNC_LOG[FOXSI_SYNC_LOG_SIZE];
     
     // for tracking different error types in software. Move this to a separate header, define macros for each bit.
-    uint16_t                    FOXSI_ERRORS;
+    uint16_t        FOXSI_ERRORS;
     
+    uint32_t        FOXSI_UDP_COUNTER = 0;
+    
+    uint8_t         RECEIVE_FORMATTER_COMMAND_BUFF[4];
+    uint8_t         SPI_TX_POWER_SWITCH_BUFF[2];  // unused
+    uint8_t         SPI_RX_POWER_HEALTH_BUFF[32];
     
     void formatter_init_udp(void);
     void formatter_handle_udp(size_t length);

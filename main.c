@@ -113,25 +113,23 @@ void main(void) {
     
     LATAbits.LATA5 = 0;
     
-    LATAbits.LATA3 = 1;
-//    __delay_ms(1000);
+    LATAbits.LATA3 = 0;
+
     uint8_t blink_state = 0x00;
-    
-    // raise if SPI1 opened:
-//    LATAbits.LATA2 = SPI1_Open(SPI1_DEFAULT_MODE0);
-    
-    const char *string = "Transmit test\n\r";
     
     formatter_init_udp();
     
     while (1) {
          Network_Manage();
-        // demo_tcp_server();
-//        formatter_handle_udp();
+//         formatter_handle_udp();
         
         // Add your application code
-        LATAbits.LATA3 = blink_state;
-        blink_state = ~blink_state;
+//        LATAbits.LATA3 = blink_state;
+//        blink_state = ~blink_state;
+//         LATAbits.LATA3 = FOXSI_UDP_COUNTER % 2;
+        
+//        __delay_ms(100);
+        
 //        uart_write_string(string);
     }
 //    SPI1_Close();

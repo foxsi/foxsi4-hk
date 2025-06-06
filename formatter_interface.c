@@ -14,10 +14,12 @@ void formatter_init_udp(void) {
     }
 }
 
-void formatter_handle_udp(size_t length) {    
+void formatter_handle_udp(size_t length) {
     formatter_init_udp();
     
-    // handle errors for incorrect packet length
+    ++FOXSI_UDP_COUNTER;
+    
+//     handle errors for incorrect packet length
     if (length != 3) {
         FOXSI_ERRORS |= FOXSI_ERROR_ETH_RECV_MSB;
         UDP_FlushRxdPacket();
@@ -25,38 +27,44 @@ void formatter_handle_udp(size_t length) {
     }
     // read 4 bytes from UDP. Convert to array.
     const uint32_t recv_buff_block = UDP_Read32();
-    uint8_t recv_buff[4];
-    bytes_from_uint32_t(recv_buff_block, recv_buff);
+    if (recv_buff_block == 0x00) {
+        return;
+    }
     
-    switch (recv_buff[0]) {
+    bytes_from_uint32_t(recv_buff_block, RECEIVE_FORMATTER_COMMAND_BUFF);
+    
+    switch (RECEIVE_FORMATTER_COMMAND_BUFF[0]) {
         case FOXSI_POWER_SWITCH:
             SPI1_Open(SPI1_DEFAULT_MODE1);
-            power_switch_handler(recv_buff);
+            power_switch_handler(RECEIVE_FORMATTER_COMMAND_BUFF);
             SPI1_Close();
             break;
         case FOXSI_POWER_HEALTH:
             SPI1_Open(SPI1_DEFAULT_MODE3);
-            power_health_handler(recv_buff);
+            power_health_handler(RECEIVE_FORMATTER_COMMAND_BUFF);
             SPI1_Close();
             break;
         case FOXSI_RTD1:
             SPI1_Open(SPI1_DEFAULT_MODE0);
-            rtd1_handler(recv_buff);
+            rtd1_handler(RECEIVE_FORMATTER_COMMAND_BUFF);
             SPI1_Close();
             break;
         case FOXSI_RTD2:
             SPI1_Open(SPI1_DEFAULT_MODE0);
-            rtd2_handler(recv_buff);
+            rtd2_handler(RECEIVE_FORMATTER_COMMAND_BUFF);
             SPI1_Close();
             break;
         case FOXSI_INTRO:
-            introspect_handler(recv_buff);
+            introspect_handler(RECEIVE_FORMATTER_COMMAND_BUFF);
             break;
         default:
             // should not end up here
             FOXSI_ERRORS |= FOXSI_ERROR_ETH_RECV_MSB;
             break;
     }
+    
+    UDP_FlushRxdPacket();
+    UDP_FlushTXPackets();
 }
 
 void power_switch_handler(uint8_t* recv_buff) {
@@ -97,7 +105,8 @@ void power_switch_handler(uint8_t* recv_buff) {
 void power_health_handler(uint8_t* recv_buff) {
     switch (recv_buff[1]) {
         case FOXSI_POWER_HEALTH_READ_ALL: {
-            uint8_t response[32]; // 2B per VIN, 16 VINs.
+//            uint8_t response[32]; // 2B per VIN, 16 VINs.
+            
             uint8_t spi_tx_buff[2];
             
             uint16_t ctrl = FOXSI_POWER_HEALTH_CONTROL_MASK | power_health_convert_addr(0x00);
@@ -120,8 +129,8 @@ void power_health_handler(uint8_t* recv_buff) {
                     LATEbits.LATE3 = 1;
                     __delay_us(FOXSI_POWER_HEALTH_MIN_DELAY_US);
                     
-                    response[response_index + 1] = spi_tx_buff[1];
-                    response[response_index] = spi_tx_buff[0];
+                    SPI_RX_POWER_HEALTH_BUFF[response_index + 1] = spi_tx_buff[1];
+                    SPI_RX_POWER_HEALTH_BUFF[response_index] = spi_tx_buff[0];
                     
                     // reapply the tx control packet mask
                     ctrl = FOXSI_POWER_HEALTH_CONTROL_MASK | power_health_convert_addr(i);
@@ -134,21 +143,21 @@ void power_health_handler(uint8_t* recv_buff) {
                     __delay_us(FOXSI_POWER_HEALTH_MIN_DELAY_US);
                     
                     response_index += 2;
-                    response[response_index + 1] = spi_tx_buff[1];
-                    response[response_index] = spi_tx_buff[0];
+                    SPI_RX_POWER_HEALTH_BUFF[response_index + 1] = spi_tx_buff[1];
+                    SPI_RX_POWER_HEALTH_BUFF[response_index] = spi_tx_buff[0];
                     
                 } else {                    // send these once.
                     LATEbits.LATE3 = 0;
                     SPI1_ExchangeBlock(spi_tx_buff, 2);
                     LATEbits.LATE3 = 1;
                     // add to eth TX buffer
-                    response[response_index + 1] = spi_tx_buff[1];
-                    response[response_index] = spi_tx_buff[0];
+                    SPI_RX_POWER_HEALTH_BUFF[response_index + 1] = spi_tx_buff[1];
+                    SPI_RX_POWER_HEALTH_BUFF[response_index] = spi_tx_buff[0];
                 }
             }
             
             // send all response data on ethernet
-            UDP_WriteBlock(response, 32);
+            UDP_WriteBlock(SPI_RX_POWER_HEALTH_BUFF, 32);
             UDP_Send();
             break;
         }

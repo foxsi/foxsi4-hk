@@ -256,6 +256,8 @@ void ETH_EventHandler(void)
 {
     // check for the IRQ Flag
     PIR2bits.ETHIF = 0;
+    
+    LATAbits.LATA3 = ETH_CheckLinkUp();
 
    if (EIRbits.LINKIF) // something about the link changed.... update the link parameters
     {
@@ -272,7 +274,7 @@ void ETH_EventHandler(void)
     }
 
     if (EIRbits.TXERIF)
-    {
+    {        
         EIRbits.TXERIF = 0;
     }
 

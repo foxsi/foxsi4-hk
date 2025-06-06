@@ -145,12 +145,14 @@ error_msg IPV4_Packet(void)
         return DEST_IP_NOT_MATCHED;
 
     // jira:M8TS-608
-    if(ipv4Header.dstIpAddress == ipdb_getAddress() || (ipv4Header.dstIpAddress == IPV4_ZERO_ADDRESS)||
-        (ipv4Header.dstIpAddress == SPECIAL_IPV4_BROADCAST_ADDRESS)
-            ||((ipdb_getAddress()|CLASS_A_IPV4_REVERSE_BROADCAST_MASK)== ipv4Header.dstIpAddress)                  // jira: MCU8CC-6949
-                ||((ipdb_getAddress()|CLASS_B_IPV4_REVERSE_BROADCAST_MASK)== ipv4Header.dstIpAddress)
-                    ||((ipdb_getAddress()|CLASS_C_IPV4_REVERSE_BROADCAST_MASK)== ipv4Header.dstIpAddress)
-            || (ipv4Header.dstIpAddress == ALL_HOST_MULTICAST_ADDRESS))
+    if(ipv4Header.dstIpAddress == ipdb_getAddress()
+        || (ipv4Header.dstIpAddress == IPV4_ZERO_ADDRESS)
+        || (ipv4Header.dstIpAddress == SPECIAL_IPV4_BROADCAST_ADDRESS)
+        ||((ipdb_getAddress()|CLASS_A_IPV4_REVERSE_BROADCAST_MASK)== ipv4Header.dstIpAddress)                  // jira: MCU8CC-6949
+        ||((ipdb_getAddress()|CLASS_B_IPV4_REVERSE_BROADCAST_MASK)== ipv4Header.dstIpAddress)
+        ||((ipdb_getAddress()|CLASS_C_IPV4_REVERSE_BROADCAST_MASK)== ipv4Header.dstIpAddress)
+        || (ipv4Header.dstIpAddress == ALL_HOST_MULTICAST_ADDRESS))
+        
     {
         ipv4Header.length = ntohs(ipv4Header.length);
 
@@ -192,7 +194,7 @@ error_msg IPV4_Packet(void)
                 break;
             case UDP_TCPIP:
                 // check the UDP header checksum                
-                logMsg("IPv4 RX UDP", LOG_INFO, LOG_DEST_CONSOLE);
+                logMsg("IPv4 RX UDP", LOG_INFO, LOG_DEST_CONSOLE); 
                 length = ipv4Header.length - hdrLen;
                 cksm = IPV4_PseudoHeaderChecksum(length);//Calculate pseudo header checksum
                 cksm = ETH_RxComputeChecksum(length, cksm); //1's complement of pseudo header checksum + 1's complement of UDP header, data
