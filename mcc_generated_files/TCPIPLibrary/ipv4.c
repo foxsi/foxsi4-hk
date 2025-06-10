@@ -17,7 +17,7 @@
 
 /*
 
-©  [2015] Microchip Technology Inc. and its subsidiaries.  You may use this software
+?  [2015] Microchip Technology Inc. and its subsidiaries.  You may use this software
 and any derivatives exclusively with Microchip products.
 
 THIS SOFTWARE IS SUPPLIED BY MICROCHIP "AS IS".  NO WARRANTIES, WHETHER EXPRESS,
@@ -46,7 +46,6 @@ MICROCHIP PROVIDES THIS SOFTWARE CONDITIONALLY UPON YOUR ACCEPTANCE OF THESE TER
 #include "arpv4.h"
 #include "udpv4.h"
 #include "udpv4_port_handler_table.h"
-#include "tcpv4.h"
 #include "tcpip_types.h"
 #include "ethernet_driver.h"
 #include "log.h"
@@ -61,11 +60,6 @@ MICROCHIP PROVIDES THIS SOFTWARE CONDITIONALLY UPON YOUR ACCEPTANCE OF THESE TER
 
 ipv4Header_t ipv4Header;
 
-uint32_t remoteIpv4Address;
-/*
- *  Callback to TCP protocol to deliver the TCP packets
- */
-extern void TCP_Recv(uint32_t, uint16_t);
 static uint8_t getHeaderLen(void);   //jira: CAE_MCU8-5737
 
 void IPV4_Init(void)
@@ -145,14 +139,12 @@ error_msg IPV4_Packet(void)
         return DEST_IP_NOT_MATCHED;
 
     // jira:M8TS-608
-    if(ipv4Header.dstIpAddress == ipdb_getAddress()
-        || (ipv4Header.dstIpAddress == IPV4_ZERO_ADDRESS)
-        || (ipv4Header.dstIpAddress == SPECIAL_IPV4_BROADCAST_ADDRESS)
+    if(ipv4Header.dstIpAddress == ipdb_getAddress() || (ipv4Header.dstIpAddress == IPV4_ZERO_ADDRESS)||
+        (ipv4Header.dstIpAddress == SPECIAL_IPV4_BROADCAST_ADDRESS)
         ||((ipdb_getAddress()|CLASS_A_IPV4_REVERSE_BROADCAST_MASK)== ipv4Header.dstIpAddress)                  // jira: MCU8CC-6949
         ||((ipdb_getAddress()|CLASS_B_IPV4_REVERSE_BROADCAST_MASK)== ipv4Header.dstIpAddress)
         ||((ipdb_getAddress()|CLASS_C_IPV4_REVERSE_BROADCAST_MASK)== ipv4Header.dstIpAddress)
         || (ipv4Header.dstIpAddress == ALL_HOST_MULTICAST_ADDRESS))
-        
     {
         ipv4Header.length = ntohs(ipv4Header.length);
 
@@ -199,23 +191,6 @@ error_msg IPV4_Packet(void)
                 cksm = IPV4_PseudoHeaderChecksum(length);//Calculate pseudo header checksum
                 cksm = ETH_RxComputeChecksum(length, cksm); //1's complement of pseudo header checksum + 1's complement of UDP header, data
                 UDP_Receive(cksm);
-                break;
-            case TCP_TCPIP:
-                // accept only uni cast TCP packets
-                // check the TCP header checksum
-                logMsg("IPv4 RX TCP", LOG_INFO, LOG_DEST_CONSOLE);
-                length = ipv4Header.length - hdrLen;
-                cksm = IPV4_PseudoHeaderChecksum(length);
-                cksm = ETH_RxComputeChecksum(length, cksm);
-
-                // accept only packets with valid CRC Header
-                if (cksm == 0 && (ipv4Header.dstIpAddress != SPECIAL_IPV4_BROADCAST_ADDRESS) && (ipv4Header.dstIpAddress != IPV4_ZERO_ADDRESS))                
-                {
-                    remoteIpv4Address = ipv4Header.srcIpAddress;
-                    TCP_Recv(remoteIpv4Address, length);
-                }else{
-                    logMsg("IPv4 RX bad TCP chksm",LOG_DEBUG,LOG_DEST_CONSOLE);
-                }
                 break;
             default:
                 ETH_Dump(ipv4Header.length);

@@ -42,7 +42,6 @@
 */
 
 #include "mcc_generated_files/mcc.h"
-#include "demo_tcp.h"
 #include "formatter_interface.h"
 
 /*
@@ -117,7 +116,7 @@ void main(void) {
 
     uint8_t blink_state = 0x00;
     
-    formatter_init_udp();
+//    formatter_init_udp();
     
     while (1) {
          Network_Manage();

@@ -58,7 +58,7 @@ typedef struct {
 static const spi1_configuration_t spi1_configuration[] = {   
     { 0x21, 0x00, 0x0, 0x00 },  // SPI mode 0 config
     { 0x21, 0x40, 0x0, 0x00 },  // SPI mode 1 config
-//    { 0x11, 0x40, 0x0, 0x00 },   // SPI mode 3 config (OLD, SUSPECT BAD)
+//    { 0x11, 0x40, 0x0, 0x00 },   // SPI mode 3 config (OLD, SUSPECT BAD)  
     { 0x31, 0x40, 0x0, 0x00 }   // SPI mode 3 config (NEW, BELIEVE CORRECT)
 };
 

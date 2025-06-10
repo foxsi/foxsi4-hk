@@ -61,7 +61,7 @@ volatile ethernetDriver_t ethData;
 
 // adjust these parameters for the MAC...
 #define RAMSIZE (8192)
-#define MAX_TX_PACKET_SIZE  (1518)
+#define MAX_TX_PACKET_SIZE  (1500)
 #define MIN_TX_PACKET_SIZE  (64)
 #define MAX_TX_PACKETS (20)
 
@@ -256,8 +256,6 @@ void ETH_EventHandler(void)
 {
     // check for the IRQ Flag
     PIR2bits.ETHIF = 0;
-    
-    LATAbits.LATA3 = ETH_CheckLinkUp();
 
    if (EIRbits.LINKIF) // something about the link changed.... update the link parameters
     {

@@ -14,7 +14,6 @@ extern "C" {
 
 #include <stddef.h> // for size_t
 #include "mcc_generated_files/mcc.h"
-#include "mcc_generated_files/TCPIPLibrary/tcpv4.h"
 #include "mcc_generated_files/spi1.h"
 #include "mcc_generated_files/drivers/uart.h"
     
@@ -90,12 +89,34 @@ extern "C" {
     
     uint32_t        FOXSI_UDP_COUNTER = 0;
     
-    uint8_t         RECEIVE_FORMATTER_COMMAND_BUFF[4];
-    uint8_t         SPI_TX_POWER_SWITCH_BUFF[2];  // unused
-    uint8_t         SPI_RX_POWER_HEALTH_BUFF[32];
+    static uint8_t         RECEIVE_FORMATTER_COMMAND_BUFF[4];
+    static uint8_t         SPI_TX_POWER_SWITCH_BUFF[2];  // unused
+    static uint8_t         SPI_RX_POWER_HEALTH_BUFF[32];
+    static uint8_t         SPI_RX_RTD_BUFF[4*FOXSI_RTD_COUNT];
+    
+    // For mocking up interface (no SPI readback):
+    
+//    #define FOXSIMILE
+    
+    static const uint8_t SPI_FOXSIMILE_POWER_HEALTH_BUFF[32] = {
+        0x09, 0xB9, 0x19, 0x1A, 0x2A, 0x20, 0x3A, 0x21, 0x48, 0xF8, 0x58, 0x86, 0x68, 0x7D, 0x78, 0x81, 
+        0x88, 0x89, 0x99, 0x8A, 0xA8, 0x89, 0xB8, 0x85, 0xC8, 0x79, 0xD8, 0x7E, 0xE8, 0x7E, 0xF8, 0x7D, 
+    };
+    static const uint8_t SPI_FOXSIMILE_RTD_BUFF[36] = {
+        0x81, 0xF0, 0x64, 0x00, 0x01, 0x00, 0x5E, 0x02, 0x85, 0xF0, 0x64, 0x00, 0x81, 0xF0, 0x64, 0x00, 
+        0x81, 0xF0, 0x64, 0x00, 0x81, 0xF0, 0x64, 0x00, 0x81, 0xF0, 0x64, 0x00, 0x81, 0xF0, 0x64, 0x00, 
+        0x81, 0xF0, 0x64, 0x00, 
+    };
+    
+//    typedef struct {
+//        uint8_t device;
+//        uint8_t target;
+//        uint8_t value;
+//    } formatter_command_packet;
     
     void formatter_init_udp(void);
-    void formatter_handle_udp(size_t length);
+    void formatter_handle_udp(uint16_t length);
+    void formatter_handle_udp_flat(uint16_t length);
     
     
     

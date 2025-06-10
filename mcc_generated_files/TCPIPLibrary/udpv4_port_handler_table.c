@@ -44,7 +44,7 @@ MICROCHIP PROVIDES THIS SOFTWARE CONDITIONALLY UPON YOUR ACCEPTANCE OF THESE TER
 
 const udp_handler_t UDP_CallBackTable[] = \
 {
-    {7777, &formatter_handle_udp}
+    {7777, &formatter_handle_udp_flat}
 };
 
 // ***************** Leave the stuff below this line alone *********************

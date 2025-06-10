@@ -17,7 +17,7 @@
 
 /*
 
-©  [2015] Microchip Technology Inc. and its subsidiaries.  You may use this software 
+?  [2015] Microchip Technology Inc. and its subsidiaries.  You may use this software 
 and any derivatives exclusively with Microchip products. 
   
 THIS SOFTWARE IS SUPPLIED BY MICROCHIP "AS IS".  NO WARRANTIES, WHETHER EXPRESS, 
@@ -49,14 +49,10 @@ MICROCHIP PROVIDES THIS SOFTWARE CONDITIONALLY UPON YOUR ACCEPTANCE OF THESE TER
 #include "tcpip_types.h"
 #include "arpv4.h"
 #include "ipv4.h"
-#include "tcpv4.h"
 #include "rtcc.h"
 #include "ethernet_driver.h"
 #include "log.h"
 #include "ip_database.h"
-
-#include "../mcc.h"
-
 #ifdef ENABLE_NETWORK_DEBUG
 #define logMsg(msg, msgSeverity, msgLogDest)    logMessage(msg, LOG_KERN, msgSeverity, msgLogDest) 
 #else
@@ -80,7 +76,6 @@ void Network_Init(void)
     ETH_Init();
     ARPV4_Init();
     IPV4_Init();
-    TCP_Init();
     rtcc_init();
     Network_WaitForLink();  
     timersInit();
@@ -116,7 +111,6 @@ void Network_Manage(void)
     if(now > nowPv) // at least 1 second has elapsed
     {
         // is defined as a minimum of 1 seconds in RFC973
-        TCP_Update();  // handle timeouts
     }
     nowPv = now;
 }

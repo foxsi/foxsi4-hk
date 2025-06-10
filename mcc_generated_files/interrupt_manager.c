@@ -48,7 +48,6 @@
 
 #include "interrupt_manager.h"
 #include "mcc.h"
-#include "../formatter_interface.h"
 
 void  INTERRUPT_Initialize (void)
 {
@@ -59,34 +58,20 @@ void  INTERRUPT_Initialize (void)
 void __interrupt() INTERRUPT_InterruptManager (void)
 {
     // interrupt handler
-//    if(INTCONbits.RBIE == 1 && INTCONbits.RBIF == 1)
-//    {
-//        PIN_MANAGER_IOC();
-//        
-//        //DEBUG
-////        LATEbits.LATE3 = 0;
-//
-////        // state-related work:
-////        if (PORTBbits.RB0 == 1) {  // SYNC signal raised. 
-////            // call lengthen_time()
-////            lengthen_time();    // modifies FOXSI global timer
-////        }
-////
-////        if (PORTBbits.RB1 == 1) {  // PRELAUNCH raised.
-////            FOXSI_CURRENT_STATE = (uint8_t)FOXSI_FLIGHT_STATE_PRELAUNCH;
-////        }
-////
-////        if (PORTBbits.RB2 == 1) {  // SHUTTER raised.
-////            if (FOXSI_CURRENT_STATE == (uint8_t)FOXSI_FLIGHT_STATE_SHUTTER) {
-////                FOXSI_CURRENT_STATE = (uint8_t)FOXSI_FLIGHT_STATE_END;
-////            } else {
-////                FOXSI_CURRENT_STATE = (uint8_t)FOXSI_FLIGHT_STATE_SHUTTER;
-////            }
-////        }
-//    }
-    
+    if(INTCONbits.RBIE == 1 && INTCONbits.RBIF == 1)
+    {
+        PIN_MANAGER_IOC();
+    }
     if(INTCONbits.PEIE == 1)
     {
+        if(PIE1bits.TX1IE == 1 && PIR1bits.TX1IF == 1)
+        {
+            EUSART1_TxDefaultInterruptHandler();
+        } 
+        if(PIE1bits.RC1IE == 1 && PIR1bits.RC1IF == 1)
+        {
+            EUSART1_RxDefaultInterruptHandler();
+        } 
         if(PIE1bits.TMR1IE == 1 && PIR1bits.TMR1IF == 1)
         {
             TMR1_ISR();
