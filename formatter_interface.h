@@ -89,13 +89,13 @@ extern "C" {
     
     uint32_t        FOXSI_UDP_COUNTER = 0;
     
-    static uint8_t         RECEIVE_FORMATTER_COMMAND_BUFF[4];
-    static uint8_t         SPI_TX_POWER_SWITCH_BUFF[2];  // unused
-    static uint8_t         SPI_RX_POWER_HEALTH_BUFF[32];
-    static uint8_t         SPI_RX_RTD_BUFF[4*FOXSI_RTD_COUNT];
+    static uint8_t          RECEIVE_FORMATTER_COMMAND_BUFF[3];
+    static uint8_t          SPI_TX_POWER_SWITCH_BUFF[2];  // unused
+    static uint8_t          SPI_RX_POWER_HEALTH_BUFF[32];
+    static uint8_t          SPI_TX_RTD_BUFF[7];
+    static uint8_t          SPI_RX_RTD_BUFF[4*FOXSI_RTD_COUNT];
     
     // For mocking up interface (no SPI readback):
-    
 //    #define FOXSIMILE
     
     static const uint8_t SPI_FOXSIMILE_POWER_HEALTH_BUFF[32] = {
@@ -108,15 +108,8 @@ extern "C" {
         0x81, 0xF0, 0x64, 0x00, 
     };
     
-//    typedef struct {
-//        uint8_t device;
-//        uint8_t target;
-//        uint8_t value;
-//    } formatter_command_packet;
-    
     void formatter_init_udp(void);
     void formatter_handle_udp(uint16_t length);
-    void formatter_handle_udp_flat(uint16_t length);
     
     
     

@@ -9,362 +9,31 @@
 void formatter_init_udp(void) {
     error_msg ret = UDP_Start(makeStrToIpv4Address("192.168.1.8"), 7777, 7777);
     if (ret != SUCCESS) {
-        LATAbits.LATA3 = 1;
         FOXSI_ERRORS |= FOXSI_ERROR_INIT;
+        if (ret == BUFFER_BUSY) {
+            LATAbits.LATA3 = 1;
+        }
+        else {
+            LATAbits.LATA3 = 0;
+        }
         return;
     }
 }
 
-void formatter_handle_udp_flat(uint16_t length) {
-    error_msg ret = UDP_Start(makeStrToIpv4Address("192.168.1.8"), 7777, 7777);
-    if (ret != SUCCESS) {
-        FOXSI_ERRORS |= FOXSI_ERROR_INIT;
-        LATAbits.LATA3 = 1;
-        return;
-    }
-    
+
+
+void formatter_handle_udp(uint16_t length) {    
     ++FOXSI_UDP_COUNTER;
     LATAbits.LATA3 = FOXSI_UDP_COUNTER % 2;
     
-//    return;
-//     handle errors for incorrect packet length
+    // handle errors for incorrect packet length
     if (length != 3) {
         FOXSI_ERRORS |= FOXSI_ERROR_ETH_RECV_MSB;
         UDP_FlushRxdPacket();
         return;
     }
-    // read 4 bytes from UDP. Convert to array.
-    const uint32_t recv_buff_block = UDP_Read32();
-    if (recv_buff_block == 0x00) {
-        return;
-    }
     
-    bytes_from_uint32_t(recv_buff_block, RECEIVE_FORMATTER_COMMAND_BUFF);
-    
-    if (RECEIVE_FORMATTER_COMMAND_BUFF[0] == FOXSI_POWER_SWITCH) {
-        SPI1_Open(SPI1_DEFAULT_MODE1);
-        // use pin RE2 for the power switch CS
-        if (RECEIVE_FORMATTER_COMMAND_BUFF[1] > 0x0d) {
-            // handle read command
-            LATEbits.LATE2 = 0;
-            SPI1_ExchangeBlock(RECEIVE_FORMATTER_COMMAND_BUFF + 1, 2);
-            LATEbits.LATE2 = 1;
-            UDP_WriteBlock(RECEIVE_FORMATTER_COMMAND_BUFF, 2);
-            UDP_Send();
-        } else {
-            if (RECEIVE_FORMATTER_COMMAND_BUFF[1] == 0x09) {
-                // formatter reset case
-                if (RECEIVE_FORMATTER_COMMAND_BUFF[2] == 0x01) {
-                    // case where command is to reset formatter
-                    uint8_t spi_msg[2] = {0x09, 0x00};
-                    LATEbits.LATE2 = 0;
-                    SPI1_WriteBlock(spi_msg, 2);
-                    LATEbits.LATE2 = 1;
-                    __delay_ms(100);
-
-                    spi_msg[1] = 0x01;
-                    LATEbits.LATE2 = 0;
-                    SPI1_WriteBlock(spi_msg, 2);
-                    LATEbits.LATE2 = 1;
-                } 
-            } else {
-                // non-formatter reset case. Forward the write_value.
-                // bring CS low:
-                LATEbits.LATE2 = 0;
-                SPI1_WriteBlock(RECEIVE_FORMATTER_COMMAND_BUFF + 1, 2);
-                LATEbits.LATE2 = 1;
-            }
-        }   
-        SPI1_Close();
-    } else if (RECEIVE_FORMATTER_COMMAND_BUFF[0] == FOXSI_POWER_HEALTH) {
-        SPI1_Open(SPI1_DEFAULT_MODE3);
-        if (RECEIVE_FORMATTER_COMMAND_BUFF[1] == FOXSI_POWER_HEALTH_READ_ALL) {
-//            uint8_t response[32]; // 2B per VIN, 16 VINs.
-
-            uint8_t spi_tx_buff[2];
-
-            uint16_t ctrl = FOXSI_POWER_HEALTH_CONTROL_MASK | power_health_convert_addr(0x00);
-            bytes_from_uint16_t(ctrl, spi_tx_buff);
-
-            // read 0x00 
-            LATEbits.LATE3 = 0;
-            SPI1_WriteBlock(spi_tx_buff, 2);
-            LATEbits.LATE3 = 1;
-
-            for (uint8_t i = 1; i <= 0x0f; ++i) {
-                ctrl = FOXSI_POWER_HEALTH_CONTROL_MASK | power_health_convert_addr(i);
-                bytes_from_uint16_t(ctrl, spi_tx_buff);
-                uint8_t response_index = 2*i - 2;
-
-                if (i == 0x0f) {            // send this one twice.
-                    // first send
-                    LATEbits.LATE3 = 0;
-                    SPI1_ExchangeBlock(spi_tx_buff, 2);
-                    LATEbits.LATE3 = 1;
-                    __delay_us(FOXSI_POWER_HEALTH_MIN_DELAY_US);
-
-                    SPI_RX_POWER_HEALTH_BUFF[response_index + 1] = spi_tx_buff[1];
-                    SPI_RX_POWER_HEALTH_BUFF[response_index] = spi_tx_buff[0];
-
-                    // reapply the tx control packet mask
-                    ctrl = FOXSI_POWER_HEALTH_CONTROL_MASK | power_health_convert_addr(i);
-                    bytes_from_uint16_t(ctrl, spi_tx_buff);
-
-                    // second send. now can read back ADC
-                    LATEbits.LATE3 = 0;
-                    SPI1_ExchangeBlock(spi_tx_buff, 2);
-                    LATEbits.LATE3 = 1;
-                    __delay_us(FOXSI_POWER_HEALTH_MIN_DELAY_US);
-
-                    response_index += 2;
-                    SPI_RX_POWER_HEALTH_BUFF[response_index + 1] = spi_tx_buff[1];
-                    SPI_RX_POWER_HEALTH_BUFF[response_index] = spi_tx_buff[0];
-
-                } else {                    // send these once.
-                    LATEbits.LATE3 = 0;
-                    SPI1_ExchangeBlock(spi_tx_buff, 2);
-                    LATEbits.LATE3 = 1;
-                    // add to eth TX buffer
-                    SPI_RX_POWER_HEALTH_BUFF[response_index + 1] = spi_tx_buff[1];
-                    SPI_RX_POWER_HEALTH_BUFF[response_index] = spi_tx_buff[0];
-                }
-            }
-
-            // send all response data on ethernet
-            UDP_WriteBlock(SPI_RX_POWER_HEALTH_BUFF, 32);
-            error_msg ret_send = UDP_Send();
-        } else if (RECEIVE_FORMATTER_COMMAND_BUFF[1] == FOXSI_POWER_HEALTH_FORWARD) {
-
-        } else if (RECEIVE_FORMATTER_COMMAND_BUFF[1] == FOXSI_POWER_HEALTH_SETUP) {
-
-            uint8_t setup_frame[2] = {0xff, 0xff};
-            // send setup frame twice to clear
-            LATAbits.LATA5 = 1;
-
-            LATEbits.LATE3 = 0;
-            SPI1_WriteBlock(setup_frame, 2);
-            LATEbits.LATE3 = 1;
-            __delay_us(FOXSI_POWER_HEALTH_MIN_DELAY_US);
-            LATEbits.LATE3 = 0;
-            SPI1_WriteBlock(setup_frame, 2);
-            LATEbits.LATE3 = 1;
-        } else {
-            uint16_t ctrl;
-            ctrl = FOXSI_POWER_HEALTH_CONTROL_MASK | power_health_convert_addr(RECEIVE_FORMATTER_COMMAND_BUFF[1]);
-            // this is 2B wide. 
-            uint8_t spi_tx_buff[2];
-            bytes_from_uint16_t(ctrl, spi_tx_buff);
-
-            uint8_t response[2];
-
-            // first send
-            LATEbits.LATE3 = 0;
-            SPI1_WriteBlock(spi_tx_buff, 2);
-            LATEbits.LATE3 = 1;
-            __delay_us(FOXSI_POWER_HEALTH_MIN_DELAY_US);
-
-            // second send
-            LATEbits.LATE3 = 0;
-            SPI1_ExchangeBlock(spi_tx_buff, 2);
-            LATEbits.LATE3 = 1;
-
-            // build Ethernet payload (MSB, LSB order)
-            response[1] = spi_tx_buff[1];
-            response[0] = spi_tx_buff[0];
-
-            // send on Ethernet
-            UDP_WriteBlock(response, 2);
-            UDP_Send();
-        }
-        SPI1_Close();
-    } else if (RECEIVE_FORMATTER_COMMAND_BUFF[0] == FOXSI_RTD1 || RECEIVE_FORMATTER_COMMAND_BUFF[0] == FOXSI_RTD2) {
-        SPI1_Open(SPI1_DEFAULT_MODE0);
-        uint8_t rtd_num = RECEIVE_FORMATTER_COMMAND_BUFF[0];
-        
-        if (RECEIVE_FORMATTER_COMMAND_BUFF[1] == FOXSI_RTD_SETUP) {
-            uint8_t spi_tx_buff[7];
-            spi_tx_buff[0] = FOXSI_RTD_WR_CMD;
-            bytes_from_uint16_t(FOXSI_RTD_CONF_SENSE_ADDR, spi_tx_buff + 1);
-            bytes_from_uint32_t(FOXSI_RTD_CONF_SENSE, spi_tx_buff + 3);
-
-            if (rtd_num == FOXSI_RTD1) {
-                LATEbits.LATE0 = 0;
-                SPI1_WriteBlock(spi_tx_buff, 7);
-                LATEbits.LATE0 = 1;
-
-                for (int i = 0; i < FOXSI_RTD_COUNT; ++i) {
-
-                    // substitute in memory address for channel config
-                    bytes_from_uint16_t(FOXSI_RTD_CONF_RTD_ADDR + 8*i, spi_tx_buff + 1);
-                    // substitute in channel config data
-                    bytes_from_uint32_t(FOXSI_RTD_CONF_RTD, spi_tx_buff + 3);
-
-                    LATEbits.LATE0 = 0;
-                    SPI1_WriteBlock(spi_tx_buff, 7);
-                    LATEbits.LATE0 = 1;
-                }
-            } else if (rtd_num == FOXSI_RTD2) {
-                LATEbits.LATE1 = 0;
-                SPI1_WriteBlock(spi_tx_buff, 7);
-                LATEbits.LATE1 = 1;
-
-                for (int i = 0; i < FOXSI_RTD_COUNT; ++i) {
-
-                    // substitute in memory address for channel config
-                    bytes_from_uint16_t(FOXSI_RTD_CONF_RTD_ADDR + 8*i, spi_tx_buff + 1);
-                    // substitute in channel config data
-                    bytes_from_uint32_t(FOXSI_RTD_CONF_RTD, spi_tx_buff + 3);
-
-                    LATEbits.LATE1 = 0;
-                    SPI1_WriteBlock(spi_tx_buff, 7);
-                    LATEbits.LATE1 = 1;
-                }
-            } else {
-                // shouldn't end up here.
-                FOXSI_ERRORS |= FOXSI_ERROR_RTD;
-            }
-            
-        } else if (RECEIVE_FORMATTER_COMMAND_BUFF[1] == FOXSI_RTD_START_ALL_CONV) {
-            uint8_t spi_tx_buff[6];
-            uint8_t seq_conv_pad[4];
-            spi_tx_buff[0] = FOXSI_RTD_WR_CMD;
-            bytes_from_uint16_t(FOXSI_RTD_SEQ_CONV_ADDR, spi_tx_buff + 1);
-            // remove empty first byte (data to write is 3 B long)
-            bytes_from_uint32_t(FOXSI_RTD_SEQ_CONV, seq_conv_pad);
-            spi_tx_buff[3] = seq_conv_pad[1];
-            spi_tx_buff[4] = seq_conv_pad[2];
-            spi_tx_buff[5] = seq_conv_pad[3];
-
-            uint8_t command_tx_buff[4];
-            command_tx_buff[0] = FOXSI_RTD_WR_CMD;
-            command_tx_buff[1] = 0x00;
-            command_tx_buff[2] = 0x00;
-            command_tx_buff[3] = 0x80;  // register value to convert multiple channels
-
-            if (rtd_num == FOXSI_RTD1) {
-                LATEbits.LATE0 = 0;
-                SPI1_WriteBlock(spi_tx_buff, 6);
-                LATEbits.LATE0 = 1;
-
-                __delay_us(FOXSI_RTD_MIN_DELAY_US);
-
-                LATEbits.LATE0 = 0;
-                SPI1_WriteBlock(command_tx_buff, 4);
-                LATEbits.LATE0 = 1;
-
-            } else if (rtd_num == FOXSI_RTD2) {
-                LATEbits.LATE1 = 0;
-                SPI1_WriteBlock(spi_tx_buff, 6);
-                LATEbits.LATE1 = 1;
-
-                __delay_us(FOXSI_RTD_MIN_DELAY_US);
-
-                LATEbits.LATE1 = 0;
-                SPI1_WriteBlock(command_tx_buff, 4);
-                LATEbits.LATE1 = 1;
-
-            } else {
-                // shouldn't end up here.
-                FOXSI_ERRORS |= FOXSI_ERROR_RTD;
-            }
-            
-        } else if (RECEIVE_FORMATTER_COMMAND_BUFF[1] == FOXSI_RTD_READ_ALL) {
-            if (rtd_num == FOXSI_RTD1) {
-                // check if INTERRUPT asserted.
-                if (PORTDbits.RD0 == 1) {
-                    for (uint16_t i = 0; i < FOXSI_RTD_COUNT; ++i) {
-                        // assign/reassign value of spi_tx_buff 
-                        uint8_t spi_tx_buff[7];
-                        spi_tx_buff[0] = FOXSI_RTD_RD_CMD;
-                        bytes_from_uint16_t((uint16_t)FOXSI_RTD_RD_ADDR + 8*i, spi_tx_buff + 1);
-                        for (int j = 3; j < 7; ++j) {
-                            spi_tx_buff[j] = 0;
-                        }
-
-                        LATEbits.LATE0 = 0;
-                        SPI1_ExchangeBlock(spi_tx_buff, 7);
-                        LATEbits.LATE0 = 1;
-
-                        SPI_RX_RTD_BUFF[4*i] = spi_tx_buff[3];
-                        SPI_RX_RTD_BUFF[4*i + 1] = spi_tx_buff[4];
-                        SPI_RX_RTD_BUFF[4*i + 2] = spi_tx_buff[5];
-                        SPI_RX_RTD_BUFF[4*i + 3] = spi_tx_buff[6];
-                    }
-                } else {
-                    FOXSI_ERRORS |= FOXSI_ERROR_RTD;
-                    return;
-                }
-
-            } else if (rtd_num == FOXSI_RTD2) {
-                // check if INTERRUPT asserted.
-                if (PORTDbits.RD2 == 1) {
-                    for (uint16_t i = 0; i < FOXSI_RTD_COUNT; ++i) {
-                        // assign/reassign value of spi_tx_buff 
-                        uint8_t spi_tx_buff[7];
-                        spi_tx_buff[0] = FOXSI_RTD_RD_CMD;
-                        bytes_from_uint16_t((uint16_t)FOXSI_RTD_RD_ADDR + 8*i, spi_tx_buff + 1);
-                        for (int j = 3; j < 7; ++j) {
-                            spi_tx_buff[j] = 0;
-                        }
-
-                        LATEbits.LATE1 = 0;
-                        SPI1_ExchangeBlock(spi_tx_buff, 7);
-                        LATEbits.LATE1 = 1;
-
-                        SPI_RX_RTD_BUFF[4*i] = spi_tx_buff[3];
-                        SPI_RX_RTD_BUFF[4*i + 1] = spi_tx_buff[4];
-                        SPI_RX_RTD_BUFF[4*i + 2] = spi_tx_buff[5];
-                        SPI_RX_RTD_BUFF[4*i + 3] = spi_tx_buff[6];
-                    }
-                } else {
-                    FOXSI_ERRORS |= FOXSI_ERROR_RTD;
-                    return;
-                }
-            } else {
-                // shouldn't end up here.
-                FOXSI_ERRORS |= FOXSI_ERROR_RTD;
-                return;
-            }
-            UDP_WriteBlock(SPI_RX_RTD_BUFF, 4*FOXSI_RTD_COUNT);
-            error_msg err = UDP_Send();
-        } else {
-            // invalid CH identifier.
-            FOXSI_ERRORS |= FOXSI_ERROR_RTD1;
-        }
-        SPI1_Close();
-        
-    } else if (RECEIVE_FORMATTER_COMMAND_BUFF[0] == FOXSI_INTRO) {
-        introspect_handler(RECEIVE_FORMATTER_COMMAND_BUFF);
-    } else {
-        // should not end up here
-        FOXSI_ERRORS |= FOXSI_ERROR_ETH_RECV_MSB;
-    }
-}
-
-
-
-
-/******************************************************************************/
-void formatter_handle_udp(uint16_t length) {
-    formatter_init_udp();
-    
-    ++FOXSI_UDP_COUNTER;
-//    LATAbits.LATA3 = FOXSI_UDP_COUNTER % 2;
-    
-//    return;
-//     handle errors for incorrect packet length
-    if (length != 3) {
-        FOXSI_ERRORS |= FOXSI_ERROR_ETH_RECV_MSB;
-        UDP_FlushRxdPacket();
-        return;
-    }
-    // read 4 bytes from UDP. Convert to array.
-    const uint32_t recv_buff_block = UDP_Read32();
-    if (recv_buff_block == 0x00) {
-        return;
-    }
-    
-    bytes_from_uint32_t(recv_buff_block, RECEIVE_FORMATTER_COMMAND_BUFF);
+    UDP_ReadBlock(RECEIVE_FORMATTER_COMMAND_BUFF, 3);
     
     switch (RECEIVE_FORMATTER_COMMAND_BUFF[0]) {
         case FOXSI_POWER_SWITCH:
@@ -395,9 +64,6 @@ void formatter_handle_udp(uint16_t length) {
             FOXSI_ERRORS |= FOXSI_ERROR_ETH_RECV_MSB;
             break;
     }
-
-//    UDP_FlushRxdPacket();
-//    UDP_FlushTXPackets();
 }
 
 void power_switch_handler(uint8_t* recv_buff) {
@@ -407,6 +73,8 @@ void power_switch_handler(uint8_t* recv_buff) {
         LATEbits.LATE2 = 0;
         SPI1_ExchangeBlock(recv_buff + 1, 2);
         LATEbits.LATE2 = 1;
+        
+        formatter_init_udp();
         UDP_WriteBlock(recv_buff, 2);
         UDP_Send();
     } else {
@@ -437,12 +105,12 @@ void power_switch_handler(uint8_t* recv_buff) {
 
 void power_health_handler(uint8_t* recv_buff) {
 #ifdef FOXSIMILE
+    formatter_init_udp();
     UDP_WriteBlock(SPI_FOXSIMILE_POWER_HEALTH_BUFF, 32);
     UDP_Send();
 #else
     switch (recv_buff[1]) {
         case FOXSI_POWER_HEALTH_READ_ALL: {
-//            uint8_t response[32]; // 2B per VIN, 16 VINs.
             
             uint8_t spi_tx_buff[2];
             
@@ -494,6 +162,7 @@ void power_health_handler(uint8_t* recv_buff) {
             }
             
             // send all response data on ethernet
+            formatter_init_udp();
             UDP_WriteBlock(SPI_RX_POWER_HEALTH_BUFF, 32);
             UDP_Send();
             break;
@@ -531,6 +200,7 @@ void power_health_handler(uint8_t* recv_buff) {
             response[0] = spi_tx_buff[0];
             
             // send on Ethernet
+            formatter_init_udp();
             UDP_WriteBlock(response, 2);
             UDP_Send();
             
@@ -707,6 +377,7 @@ void rtd_start_all_conversion(uint8_t rtd_num) {
 
 void rtd_read_all(uint8_t rtd_num) {
 #ifdef FOXSIMILE
+    formatter_init_udp();
     UDP_WriteBlock(SPI_FOXSIMILE_RTD_BUFF, 36);
     UDP_Send();
 #else
@@ -766,6 +437,7 @@ void rtd_read_all(uint8_t rtd_num) {
         FOXSI_ERRORS |= FOXSI_ERROR_RTD;
         return;
     }
+    formatter_init_udp();
     UDP_WriteBlock(SPI_RX_RTD_BUFF, 4*FOXSI_RTD_COUNT);
     error_msg err = UDP_Send();
     // todo: consider adding a FOXSI_ERROR_MASK entry for err != SUCCESS.
@@ -788,6 +460,7 @@ void introspect_handler(uint8_t* recv_buff) {
             uint8_t response[2];
             bytes_from_uint16_t((uint16_t)FOXSI_CURRENT_STATE, response);
             // send on Ethernet
+            formatter_init_udp();
             UDP_WriteBlock(response, 2);
             UDP_Send();
             break;
@@ -795,6 +468,7 @@ void introspect_handler(uint8_t* recv_buff) {
         case FOXSI_INTRO_GET_ERRORS: {
             uint8_t response[2];
             bytes_from_uint16_t(FOXSI_ERRORS, response);
+            formatter_init_udp();
             UDP_WriteBlock(response, 2);
             UDP_Send();
             break;
@@ -802,6 +476,7 @@ void introspect_handler(uint8_t* recv_buff) {
         case FOXSI_INTRO_GET_CURRENT_CLOCK: {
             uint8_t response[4];
             bytes_from_uint32_t(FOXSI_TIME_LONG, response);
+            formatter_init_udp();
             UDP_WriteBlock(response, 4);
             UDP_Send();
             break;
@@ -809,6 +484,7 @@ void introspect_handler(uint8_t* recv_buff) {
         case FOXSI_INTRO_GET_CORE_CLOCK: {
             uint8_t response[2];
             bytes_from_uint16_t(TMR1_ReadTimer(), response);
+            formatter_init_udp();
             UDP_WriteBlock(response, 2);
             UDP_Send();
         }
@@ -817,6 +493,7 @@ void introspect_handler(uint8_t* recv_buff) {
             for (int i = 0; i < 32; i += 4) {
                 bytes_from_uint32_t(FOXSI_SYNC_LOG[i/8], response + i);
             }
+            formatter_init_udp();
             UDP_WriteBlock(response, 32);
             UDP_Send();
 

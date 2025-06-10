@@ -64,7 +64,7 @@ if __name__ == "__main__":
 
     print("running loop...")
     loop_counter = 0
-    intercommand = 0.25
+    intercommand = 0.01
     timeout = 0.1
     while True:
         print("\tloop counter: ", loop_counter)
@@ -91,5 +91,6 @@ if __name__ == "__main__":
         time.sleep(intercommand)
         socket.sendto(start_temp2_convert, remote_endpoint)
         
-        time.sleep(0.1)
+        print('\a')
+        time.sleep(1.5)
         loop_counter = loop_counter + 1
