@@ -6,25 +6,22 @@
 #include "mcc_generated_files/TCPIPLibrary/ip_database.h"
 #include <string.h>
 
-void formatter_init_udp(void) {
+error_msg formatter_init_udp(void) {
     error_msg ret = UDP_Start(makeStrToIpv4Address("192.168.1.8"), 7777, 7777);
     if (ret != SUCCESS) {
-        FOXSI_ERRORS |= FOXSI_ERROR_INIT;
-        if (ret == BUFFER_BUSY) {
-            LATAbits.LATA3 = 1;
-        }
-        else {
-            LATAbits.LATA3 = 0;
-        }
-        return;
+        FOXSI_ERRORS |= FOXSI_ERROR_NETWORK;
+        LATAbits.LATA3 = 1;
+    } else {
+        LATAbits.LATA3 = 0;
     }
+    return ret;
 }
 
 
 
 void formatter_handle_udp(uint16_t length) {    
     ++FOXSI_UDP_COUNTER;
-    LATAbits.LATA3 = FOXSI_UDP_COUNTER % 2;
+//    LATAbits.LATA3 = FOXSI_UDP_COUNTER % 2;
     
     // handle errors for incorrect packet length
     if (length != 3) {

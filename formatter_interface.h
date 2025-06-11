@@ -74,7 +74,8 @@ extern "C" {
         FOXSI_ERROR_RTD1,
         FOXSI_ERROR_RTD2,
         FOXSI_ERROR_RTD,
-        FOXSI_ERROR_INTRO
+        FOXSI_ERROR_INTRO,
+        FOXSI_ERROR_NETWORK
     };
     
     uint8_t         FOXSI_CURRENT_STATE;
@@ -108,7 +109,7 @@ extern "C" {
         0x81, 0xF0, 0x64, 0x00, 
     };
     
-    void formatter_init_udp(void);
+    error_msg formatter_init_udp(void);
     void formatter_handle_udp(uint16_t length);
     
     
