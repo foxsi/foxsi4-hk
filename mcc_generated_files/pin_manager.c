@@ -82,7 +82,7 @@ void PIN_MANAGER_Initialize(void)
   
    
 	// Enable RBI interrupt
-    INTCONbits.RBIE = 1;
+//    INTCONbits.RBIE = 1;
 }
 
 void PIN_MANAGER_IOC(void)

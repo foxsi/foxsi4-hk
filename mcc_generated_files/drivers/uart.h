@@ -46,7 +46,7 @@ typedef enum {
 *   \ingroup doc_driver_uart_code
 *   \struct uart_functions_t uart.h
 */
-typedef struct { uint8_t (*Read)(void); void (*Write)(uint8_t txdata); bool (*TransmitReady)(void); bool (*DataReady)(void); bool (*TransmitDone)(void); void (*Initialize)(void);  } uart_functions_t;
+typedef struct { uint8_t (*Read)(void); void (*Write)(uint8_t txdata); bool (*TransmitReady)(void); bool (*DataReady)(void); void (*SetTxISR)(void (* interruptHandler)(void)); void (*RxDefaultISR)(void); void (*SetRxISR)(void (* interruptHandler)(void)); bool (*TransmitDone)(void); void (*TxDefaultISR)(void); void (*Initialize)(void);  } uart_functions_t;
 
 extern const uart_functions_t uart[];
 

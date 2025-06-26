@@ -49,6 +49,8 @@ MICROCHIP PROVIDES THIS SOFTWARE CONDITIONALLY UPON YOUR ACCEPTANCE OF THESE TER
 #include "tcpip_types.h"
 #include "icmp.h"
 
+#include "../../formatter_interface.h"
+
 /**
   Section: Macro Declarations
 */

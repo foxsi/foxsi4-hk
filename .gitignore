@@ -1,3 +1,10 @@
 build/*
 dist/*
 debug/*
+
+*.DS_Store
+.env/
+.venv/
+
+*.log
+*.log.*

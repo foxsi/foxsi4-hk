@@ -61,7 +61,7 @@ volatile ethernetDriver_t ethData;
 
 // adjust these parameters for the MAC...
 #define RAMSIZE (8192)
-#define MAX_TX_PACKET_SIZE  (1518)
+#define MAX_TX_PACKET_SIZE  (1500)
 #define MIN_TX_PACKET_SIZE  (64)
 #define MAX_TX_PACKETS (20)
 
@@ -272,7 +272,7 @@ void ETH_EventHandler(void)
     }
 
     if (EIRbits.TXERIF)
-    {
+    {        
         EIRbits.TXERIF = 0;
     }
 
