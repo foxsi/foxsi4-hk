@@ -40,7 +40,7 @@ extern "C" {
 #define FOXSI_RTD_RD_CMD                0x03    // read command byte
 #define FOXSI_RTD_RD_ADDR               0x001c  // first address of 9 (spaced by 8 B) channels to read (once data ready).
 #define FOXSI_RTD_CONF_SENSE            0xe8025800  // value to write to FOXSI_RTD_CONF_SENSE_ADDR to config RSENSE resistor.
-#define FOXSI_RTD_CONF_RTD              0x60961000  // value to write to FOXSI_RTD_CONF_RTD_ADDR (and in 8 B offset from there) to config
+#define FOXSI_RTD_CONF_RTD              0x60960000  // value to write to FOXSI_RTD_CONF_RTD_ADDR (and in 8 B offset from there) to config
 #define FOXSI_RTD_SEQ_CONV_ADDR         0x00f5      // address to write FOXSI_RTD_SEQ_CONV to start sequential conversion
 #define FOXSI_RTD_SEQ_CONV              0x000aaaa8  // value to write to FOXSI_RTD_SEQ_CONV_ADDR to start sequential conversion
 #define FOXSI_RTD_SETUP                 0xff    // setup (set config data for all channels)
